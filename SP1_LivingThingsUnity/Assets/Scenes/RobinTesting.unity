@@ -344,8 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576f53991cd2efe43a13b7751640df17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springBoostMultiplier: 120.5
-  springBoostFallout: 35
+  springBoostMultiplier: 110
+  springBoostFallout: 40
+  BoostResetTimerDelta: 5
 --- !u!1 &1994119607
 GameObject:
   m_ObjectHideFlags: 0

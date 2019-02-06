@@ -7,37 +7,42 @@ public class CharacterSpring : MonoBehaviour
 
     [Range(101, 200)]
     public float springBoostMultiplier;
-    [Range(0,99)]
+    [Range(0, 99)]
     public float springBoostFallout;
+    public float BoostResetTimerDelta;
+
+    private float boostResetTimer;
     private bool jumped = false;
-    GameObject previousJumpingObject;
+    private bool shrunken = false;
+    private GameObject previousJumpingObject;
 
     void Start()
     {
-
+        boostResetTimer = BoostResetTimerDelta;
     }
 
     void Update()
     {
         BoostLandingObject();
+        ResetBoostJump();
+        Shrink();
     }
 
     void BoostLandingObject()
     {
         RaycastHit2D hit2D = Physics2D.Raycast(transform.position, Vector2.up, 0.1f);
 
-        if(hit2D.collider != null)
+        if (hit2D.collider != null && !shrunken)
         {
-            print(previousJumpingObject.name + " || " + hit2D.collider.name);
-            if (hit2D.collider != previousJumpingObject || previousJumpingObject == null)
+            if (hit2D.collider.gameObject != previousJumpingObject || previousJumpingObject == null)
             {
                 jumped = false;
                 previousJumpingObject = hit2D.collider.gameObject;
             }
-
             if (hit2D.collider.GetComponent<Rigidbody2D>() != null)
             {
                 var hitRB = hit2D.collider.GetComponent<Rigidbody2D>();
+
                 if (hitRB.velocity.y < 0)
                 {
                     float velocityY = hitRB.velocity.y;
@@ -45,10 +50,27 @@ public class CharacterSpring : MonoBehaviour
                     if (jumped)
                         springBoostMultiplier = springBoostFallout;
                     hitRB.AddForce(Vector2.up * Mathf.Abs(velocityY) * springBoostMultiplier);
-                    print(jumped);
+                    boostResetTimer = Time.time + BoostResetTimerDelta;
                     jumped = true;
                 }
             }
         }
     }
+
+    void ResetBoostJump()
+    {
+        if (Time.time > boostResetTimer)
+        {
+            jumped = false;
+            previousJumpingObject = null;
+            boostResetTimer = Time.time + BoostResetTimerDelta;
+        }
+    }
+
+    void Shrink()
+    {
+        if (Input.GetButtonDown("Ability"))
+            shrunken = !shrunken;
+    }
+
 }
