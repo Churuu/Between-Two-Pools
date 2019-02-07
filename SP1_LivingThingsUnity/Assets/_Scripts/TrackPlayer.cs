@@ -4,7 +4,7 @@ public class TrackPlayer : MonoBehaviour
 {//Påbörjad av Jonas Thunberg 2019-02-04
 
     [SerializeField] private GameObject player;
-    private Camera camera;
+    private new Camera  camera;
     // Use this for initialization
     void Start()
     {
