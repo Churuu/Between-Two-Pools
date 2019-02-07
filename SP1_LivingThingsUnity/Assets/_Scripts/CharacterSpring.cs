@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Skapad av Robin Nechovski 07-02-2019
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -53,7 +54,6 @@ public class CharacterSpring : MonoBehaviour
                     hitRB.velocity = new Vector2(hitRB.velocity.x, 0);
                     if (jumped)
                     {
-                        print("fallout 76");
                         springBoostMultiplier = springBoostFallout;
                     }
 
@@ -62,7 +62,6 @@ public class CharacterSpring : MonoBehaviour
                     hitRB.AddForce(Vector2.up * Mathf.Abs(velocityY) * springBoostMultiplier);
                     boostResetTimer = Time.time + BoostResetTimerDelta;
                     jumped = true;
-                    print(jumped);
                 }
             }
         }
