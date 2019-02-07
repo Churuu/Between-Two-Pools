@@ -2,7 +2,7 @@
 
 public class Movement : MonoBehaviour
 {//Påbörjad av Jonas Thunberg 2019-01-31
-
+    
     private Rigidbody2D rb2D;
     [SerializeField] private float materialFrictiom = 50f;
     private int materialFrictiomZero = 0;
@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     LayerMask mask;
     [SerializeField] private string layerMask = "Ground";
     [SerializeField] private bool okToJump = true;
-    [SerializeField] float maxTimeToNextJump = 0.3f;
+    [SerializeField] float maxTimeToNextJump = 0.01f;
     [SerializeField] float deltaTimeNextJump = 0f;
     
     private float horizontalInput;
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
         OKtoJump(); // 
         VerticalMovmenent();
         JumpMovment();
-
+      
 
     }
 
