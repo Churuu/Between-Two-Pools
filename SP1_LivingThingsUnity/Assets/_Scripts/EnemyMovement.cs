@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿//Joakim
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- Random kommentarer
-*/
-public class Enemy_Movement : MonoBehaviour {
+
+public class EnemyMovement : MonoBehaviour {
+
     public int StartRiktning; // värden -1 startar åt vänster, 0 stårstilla, 1 startar åt höger
     public float Enemy_Move_speed;
     public float Distance_From_Start_Pos;
@@ -16,18 +16,21 @@ public class Enemy_Movement : MonoBehaviour {
     private bool going_left = false;
 
 
-    void Start () {
+    void Start()
+    {
         Enemy_Rigid = GetComponent<Rigidbody2D>();
         Flip_Sprite = GetComponent<SpriteRenderer>();
         Vector2 movement = new Vector2(StartRiktning, 0.0f);
         Enemy_Rigid.velocity = new Vector2(movement.x * Enemy_Move_speed, movement.y * Enemy_Move_speed);
         Physics2D.IgnoreLayerCollision(8, 8);
         // Om Distance_From_Start_Pos är 0 så patrullerar fienden fram tills kollition med vägg
-        if(Distance_From_Start_Pos == 0) {
+        if (Distance_From_Start_Pos == 0)
+        {
             MaxDist = 100000;
             NegMaxDist = -100000;
         }
-        else {
+        else
+        {
             MaxDist = transform.position.x + Distance_From_Start_Pos;
             NegMaxDist = transform.position.x - Distance_From_Start_Pos;
         }
@@ -37,7 +40,8 @@ public class Enemy_Movement : MonoBehaviour {
 
     }
 
-	void Update () {
+    void Update()
+    {
         Vector2 movement = new Vector2(StartRiktning, 0.0f);
         Enemy_Rigid.velocity = new Vector2(movement.x * Enemy_Move_speed, movement.y * Enemy_Move_speed);
         ChangeDirection();
@@ -65,12 +69,13 @@ public class Enemy_Movement : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         // Byt riktning vid kollition med vägg
-        if (col.gameObject.CompareTag("Vägg")){
+        if (col.gameObject.CompareTag("Vägg"))
+        {
             StartRiktning = StartRiktning * -1;
             Flip_Sprite.flipX = !Flip_Sprite.flipX;
             going_right = !going_right;
             going_left = !going_left;
-        } 
+        }
     }
 
     void OnDrawGizmosSelected()
@@ -85,3 +90,4 @@ public class Enemy_Movement : MonoBehaviour {
         Gizmos.DrawCube(Target_Pos2, new Vector3(1, 1, 1));
     }
 }
+
