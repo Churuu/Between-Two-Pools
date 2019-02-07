@@ -1,30 +1,31 @@
-﻿using System.Collections;
+﻿//Joakim
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skiftnyckel_characteristics : MonoBehaviour {
-    public float Degresperclick;
+public class WrenchCharacteristics : MonoBehaviour {
+
+    public float DegresPerRotation;
     public Vector3 OffsetRotatePoint;
     private Rigidbody2D rb2D;
     private SpriteRenderer Sprite;
-    private bool AbiltyActive;
+    [HideInInspector] public bool AbiltyActive;
     private bool movementScriptActive;
-    private float rotate;
     private Vector3 MutterPos;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         AbiltyActive = false;
         movementScriptActive = true;
         rb2D = GetComponent<Rigidbody2D>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-           
             AbiltyActive = !AbiltyActive;
-            //endast visuelt hjälpmedel eftersom rätta sprites inte finns än
             Sprite = GetComponent<SpriteRenderer>();
             if (AbiltyActive == true)
             {
@@ -45,14 +46,13 @@ public class Skiftnyckel_characteristics : MonoBehaviour {
         }
 
         // rotera runt muttern
-        if(AbiltyActive == true && movementScriptActive == false)
+        if (AbiltyActive == true && movementScriptActive == false)
         {
-            rotate = Degresperclick;
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-                transform.RotateAround(MutterPos, new Vector3(0 ,0 ,1), rotate);
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-                transform.RotateAround(MutterPos, new Vector3(0, 0, 1), -rotate);
-        } 
+            if (Input.GetKeyDown(KeyCode.D))
+                transform.RotateAround(MutterPos, new Vector3(0, 0, 1), DegresPerRotation);
+            else if (Input.GetKeyDown(KeyCode.A))
+                transform.RotateAround(MutterPos, new Vector3(0, 0, 1), -DegresPerRotation);   
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -70,5 +70,5 @@ public class Skiftnyckel_characteristics : MonoBehaviour {
             }
         }
     }
-    
 }
+
