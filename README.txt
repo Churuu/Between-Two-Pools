@@ -1,18 +1,20 @@
-git clone https://github.com/Churuu/SP1_LivingThings.git - clonar projektet till documents på datorn
+git clone https://github.com/Churuu/SP1_LivingThings.git - clonar projektet till documents pÃ¥ datorn
 
-cd SP1_LivingThings - berättar för datorn vilken fil du arbetar inom
+cd SP1_LivingThings - berÃ¤ttar fÃ¶r datorn vilken fil du arbetar inom
 
 git init initialiserar projektet
 
-git status - Kollar vilka filer som finns i projektet och vilka som har ändrats på
+git status - Kollar vilka filer som finns i projektet och vilka som har Ã¤ndrats pÃ¥
 
-git add -A Förbereder alla nya/modifierade filer för commit
+git add -A FÃ¶rbereder alla nya/modifierade filer fÃ¶r commit
 
-git commit -m "Skriv förändringar här inom citat tecknerna" - Sparar alla förändringar
+git commit -m "Skriv fÃ¶rÃ¤ndringar hÃ¤r inom citat tecknerna" - Sparar alla fÃ¶rÃ¤ndringar
 
 git push origin 'branch' - laddar upp filerna till github
 
-git pull - Laddar ner nya filer från molnet ifall det finns
+git fetch --all
+
+git pull - Laddar ner nya filer frÃ¥n molnet ifall det finns
 
 
 
