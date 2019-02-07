@@ -11,6 +11,7 @@ public class CharacterSpring : MonoBehaviour
     public float springBoostFallout;
     public float BoostResetTimerDelta;
 
+    [SerializeField] private string abilityKey;
     private float boostResetTimer;
     private bool jumped = false;
     private bool shrunken = false;
@@ -39,6 +40,8 @@ public class CharacterSpring : MonoBehaviour
                 jumped = false;
                 previousJumpingObject = hit2D.collider.gameObject;
             }
+
+
             if (hit2D.collider.GetComponent<Rigidbody2D>() != null)
             {
                 var hitRB = hit2D.collider.GetComponent<Rigidbody2D>();
@@ -69,7 +72,7 @@ public class CharacterSpring : MonoBehaviour
 
     void Shrink()
     {
-        if (Input.GetButtonDown("Ability"))
+        if (Input.GetButtonDown(abilityKey))
             shrunken = !shrunken;
     }
 
