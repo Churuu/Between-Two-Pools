@@ -5,11 +5,12 @@ using UnityEngine;
 public class CharacterSpring : MonoBehaviour
 {
 
-    [Range(101, 200)]
+    [Range(50, 100)]
     public float springBoostMultiplier;
-    [Range(0, 99)]
+    [Range(0, 49)]
     public float springBoostFallout;
     public float BoostResetTimerDelta;
+    public float springJumpDistance;
 
     [SerializeField] private string abilityKey;
     private float boostResetTimer;
@@ -31,7 +32,7 @@ public class CharacterSpring : MonoBehaviour
 
     void BoostLandingObject()
     {
-        RaycastHit2D hit2D = Physics2D.Raycast(transform.position, Vector2.up, 0.1f);
+        RaycastHit2D hit2D = Physics2D.Raycast(transform.position, Vector2.up, springJumpDistance);
 
         if (hit2D.collider != null && !shrunken)
         {
@@ -51,10 +52,17 @@ public class CharacterSpring : MonoBehaviour
                     float velocityY = hitRB.velocity.y;
                     hitRB.velocity = new Vector2(hitRB.velocity.x, 0);
                     if (jumped)
+                    {
+                        print("fallout 76");
                         springBoostMultiplier = springBoostFallout;
+                    }
+
+                    print(Mathf.Abs(hitRB.velocity.y) * springBoostMultiplier);
+
                     hitRB.AddForce(Vector2.up * Mathf.Abs(velocityY) * springBoostMultiplier);
                     boostResetTimer = Time.time + BoostResetTimerDelta;
                     jumped = true;
+                    print(jumped);
                 }
             }
         }
@@ -76,4 +84,10 @@ public class CharacterSpring : MonoBehaviour
             shrunken = !shrunken;
     }
 
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawRay(transform.position, Vector3.up * springJumpDistance);
+    }
 }
