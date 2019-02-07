@@ -9,6 +9,7 @@ public class Hammer : MonoBehaviour
     [HideInInspector] public Vector2 direction;
 
     [SerializeField] private float destructionDistance;
+    [SerializeField] private bool active;
     [SerializeField] private LayerMask destructableWall;
 
     private Rigidbody2D rb;
@@ -21,7 +22,7 @@ public class Hammer : MonoBehaviour
     void Update()
     {
         DestroyWall();
-        //Debug.DrawRay(transform.position);
+        Debug.DrawRay(transform.position, (direction.x > 0 && direction.x != 0 ? Vector2.right : Vector2.left) * destructionDistance, Color.green);
     }
 
     void DestroyWall()
@@ -29,7 +30,7 @@ public class Hammer : MonoBehaviour
         if (rb.velocity.x != 0)
             SetDestructionDirection(new Vector2(rb.velocity.x, 0));
 
-        if (Input.GetButtonDown("Ability"))
+        if (Input.GetButtonDown("Ability") && active)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, destructionDistance, destructableWall);
 
@@ -43,5 +44,9 @@ public class Hammer : MonoBehaviour
     public void SetDestructionDirection(Vector2 direction)
     {
         this.direction = direction;
+    }
+    public void ChangeActiveState()
+    {
+        active = !active;
     }
 }
