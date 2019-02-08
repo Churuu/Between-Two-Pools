@@ -11,6 +11,7 @@ public class Hammer : MonoBehaviour
     [SerializeField] private float destructionDistance;
     [SerializeField] private bool active;
     [SerializeField] private LayerMask destructableWall;
+    [SerializeField] private string abilityButton;
 
     private Rigidbody2D rb;
 
@@ -30,7 +31,7 @@ public class Hammer : MonoBehaviour
         if (rb.velocity.x != 0)
             SetDestructionDirection(new Vector2(rb.velocity.x, 0));
 
-        if (Input.GetButtonDown("Ability") && active)
+        if (Input.GetButtonDown(abilityButton) && active)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, destructionDistance, destructableWall);
 

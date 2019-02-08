@@ -7,13 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitioner : MonoBehaviour
 {
+    public AnimationClip fadeAnim;
 
     Animator anim;
-    Animation fadeAnim;
     string sceneToLoad;
 
     void Start()
     {
+        if(GameObject.Find(gameObject.name) == null)
+            DontDestroyOnLoad(gameObject);
+
+        
+
+
         anim = GetComponent<Animator>();
     }
 
@@ -21,13 +27,21 @@ public class SceneTransitioner : MonoBehaviour
     {
         sceneToLoad = name;
         anim.SetTrigger("Fade");
-        Invoke("SwitchScene", fadeAnim.clip.length);
+        Invoke("SwitchScene", fadeAnim.length + 1);
     }
 
 
     void SwitchScene()
     {
         SceneManager.LoadScene(sceneToLoad);
+        anim.SetTrigger("FadeOut");
+        Invoke("Reset", 1.5f);
+
+    }
+
+    void Reset()
+    {
         anim.ResetTrigger("Fade");
+        anim.ResetTrigger("FadeOut");
     }
 }
