@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 358690393}
   - component: {fileID: 358690392}
   - component: {fileID: 358690391}
-  - component: {fileID: 358690395}
+  - component: {fileID: 358690396}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -294,7 +294,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &358690395
+--- !u!114 &358690396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -302,10 +302,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 358690390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d764378c3e9790b44a72b5d29a7048a7, type: 3}
+  m_Script: {fileID: 11500000, guid: e5e67b32ae440a141a9f5f44d0c07047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1759407376}
+  objectToFollow: {fileID: 1759407378}
+  cameraObject: {fileID: 358690394}
+  followSpeed: 5
 --- !u!1 &377799279 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1296497176176386, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427,
@@ -1002,6 +1004,7 @@ MonoBehaviour:
   destructableWall:
     serializedVersion: 2
     m_Bits: 0
+  abilityButton: Ability1
 --- !u!50 &1868850038 stripped
 Rigidbody2D:
   m_PrefabParentObject: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
