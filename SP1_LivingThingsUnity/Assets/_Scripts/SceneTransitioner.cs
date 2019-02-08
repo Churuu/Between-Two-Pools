@@ -12,10 +12,17 @@ public class SceneTransitioner : MonoBehaviour
     Animator anim;
     string sceneToLoad;
 
+    private static SceneTransitioner scene;
+
     void Start()
     {
-        if(GameObject.Find(gameObject.name) == null)
-            DontDestroyOnLoad(gameObject);
+
+        DontDestroyOnLoad(this);
+
+        if (scene == null)
+            scene = this;
+        else
+            Destroy(gameObject);
 
         
 
