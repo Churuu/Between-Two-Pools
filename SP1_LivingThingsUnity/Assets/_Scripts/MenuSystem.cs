@@ -42,7 +42,8 @@ public class MenuSystem : MonoBehaviour {
             P_Pressed = false;
             Time.timeScale = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == false)
+        //Aktivera Pause menyn och pausar spelet
+        else if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == false && MainMenu.gameObject.active == false && Levels.gameObject.active == false)
         {
             PauseMenu.gameObject.SetActive(true);
             Restart.Select();
@@ -64,9 +65,9 @@ public class MenuSystem : MonoBehaviour {
     }
     void TaskOnExitClick()
     {
+        Debug.Log("You have clicked the Exit button!");
         //Stänger av spelet
         Application.Quit();
-        Debug.Log("You have clicked the Exit button!");
     }
 
     void TaskOnBack()
@@ -76,9 +77,9 @@ public class MenuSystem : MonoBehaviour {
         StartButton.Select();
     }
     // Laddar level efter vilken knapp som tryckts
-    public void LoadLevel(string LevelSceneNAme)
+    public void LoadLevel(string LevelSceneName)
     {
-        SceneManager.LoadScene(LevelSceneNAme);
+        SceneManager.LoadScene(LevelSceneName);
     }
 
     void TaskOnRestart()
