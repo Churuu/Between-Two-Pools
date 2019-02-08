@@ -742,7 +742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
@@ -1287,6 +1287,10 @@ Prefab:
       propertyPath: magneticRigidBodysMagnetToObject.Array.data[0]
       value: 
       objectReference: {fileID: 830080278}
+    - target: {fileID: 1296497176176386, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
   m_IsPrefabParent: 0
@@ -1399,6 +1403,10 @@ Prefab:
     - target: {fileID: 4674600156397208, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259225014574912, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}
