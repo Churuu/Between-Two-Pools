@@ -2,7 +2,7 @@
 
 public class Movement : MonoBehaviour
 {//Påbörjad av Jonas Thunberg 2019-01-31
-    
+
     private Rigidbody2D rb2D;
     [SerializeField] private float materialFrictiom = 50f;
     private int materialFrictiomZero = 0;
@@ -10,21 +10,21 @@ public class Movement : MonoBehaviour
     [SerializeField] private float jump = 500f;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float lowJumpMultiplier = 2f;
-  //  [SerializeField] private int numberJump = 100;
- //   [SerializeField] private float jumpTimerCounterDown = 1f;
+    //  [SerializeField] private int numberJump = 100;
+    //   [SerializeField] private float jumpTimerCounterDown = 1f;
     [SerializeField] private string horizontal = "Horizontal";
     [SerializeField] private string jumpAxi = "wJump";
     [SerializeField] private float toleranceNextJump = 0.0005f;
     private float raycastSize;
     private float raycastSizeOriginal;
-    LayerMask mask;
+    [SerializeField] private LayerMask mask;
     [SerializeField] private string layerMask = "Ground";
     [SerializeField] private bool okToJump = true;
     [SerializeField] float maxTimeToNextJump = 0.01f;
     [SerializeField] float deltaTimeNextJump = 0f;
-    
+
     private float horizontalInput;
-  //  private float verticalInput;
+    //  private float verticalInput;
     private Vector3 side;
     Collider2D coll2D;
     private void Awake()
@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
         coll2D = GetComponent<Collider2D>();
         raycastSize = (coll2D.bounds.size.y * 0.5f) + toleranceNextJump;
         rb2D = GetComponent<Rigidbody2D>();
-        mask = LayerMask.GetMask(layerMask);
+     //   mask = LayerMask.GetMask(layerMask);
         side = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
         raycastSizeOriginal = raycastSize;
 
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
         OKtoJump(); // 
         VerticalMovmenent();
         JumpMovment();
-      
+
 
     }
 
@@ -81,7 +81,7 @@ public class Movement : MonoBehaviour
         {
             deltaTimeNextJump = 0;
         }
-        if (!okToJump)
+        if (!okToJump ||!(deltaTimeNextJump > maxTimeToNextJump))
         {
             RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, raycastSize, mask);
             RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize, mask);
@@ -92,7 +92,7 @@ public class Movement : MonoBehaviour
                 okToJump = true;
                 deltaTimeNextJump = 0;
                 SetMaterialFrictiom();
-          //      Debug.Log("Raycast nudar marken");
+                //      Debug.Log("Raycast nudar marken");
             }
         }
         //else if(rb2D.velocity.y < toleranceNextJump && rb2D.velocity.y > -toleranceNextJump)
@@ -126,7 +126,7 @@ public class Movement : MonoBehaviour
 
                 rb2D.AddForce(Vector2.up * jump);
                 okToJump = false;
-               // verticalInput = 0;
+                // verticalInput = 0;
                 SetMaterialFrictiom();
 
 
@@ -140,7 +140,7 @@ public class Movement : MonoBehaviour
         if (horizontalInput < 0)//Left
         {
             rb2D.velocity = new Vector2(-speed, rb2D.velocity.y);//* Time.deltaTime
-        //    Debug.Log("//Left");
+                                                                 //    Debug.Log("//Left");
 
             horizontalInput = 0;
         }
@@ -159,7 +159,7 @@ public class Movement : MonoBehaviour
             }
             if (rb2D.velocity.x > 0)//Right
             {
-           //     Debug.Log("Right speed");
+                //     Debug.Log("Right speed");
             }
         }
     }
@@ -174,7 +174,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-          coll2D.sharedMaterial.friction = materialFrictiomZero;
+            coll2D.sharedMaterial.friction = materialFrictiomZero;
             // rb2D.sharedMaterial.friction = materialFrictiomZero;
         }
         // Debug.Log(rb2D.sharedMaterial.friction);
