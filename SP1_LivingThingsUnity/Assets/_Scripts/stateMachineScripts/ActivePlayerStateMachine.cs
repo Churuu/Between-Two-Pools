@@ -9,7 +9,7 @@ public class ActivePlayerStateMachine : MonoBehaviour
     //[HideInInspector] public StartState startState; //Start lägge//TODO
     [HideInInspector] public ActivePlayerMagnetState activePlayerState1;
     [HideInInspector] public ActivePlayerSpringState activePlayerState2;
-    [HideInInspector] public ActivePlayerHammerState activePlayerState3;
+    [HideInInspector] public ActivePlayerWrenchState activePlayerState3;
     // [HideInInspector] public GameOver startState; // Förlora Lägge//TODO
     //  [HideInInspector] public StartState startState; // Vinst Lägge//TODO
     // [HideInInspector] public StartState startState; // Paus lägge//TODO
@@ -21,7 +21,7 @@ public class ActivePlayerStateMachine : MonoBehaviour
     //    Debug.Log(activePlayerState1);
         activePlayerState2 = new ActivePlayerSpringState(this, spelareTwo,2);
      //   Debug.Log(activePlayerState2);
-        activePlayerState3 = new ActivePlayerHammerState(this, spelareThree,3);
+        activePlayerState3 = new ActivePlayerWrenchState(this, spelareThree,3);
       //  Debug.Log(activePlayerState3);
     }
     private void Start()
