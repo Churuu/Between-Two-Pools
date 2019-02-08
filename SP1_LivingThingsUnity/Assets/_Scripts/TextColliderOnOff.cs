@@ -16,18 +16,25 @@ public class TextColliderOnOff : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (text != null && collision.tag == tagPlayer )
+        if (text != null && collision.transform.childCount !=0)
         {
-            text.enabled = true;
+            if (collision.transform.GetChild(0).GetComponent<ActivePlayerStateMachine>() != null)
+            {
+                text.enabled = true;
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (text != null && collision.tag == tagPlayer)
+        if (text != null && collision.transform.childCount != 0)
         {
-            text.enabled = false;
+            if (collision.transform.GetChild(0).GetComponent<ActivePlayerStateMachine>() != null)
+            {
+                text.enabled = false;
+            }
+
         }
     }
 }
