@@ -7,6 +7,10 @@ public class WrenchCharacteristics : MonoBehaviour {
 
     public float DegresPerRotation;
     public Vector3 OffsetRotatePoint;
+    public string TagOnMutter;
+    public string Abillity;
+    public string RotateRight;
+    public string RotateLeft;
     private Rigidbody2D rb2D;
     private SpriteRenderer Sprite;
     [HideInInspector] public bool AbiltyActive;
@@ -23,7 +27,7 @@ public class WrenchCharacteristics : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown(Abillity))
         {
             AbiltyActive = !AbiltyActive;
             Sprite = GetComponent<SpriteRenderer>();
@@ -48,16 +52,16 @@ public class WrenchCharacteristics : MonoBehaviour {
         // rotera runt muttern
         if (AbiltyActive == true && movementScriptActive == false)
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetButtonDown(RotateRight))
                 transform.RotateAround(MutterPos, new Vector3(0, 0, 1), DegresPerRotation);
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetButtonDown(RotateLeft))
                 transform.RotateAround(MutterPos, new Vector3(0, 0, 1), -DegresPerRotation);   
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Mutter"))
+        if (col.CompareTag(TagOnMutter))
         {
             if (AbiltyActive == true)
             {
