@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float deltaTimeNextJump = 0f;
     
     private float horizontalInput;
-    private float verticalInput;
+  //  private float verticalInput;
     private Vector3 side;
     Collider2D coll2D;
     private void Awake()
@@ -126,7 +126,7 @@ public class Movement : MonoBehaviour
 
                 rb2D.AddForce(Vector2.up * jump);
                 okToJump = false;
-                verticalInput = 0;
+               // verticalInput = 0;
                 SetMaterialFrictiom();
 
 

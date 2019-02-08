@@ -472,7 +472,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_Name
-      value: Player1 (2)
+      value: Hammer
       objectReference: {fileID: 0}
     - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_IsActive
@@ -493,6 +493,11 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
   m_IsPrefabParent: 0
@@ -506,6 +511,22 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
     type: 2}
   m_PrefabInternal: {fileID: 2052731894}
+--- !u!114 &830080282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 830080276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576f53991cd2efe43a13b7751640df17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springBoostMultiplier: 100
+  springBoostFallout: 20
+  BoostResetTimerDelta: 3
+  springJumpDistance: 0.5
+  abilityKey: Ability1
 --- !u!50 &879679755 stripped
 Rigidbody2D:
   m_PrefabParentObject: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
@@ -718,11 +739,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.17
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.51
+      value: -2.46
       objectReference: {fileID: 0}
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -779,6 +800,10 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114338884386187834, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
@@ -829,11 +854,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4647128935223556, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.77
+      value: -4.57
       objectReference: {fileID: 0}
     - target: {fileID: 4647128935223556, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.52
       objectReference: {fileID: 0}
     - target: {fileID: 4647128935223556, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
       propertyPath: m_LocalPosition.z
@@ -904,6 +929,11 @@ Prefab:
       propertyPath: magneticRigidBodysMagnetToObject.Array.data[0]
       value: 
       objectReference: {fileID: 830080278}
+    - target: {fileID: 1296497176176386, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
   m_IsPrefabParent: 0
@@ -955,6 +985,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
     type: 2}
   m_PrefabInternal: {fileID: 800633478}
+--- !u!114 &1868850037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868850036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba76d2847a52a294dbaa893c4d187f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
+  destructionDistance: 0
+  active: 0
+  destructableWall:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &1868850038 stripped
 Rigidbody2D:
   m_PrefabParentObject: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
@@ -969,11 +1016,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.13
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.47
+      value: -3.69
       objectReference: {fileID: 0}
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1001,7 +1048,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_Name
-      value: Player1 (1)
+      value: Spring
       objectReference: {fileID: 0}
     - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_IsActive
@@ -1025,8 +1072,38 @@ Prefab:
     - target: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
         type: 2}
       propertyPath: m_Constraints
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
+        type: 2}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
+        type: 2}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114338884386187834, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
   m_IsPrefabParent: 0

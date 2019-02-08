@@ -1,15 +1,18 @@
-﻿using UnityEngine;
-public class ActivePlayerState : ActivePlayerStateBase
-{
-    public GameObject snubbe;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ActivePlayerSpringState : ActivePlayerStateBase {
+
+    public GameObject spring;
     public int playerNumber;
- 
+
     [SerializeField] private string charakterOne = "1";
     [SerializeField] private string charakterTwo = "2";
     [SerializeField] private string charakterThree = "3";
-    public ActivePlayerState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
+    public ActivePlayerSpringState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
     {
-        snubbe = gameObjectPlayer;
+        spring = gameObjectPlayer;
         if (stateMachines == null)
         {
             stateMachines = stateMachine;
@@ -27,17 +30,17 @@ public class ActivePlayerState : ActivePlayerStateBase
     }
     public override void Enter()
     {
-   
-        stateMachines.transform.position = snubbe.transform.position;
-       
-        stateMachines.transform.parent = snubbe.transform;
-        snubbe.GetComponent<Movement>().enabled = true;
+
+        stateMachines.transform.position = spring.transform.position;
+
+        stateMachines.transform.parent = spring.transform;
+        spring.GetComponent<Movement>().enabled = true;
     }
     public override void Exit()
     {
-    
+
         stateMachines.transform.parent = null;
-        snubbe.GetComponent<Movement>().enabled = false;
+        spring.GetComponent<Movement>().enabled = false;
 
 
 
