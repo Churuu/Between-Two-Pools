@@ -29,8 +29,6 @@ public class Reciever : MonoBehaviour
     [SerializeField]
     private float acceleration;
     [SerializeField]
-    private float time;
-    [SerializeField]
     private float tolerance;
 
     //Variables for different door states
@@ -39,8 +37,6 @@ public class Reciever : MonoBehaviour
     private bool gameObjectToggle;
     [SerializeField]
     private bool toggle;
-    [SerializeField]
-    private bool moveBool;
 
     [Space]
     [Header("Timed Platform Variables")]
@@ -54,6 +50,8 @@ public class Reciever : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+
+        start = transform.position;
         gameObject.SetActive(gameObjectToggle);
         if (audioObject != null)
         {
@@ -65,23 +63,27 @@ public class Reciever : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        ToggleElevator(start, target, speed, acceleration, time, tolerance, gameObjectToggle);
-
-        
+        ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
 	}
 
     public void ToggleObject()
     {
         if (toggle)
         {
-            gameObjectToggle = !gameObjectToggle;
-            audioSource.Play();
+            //gameObjectToggle = !gameObjectToggle;
+            //audioSource.Play();
 
             if (doorType == DoorType.flip)
             {
+                gameObjectToggle = !gameObjectToggle;
                 gameObject.SetActive(gameObjectToggle);
-
             }
+
+            else if (doorType == DoorType.move)
+            {
+                gameObjectToggle = !gameObjectToggle;
+            }
+
             else if (doorType == DoorType.moveTimer)
             {
                 timerToggle = true;
@@ -89,34 +91,35 @@ public class Reciever : MonoBehaviour
         } 
     }
 
-    public void ToggleObject(bool senderBool)
-    {
-        if (toggle)
-        {
-            audioSource.Play();
-            if (gameObjectToggle == false)
-            {
-                gameObjectToggle = senderBool;
-            }
-            else
-                gameObjectToggle = false;
-            if (doorType == DoorType.flip)
-            {
-                gameObject.SetActive(gameObjectToggle);
-            }
-            else if (doorType == DoorType.moveTimer)
-            {
-                timerToggle = true;
-            }
-        }
-    }
+    //public void ToggleObject(bool senderBool)
+    //{
+    //    if (toggle)
+    //    {
+    //        audioSource.Play();
+    //        if (gameObjectToggle == false)
+    //        {
+    //            gameObjectToggle = senderBool;
+    //        }
+    //        else
+    //            gameObjectToggle = false;
+    //        if (doorType == DoorType.flip)
+    //        {
+    //            gameObject.SetActive(gameObjectToggle);
+    //        }
+    //        else if (doorType == DoorType.moveTimer)
+    //        {
+    //            timerToggle = true;
+    //        }
+    //    }
+    //}
 
     public void BoolToogle()
     {
         toggle = !toggle;
     }
 
-    private void ToggleElevator(Vector3 start, Vector3 target, float speed, float acceleration, float time, float tolerance, bool flip)
+    private void ToggleElevator(Vector3 start, Vector3 target, float speed, float acceleration,
+        float time, float tolerance, bool flip)
     {
 
         Motion motion = new Motion(start, target, speed, acceleration, time, tolerance);
@@ -131,10 +134,15 @@ public class Reciever : MonoBehaviour
             motion.Target = start;
 
         }
-        transform.Translate(motion.SourceToTarget * motion.Velocity * Time.deltaTime);
+        if (doorType != DoorType.flip)
+        {
+            transform.Translate(motion.SourceToTarget * motion.Velocity * Time.deltaTime);
+        }
+        
 
         if (timerToggle && motion.InTargetRegion)
         {
+            
             if (timerFloat < timer)
             {
                 timerFloat += Time.deltaTime;
@@ -148,9 +156,20 @@ public class Reciever : MonoBehaviour
         }
     }
 
+    public bool GetDoorType(DoorType dT)
+    {
+        if (dT == doorType)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
     //private void ToggleElevator(Vector3 source, Vector3 target, float speed, float acceleration, float time, float tolerance)
     //{
     //    Motion motion = new Motion(source, target, 1, 0, 3, tolerance);
     //    transform.Translate(motion.TargetToSource * speed * Time.deltaTime);
     //}
 }
+
