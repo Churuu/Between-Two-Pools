@@ -3,22 +3,25 @@
 public class PlayerController : MonoBehaviour
 {//Påbörjad av Jonas Thunberg 2019-01-31
  //redigering 2019-02-11
-    private Rigidbody2D rb2D;
-    private Collider2D coll2D;
 
 
-    [SerializeField] private string horizontalMoment = "Horizontal";
-    [SerializeField] private string jumpAxis = "wJump";
+
+    [SerializeField] bool canJump;
     [Space]
-    [SerializeField] private float speedVelocityHorizontal = 400f;
-    [SerializeField] private float speedVelocityHorizontalJump = 150f;
-    [SerializeField] private float jumpAddForce = 500f;
-    [SerializeField] private float fallMultiplier = 2.5f;
-    [SerializeField] private float lowJumpMultiplier = 2f;
-    [SerializeField] private float gizmoRange = 1f;
+    [SerializeField] string horizontalMoment = "Horizontal";
+    [SerializeField] string jumpAxis = "wJump";
+    [Space]
+    [SerializeField] float speedVelocityHorizontal = 400f;
+    [SerializeField] float speedVelocityHorizontalJump = 150f;
+    [SerializeField] float jumpAddForce = 500f;
+    [SerializeField] float fallMultiplier = 2.5f;
+    [SerializeField] float lowJumpMultiplier = 2f;
+    [SerializeField] float gizmoRange = 1f;
 
-    private float horizontalInput;
-    private Vector3 side;
+    float horizontalInput;
+    Vector3 side;
+    Rigidbody2D rb2D;
+    Collider2D coll2D;
 
 
 
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, gizmoRange);
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, gizmoRange);
 
-        if (hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null)
+        if ((hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null) && canJump)
             return true;
 
         return false;
