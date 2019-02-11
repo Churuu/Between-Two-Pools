@@ -734,22 +734,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938343166094c5045a860a249ca7bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialFrictiom: 0
   horizontalMoment: Horizontal
   jumpAxis: wJump
-  speedVelocityHorizontal: 400
-  speedVelocityHorizontalJump: 5
-  canJump: 1
+  speedVelocityHorizontal: 500
+  speedVelocityHorizontalJump: 500
   jumpAddForce: 500
-  maxTimeToNextJump: 0.05
-  deltaTimeNextJump: 0
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
-  toleranceNextJump: 0.0005
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  raycastSize: 3
+  gizmoRange: 0.6
 --- !u!61 &1265997710
 BoxCollider2D:
   m_ObjectHideFlags: 0
