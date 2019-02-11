@@ -1,22 +1,21 @@
 ﻿using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {//Påbörjad av Jonas Thunberg 2019-01-31
  //redigering 2019-02-11
     private Rigidbody2D rb2D;
     private Collider2D coll2D;
 
-    [SerializeField] private float materialFrictiom = 50f;
+    [SerializeField] private float materialFrictiom = 0;
     private int materialFrictiomZero = 0;
 
     [SerializeField] private string horizontalMoment = "Horizontal";
-    [SerializeField] private string jumpAxi = "wJump";
+    [SerializeField] private string jumpAxis = "wJump";
 
     [SerializeField] private float speedVelocityHorizontal = 7f;
     [SerializeField] private float speedVelocityHorizontalJump = 5f;
     public bool canJump = true;//TODO
     [SerializeField] private float jumpAddForce = 500f;
-    [SerializeField] private bool okToJump = true;
     [SerializeField] float maxTimeToNextJump = 0.05f;
     [SerializeField] float deltaTimeNextJump = 0f;
     [SerializeField] private float fallMultiplier = 2.5f;
@@ -24,11 +23,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private float toleranceNextJump = 0.0005f;
 
     [SerializeField] private LayerMask mask;// ta bort?
-    private float raycastSize;
+    [SerializeField] private float raycastSize;
     private float raycastSizeOriginal;
     private float horizontalInput;
     private Vector3 side;
-    public float test;
 
 
 
@@ -38,7 +36,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         coll2D = GetComponent<Collider2D>();
-        raycastSize = (coll2D.bounds.size.y * 0.5f) + toleranceNextJump;
+        //raycastSize = (coll2D.bounds.size.y * 0.5f) + toleranceNextJump;
         rb2D = GetComponent<Rigidbody2D>();
         side = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
         raycastSizeOriginal = raycastSize;
@@ -53,21 +51,10 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        horizontalInput = Input.GetAxis(horizontalMoment);//Höger Vänster styrning 
-        // 
+        horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
         VerticalMovmenent();
-        if (canJump)
-        {
-            OKtoJump();
-            JumpMovment();
-        }
-        else
-        {
-
-        }
-
-
-
+        JumpMovment();
+        ZeroVelocityCollidIfJump();
     }
 
 
@@ -75,48 +62,32 @@ public class Movement : MonoBehaviour
     {
         HorizontalMovmenent();
     }
-    //Tareda på om spelaren är på marken
-    private void OKtoJump() // TODO Inte helt fel fri kan ibland missa att den nuda marken
-    {//V velocety = 0 time TODO
-        if (!okToJump && rb2D.velocity.y < toleranceNextJump && rb2D.velocity.y > -toleranceNextJump)
-        {
-            deltaTimeNextJump += Time.deltaTime;
-        }
-        else
-        {
-            deltaTimeNextJump = 0;
-        }
-        if (!okToJump || !(deltaTimeNextJump > maxTimeToNextJump))
-        {
-            RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
 
-            if (hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null || deltaTimeNextJump > maxTimeToNextJump)
-            {
-                okToJump = true;
-                deltaTimeNextJump = 0;
-                SetMaterialFrictiom();
+    private bool Grounded()
+    {
 
-            }
-        }
+        RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, raycastSize);
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);
+
+        if (hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null)
+            return true;
+
+        return false;
 
     }
+
     private void ZeroVelocityCollidIfJump()
     {
-        if (rb2D.velocity.x < 0 && !okToJump)
+        if (rb2D.velocity.magnitude > 0 && !Grounded())
         {
-            RaycastHit2D hitLeftTop = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitLeftBot = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitRightTop = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitRightBot = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
+            RaycastHit2D hitLeftBot = Physics2D.Raycast(transform.position, Vector2.left, raycastSize);
+            RaycastHit2D hitRightTop = Physics2D.Raycast(transform.position, Vector2.right, raycastSize);
 
-            if (hitLeftTop.collider != null || hitLeftBot.collider != null || hitRightTop.collider != null || hitRightBot.collider != null)
-            {
+            if ( hitLeftBot.collider != null || hitRightTop.collider != null)
                 rb2D.velocity = new Vector2(0, rb2D.velocity.y);
-            }
-        }
 
+        }
     }
     private void JumpMovment()
     {
@@ -124,7 +95,7 @@ public class Movement : MonoBehaviour
         {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        else if (rb2D.velocity.y > 0 && !Input.GetButton(jumpAxi))
+        else if (rb2D.velocity.y > 0 && !Input.GetButton(jumpAxis))
         {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
@@ -132,13 +103,11 @@ public class Movement : MonoBehaviour
     //AddForce För att hoppa
     private void VerticalMovmenent()
     {
-
-        if (okToJump)
+        if (Input.GetButtonDown(jumpAxis))
         {
-            if (Input.GetButtonDown(jumpAxi))//Up
+            if (Grounded())
             {
                 rb2D.AddForce(Vector2.up * jumpAddForce);
-                okToJump = false;
                 SetMaterialFrictiom();
             }
         }
@@ -146,9 +115,18 @@ public class Movement : MonoBehaviour
 
     private void HorizontalMovmenent()
     {
-        if (horizontalInput < 0)//Left
+
+
+        Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
+
+        rb2D.velocity = movement;
+
+
+
+
+        /*if (horizontalInput < 0)//Left
         {
-            if (!okToJump)
+            if (Grounded())
             {
                 rb2D.velocity = new Vector2(-speedVelocityHorizontalJump, rb2D.velocity.y);
             }
@@ -160,7 +138,7 @@ public class Movement : MonoBehaviour
         }
         else if (horizontalInput > 0)//Right
         {
-            if (!okToJump)
+            if (!Grounded())
             {
                 rb2D.velocity = new Vector2(+speedVelocityHorizontalJump, rb2D.velocity.y);//* Time.deltaTime
             }
@@ -181,18 +159,18 @@ public class Movement : MonoBehaviour
             {
 
             }
-        }
+        }*/
     }
 
     private void SetMaterialFrictiom()
     {
-        if (okToJump)
+        if (Grounded())
         {
-            coll2D.sharedMaterial.friction = materialFrictiom;
+            //coll2D.sharedMaterial.friction = materialFrictiom;
         }
         else
         {
-            coll2D.sharedMaterial.friction = materialFrictiomZero;
+            //coll2D.sharedMaterial.friction = materialFrictiomZero;
         }
     }
 

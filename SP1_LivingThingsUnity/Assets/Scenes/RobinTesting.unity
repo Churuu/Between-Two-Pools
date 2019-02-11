@@ -402,7 +402,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &855463754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -642,12 +642,13 @@ GameObject:
   - component: {fileID: 1265997707}
   - component: {fileID: 1265997706}
   - component: {fileID: 1265997705}
-  - component: {fileID: 1265997709}
   - component: {fileID: 1265997710}
   - component: {fileID: 1265997711}
   - component: {fileID: 1265997708}
+  - component: {fileID: 1265997712}
+  - component: {fileID: 1265997709}
   m_Layer: 0
-  m_Name: Spring
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,24 +731,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1265997704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0335ebaac63f4b14caf4f187074c6511, type: 3}
+  m_Script: {fileID: 11500000, guid: 938343166094c5045a860a249ca7bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialFrictiom: 82.28
-  speed: 10
-  jump: 500
+  materialFrictiom: 0
+  horizontalMoment: Horizontal
+  jumpAxis: wJump
+  speedVelocityHorizontal: 400
+  speedVelocityHorizontalJump: 5
+  canJump: 1
+  jumpAddForce: 500
+  maxTimeToNextJump: 0.05
+  deltaTimeNextJump: 0
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
-  horizontal: Horizontal
-  jumpAxi: wJump
   toleranceNextJump: 0.0005
   mask:
     serializedVersion: 2
     m_Bits: 0
-  layerMask: Ground
-  okToJump: 1
-  maxTimeToNextJump: 0.3
-  deltaTimeNextJump: 0
+  raycastSize: 3
 --- !u!61 &1265997710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -793,6 +795,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!232 &1265997712
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265997704}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 5
+  m_MaxDistanceOnly: 1
 --- !u!1 &1537065948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1557934068
 MonoBehaviour:
   m_ObjectHideFlags: 0
