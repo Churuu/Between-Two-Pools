@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MenuSystem : MonoBehaviour {
 
@@ -18,9 +17,11 @@ public class MenuSystem : MonoBehaviour {
     public Canvas Levels;
     public Canvas PauseMenu;
     private bool P_Pressed;
+    private SceneManagerScript NextScene;
 
     void Start()
     {
+        NextScene = GetComponent<SceneManagerScript>();
         P_Pressed = false;
         Time.timeScale = 1;
         StartButton.OnSelect(null);
@@ -53,7 +54,7 @@ public class MenuSystem : MonoBehaviour {
     }
     void TaskOnStart()
     {
-        SceneManager.LoadScene(/*Namn på scenen med lvl1*/" ");
+        NextScene.StartScene(/*Namn på scenen med lvl1*/" ");
         MainMenu.gameObject.SetActive(false);
     }
     void TaskOnLevel()
@@ -79,12 +80,12 @@ public class MenuSystem : MonoBehaviour {
     // Laddar level efter vilken knapp som tryckts
     public void LoadLevel(string LevelSceneName)
     {
-        SceneManager.LoadScene(LevelSceneName);
+        NextScene.LoadNextScene(LevelSceneName);
     }
 
     void TaskOnRestart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        NextScene.ReloadCurrentScene();
     }
 
     void TaskOnBackToMainMenu()
