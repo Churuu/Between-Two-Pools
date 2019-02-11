@@ -5,7 +5,7 @@ public class TextColliderOnOff : MonoBehaviour
 {// Jonas Thunberg 2019-02-09
 
     [SerializeField] Text text;
-    [SerializeField] string tagPlayer = "Player";
+
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class TextColliderOnOff : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (text != null && collision.transform.childCount !=0)
+        if (text != null && collision.transform.childCount != 0)
         {
             if (collision.transform.GetChild(0).GetComponent<ActivePlayerStateMachine>() != null)
             {

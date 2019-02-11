@@ -744,6 +744,16 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 114338884386187834, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
+        type: 2}
+      propertyPath: testGismoX
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114338884386187834, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
+        type: 2}
+      propertyPath: testGismoY
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
   m_IsPrefabParent: 0
@@ -1310,6 +1320,16 @@ Prefab:
       propertyPath: mask.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114238388390613992, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427,
+        type: 2}
+      propertyPath: testGismoX
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114238388390613992, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427,
+        type: 2}
+      propertyPath: testGismoY
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
   m_IsPrefabParent: 0
@@ -1431,6 +1451,26 @@ Prefab:
         type: 2}
       propertyPath: BoostResetTimerDelta
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156082647410646, guid: d69521c87fbdd424cb5fabe4d9a87000,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156082647410646, guid: d69521c87fbdd424cb5fabe4d9a87000,
+        type: 2}
+      propertyPath: maxTimeToNextJump
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156082647410646, guid: d69521c87fbdd424cb5fabe4d9a87000,
+        type: 2}
+      propertyPath: testGismoX
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156082647410646, guid: d69521c87fbdd424cb5fabe4d9a87000,
+        type: 2}
+      propertyPath: testGismoY
+      value: 0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}

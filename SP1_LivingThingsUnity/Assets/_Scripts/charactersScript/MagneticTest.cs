@@ -124,15 +124,15 @@ public class MagneticTest : MonoBehaviour
 
     void MagnetGetPulled()
     {
-        for (int i = 0; i < magneticRigidBodys.Length; i++)
+        for (int i = 0; i < magneticRigidBodysMagnetToObject.Length; i++)
         {
-            float Distance = Vector3.Distance(magneticRigidBodys[i].transform.position, this.transform.position);
+            float Distance = Vector3.Distance(magneticRigidBodysMagnetToObject[i].transform.position, this.transform.position);
 
             if (Distance < MaxDistancePulled) // Marble is in range of the magnet
             {
                 float TDistance = Mathf.InverseLerp(MaxDistancePulled, 0f, Distance); // Give a decimal representing how far between 0 distance and max distance.
                 float strength = Mathf.Lerp(0f, MaxStrengthPulled, TDistance); // Use that decimal to work out how much strength the magnet should apple
-                Vector3 DirectionToCup = (this.transform.position - magneticRigidBodys[i].transform.position).normalized; // Get the direction from the marble to the cup
+                Vector3 DirectionToCup = (this.transform.position - magneticRigidBodysMagnetToObject[i].transform.position).normalized; // Get the direction from the marble to the cup
                 if (Distance < minDistanceStopMoving)
                 {
                     rb2D.velocity = new Vector2(0, 0);
@@ -140,9 +140,9 @@ public class MagneticTest : MonoBehaviour
                 }
                 else
                 {
-                    rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                   
                 }
-
+ rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
 
             }
         }

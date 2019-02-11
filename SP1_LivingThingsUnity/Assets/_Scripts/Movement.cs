@@ -23,11 +23,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private float lowJumpMultiplier = 2f;
     [SerializeField] private float toleranceNextJump = 0.0005f;
 
-    [SerializeField] private LayerMask mask;// ta bort?
+    // [SerializeField] private LayerMask mask;// ta bort?
     private float raycastSize;
-    private float raycastSizeOriginal;
     private float horizontalInput;
-    private Vector3 side;
+    private Vector3 sideX;
+    private Vector3 sideY;
+    [SerializeField] private float testGismoX = 0.45f;
+    [SerializeField] private float testGismoY = 0.45f;
 
 
 
@@ -39,8 +41,9 @@ public class Movement : MonoBehaviour
         coll2D = GetComponent<Collider2D>();
         raycastSize = (coll2D.bounds.size.y * 0.5f) + toleranceNextJump;
         rb2D = GetComponent<Rigidbody2D>();
-        side = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
-        raycastSizeOriginal = raycastSize;
+        sideX = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
+        sideY = new Vector3(0f, coll2D.bounds.size.y * 0.5f, 0f);
+
 
     }
 
@@ -65,7 +68,7 @@ public class Movement : MonoBehaviour
 
         }
 
-
+        //    Debug.Log(rb2D.velocity);
 
     }
 
@@ -73,26 +76,28 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         HorizontalMovmenent();
+        ZeroVelocityCollidIfJump();
     }
     //Tareda på om spelaren är på marken
     private void OKtoJump() // TODO Inte helt fel fri kan ibland missa att den nuda marken
     {//V velocety = 0 time TODO
-        if (!okToJump && rb2D.velocity.y < toleranceNextJump && rb2D.velocity.y > -toleranceNextJump)
+        //if (!okToJump && rb2D.velocity.y < toleranceNextJump && rb2D.velocity.y > -toleranceNextJump)
+        //{
+        //    deltaTimeNextJump += Time.deltaTime;
+        //}
+        //else
+        //{
+        //    deltaTimeNextJump = 0;
+        //}
+        if (!okToJump )//|| !(deltaTimeNextJump > maxTimeToNextJump)
         {
-            deltaTimeNextJump += Time.deltaTime;
-        }
-        else
-        {
-            deltaTimeNextJump = 0;
-        }
-        if (!okToJump || !(deltaTimeNextJump > maxTimeToNextJump))
-        {
-            RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
+            //RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, 1 * testGismoY);//, mask);
+            //RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - sideX, Vector2.down, 1 * testGismoY);//, mask);
+            //RaycastHit2D hitRight = Physics2D.Raycast(transform.position + sideX, Vector2.down, 1 * testGismoY);//, mask);
 
-            if (hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null || deltaTimeNextJump > maxTimeToNextJump)
+            if (!Grounded())//|| deltaTimeNextJump > maxTimeToNextJump))
             {
+
                 okToJump = true;
                 deltaTimeNextJump = 0;
                 SetMaterialFrictiom();
@@ -101,17 +106,36 @@ public class Movement : MonoBehaviour
         }
 
     }
+
+    bool Grounded()
+    {
+        RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, 1 * testGismoY);
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - sideX, Vector2.down, 1 * testGismoY);//, mask);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + sideX, Vector2.down, 1 * testGismoY);//, mask);
+        if (hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+
+    }
+
     private void ZeroVelocityCollidIfJump()
     {
-        if (rb2D.velocity.x < 0 && !okToJump)
+        if (!okToJump)
         {
-            RaycastHit2D hitLeftTop = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitLeftBot = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitRightTop = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
-            RaycastHit2D hitRightBot = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
+            RaycastHit2D hitLeftTop = Physics2D.Raycast(transform.position + sideY, Vector2.left, 1 * testGismoX);//, mask);
+            RaycastHit2D hitLeftBot = Physics2D.Raycast(transform.position - sideY, Vector2.left, 1 * testGismoX);//, mask);
+            RaycastHit2D hitRightTop = Physics2D.Raycast(transform.position + sideY, Vector2.right, 1 * testGismoX);//, mask);
+            RaycastHit2D hitRightBot = Physics2D.Raycast(transform.position - sideY, Vector2.right, 1 * testGismoX);//, mask);
 
             if (hitLeftTop.collider != null || hitLeftBot.collider != null || hitRightTop.collider != null || hitRightBot.collider != null)
             {
+                Debug.Log("nu ska du glida ner");
                 rb2D.velocity = new Vector2(0, rb2D.velocity.y);
             }
         }
@@ -200,11 +224,11 @@ public class Movement : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawRay(transform.position, Vector3.down * 1.0001f);
+        Gizmos.DrawRay(transform.position, Vector3.down * testGismoY);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, Vector3.left * 1.0001f);
+        Gizmos.DrawRay(transform.position, Vector3.left * testGismoX);
         Gizmos.color = Color.white;
-        Gizmos.DrawRay(transform.position, Vector3.right * 1.0001f);
+        Gizmos.DrawRay(transform.position, Vector3.right * testGismoX);
 
     }
 }
