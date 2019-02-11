@@ -29,8 +29,6 @@ public class Reciever : MonoBehaviour
     [SerializeField]
     private float acceleration;
     [SerializeField]
-    private float time;
-    [SerializeField]
     private float tolerance;
 
     //Variables for different door states
@@ -52,6 +50,8 @@ public class Reciever : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+
+        start = transform.position;
         gameObject.SetActive(gameObjectToggle);
         if (audioObject != null)
         {
@@ -63,7 +63,7 @@ public class Reciever : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        ToggleElevator(start, target, speed, acceleration, time, tolerance, gameObjectToggle);
+        ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
 	}
 
     public void ToggleObject()
@@ -146,6 +146,11 @@ public class Reciever : MonoBehaviour
                 timerFloat = 0;
             }
         }
+    }
+
+    public DoorType GetDoorType()
+    {
+        return doorType;
     }
 
     //private void ToggleElevator(Vector3 source, Vector3 target, float speed, float acceleration, float time, float tolerance)
