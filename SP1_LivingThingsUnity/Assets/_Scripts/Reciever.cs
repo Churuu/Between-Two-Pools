@@ -39,8 +39,6 @@ public class Reciever : MonoBehaviour
     private bool gameObjectToggle;
     [SerializeField]
     private bool toggle;
-    [SerializeField]
-    private bool moveBool;
 
     [Space]
     [Header("Timed Platform Variables")]
@@ -66,8 +64,6 @@ public class Reciever : MonoBehaviour
 	void Update ()
     {
         ToggleElevator(start, target, speed, acceleration, time, tolerance, gameObjectToggle);
-
-        
 	}
 
     public void ToggleObject()
@@ -131,10 +127,14 @@ public class Reciever : MonoBehaviour
             motion.Target = start;
 
         }
-        transform.Translate(motion.SourceToTarget * motion.Velocity * Time.deltaTime);
+        if (timerToggle)
+        {
+            transform.Translate(motion.SourceToTarget * motion.Velocity * Time.deltaTime);
+        }
 
         if (timerToggle && motion.InTargetRegion)
         {
+            
             if (timerFloat < timer)
             {
                 timerFloat += Time.deltaTime;
