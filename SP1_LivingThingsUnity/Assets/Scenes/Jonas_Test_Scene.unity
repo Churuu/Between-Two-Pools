@@ -1083,6 +1083,10 @@ Prefab:
       propertyPath: text
       value: 
       objectReference: {fileID: 57397922}
+    - target: {fileID: 1071760042530672, guid: 162005d3b15f72749b19eada372a8dfd, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 162005d3b15f72749b19eada372a8dfd, type: 2}
   m_IsPrefabParent: 0
@@ -1190,7 +1194,7 @@ Prefab:
     - target: {fileID: 61344076698183300, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114338884386187834, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
@@ -1291,6 +1295,21 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 114238388390613992, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427,
+        type: 2}
+      propertyPath: speedVelocityHorizontal
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114238388390613992, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427,
+        type: 2}
+      propertyPath: speedVelocityHorizontalJump
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114238388390613992, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427,
+        type: 2}
+      propertyPath: mask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b0e2a127c8fe8b4ab8eb6fb60986427, type: 2}
   m_IsPrefabParent: 0
@@ -1374,7 +1393,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4674600156397208, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.13
+      value: -2.84
       objectReference: {fileID: 0}
     - target: {fileID: 4674600156397208, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1407,6 +1426,11 @@ Prefab:
     - target: {fileID: 1259225014574912, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169156897364814, guid: d69521c87fbdd424cb5fabe4d9a87000,
+        type: 2}
+      propertyPath: BoostResetTimerDelta
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d69521c87fbdd424cb5fabe4d9a87000, type: 2}

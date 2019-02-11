@@ -32,9 +32,9 @@ public class ActivePlayerSpringState : ActivePlayerStateBase {
     {
 
         stateMachines.transform.position = spring.transform.position;
-
         stateMachines.transform.parent = spring.transform;
         spring.GetComponent<Movement>().enabled = true;
+        spring.GetComponent<Movement>().canJump = false;
     }
     public override void Exit()
     {

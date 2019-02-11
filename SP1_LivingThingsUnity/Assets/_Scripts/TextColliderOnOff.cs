@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 public class TextColliderOnOff : MonoBehaviour
-{
+{// Jonas Thunberg 2019-02-09
 
     [SerializeField] Text text;
     [SerializeField] string tagPlayer = "Player";
