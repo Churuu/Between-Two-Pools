@@ -91,7 +91,7 @@ public class Movement : MonoBehaviour
             RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
             RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
 
-            if (hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null  || deltaTimeNextJump > maxTimeToNextJump)
+            if (hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null || deltaTimeNextJump > maxTimeToNextJump)
             {
                 okToJump = true;
                 deltaTimeNextJump = 0;
@@ -101,7 +101,22 @@ public class Movement : MonoBehaviour
         }
 
     }
+    private void ZeroVelocityCollidIfJump()
+    {
+        if (rb2D.velocity.x < 0 && !okToJump)
+        {
+            RaycastHit2D hitLeftTop = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
+            RaycastHit2D hitLeftBot = Physics2D.Raycast(transform.position - side, Vector2.down, raycastSize);//, mask);
+            RaycastHit2D hitRightTop = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
+            RaycastHit2D hitRightBot = Physics2D.Raycast(transform.position + side, Vector2.down, raycastSize);//, mask);
 
+            if (hitLeftTop.collider != null || hitLeftBot.collider != null || hitRightTop.collider != null || hitRightBot.collider != null)
+            {
+                rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+            }
+        }
+
+    }
     private void JumpMovment()
     {
         if (rb2D.velocity.y < 0)
@@ -180,4 +195,16 @@ public class Movement : MonoBehaviour
         }
     }
 
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawRay(transform.position, Vector3.down * 1.0001f);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(transform.position, Vector3.left * 1.0001f);
+        Gizmos.color = Color.white;
+        Gizmos.DrawRay(transform.position, Vector3.right * 1.0001f);
+
+    }
 }
