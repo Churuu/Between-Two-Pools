@@ -28,7 +28,7 @@ public class CharacterSpring : MonoBehaviour
     {
         BoostLandingObject();
         ResetBoostJump();
-        Shrink();
+        //Shrink();
     }
 
     void BoostLandingObject()
