@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitioner : MonoBehaviour
 {
+
     public AnimationClip fadeAnim;
 
     Animator anim;
@@ -24,10 +25,10 @@ public class SceneTransitioner : MonoBehaviour
         else
             Destroy(gameObject);
 
-        
-
-
         anim = GetComponent<Animator>();
+
+        if (GameObject.Find("Exit Door") == null)
+            Debug.LogError("Exit door kunde inte hittas, gå till prefab mappen och lägg ut den på banan");
     }
 
     public void LoadScene(string name)

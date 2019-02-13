@@ -89,11 +89,22 @@ public class PlayerController : MonoBehaviour
         rb2D.velocity = movement;
     }
 
+    //Checks what direction the player is moving
+    public Vector2 GetMoveDirection()
+    {
+        if (rb2D.velocity.x > 0)
+            return Vector2.right;
+        else if (rb2D.velocity.x < 0)
+            return Vector2.left;
 
+        return Vector2.zero;
+    }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawRay(transform.position, Vector3.down * gizmoRange);
     }
+
+
 }
