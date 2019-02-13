@@ -31,13 +31,13 @@ public class ActivePlayerState : ActivePlayerStateBase
         stateMachines.transform.position = snubbe.transform.position;
        
         stateMachines.transform.parent = snubbe.transform;
-        snubbe.GetComponent<Movement>().enabled = true;
+        snubbe.GetComponent<PlayerController>().enabled = true;
     }
     public override void Exit()
     {
     
         stateMachines.transform.parent = null;
-        snubbe.GetComponent<Movement>().enabled = false;
+        snubbe.GetComponent<PlayerController>().enabled = false;
 
 
 

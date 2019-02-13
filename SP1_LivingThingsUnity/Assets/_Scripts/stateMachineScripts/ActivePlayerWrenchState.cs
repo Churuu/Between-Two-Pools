@@ -36,7 +36,7 @@ public class ActivePlayerWrenchState : ActivePlayerStateBase
         wrench.GetComponent<WrenchCharacteristics>().enabled = true;
         if (!wrench.GetComponent<WrenchCharacteristics>().AbiltyActive)
         {
-            wrench.GetComponent<Movement>().enabled = true;
+            wrench.GetComponent<PlayerController>().enabled = true;
         }
         wrench.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
@@ -46,7 +46,7 @@ public class ActivePlayerWrenchState : ActivePlayerStateBase
     {
         if (!wrench.GetComponent<WrenchCharacteristics>().AbiltyActive)
         {
-            wrench.GetComponent<Movement>().enabled = false;
+            wrench.GetComponent<PlayerController>().enabled = false;
         }
         else
         {

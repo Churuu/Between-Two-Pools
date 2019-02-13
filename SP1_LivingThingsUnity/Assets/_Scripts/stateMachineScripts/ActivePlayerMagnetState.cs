@@ -33,16 +33,15 @@ public class ActivePlayerMagnetState : ActivePlayerStateBase
         magneticTest.okToShangeMagnet = true;
 
         stateMachines.transform.position = snubbe.transform.position;
-        //   snubbe.transform.parent = stateMachines.transform; 
+        
         stateMachines.transform.parent = snubbe.transform;
-        snubbe.GetComponent<Movement>().enabled = true;
+        snubbe.GetComponent<PlayerController>().enabled = true;
     }
     public override void Exit()
-    {//child.transform.parent = null;
-     //    snubbe.transform.parent = null;
+    {
         magneticTest.okToShangeMagnet = false;
         stateMachines.transform.parent = null;
-        snubbe.GetComponent<Movement>().enabled = false;
+        snubbe.GetComponent<PlayerController>().enabled = false;
 
 
 
