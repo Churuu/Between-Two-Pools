@@ -142,26 +142,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 52255630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0335ebaac63f4b14caf4f187074c6511, type: 3}
+  m_Script: {fileID: 11500000, guid: 938343166094c5045a860a249ca7bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialFrictiom: 50
-  horizontalMoment: Horizontal
-  jumpAxi: wJump
-  speedVelocityHorizontal: 7
-  speedVelocityHorizontalJump: 5
   canJump: 1
+  horizontalMoment: Horizontal
+  jumpAxis: wJump
+  speedVelocityHorizontal: 400
+  speedVelocityHorizontalJump: 300
   jumpAddForce: 500
-  okToJump: 1
-  maxTimeToNextJump: 0.01
-  deltaTimeNextJump: 0
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
-  toleranceNextJump: 0.0005
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  test: 0
+  gizmoRange: 1
 --- !u!50 &52255632
 Rigidbody2D:
   serializedVersion: 4
@@ -255,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 52255630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.7, y: 0.9, z: 0}
+  m_LocalPosition: {x: 58.6, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499939230}
