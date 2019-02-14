@@ -44,7 +44,7 @@ public class MenuSystem : MonoBehaviour {
             Time.timeScale = 1;
         }
         //Aktivera Pause menyn och pausar spelet
-        else if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == false && MainMenu.gameObject.active == false && Levels.gameObject.active == false)
+        else if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == false && MainMenu.gameObject.activeInHierarchy == false && Levels.gameObject.activeInHierarchy == false)
         {
             PauseMenu.gameObject.SetActive(true);
             Restart.Select();

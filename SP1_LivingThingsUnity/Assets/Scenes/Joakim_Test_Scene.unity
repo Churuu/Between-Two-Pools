@@ -209,6 +209,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &175789286
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.136684
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.19484219
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.05078125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356357568526240, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 95405189197466902, guid: 83fa01da65b9f714ab14dc57dba64a1e,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 29442ced5738609408484e9aff1f7187, type: 2}
+    - target: {fileID: 95405189197466902, guid: 83fa01da65b9f714ab14dc57dba64a1e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 83fa01da65b9f714ab14dc57dba64a1e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &209687873
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +669,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial
+          m_StringArgument: Joakim_Test_Scene
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1557,7 +1609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa75eb45c5c54745951a5bfa8f5ea49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Seel: {fileID: 0}
 --- !u!1 &1574569059
 GameObject:
   m_ObjectHideFlags: 0

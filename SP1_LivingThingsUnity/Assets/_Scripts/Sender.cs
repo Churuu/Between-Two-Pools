@@ -24,15 +24,6 @@ public class Sender : MonoBehaviour
     [SerializeField]
     List<GameObject> gameObjects = new List<GameObject>();
 
-    [SerializeField]
-    bool test1;
-    [SerializeField]
-    bool test2;
-    [SerializeField]
-    bool test3;
-    [SerializeField]
-    bool test4;
-
     // Use this for initialization
     void Start ()
     {
@@ -71,6 +62,7 @@ public class Sender : MonoBehaviour
                 {
                     gameObjects[i].GetComponent<Reciever>().BoolToogle();
                     gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                    
                 }
             }
         }
@@ -88,7 +80,6 @@ public class Sender : MonoBehaviour
 
     public void ActivatePlate()
     {
-        test3 = !test3;
         if (switchType == SwitchType.door)
         {
             for (int i = 0; i < gameObjects.Count; i++)
