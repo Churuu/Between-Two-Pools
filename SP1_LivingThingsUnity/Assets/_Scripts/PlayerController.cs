@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    [SerializeField] bool canJump;
+    [SerializeField] bool canJump = true;
     [Space]
     [SerializeField] string horizontalMoment = "Horizontal";
     [SerializeField] string jumpAxis = "wJump";
