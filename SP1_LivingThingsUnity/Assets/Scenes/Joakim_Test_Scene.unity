@@ -1362,6 +1362,32 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982547374}
+--- !u!1 &992663408 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1297595439242844, guid: 83fa01da65b9f714ab14dc57dba64a1e,
+    type: 2}
+  m_PrefabInternal: {fileID: 175789286}
+--- !u!114 &992663409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 992663408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938343166094c5045a860a249ca7bdfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canJump: 1
+  horizontalMoment: Horizontal
+  jumpAxis: wJump
+  jumpAnimParam: wJump
+  walkAnimParam: wJump
+  speedVelocityHorizontal: 400
+  jumpAddForce: 500
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  gizmoRange: 1
 --- !u!1 &1011184914
 GameObject:
   m_ObjectHideFlags: 0

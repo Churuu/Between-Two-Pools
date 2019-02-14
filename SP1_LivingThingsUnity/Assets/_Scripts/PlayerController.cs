@@ -10,9 +10,11 @@ public class PlayerController : MonoBehaviour
     [Space]
     [SerializeField] string horizontalMoment = "Horizontal";
     [SerializeField] string jumpAxis = "wJump";
+    [SerializeField] string jumpAnimParam = "wJump";
+    [SerializeField] string walkAnimParam = "wJump";
     [Space]
     [SerializeField] float speedVelocityHorizontal = 400f;
-  //  [SerializeField] float speedVelocityHorizontalJump = 150f;
+    //  [SerializeField] float speedVelocityHorizontalJump = 150f;
     [SerializeField] float jumpAddForce = 500f;
     [SerializeField] float fallMultiplier = 2.5f;
     [SerializeField] float lowJumpMultiplier = 2f;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
     Vector3 side;
     Rigidbody2D rb2D;
     Collider2D coll2D;
+    Animator anim;
 
 
 
@@ -30,12 +33,14 @@ public class PlayerController : MonoBehaviour
         coll2D = GetComponent<Collider2D>();
         rb2D = GetComponent<Rigidbody2D>();
         side = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
         horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
         VerticalMovmenent();
         JumpMovment();
+        AnimatePlayer();
     }
 
 
@@ -85,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     private void HorizontalMovmenent()
     {
-        Vector2 movement = new Vector2(horizontalInput *  speedVelocityHorizontal  * Time.deltaTime, rb2D.velocity.y);
+        Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
         rb2D.velocity = movement;
     }
 
@@ -98,6 +103,13 @@ public class PlayerController : MonoBehaviour
             return Vector2.left;
 
         return Vector2.zero;
+    }
+
+    void AnimatePlayer()
+    {
+        anim.SetFloat(walkAnimParam, rb2D.velocity.x);
+        if (canJump)
+            anim.SetBool(jumpAnimParam, !Grounded());
     }
 
     void OnDrawGizmos()

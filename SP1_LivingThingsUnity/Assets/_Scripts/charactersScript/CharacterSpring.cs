@@ -12,16 +12,19 @@ public class CharacterSpring : MonoBehaviour
     public float springBoostFallout;
     public float BoostResetTimerDelta;
     public float springJumpDistance;
+    public string bounceAnimParam;
 
     [SerializeField] private string abilityKey;
     private float boostResetTimer;
     private bool jumped = false;
     private bool shrunken = false;
     private GameObject previousJumpingObject;
+    Animator anim;
 
     void Start()
     {
         boostResetTimer = BoostResetTimerDelta;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -41,6 +44,7 @@ public class CharacterSpring : MonoBehaviour
             {
                 jumped = false;
                 previousJumpingObject = hit2D.collider.gameObject;
+               // anim.ResetTrigger(bounceAnimParam);
             }
 
 
@@ -62,6 +66,7 @@ public class CharacterSpring : MonoBehaviour
                     hitRB.AddForce(Vector2.up * Mathf.Abs(velocityY) * springBoostMultiplier);
                     boostResetTimer = Time.time + BoostResetTimerDelta;
                     jumped = true;
+                    anim.SetTrigger(bounceAnimParam);
                 }
             }
         }
@@ -74,6 +79,7 @@ public class CharacterSpring : MonoBehaviour
             jumped = false;
             previousJumpingObject = null;
             boostResetTimer = Time.time + BoostResetTimerDelta;
+            //anim.ResetTrigger(bounceAnimParam);
         }
     }
 
