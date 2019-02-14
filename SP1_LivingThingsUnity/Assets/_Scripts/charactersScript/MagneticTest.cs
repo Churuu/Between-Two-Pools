@@ -4,6 +4,8 @@ public class MagneticTest : MonoBehaviour
 {
     // Jonas Thunberg på börjad 2019-02-05
     public enum MomentDerection { Right, Left, Up, Down }
+    private enum Ability { Pull, Thrust }
+    [SerializeField] private Ability abilityOne = Ability.Thrust;
     public MomentDerection magnetEnumMomentDerection = MomentDerection.Right;
     private Rigidbody2D rb2D;
     [SerializeField] Rigidbody2D[] magneticRigidBodys;
@@ -15,16 +17,18 @@ public class MagneticTest : MonoBehaviour
     [SerializeField] private float MaxDistanceThrust = 10f; // Maximum range at which the marble will start being thrust from the cup
     [SerializeField] float MaxStrengthThrust = 20f; // Strength with which the marble will be thrust when it is right next to the cup (reduces with distance)
     [SerializeField] bool thrust = false;
-    [SerializeField] private string buttonNameAbility1 = "Ability1";
+    [SerializeField] private string buttonNameAbility1AvPå = "Ability1";
+    [SerializeField] private string buttonNameAbility1Togel = "S";
     [SerializeField] private string buttonNameAbility2 = "Ability2";
     [SerializeField] private bool ability2Activ = false;
     [SerializeField] private float minDistanceStopMoving = 0.9f;
     [SerializeField] private float maxDistanceToGetPulled = 10f;
-    [SerializeField] float maxStrengthToGetPulled = 30f; 
+    [SerializeField] float maxStrengthToGetPulled = 30f;
     int numer = 0;
     public bool okToShangeMagnet = false;
     private void Start()
     {
+
         rb2D = transform.GetComponent<Rigidbody2D>();
     }
 
@@ -51,31 +55,22 @@ public class MagneticTest : MonoBehaviour
 
             }
 
-            if (Input.GetButtonDown(buttonNameAbility1))//TODO
+            if (Input.GetButtonDown(buttonNameAbility1AvPå))//TODO
             {
-                numer++;
-                if (numer > 2)
-                {
-                    numer = 0;
-                }
-                if (numer == 1)
-                {
-                    magnetPowerActiv = true;
-                    thrust = false;
-                    pulled = true;
+                magnetPowerActiv = !magnetPowerActiv;
 
-                }
-                else if (numer == 2)
+
+            }
+            if (Input.GetButtonDown(buttonNameAbility1Togel))
+            {
+                if (abilityOne == Ability.Pull)
                 {
-                    magnetPowerActiv = true;
-                    pulled = false;
-                    thrust = true;
+                    abilityOne = Ability.Thrust;
                 }
-                else if (numer == 0)
+                else if (abilityOne == Ability.Thrust)
                 {
-                    magnetPowerActiv = false;
-                    pulled = false;
-                    thrust = false;
+
+                    abilityOne = Ability.Pull;
                 }
 
             }
@@ -84,18 +79,19 @@ public class MagneticTest : MonoBehaviour
         {
             MagnetGetPulled();
         }
-        if (pulled)
+        if (magnetPowerActiv)
         {
-            Update_MagnetismPulled();
+            if (abilityOne == Ability.Pull)
+            {
+                Update_MagnetismPulled();
+            }
+            else if (abilityOne == Ability.Thrust)
+            {
+                Update_MagnetismThrust();
+            }
         }
-        else if (thrust)
-        {
-            Update_MagnetismThrust();
-        }
-        else
-        {
 
-        }
+
 
         //  Update_CupDirection();
     }
@@ -105,21 +101,23 @@ public class MagneticTest : MonoBehaviour
 
         for (int i = 0; i < magneticRigidBodys.Length; i++)
         {
-            if (magnetEnumMomentDerection == MomentDerection.Left)
+            if (magneticRigidBodys[i] != null && magneticRigidBodys[i].gameObject.active)
             {
-                if (magneticRigidBodys[i].transform.position.x < this.transform.position.x)
+                if (magnetEnumMomentDerection == MomentDerection.Left)
                 {
-                    MagnetismPulled(i);
+                    if (magneticRigidBodys[i].transform.position.x < this.transform.position.x)
+                    {
+                        MagnetismPulled(i);
+                    }
+                }
+                else if (magnetEnumMomentDerection == MomentDerection.Right)
+                {
+                    if (magneticRigidBodys[i].transform.position.x > this.transform.position.x)
+                    {
+                        MagnetismPulled(i);
+                    }
                 }
             }
-            else if (magnetEnumMomentDerection == MomentDerection.Right)
-            {
-                if (magneticRigidBodys[i].transform.position.x > this.transform.position.x)
-                {
-                    MagnetismPulled(i);
-                }
-            }
-
         }
     }
 
@@ -128,24 +126,27 @@ public class MagneticTest : MonoBehaviour
     {
         for (int i = 0; i < magneticRigidBodysMagnetToObject.Length; i++)
         {
-            float Distance = Vector3.Distance(magneticRigidBodysMagnetToObject[i].transform.position, this.transform.position);
-
-            if (Distance < maxDistanceToGetPulled) // Marble is in range of the magnet
+            if (magneticRigidBodysMagnetToObject[i] != null && magneticRigidBodysMagnetToObject[i].gameObject.active)
             {
-                float TDistance = Mathf.InverseLerp(maxDistanceToGetPulled , 0f, Distance); // Give a decimal representing how far between 0 distance and max distance.
-                float strength = Mathf.Lerp(0f, maxStrengthToGetPulled, TDistance); // Use that decimal to work out how much strength the magnet should apple
-                Vector3 DirectionToCup = (this.transform.position - magneticRigidBodysMagnetToObject[i].transform.position).normalized; // Get the direction from the marble to the cup
-                if (Distance < minDistanceStopMoving)
-                {
-                    rb2D.velocity = new Vector2(0, 0);
-                    // magneticRigidBodys[i].velocity = new Vector2(0, magneticRigidBodys[i].velocity.y);
-                }
-                else
-                {
-                   rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
-                }
- 
+                float Distance = Vector3.Distance(magneticRigidBodysMagnetToObject[i].transform.position, this.transform.position);
 
+                if (Distance < maxDistanceToGetPulled) // Marble is in range of the magnet
+                {
+                    float TDistance = Mathf.InverseLerp(maxDistanceToGetPulled, 0f, Distance); // Give a decimal representing how far between 0 distance and max distance.
+                    float strength = Mathf.Lerp(0f, maxStrengthToGetPulled, TDistance); // Use that decimal to work out how much strength the magnet should apple
+                    Vector3 DirectionToCup = (this.transform.position - magneticRigidBodysMagnetToObject[i].transform.position).normalized; // Get the direction from the marble to the cup
+                    if (Distance < minDistanceStopMoving)
+                    {
+                        rb2D.velocity = new Vector2(0, 0);
+                        // magneticRigidBodys[i].velocity = new Vector2(0, magneticRigidBodys[i].velocity.y);
+                    }
+                    else
+                    {
+                        rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                    }
+
+
+                }
             }
         }
     }
@@ -177,22 +178,23 @@ public class MagneticTest : MonoBehaviour
     {
         for (int i = 0; i < magneticRigidBodys.Length; i++)
         {
-
-            if (magnetEnumMomentDerection == MomentDerection.Left)
+            if (magneticRigidBodys[i] != null && magneticRigidBodys[i].gameObject.active)
             {
-                if (magneticRigidBodys[i].transform.position.x < this.transform.position.x)
+                if (magnetEnumMomentDerection == MomentDerection.Left)
                 {
-                    MagnetismThrust(i);
+                    if (magneticRigidBodys[i].transform.position.x < this.transform.position.x)
+                    {
+                        MagnetismThrust(i);
+                    }
+                }
+                else if (magnetEnumMomentDerection == MomentDerection.Right)
+                {
+                    if (magneticRigidBodys[i].transform.position.x > this.transform.position.x)
+                    {
+                        MagnetismThrust(i);
+                    }
                 }
             }
-            else if (magnetEnumMomentDerection == MomentDerection.Right)
-            {
-                if (magneticRigidBodys[i].transform.position.x > this.transform.position.x)
-                {
-                    MagnetismThrust(i);
-                }
-            }
-
         }
     }
     void MagnetismThrust(int i)
