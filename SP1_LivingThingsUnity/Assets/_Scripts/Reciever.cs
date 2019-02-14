@@ -25,18 +25,20 @@ public class Reciever : MonoBehaviour
     [SerializeField]
     private Vector3 target;
     [SerializeField]
-    private float speed;
+    private float speed = 1;
     [SerializeField]
-    private float acceleration;
+    private float acceleration = 1.1f;
     [SerializeField]
-    private float tolerance;
+    private float tolerance = 0.15f;
 
     //Variables for different door states
     [Space]
     [SerializeField]
-    private bool gameObjectToggle;
+    private bool gameObjectToggle = true;
     [SerializeField]
-    private bool toggle;
+    private bool toggle = true;
+    [SerializeField]
+    private bool testbool = false;
 
     [Space]
     [Header("Timed Platform Variables")]
@@ -50,7 +52,7 @@ public class Reciever : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-
+        
         start = transform.position;
         gameObject.SetActive(gameObjectToggle);
         if (audioObject != null)
@@ -63,6 +65,7 @@ public class Reciever : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (testbool)
         ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
 	}
 
@@ -86,7 +89,7 @@ public class Reciever : MonoBehaviour
 
             else if (doorType == DoorType.moveTimer)
             {
-                timerToggle = true;
+                timerToggle = !timerToggle;
             }
         } 
     }
@@ -115,6 +118,7 @@ public class Reciever : MonoBehaviour
 
     public void BoolToogle()
     {
+        testbool = true;
         toggle = false;
     }
 
@@ -165,11 +169,5 @@ public class Reciever : MonoBehaviour
         else
             return false;
     }
-
-    //private void ToggleElevator(Vector3 source, Vector3 target, float speed, float acceleration, float time, float tolerance)
-    //{
-    //    Motion motion = new Motion(source, target, 1, 0, 3, tolerance);
-    //    transform.Translate(motion.TargetToSource * speed * Time.deltaTime);
-    //}
 }
 
