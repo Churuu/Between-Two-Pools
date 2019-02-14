@@ -115,7 +115,7 @@ public class Reciever : MonoBehaviour
 
     public void BoolToogle()
     {
-        toggle = !toggle;
+        toggle = false;
     }
 
     private void ToggleElevator(Vector3 start, Vector3 target, float speed, float acceleration,
