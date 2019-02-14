@@ -15,14 +15,14 @@ public class Sender : MonoBehaviour
 
     public enum ButtonType
     {
-        hammerSwitch, buttonSwitch = 0, pressureSwitch
+        buttonSwitch = 0, hammerSwitch, pressureSwitch
     }
     [SerializeField]
-    ButtonType buttonType;
+    private ButtonType buttonType;
 
 
     [SerializeField]
-    List<GameObject> gameObjects = new List<GameObject>();
+    private List<GameObject> gameObjects = new List<GameObject>();
 
     // Use this for initialization
     void Start ()
@@ -71,11 +71,6 @@ public class Sender : MonoBehaviour
         {
 
         }
-
-        else if (buttonType == ButtonType.pressureSwitch)
-        {
-            
-        }
     }
 
     public void ActivatePlate()
@@ -104,8 +99,6 @@ public class Sender : MonoBehaviour
                 gameObjects[i].GetComponent<Reciever>().ToggleObject();
             }
         }
-
-        //}
 
     }
 

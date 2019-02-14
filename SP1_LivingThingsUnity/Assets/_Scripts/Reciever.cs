@@ -33,12 +33,12 @@ public class Reciever : MonoBehaviour
 
     //Variables for different door states
     [Space]
-    [SerializeField]
+    [SerializeField][Tooltip("changes state of object, if false at start object will be disabled")]
     private bool gameObjectToggle = true;
-    [SerializeField]
-    private bool toggle = true;
-    [SerializeField]
-    private bool testbool = false;
+    [SerializeField][Tooltip("Cant use button if false")]
+    private bool lockBool = true;
+    [SerializeField][Tooltip("Wont move if false")]
+    private bool moveBool;
 
     [Space]
     [Header("Timed Platform Variables")]
@@ -65,21 +65,22 @@ public class Reciever : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (testbool)
+        if (moveBool)
         ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
 	}
 
     public void ToggleObject()
     {
-        if (toggle)
+        if (lockBool)
         {
             //gameObjectToggle = !gameObjectToggle;
-            //audioSource.Play();
+            
 
             if (doorType == DoorType.flip)
-            {
+            {     
                 gameObjectToggle = !gameObjectToggle;
                 gameObject.SetActive(gameObjectToggle);
+                GetComponent<ObjectAudioClip>().PlayClip();
             }
 
             else if (doorType == DoorType.move)
@@ -118,8 +119,8 @@ public class Reciever : MonoBehaviour
 
     public void BoolToogle()
     {
-        testbool = true;
-        toggle = false;
+        moveBool = true;
+        lockBool = false;
     }
 
     private void ToggleElevator(Vector3 start, Vector3 target, float speed, float acceleration,
@@ -146,8 +147,8 @@ public class Reciever : MonoBehaviour
 
         if (timerToggle && motion.InTargetRegion)
         {
-            
-            if (timerFloat < timer)
+
+            if (timerFloat < timer && moveBool)
             {
                 timerFloat += Time.deltaTime;
             }
