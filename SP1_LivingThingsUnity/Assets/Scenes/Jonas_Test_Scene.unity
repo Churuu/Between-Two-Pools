@@ -1337,6 +1337,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodys.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodysMagnetToObject.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4635786181140478, guid: 1f2638764a6845f48b4c0eb46a63f4ad, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.57
@@ -1392,6 +1402,36 @@ Prefab:
     - target: {fileID: 1862363240381726, guid: 1f2638764a6845f48b4c0eb46a63f4ad, type: 2}
       propertyPath: m_Name
       value: MagnetTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodysMagnetToObject.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodysMagnetToObject.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodysMagnetToObject.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodys.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodys.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806111349642986, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
+        type: 2}
+      propertyPath: magneticRigidBodys.Array.data[5]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f2638764a6845f48b4c0eb46a63f4ad, type: 2}
