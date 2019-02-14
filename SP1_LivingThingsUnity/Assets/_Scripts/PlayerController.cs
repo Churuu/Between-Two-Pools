@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] string jumpAxis = "wJump";
     [Space]
     [SerializeField] float speedVelocityHorizontal = 400f;
-    [SerializeField] float speedVelocityHorizontalJump = 150f;
+  //  [SerializeField] float speedVelocityHorizontalJump = 150f;
     [SerializeField] float jumpAddForce = 500f;
     [SerializeField] float fallMultiplier = 2.5f;
     [SerializeField] float lowJumpMultiplier = 2f;
@@ -85,15 +85,26 @@ public class PlayerController : MonoBehaviour
 
     private void HorizontalMovmenent()
     {
-        Vector2 movement = new Vector2(horizontalInput * (Grounded() ? speedVelocityHorizontal : speedVelocityHorizontalJump) * Time.deltaTime, rb2D.velocity.y);
+        Vector2 movement = new Vector2(horizontalInput *  speedVelocityHorizontal  * Time.deltaTime, rb2D.velocity.y);
         rb2D.velocity = movement;
     }
 
+    //Checks what direction the player is moving
+    public Vector2 GetMoveDirection()
+    {
+        if (rb2D.velocity.x > 0)
+            return Vector2.right;
+        else if (rb2D.velocity.x < 0)
+            return Vector2.left;
 
+        return Vector2.zero;
+    }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawRay(transform.position, Vector3.down * gizmoRange);
     }
+
+
 }

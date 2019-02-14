@@ -34,13 +34,13 @@ public class ActivePlayerHammerState : ActivePlayerStateBase {
         stateMachines.transform.position = hammer.transform.position;
         hammer.GetComponent<Hammer>().ChangeActiveState();
         stateMachines.transform.parent = hammer.transform;
-        hammer.GetComponent<Movement>().enabled = true;
+        hammer.GetComponent<PlayerController>().enabled = true;
     }
     public override void Exit()
     {
         hammer.GetComponent<Hammer>().ChangeActiveState();
         stateMachines.transform.parent = null;
-        hammer.GetComponent<Movement>().enabled = false;
+        hammer.GetComponent<PlayerController>().enabled = false;
 
 
 

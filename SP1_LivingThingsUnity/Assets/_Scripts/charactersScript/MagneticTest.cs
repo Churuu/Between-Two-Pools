@@ -19,6 +19,8 @@ public class MagneticTest : MonoBehaviour
     [SerializeField] private string buttonNameAbility2 = "Ability2";
     [SerializeField] private bool ability2Activ = false;
     [SerializeField] private float minDistanceStopMoving = 0.9f;
+    [SerializeField] private float maxDistanceToGetPulled = 10f;
+    [SerializeField] float maxStrengthToGetPulled = 30f; 
     int numer = 0;
     public bool okToShangeMagnet = false;
     private void Start()
@@ -128,10 +130,10 @@ public class MagneticTest : MonoBehaviour
         {
             float Distance = Vector3.Distance(magneticRigidBodysMagnetToObject[i].transform.position, this.transform.position);
 
-            if (Distance < MaxDistancePulled) // Marble is in range of the magnet
+            if (Distance < maxDistanceToGetPulled) // Marble is in range of the magnet
             {
-                float TDistance = Mathf.InverseLerp(MaxDistancePulled, 0f, Distance); // Give a decimal representing how far between 0 distance and max distance.
-                float strength = Mathf.Lerp(0f, MaxStrengthPulled, TDistance); // Use that decimal to work out how much strength the magnet should apple
+                float TDistance = Mathf.InverseLerp(maxDistanceToGetPulled , 0f, Distance); // Give a decimal representing how far between 0 distance and max distance.
+                float strength = Mathf.Lerp(0f, maxStrengthToGetPulled, TDistance); // Use that decimal to work out how much strength the magnet should apple
                 Vector3 DirectionToCup = (this.transform.position - magneticRigidBodysMagnetToObject[i].transform.position).normalized; // Get the direction from the marble to the cup
                 if (Distance < minDistanceStopMoving)
                 {
@@ -140,9 +142,9 @@ public class MagneticTest : MonoBehaviour
                 }
                 else
                 {
-                   
+                   rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
                 }
- rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+ 
 
             }
         }
