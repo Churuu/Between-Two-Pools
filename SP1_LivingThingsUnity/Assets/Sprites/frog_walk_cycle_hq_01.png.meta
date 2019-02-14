@@ -3,7 +3,19 @@ guid: 3e332531df79d30458ab8e14ffa25f9a
 timeCreated: 1550139929
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: frog_walk_cycle_hq_01_0
+    21300002: frog_walk_cycle_hq_01_1
+    21300004: frog_walk_cycle_hq_01_2
+    21300006: frog_walk_cycle_hq_01_3
+    21300008: frog_walk_cycle_hq_01_4
+    21300010: frog_walk_cycle_hq_01_5
+    21300012: frog_walk_cycle_hq_01_6
+    21300014: frog_walk_cycle_hq_01_7
+    21300016: frog_walk_cycle_hq_01_8
+    21300018: frog_walk_cycle_hq_01_9
+    21300020: frog_walk_cycle_hq_01_10
+    21300022: frog_walk_cycle_hq_01_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -78,7 +90,175 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 360
+        width: 102
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_1
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 360
+        width: 115
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_2
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 360
+        width: 110
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_3
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 360
+        width: 103
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_4
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 360
+        width: 115
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_5
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 360
+        width: 110
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_6
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 40
+        width: 120
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_7
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 40
+        width: 110
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_8
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 40
+        width: 113
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_9
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 40
+        width: 120
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_10
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 40
+        width: 110
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: frog_walk_cycle_hq_01_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 40
+        width: 112
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
