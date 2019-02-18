@@ -15,7 +15,7 @@ public class Sender : MonoBehaviour
 
     public enum ButtonType
     {
-        buttonSwitch = 0, hammerSwitch, pressureSwitch
+        buttonSwitch = 0, sealSwitch, pressureSwitch
     }
     [SerializeField]
     private ButtonType buttonType;
@@ -68,7 +68,7 @@ public class Sender : MonoBehaviour
             }
         }
 
-        else if (buttonType == ButtonType.hammerSwitch)
+        else if (buttonType == ButtonType.sealSwitch)
         {
 
         }
@@ -97,8 +97,9 @@ public class Sender : MonoBehaviour
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
-                gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                
                 gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                gameObjects[i].GetComponent<Reciever>().BoolToogle();
             }
         }
 
