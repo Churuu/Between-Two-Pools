@@ -61,8 +61,10 @@ public class Sender : MonoBehaviour
             {
                 for (int i = 0; i < gameObjects.Count; i++)
                 {
-                    gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                    print("test1");
                     gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                    gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                    
                     
                 }
             }
