@@ -13,7 +13,6 @@ public class Frog : MonoBehaviour
     private DistanceJoint2D joint2D;
     private bool extended;
     private float extendToungeTimer = 5f;
-    private RaycastHit2D hit;
     private float jointTimer = 0.3f;
     private PlayerController playerController;
     private GameObject toungeTemp;
@@ -36,17 +35,32 @@ public class Frog : MonoBehaviour
     {
 
         Vector2 playerPos = transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(playerPos, direction, maxDistance);
 
         if (hit.collider == null)
             return;
 
+        Vector2 hitPoint;
 
-        Vector2 hitPoint = hit.point;
-        Vector2 middlePoint = (playerPos + hitPoint) * 0.5f;
+        if (direction == Vector2.left)
+            hitPoint = new Vector2(hit.point.x - 0.5f, hit.point.y);
+        else
+            hitPoint = new Vector2(hit.point.x + 0.5f, hit.point.y);
+
+        Vector2 middlePoint = (playerPos + hitPoint) / 2;
 
         toungeTemp = Instantiate(tounge, middlePoint, Quaternion.identity) as GameObject;
-        toungeTemp.transform.localScale = new Vector3(Vector2.Distance(hitPoint, middlePoint) * 1.5f, toungeTemp.transform.localScale.y);
+
+        var toungeTempCol = toungeTemp.GetComponent<BoxCollider2D>();
+        var toungeTempSprite = toungeTemp.GetComponent<SpriteRenderer>();
+
+        Vector3 size = new Vector3(Vector2.Distance(hitPoint, middlePoint) * 1.5f, toungeTempCol.size.y);
+
+        toungeTempCol.size = size;
+        toungeTempSprite.size = size;
+
         extended = true;
+
     }
 
     void DisableMovementWhenExtended()
@@ -79,9 +93,6 @@ public class Frog : MonoBehaviour
         {
             if (!extended)
             {
-                Vector2 playerPos = transform.position;
-                hit = Physics2D.Raycast(playerPos, direction, maxDistance);
-
                 ExtendTounge();
             }
             else
@@ -96,7 +107,7 @@ public class Frog : MonoBehaviour
             joint2D.enabled = false;
         }
 
-        if(Input.GetButtonDown(abilityButton))
+        if (Input.GetButtonDown(abilityButton))
         {
             RaycastHit2D anchorCast = Physics2D.CircleCast(transform.position, 5, Vector2.right, 5);
             joint2D.connectedAnchor = anchorCast.collider.CompareTag("AnchorPoint") ? anchorCast.collider.transform.position : transform.position;
