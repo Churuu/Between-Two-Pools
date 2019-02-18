@@ -91,6 +91,8 @@ public class PlayerController : MonoBehaviour
     private void HorizontalMovmenent()
     {
         Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
+        if(movement.x > 0) anim.SetBool("FaceingRight", true);
+        else if (movement.x < 0) anim.SetBool("FaceingRight", false);
         rb2D.velocity = movement;
     }
 
@@ -98,9 +100,17 @@ public class PlayerController : MonoBehaviour
     public Vector2 GetMoveDirection()
     {
         if (rb2D.velocity.x > 0)
+        {
+            anim.SetBool("FaceingRight", true);
             return Vector2.right;
+        }
+            
         else if (rb2D.velocity.x < 0)
+        {
+            anim.SetBool("FaceingRight", false);
             return Vector2.left;
+        }
+           
 
         return Vector2.zero;
     }
