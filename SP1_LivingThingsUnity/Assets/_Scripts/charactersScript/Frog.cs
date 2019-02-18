@@ -39,7 +39,7 @@ public class Frog : MonoBehaviour
         Vector2 playerPos = transform.position;
         RaycastHit2D hit = Physics2D.Raycast(playerPos, direction, maxExtendedDistance);
 
-        if (hit.collider != null)
+        if (hit.collider != null && playerController.Grounded())
         {
             Vector2 hitPoint;
 
