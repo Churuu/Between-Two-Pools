@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour {
     public int StartRiktning; // värden -1 startar åt vänster, 0 stårstilla, 1 startar åt höger
     public float Enemy_Move_speed;
     public float Distance_From_Start_Pos;
+  
     private Rigidbody2D Enemy_Rigid;
     private SpriteRenderer Flip_Sprite;
     private float MaxDist;
@@ -69,13 +70,10 @@ public class EnemyMovement : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         // Byt riktning vid kollition med vägg
-        if (col.gameObject.CompareTag("Vägg"))
-        {
             StartRiktning = StartRiktning * -1;
             Flip_Sprite.flipX = !Flip_Sprite.flipX;
             going_right = !going_right;
             going_left = !going_left;
-        }
     }
 
     void OnDrawGizmosSelected()

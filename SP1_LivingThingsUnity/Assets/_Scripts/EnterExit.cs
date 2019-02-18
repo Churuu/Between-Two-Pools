@@ -50,7 +50,6 @@ public class EnterExit : MonoBehaviour
         if (other.gameObject.GetComponent<Sender>() != null)
         {
             go = other.gameObject;
-
             if (go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.pressureSwitch)
             {
                 go.GetComponent<Sender>().ActivatePlate();

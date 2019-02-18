@@ -387,6 +387,52 @@ GameObject:
   m_PrefabParentObject: {fileID: 1862363240381726, guid: 1f2638764a6845f48b4c0eb46a63f4ad,
     type: 2}
   m_PrefabInternal: {fileID: 1686587647}
+--- !u!1001 &528789463
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418594720633520, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091334110424220, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3e82572ec182ee342b3eab78f92d1fab, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &647358559
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,11 +624,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.4301033
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 4077441827335984, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -640,7 +686,8 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114338884386187834, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &830080276 stripped
@@ -1195,6 +1242,7 @@ MonoBehaviour:
   tolerance: 0.15
   gameObjectToggle: 1
   toggle: 1
+  testbool: 0
   timerToggle: 1
   timer: 2
 --- !u!50 &1509853420 stripped
@@ -1441,29 +1489,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4421167679797314, guid: a92b19e6b41f6b7419a85e610c63733d,
     type: 2}
   m_PrefabInternal: {fileID: 1349258188}
---- !u!1 &1868850036 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1173901643371086, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
-    type: 2}
-  m_PrefabInternal: {fileID: 800633478}
---- !u!114 &1868850037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1868850036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba76d2847a52a294dbaa893c4d187f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  destructionDistance: 0
-  active: 0
-  destructableWall:
-    serializedVersion: 2
-    m_Bits: 0
-  abilityButton: Ability1
 --- !u!50 &1868850038 stripped
 Rigidbody2D:
   m_PrefabParentObject: {fileID: 50611038519364640, guid: 9a79ff664b0cbdd4ba91a79cd120e7cd,
