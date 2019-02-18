@@ -5,10 +5,6 @@ using UnityEngine;
 //Jesper Li 07/02 - 19
 public class Reciever : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject audioObject;
-
-    private AudioSource audioSource;
 
     public enum DoorType
     {
@@ -40,6 +36,8 @@ public class Reciever : MonoBehaviour
     [SerializeField][Tooltip("Wont move if false")]
     private bool moveBool;
 
+    private bool componentToggle;
+
     [Space]
     [Header("Timed Platform Variables")]
     [SerializeField]
@@ -54,19 +52,14 @@ public class Reciever : MonoBehaviour
     {
         
         start = transform.position;
-        gameObject.SetActive(gameObjectToggle);
-        if (audioObject != null)
-        {
-            audioSource = audioObject.GetComponent<AudioSource>();
-        }
-        
+        ToggleObjectComponents();
     }
     
 	// Update is called once per frame
 	void Update ()
     {
         if (moveBool)
-        ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
+            ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
 	}
 
     public void ToggleObject()
@@ -77,51 +70,45 @@ public class Reciever : MonoBehaviour
             
 
             if (doorType == DoorType.flip)
-            {     
+            {
                 gameObjectToggle = !gameObjectToggle;
-                gameObject.SetActive(gameObjectToggle);
-                GetComponent<ObjectAudioClip>().PlayClip();
+                ToggleObjectComponents();
+                GetComponent<ObjectAudioClip>().PlaySingle(0);
             }
 
             else if (doorType == DoorType.move)
             {
+                GetComponent<ObjectAudioClip>().PlaySingle(0);
                 gameObjectToggle = !gameObjectToggle;
             }
 
             else if (doorType == DoorType.moveTimer)
             {
                 timerToggle = !timerToggle;
+                
             }
-        } 
+        }
+        else
+            GetComponent<ObjectAudioClip>().PlaySingle(1);
     }
 
-    //public void ToggleObject(bool senderBool)
-    //{
-    //    if (toggle)
-    //    {
-    //        audioSource.Play();
-    //        if (gameObjectToggle == false)
-    //        {
-    //            gameObjectToggle = senderBool;
-    //        }
-    //        else
-    //            gameObjectToggle = false;
-    //        if (doorType == DoorType.flip)
-    //        {
-    //            gameObject.SetActive(gameObjectToggle);
-    //        }
-    //        else if (doorType == DoorType.moveTimer)
-    //        {
-    //            timerToggle = true;
-    //        }
-    //    }
-    //}
+    public void ToggleObjectComponents()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            GetComponent<BoxCollider2D>().enabled = gameObjectToggle;
+            GetComponent<SpriteRenderer>().enabled = gameObjectToggle;
+        }
+        
+    }
 
     public void BoolToogle()
-    {
+    { 
         moveBool = true;
         lockBool = false;
+
     }
+
 
     private void ToggleElevator(Vector3 start, Vector3 target, float speed, float acceleration,
         float time, float tolerance, bool flip)
@@ -133,6 +120,7 @@ public class Reciever : MonoBehaviour
         if (flip)
         {
             motion.Target = target;
+
         }
         else
         {
@@ -155,6 +143,7 @@ public class Reciever : MonoBehaviour
             else if (timerFloat >= timer)
             {
                 gameObjectToggle = !gameObjectToggle;
+                GetComponent<ObjectAudioClip>().PlaySingle(0);
                 //timerToggle = false;
                 timerFloat = 0;
             }
@@ -172,3 +161,25 @@ public class Reciever : MonoBehaviour
     }
 }
 
+
+//public void ToggleObject(bool senderBool)
+//{
+//    if (toggle)
+//    {
+//        audioSource.Play();
+//        if (gameObjectToggle == false)
+//        {
+//            gameObjectToggle = senderBool;
+//        }
+//        else
+//            gameObjectToggle = false;
+//        if (doorType == DoorType.flip)
+//        {
+//            gameObject.SetActive(gameObjectToggle);
+//        }
+//        else if (doorType == DoorType.moveTimer)
+//        {
+//            timerToggle = true;
+//        }
+//    }
+//}
