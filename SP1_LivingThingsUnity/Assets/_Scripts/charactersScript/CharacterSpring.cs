@@ -67,6 +67,7 @@ public class CharacterSpring : MonoBehaviour
                     boostResetTimer = Time.time + BoostResetTimerDelta;
                     jumped = true;
                     anim.SetTrigger(bounceAnimParam);
+                    anim.ResetTrigger(bounceAnimParam);
                 }
             }
         }
