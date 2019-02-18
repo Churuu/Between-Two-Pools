@@ -100,17 +100,10 @@ public class PlayerController : MonoBehaviour
     public Vector2 GetMoveDirection()
     {
         if (rb2D.velocity.x > 0)
-        {
-            anim.SetBool("FaceingRight", true);
             return Vector2.right;
-        }
             
         else if (rb2D.velocity.x < 0)
-        {
-            anim.SetBool("FaceingRight", false);
             return Vector2.left;
-        }
-           
 
         return Vector2.zero;
     }
