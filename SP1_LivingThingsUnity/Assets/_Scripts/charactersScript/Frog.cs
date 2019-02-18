@@ -9,9 +9,11 @@ public class Frog : MonoBehaviour
     public Vector2 direction;
     public float maxDistance;
     public GameObject tounge;
+    public LayerMask anchor;
 
     private DistanceJoint2D joint2D;
     private bool extended;
+    private bool activated = true;
     private float extendToungeTimer = 5f;
     private float jointTimer = 0.3f;
     private PlayerController playerController;
@@ -26,9 +28,12 @@ public class Frog : MonoBehaviour
 
     void Update()
     {
-        ButtonHandler();
-        DisableMovementWhenExtended();
-        SetDirection();
+        if (activated)
+        {
+            ButtonHandler();
+            DisableMovementWhenExtended();
+            SetDirection();
+        }
     }
 
     void ExtendTounge()
@@ -80,12 +85,17 @@ public class Frog : MonoBehaviour
 
     void ButtonHandler()
     {
+
+        RaycastHit2D anchorCast = Physics2D.CircleCast(transform.position, 5, direction, 5, anchor);
+
         if (Input.GetButton(abilityButton))
         {
             jointTimer -= Time.deltaTime;
+            print(anchorCast.collider.name);
 
-            if (jointTimer <= 0)
+            if (jointTimer <= 0 && anchorCast.collider != null)
             {
+                joint2D.connectedAnchor = anchorCast.collider.transform.position;
                 joint2D.enabled = true;
             }
         }
@@ -107,11 +117,15 @@ public class Frog : MonoBehaviour
             joint2D.enabled = false;
         }
 
-        if (Input.GetButtonDown(abilityButton))
-        {
-            RaycastHit2D anchorCast = Physics2D.CircleCast(transform.position, 5, Vector2.right, 5);
-            joint2D.connectedAnchor = anchorCast.collider.CompareTag("AnchorPoint") ? anchorCast.collider.transform.position : transform.position;
-        }
+    }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 5);
+    }
+
+    public void SwitchActivation(bool state)
+    {
+        activated = state;
     }
 }
