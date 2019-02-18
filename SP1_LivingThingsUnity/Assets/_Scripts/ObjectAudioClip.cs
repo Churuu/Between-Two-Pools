@@ -5,13 +5,13 @@ using UnityEngine;
 public class ObjectAudioClip : MonoBehaviour
 {
     [SerializeField]
-    private GameObject audioManager;
+    private AudioSource audioSource;
     [SerializeField]
     private List<AudioClip> audioClips = new List<AudioClip>();
 	// Use this for initialization
 	void Start ()
     {
-        audioManager = FindObjectOfType<AudioManager>().gameObject;
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -20,15 +20,23 @@ public class ObjectAudioClip : MonoBehaviour
         
 	}
 
-    private int RandomizeClip()
+    private int RandomizeClip(int min, int max)
     {
         int randomIndex;
-        return randomIndex = Random.Range(0, audioClips.Count);      
+        return randomIndex = Random.Range(min, max+1);      
     }
 
-    public void PlayClip()
+    public void PlaySingle(int min, int max)
     {
-        audioManager.GetComponent<AudioManager>().PlaySingle(audioClips[RandomizeClip()]);
+        audioSource.clip = audioClips[RandomizeClip(min, max)];
         
+        audioSource.Play();
+    }
+
+    public void PlaySingle(int clipIndex)
+    {
+        audioSource.clip = audioClips[clipIndex];
+
+        audioSource.Play();
     }
 }

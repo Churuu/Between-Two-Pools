@@ -40,6 +40,7 @@ public class Sender : MonoBehaviour
     {
         if (GetButtonType() == ButtonType.buttonSwitch)
         {
+            GetComponent<ObjectAudioClip>().PlaySingle(0);
             if (switchType == SwitchType.door)
             {
                 for (int i = 0; i < gameObjects.Count; i++)
@@ -75,6 +76,7 @@ public class Sender : MonoBehaviour
 
     public void ActivatePlate()
     {
+        GetComponent<ObjectAudioClip>().PlaySingle(0);
         if (switchType == SwitchType.door)
         {
             for (int i = 0; i < gameObjects.Count; i++)

@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212363594899825864}
   - component: {fileID: 114946651245398942}
   - component: {fileID: 61990521860914164}
+  - component: {fileID: 114587916490215912}
+  - component: {fileID: 82342057452200296}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -67,6 +69,100 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.16}
   m_EdgeRadius: 0
+--- !u!82 &82342057452200296
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200292512829454}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243386080139177198, guid: 58439c3261a1a554db09ed5b5ab31fb4,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114587916490215912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200292512829454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e6c0613ecc52f43a9033e354a4d557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClips: []
 --- !u!114 &114946651245398942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba812583f8a00a340aac7d0700869e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioObject: {fileID: 0}
   doorType: 2
   start: {x: 37, y: 0, z: 0}
   target: {x: 50, y: 0, z: 0}
@@ -86,8 +181,8 @@ MonoBehaviour:
   acceleration: 1.1
   tolerance: 0.15
   gameObjectToggle: 1
-  toggle: 1
-  testbool: 0
+  lockBool: 1
+  moveBool: 0
   timerToggle: 0
   timer: 2
 --- !u!212 &212363594899825864
