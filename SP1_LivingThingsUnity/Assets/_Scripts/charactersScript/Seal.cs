@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSpring : MonoBehaviour
+public class Seal : MonoBehaviour
 {
 
     [Range(50, 100)]
