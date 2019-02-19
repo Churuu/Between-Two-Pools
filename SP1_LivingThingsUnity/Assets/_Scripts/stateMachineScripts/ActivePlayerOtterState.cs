@@ -39,6 +39,7 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
     }
     public override void Exit()
     {
+        otter.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         otter.okToShangeMagnet = false;
         stateMachines.transform.parent = null;
         snubbe.GetComponent<PlayerController>().enabled = false;
