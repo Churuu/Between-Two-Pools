@@ -6,9 +6,7 @@ using UnityEngine;
 public class Seal : MonoBehaviour
 {
 
-    [Range(50, 150)]
     public float springBoostMultiplier = 75f;
-    [Range(0, 49)]
     public float springBoostFallout = 25f;
     public float BoostResetTimerDelta = 5f;
     public string bounceAnimParam = "Bounce";
@@ -54,7 +52,7 @@ public class Seal : MonoBehaviour
 
             playerController = gObj.GetComponent<PlayerController>();
             playerController.SealJump();
-            hitRB.AddForce(Vector2.up * Mathf.Abs(velocityY) * (jumped ? springBoostFallout : springBoostMultiplier));
+            hitRB.AddForce(Vector2.up * (jumped ? springBoostFallout : springBoostMultiplier));
 
             boostResetTimer = Time.time + BoostResetTimerDelta;
 
