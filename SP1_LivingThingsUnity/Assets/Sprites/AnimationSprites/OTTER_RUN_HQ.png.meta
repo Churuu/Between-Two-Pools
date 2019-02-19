@@ -1,23 +1,25 @@
 fileFormatVersion: 2
-guid: 38660bf5bbf91734a912ac1a6efe569b
-timeCreated: 1550569801
+guid: 496e52eaf6654694b968828f06620656
+timeCreated: 1550572297
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Otter IdleSlow -Sheet_HQ_0
-    21300002: Otter IdleSlow -Sheet_HQ_1
-    21300004: Otter IdleSlow -Sheet_HQ_2
-    21300006: Otter IdleSlow -Sheet_HQ_3
-    21300008: Otter IdleSlow -Sheet_HQ_4
-    21300010: Otter IdleSlow -Sheet_HQ_5
-    21300012: Otter IdleSlow -Sheet_HQ_6
-    21300014: Otter IdleSlow -Sheet_HQ_7
-    21300016: Otter IdleSlow -Sheet_HQ_8
-    21300018: Otter IdleSlow -Sheet_HQ_9
-    21300020: Otter IdleSlow -Sheet_HQ_10
-    21300022: Otter IdleSlow -Sheet_HQ_11
-    21300024: Otter IdleSlow -Sheet_HQ_12
-    21300026: Otter IdleSlow -Sheet_HQ_13
+    21300000: OTTER_RUN_HQ_0
+    21300002: OTTER_RUN_HQ_1
+    21300004: OTTER_RUN_HQ_2
+    21300006: OTTER_RUN_HQ_3
+    21300008: OTTER_RUN_HQ_4
+    21300010: OTTER_RUN_HQ_5
+    21300012: OTTER_RUN_HQ_6
+    21300014: OTTER_RUN_HQ_7
+    21300016: OTTER_RUN_HQ_8
+    21300018: OTTER_RUN_HQ_9
+    21300020: OTTER_RUN_HQ_10
+    21300022: OTTER_RUN_HQ_11
+    21300024: OTTER_RUN_HQ_12
+    21300026: OTTER_RUN_HQ_13
+    21300028: OTTER_RUN_HQ_14
+    21300030: OTTER_RUN_HQ_15
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -94,197 +96,225 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_0
+      name: OTTER_RUN_HQ_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 804
-        height: 455
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 9
+        y: 505
+        width: 432
+        height: 313
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_1
+      name: OTTER_RUN_HQ_1
       rect:
         serializedVersion: 2
-        x: 793
-        y: 0
-        width: 809
-        height: 455
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 498
+        y: 505
+        width: 416
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_2
+      name: OTTER_RUN_HQ_2
       rect:
         serializedVersion: 2
-        x: 1597
-        y: 0
-        width: 809
-        height: 455
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 950
+        y: 505
+        width: 421
+        height: 238
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_3
+      name: OTTER_RUN_HQ_3
       rect:
         serializedVersion: 2
-        x: 2395
-        y: 0
-        width: 810
-        height: 455
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1371
+        y: 505
+        width: 452
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_4
+      name: OTTER_RUN_HQ_4
       rect:
         serializedVersion: 2
-        x: 3194
-        y: 0
-        width: 809
-        height: 455
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1840
+        y: 505
+        width: 440
+        height: 238
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_5
+      name: OTTER_RUN_HQ_5
       rect:
         serializedVersion: 2
-        x: 3998
-        y: 0
-        width: 809
-        height: 455
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2287
+        y: 505
+        width: 446
+        height: 288
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_6
+      name: OTTER_RUN_HQ_6
       rect:
         serializedVersion: 2
-        x: 4796
-        y: 0
-        width: 809
-        height: 455
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2744
+        y: 505
+        width: 432
+        height: 315
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_7
+      name: OTTER_RUN_HQ_7
       rect:
         serializedVersion: 2
-        x: 5600
-        y: 0
-        width: 804
-        height: 471
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3204
+        y: 505
+        width: 418
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_8
+      name: OTTER_RUN_HQ_8
       rect:
         serializedVersion: 2
-        x: 6404
-        y: 0
-        width: 798
-        height: 471
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 9
+        y: 48
+        width: 418
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_9
+      name: OTTER_RUN_HQ_9
       rect:
         serializedVersion: 2
-        x: 7202
-        y: 0
-        width: 804
-        height: 471
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 455
+        y: 48
+        width: 432
+        height: 315
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_10
+      name: OTTER_RUN_HQ_10
       rect:
         serializedVersion: 2
-        x: 8001
-        y: 0
-        width: 804
-        height: 471
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 898
+        y: 48
+        width: 446
+        height: 288
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_11
+      name: OTTER_RUN_HQ_11
       rect:
         serializedVersion: 2
-        x: 8799
-        y: 0
-        width: 804
-        height: 471
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1351
+        y: 48
+        width: 441
+        height: 238
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_12
+      name: OTTER_RUN_HQ_12
       rect:
         serializedVersion: 2
-        x: 9603
-        y: 0
-        width: 804
-        height: 471
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1807
+        y: 48
+        width: 451
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Otter IdleSlow -Sheet_HQ_13
+      name: OTTER_RUN_HQ_13
       rect:
         serializedVersion: 2
-        x: 10402
-        y: 0
-        width: 798
-        height: 471
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2262
+        y: 48
+        width: 418
+        height: 238
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: OTTER_RUN_HQ_14
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 48
+        width: 416
+        height: 223
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: OTTER_RUN_HQ_15
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 48
+        width: 432
+        height: 313
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
