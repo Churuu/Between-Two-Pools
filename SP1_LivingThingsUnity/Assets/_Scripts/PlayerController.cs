@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         HorizontalMovmenent();
     }
 
-    private bool Grounded()
+    public bool Grounded()
     {
 
         RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, gizmoRange);

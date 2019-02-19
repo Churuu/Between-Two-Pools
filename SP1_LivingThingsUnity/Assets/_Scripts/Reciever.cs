@@ -84,6 +84,7 @@ public class Reciever : MonoBehaviour
 
             else if (doorType == DoorType.moveTimer)
             {
+                print("test2");
                 timerToggle = !timerToggle;
                 
             }
@@ -103,10 +104,9 @@ public class Reciever : MonoBehaviour
     }
 
     public void BoolToogle()
-    { 
+    {
         moveBool = true;
         lockBool = false;
-
     }
 
 

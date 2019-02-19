@@ -54,6 +54,14 @@ public class EnterExit : MonoBehaviour
             {
                 go.GetComponent<Sender>().ActivatePlate();
             }
+
+            else if (go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.sealSwitch)
+            {
+                if (gameObject.GetComponent<Seal>() != null)
+                {
+                    go.GetComponent<Sender>().ActivatePlate();
+                }
+            }
             else
                 goBool = true;
         }
@@ -67,6 +75,14 @@ public class EnterExit : MonoBehaviour
             if (go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.pressureSwitch)
             {
                 go.GetComponent<Sender>().ActivatePlate();
+            }
+
+            else if (go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.sealSwitch)
+            {
+                if (gameObject.GetComponent<Seal>() != null)
+                {
+                    go.GetComponent<Sender>().ActivatePlate();
+                }
             }
             else
                 goBool = false;
@@ -84,5 +100,6 @@ public class EnterExit : MonoBehaviour
                 go.GetComponent<Sender>().BoolToggle();
             }
         }
+
     }
 }
