@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MagneticTest : MonoBehaviour
+public class Otter : MonoBehaviour
 {
     // Jonas Thunberg på börjad 2019-02-05
     public enum MomentDerection { Right, Left, Up, Down }

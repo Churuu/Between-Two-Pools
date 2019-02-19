@@ -5,7 +5,7 @@ public class ActivePlayerMagnetState : ActivePlayerStateBase
     public GameObject snubbe;
     public int playerNumber;
 
-    MagneticTest magneticTest;
+    Otter magneticTest;
     [SerializeField] private string charakterOne = "1";
     [SerializeField] private string charakterTwo = "2";
     [SerializeField] private string charakterThree = "3";
@@ -17,7 +17,7 @@ public class ActivePlayerMagnetState : ActivePlayerStateBase
         {
             stateMachines = stateMachine;
         }
-        magneticTest = snubbe.GetComponent<MagneticTest>();
+        magneticTest = snubbe.GetComponent<Otter>();
         playerNumber = number;
 
     }
