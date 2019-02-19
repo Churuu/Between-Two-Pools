@@ -1190,7 +1190,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114598422917478710, guid: 96a7c4374155dcc4a8b24a73c7d1e839, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 96a7c4374155dcc4a8b24a73c7d1e839, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &996183114
@@ -1827,6 +1828,21 @@ Prefab:
       propertyPath: spelareThree
       value: 
       objectReference: {fileID: 1544559783}
+    - target: {fileID: 114913845731946320, guid: a92b19e6b41f6b7419a85e610c63733d,
+        type: 2}
+      propertyPath: Otter
+      value: 
+      objectReference: {fileID: 377799279}
+    - target: {fileID: 114913845731946320, guid: a92b19e6b41f6b7419a85e610c63733d,
+        type: 2}
+      propertyPath: Seal
+      value: 
+      objectReference: {fileID: 830080276}
+    - target: {fileID: 114913845731946320, guid: a92b19e6b41f6b7419a85e610c63733d,
+        type: 2}
+      propertyPath: Frog
+      value: 
+      objectReference: {fileID: 1544559783}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a92b19e6b41f6b7419a85e610c63733d, type: 2}
   m_IsPrefabParent: 0
@@ -2007,7 +2023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba812583f8a00a340aac7d0700869e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioObject: {fileID: 0}
   doorType: 2
   start: {x: 4.2, y: -2.05, z: 0}
   target: {x: 7, y: -2.05, z: 0}
@@ -2029,6 +2044,20 @@ GameObject:
   m_PrefabParentObject: {fileID: 1588472913814066, guid: 96a7c4374155dcc4a8b24a73c7d1e839,
     type: 2}
   m_PrefabInternal: {fileID: 947676005}
+--- !u!114 &1544559785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544559783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74766cb37676a7b49811c15ce84141e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityButton: Ability1
+  maxExtendedDistance: 5
+  tounge: {fileID: 1598041726788476, guid: eee1842e5e3b03e41a524776830bb8bf, type: 2}
 --- !u!95 &1544559790
 Animator:
   serializedVersion: 3

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivePlayerSpringState : ActivePlayerStateBase {
+public class ActivePlayerSealState : ActivePlayerStateBase {
 
     public GameObject spring;
     public int playerNumber;
@@ -10,7 +10,7 @@ public class ActivePlayerSpringState : ActivePlayerStateBase {
     [SerializeField] private string charakterOne = "1";
     [SerializeField] private string charakterTwo = "2";
     [SerializeField] private string charakterThree = "3";
-    public ActivePlayerSpringState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
+    public ActivePlayerSealState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
     {
         spring = gameObjectPlayer;
         if (stateMachines == null)
@@ -57,18 +57,18 @@ public class ActivePlayerSpringState : ActivePlayerStateBase {
 
 
 
-        if (Input.GetButtonDown(charakterOne) && playerNumber != 1)
+        if (Input.GetButtonDown(charakterOne) )//&& playerNumber != 1
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState1);
+            stateMachines.ChangeState(stateMachines.activePlayerStateOtter);
 
         }
-        if (Input.GetButtonDown(charakterTwo) && playerNumber != 2)
+        //if (Input.GetButtonDown(charakterTwo) && playerNumber != 2)
+        //{
+        //    stateMachines.ChangeState(stateMachines.activePlayerStateSeal);
+        //}
+        if (Input.GetButtonDown(charakterThree) )//&& playerNumber != 3
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState2);
-        }
-        if (Input.GetButtonDown(charakterThree) && playerNumber != 3)
-        {
-            stateMachines.ChangeState(stateMachines.activePlayerState3);
+            stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }
 
     }

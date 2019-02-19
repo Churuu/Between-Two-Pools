@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 public class ActivePlayerStateMachine : MonoBehaviour
 {//Påbörjad av Jonas Thunberg 2019-02-04
-    public GameObject spelareOne;
-    public GameObject spelareTwo;
-    public GameObject spelareThree;
+    public GameObject Otter;
+    public GameObject Seal;
+    public GameObject Frog;
     [HideInInspector] private ActivePlayerStateBase curentState;
 
     //[HideInInspector] public StartState startState; //Start lägge//TODO
-    [HideInInspector] public ActivePlayerMagnetState activePlayerState1;
-    [HideInInspector] public ActivePlayerSpringState activePlayerState2;
-    [HideInInspector] public ActivePlayerWrenchState activePlayerState3;
+    [HideInInspector] public ActivePlayerOtterState activePlayerStateOtter;
+    [HideInInspector] public ActivePlayerSealState activePlayerStateSeal;
+    [HideInInspector] public ActivePlayerFrogState activePlayerStateFrog;
     // [HideInInspector] public GameOver startState; // Förlora Lägge//TODO
     //  [HideInInspector] public StartState startState; // Vinst Lägge//TODO
     // [HideInInspector] public StartState startState; // Paus lägge//TODO
@@ -17,22 +17,19 @@ public class ActivePlayerStateMachine : MonoBehaviour
     {
         // Start startState = new StartState(this);
 
-        activePlayerState1 = new ActivePlayerMagnetState (this, spelareOne,1);
+        activePlayerStateOtter = new ActivePlayerOtterState (this, Otter,1);
     //    Debug.Log(activePlayerState1);
-        activePlayerState2 = new ActivePlayerSpringState(this, spelareTwo,2);
+        activePlayerStateSeal = new ActivePlayerSealState(this, Seal,2);
      //   Debug.Log(activePlayerState2);
-        activePlayerState3 = new ActivePlayerWrenchState(this, spelareThree,3);
+        activePlayerStateFrog = new ActivePlayerFrogState(this, Frog,3);
       //  Debug.Log(activePlayerState3);
     }
     private void Start()
     {
-       
-        
-        ChangeState(activePlayerState1);
+        ChangeState(activePlayerStateOtter);
     }
     void Update()
     {
-
         curentState.UpdateState();
     }
     public void ChangeState(ActivePlayerStateBase nextState)

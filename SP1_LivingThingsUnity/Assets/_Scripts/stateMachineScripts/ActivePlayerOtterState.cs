@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
 
-public class ActivePlayerMagnetState : ActivePlayerStateBase
+public class ActivePlayerOtterState : ActivePlayerStateBase
 {
     public GameObject snubbe;
     public int playerNumber;
 
-    Otter magneticTest;
+    Otter otter;
     [SerializeField] private string charakterOne = "1";
     [SerializeField] private string charakterTwo = "2";
     [SerializeField] private string charakterThree = "3";
 
-    public ActivePlayerMagnetState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
+    public ActivePlayerOtterState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
     {
         snubbe = gameObjectPlayer;
         if (stateMachines == null)
         {
             stateMachines = stateMachine;
         }
-        magneticTest = snubbe.GetComponent<Otter>();
+        otter = snubbe.GetComponent<Otter>();
         playerNumber = number;
 
     }
@@ -30,7 +30,7 @@ public class ActivePlayerMagnetState : ActivePlayerStateBase
     }
     public override void Enter()
     {
-        magneticTest.okToShangeMagnet = true;
+        otter.okToShangeMagnet = true;
 
         stateMachines.transform.position = snubbe.transform.position;
         
@@ -39,7 +39,7 @@ public class ActivePlayerMagnetState : ActivePlayerStateBase
     }
     public override void Exit()
     {
-        magneticTest.okToShangeMagnet = false;
+        otter.okToShangeMagnet = false;
         stateMachines.transform.parent = null;
         snubbe.GetComponent<PlayerController>().enabled = false;
 
@@ -55,18 +55,18 @@ public class ActivePlayerMagnetState : ActivePlayerStateBase
     void ChangePlayer()
     {
 
-        if (Input.GetButtonDown(charakterOne) && playerNumber != 1)
-        {
-            stateMachines.ChangeState(stateMachines.activePlayerState1);
+        //if (Input.GetButtonDown(charakterOne) && playerNumber != 1)
+        //{
+        //    stateMachines.ChangeState(stateMachines.activePlayerStateOtter);
 
-        }
-        if (Input.GetButtonDown(charakterTwo) && playerNumber != 2)
+        //}
+        if (Input.GetButtonDown(charakterTwo)) //&& playerNumber != 2
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState2);
+            stateMachines.ChangeState(stateMachines.activePlayerStateSeal);
         }
-        if (Input.GetButtonDown(charakterThree) && playerNumber != 3)
+        if (Input.GetButtonDown(charakterThree) )//&& playerNumber != 3
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState3);
+            stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }
     }
 }
