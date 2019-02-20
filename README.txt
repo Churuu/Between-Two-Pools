@@ -1,4 +1,4 @@
-git clone https://github.com/Churuu/SP1_LivingThings.git - clonar projektet till documents på datorn
+﻿git clone https://github.com/Churuu/SP1_LivingThings.git - clonar projektet till documents på datorn
 
 cd SP1_LivingThings - berättar för datorn vilken fil du arbetar inom
 
@@ -12,9 +12,11 @@ git commit -m "Skriv förändringar här inom citat tecknerna" - Sparar alla fö
 
 git push origin 'branch' - laddar upp filerna till github
 
-git fetch --all
+git fetch --all kollar efter uppdateringar
 
 git pull - Laddar ner nya filer från molnet ifall det finns
+
+
 
 
 

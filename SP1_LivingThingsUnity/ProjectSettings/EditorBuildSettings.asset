@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/RobinTesting.unity
+    guid: 9f5a81fd505e7464b81f12346b3ff075
+  - enabled: 1
+    path: Assets/Scenes/Play_Test_Scene.unity
+    guid: 6687a33b873bf0243a204864d8c2947a
