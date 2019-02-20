@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4466748632239704}
   - component: {fileID: 212018574807089346}
-  - component: {fileID: 61086288487166552}
   - component: {fileID: 50712428460664554}
   - component: {fileID: 114540269722994226}
   - component: {fileID: 95680845542791098}
   - component: {fileID: 114906808045132356}
+  - component: {fileID: 60656580231295096}
   m_Layer: 10
   m_Name: Otter
   m_TagString: Untagged
@@ -65,15 +65,15 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61086288487166552
-BoxCollider2D:
+--- !u!60 &60656580231295096
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087217229425938}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: e7bd06419ded52846bc8e64b3890a03d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -87,9 +87,41 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.15632755, y: 0.1475562}
+      - {x: 0.55831265, y: 0.37088126}
+      - {x: 0.6476427, y: -0.008771342}
+      - {x: 1.6526054, y: -0.008771342}
+      - {x: 1.5409429, y: 0.32621625}
+      - {x: 1.5186105, y: 0.9068614}
+      - {x: 1.719603, y: 1.4205091}
+      - {x: 2.166253, y: 1.4428415}
+      - {x: 2.255583, y: 1.4875066}
+      - {x: 2.255583, y: 1.8448267}
+      - {x: 2.2332506, y: 1.9564892}
+      - {x: 2.255583, y: 2.470137}
+      - {x: 2.121588, y: 2.5817993}
+      - {x: 1.5186105, y: 2.5817993}
+      - {x: 1.2506204, y: 2.514802}
+      - {x: 0.9379653, y: 2.0904841}
+      - {x: 0.46898264, y: 1.5991691}
+      - {x: -0.3573201, y: 1.7331642}
+      - {x: -0.7816377, y: 1.7554966}
+      - {x: -1.0496278, y: 1.6438341}
+      - {x: -1.4962779, y: 1.1301864}
+      - {x: -1.5856079, y: 0.9291939}
+      - {x: -1.987593, y: 0.23688623}
+      - {x: -2.255583, y: 0.1475562}
+      - {x: -2.255583, y: -0.008771342}
+      - {x: -1.4739454, y: -0.008771342}
+      - {x: -1.1836228, y: 0.21455371}
+      - {x: -1.0719603, y: -0.008771342}
+      - {x: 0.06699752, y: -0.008771342}
+    - - {x: 1.0049628, y: 0.41554627}
+      - {x: 0.98263025, y: 0.30388373}
+      - {x: 1.0496278, y: 0.23688623}
+      - {x: 1.0496278, y: 0.25921872}
 --- !u!95 &95680845542791098
 Animator:
   serializedVersion: 3
