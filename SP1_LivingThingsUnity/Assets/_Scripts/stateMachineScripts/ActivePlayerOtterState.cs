@@ -33,19 +33,16 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
         otter.okToShangeMagnet = true;
 
         stateMachines.transform.position = snubbe.transform.position;
-        
+
         stateMachines.transform.parent = snubbe.transform;
-        snubbe.GetComponent<PlayerController>().enabled = true;
+        snubbe.GetComponent<PlayerController>().SetPlayerState(true);
     }
     public override void Exit()
     {
         otter.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         otter.okToShangeMagnet = false;
         stateMachines.transform.parent = null;
-        snubbe.GetComponent<PlayerController>().enabled = false;
-
-
-
+        snubbe.GetComponent<PlayerController>().SetPlayerState(false);
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {
@@ -65,7 +62,7 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
         {
             stateMachines.ChangeState(stateMachines.activePlayerStateSeal);
         }
-        if (Input.GetButtonDown(charakterThree) )//&& playerNumber != 3
+        if (Input.GetButtonDown(charakterThree))//&& playerNumber != 3
         {
             stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }

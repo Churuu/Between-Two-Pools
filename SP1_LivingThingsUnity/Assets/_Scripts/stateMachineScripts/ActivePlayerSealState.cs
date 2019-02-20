@@ -33,17 +33,13 @@ public class ActivePlayerSealState : ActivePlayerStateBase {
 
         stateMachines.transform.position = seal.transform.position;
         stateMachines.transform.parent = seal.transform;
-        seal.GetComponent<PlayerController>().enabled = true;
-        
+        seal.GetComponent<PlayerController>().SetPlayerState(true);
     }
     public override void Exit()
     {
         seal.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         stateMachines.transform.parent = null;
-        seal.GetComponent<PlayerController>().enabled = false;
-
-
-
+        seal.GetComponent<PlayerController>().SetPlayerState(false);
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {
