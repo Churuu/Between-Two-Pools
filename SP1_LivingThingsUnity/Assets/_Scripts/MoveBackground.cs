@@ -22,9 +22,9 @@ public class MoveBackground : MonoBehaviour {
 
     void Update()
     {
-        Diff.x = Cam.position.x * speed;
+        Diff.x = Cam.position.x;
         Debug.Log(Diff.x);
-        Diff.y = (lastCamPos.y - Cam.position.y);
+		Diff.y = Cam.position.y;
         Move = new Vector2(Diff.x, Diff.y);
         transform.position = new Vector3(Move.x, Move.y, 0);
         lastCamPos = Cam.position;
