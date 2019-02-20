@@ -73,16 +73,16 @@ public class ActivePlayerWrenchState : ActivePlayerStateBase
 
         if (Input.GetButtonDown(charakterOne) && playerNumber != 1)
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState1);
+            stateMachines.ChangeState(stateMachines.activePlayerStateOtter);
 
         }
         if (Input.GetButtonDown(charakterTwo) && playerNumber != 2)
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState2);
+            stateMachines.ChangeState(stateMachines.activePlayerStateSeal);
         }
         if (Input.GetButtonDown(charakterThree) && playerNumber != 3)
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState3);
+            stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }
 
     }

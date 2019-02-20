@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
 
     [SerializeField] bool canJump = true;
+    [SerializeField] bool sealJump = false;
     [Space]
     [SerializeField] string horizontalMoment = "Horizontal";
     [SerializeField] string jumpAxis = "wJump";
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float fallMultiplier = 2.5f;
     [SerializeField] float lowJumpMultiplier = 2f;
     [SerializeField] float gizmoRange = 1f;
+    [SerializeField] LayerMask ground;
 
     float horizontalInput;
     Vector3 side;
@@ -52,9 +54,9 @@ public class PlayerController : MonoBehaviour
     public bool Grounded()
     {
 
-        RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, gizmoRange);
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, gizmoRange);
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, gizmoRange);
+        RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, gizmoRange, ground);
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, gizmoRange, ground);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, gizmoRange, ground);
 
         if ((hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null) && canJump)
             return true;
@@ -70,10 +72,17 @@ public class PlayerController : MonoBehaviour
         {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        else if (rb2D.velocity.y > 0 && !Input.GetButton(jumpAxis))
+        else if (rb2D.velocity.y > 0 && !Input.GetButton(jumpAxis) && !sealJump)
         {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+
+        if (Grounded())
+        {
+            sealJump = false;
+            print("grounded");
+        }
+
     }
 
     //AddForce För att hoppa
@@ -113,6 +122,11 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat(walkAnimParam, rb2D.velocity.x);
         if (canJump)
             anim.SetBool(jumpAnimParam, !Grounded());
+    }
+
+    public void SealJump()
+    {
+        sealJump = true;
     }
 
     void OnDrawGizmos()

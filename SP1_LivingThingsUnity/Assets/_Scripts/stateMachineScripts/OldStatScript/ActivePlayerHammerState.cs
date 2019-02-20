@@ -1,20 +1,23 @@
-﻿using UnityEngine;
-public class ActivePlayerState : ActivePlayerStateBase
-{
-    public GameObject snubbe;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ActivePlayerHammerState : ActivePlayerStateBase {
+
+    public GameObject hammer;
     public int playerNumber;
- 
+
     [SerializeField] private string charakterOne = "1";
     [SerializeField] private string charakterTwo = "2";
     [SerializeField] private string charakterThree = "3";
-    public ActivePlayerState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
+    public ActivePlayerHammerState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
     {
-        snubbe = gameObjectPlayer;
+        hammer = gameObjectPlayer;
         if (stateMachines == null)
         {
             stateMachines = stateMachine;
         }
-
+        
         playerNumber = number;
 
     }
@@ -27,17 +30,17 @@ public class ActivePlayerState : ActivePlayerStateBase
     }
     public override void Enter()
     {
-   
-        stateMachines.transform.position = snubbe.transform.position;
-       
-        stateMachines.transform.parent = snubbe.transform;
-        snubbe.GetComponent<PlayerController>().enabled = true;
+
+        stateMachines.transform.position = hammer.transform.position;
+        hammer.GetComponent<Hammer>().ChangeActiveState();
+        stateMachines.transform.parent = hammer.transform;
+        hammer.GetComponent<PlayerController>().enabled = true;
     }
     public override void Exit()
     {
-    
+        hammer.GetComponent<Hammer>().ChangeActiveState();
         stateMachines.transform.parent = null;
-        snubbe.GetComponent<PlayerController>().enabled = false;
+        hammer.GetComponent<PlayerController>().enabled = false;
 
 
 
@@ -56,16 +59,16 @@ public class ActivePlayerState : ActivePlayerStateBase
 
         if (Input.GetButtonDown(charakterOne) && playerNumber != 1)
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState1);
+            stateMachines.ChangeState(stateMachines.activePlayerStateOtter);
 
         }
         if (Input.GetButtonDown(charakterTwo) && playerNumber != 2)
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState2);
+            stateMachines.ChangeState(stateMachines.activePlayerStateSeal);
         }
         if (Input.GetButtonDown(charakterThree) && playerNumber != 3)
         {
-            stateMachines.ChangeState(stateMachines.activePlayerState3);
+            stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }
 
     }

@@ -9,79 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1917016305584562}
+  m_RootGameObject: {fileID: 1087217229425938}
   m_IsPrefabParent: 1
---- !u!1 &1623578155409688
+--- !u!1 &1087217229425938
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4934351191650736}
-  m_Layer: 12
-  m_Name: ToungeStart
+  - component: {fileID: 4466748632239704}
+  - component: {fileID: 212018574807089346}
+  - component: {fileID: 61086288487166552}
+  - component: {fileID: 50712428460664554}
+  - component: {fileID: 114540269722994226}
+  - component: {fileID: 95680845542791098}
+  - component: {fileID: 114906808045132356}
+  m_Layer: 10
+  m_Name: Otter
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1917016305584562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4956228676894714}
-  - component: {fileID: 212200907939946320}
-  - component: {fileID: 61456510767243894}
-  - component: {fileID: 50077903185317582}
-  - component: {fileID: 114240866981501126}
-  - component: {fileID: 95074062268254054}
-  - component: {fileID: 114224596387868210}
-  - component: {fileID: 114411800868128848}
-  m_Layer: 12
-  m_Name: Frog
-  m_TagString: Player
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4934351191650736
+--- !u!4 &4466748632239704
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623578155409688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.32, z: 0}
+  m_GameObject: {fileID: 1087217229425938}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.47, y: -2.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4956228676894714}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4956228676894714
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.24, y: -0.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4934351191650736}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50077903185317582
+--- !u!50 &50712428460664554
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
+  m_GameObject: {fileID: 1087217229425938}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -95,41 +65,41 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61456510767243894
+--- !u!61 &61086288487166552
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
+  m_GameObject: {fileID: 1087217229425938}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 675f5fa0af45ce2439f9093dcc125dd1, type: 2}
+  m_Material: {fileID: 6200000, guid: e7bd06419ded52846bc8e64b3890a03d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.02, y: 1.63}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 4.51, y: 2.57}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.02, y: 1.63}
+  m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!95 &95074062268254054
+--- !u!95 &95680845542791098
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
+  m_GameObject: {fileID: 1087217229425938}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 237e6da46e1041c468ef6f6037181f9f, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca54cf4f5d335674a9f04a952c723260, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -137,47 +107,53 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114224596387868210
+--- !u!114 &114540269722994226
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
+  m_GameObject: {fileID: 1087217229425938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74766cb37676a7b49811c15ce84141e0, type: 3}
+  m_Script: {fileID: 11500000, guid: ddd2894767961584d9889d79a0d59899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityButton: Ability1
-  maxExtendedDistance: 5
-  tounge: {fileID: 1598041726788476, guid: eee1842e5e3b03e41a524776830bb8bf, type: 2}
-  toungeEnd: {fileID: 1869311221974478, guid: 7d7ae50840957db44be629d48a102a19, type: 2}
-  toungeStart: {fileID: 4934351191650736}
-  activated: 1
---- !u!114 &114240866981501126
+  abilityOne: 1
+  magnetEnumMomentDerection: 0
+  magneticRigidBodys:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  magneticRigidBodysMagnetToObject:
+  - {fileID: 0}
+  magnetPowerActiv: 0
+  MaxDistancePulled: 5
+  MaxStrengthPulled: 30
+  pulled: 0
+  MaxDistanceThrust: 5
+  MaxStrengthThrust: 30
+  thrust: 0
+  "buttonNameAbility1AvP\xE5": Ability1
+  buttonNameAbility1Togel: S
+  buttonNameAbility2: Ability2
+  ability2Activ: 0
+  minDistanceStopMoving: 0.9
+  maxDistanceToGetPulled: 10
+  maxStrengthToGetPulled: 30
+  okToShangeMagnet: 0
+--- !u!114 &114906808045132356
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05afc1abb62a74f43a429bc72b8f3baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114411800868128848
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
+  m_GameObject: {fileID: 1087217229425938}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 938343166094c5045a860a249ca7bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 1
-  sealJump: 1
+  sealJump: 0
   horizontalMoment: Horizontal
   jumpAxis: wJump
   jumpAnimParam: wJump
@@ -190,12 +166,12 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
---- !u!212 &212200907939946320
+--- !u!212 &212018574807089346
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1917016305584562}
+  m_GameObject: {fileID: 1087217229425938}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -223,8 +199,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e332531df79d30458ab8e14ffa25f9a, type: 3}
+  m_SortingOrder: 777
+  m_Sprite: {fileID: 21300000, guid: 5dcbb3ae85c01104390929010049effc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
