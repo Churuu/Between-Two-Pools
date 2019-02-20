@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 496e52eaf6654694b968828f06620656
-timeCreated: 1550572297
+guid: 2f9c7e977baad784faf029bfe5a364a8
+timeCreated: 1550665123
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: OTTER_RUN_HQ_0
-    21300002: OTTER_RUN_HQ_1
-    21300004: OTTER_RUN_HQ_2
-    21300006: OTTER_RUN_HQ_3
-    21300008: OTTER_RUN_HQ_4
-    21300010: OTTER_RUN_HQ_5
-    21300012: OTTER_RUN_HQ_6
-    21300014: OTTER_RUN_HQ_7
-    21300016: OTTER_RUN_HQ_8
-    21300018: OTTER_RUN_HQ_9
-    21300020: OTTER_RUN_HQ_10
-    21300022: OTTER_RUN_HQ_11
-    21300024: OTTER_RUN_HQ_12
-    21300026: OTTER_RUN_HQ_13
-    21300028: OTTER_RUN_HQ_14
-    21300030: OTTER_RUN_HQ_15
+    21300000: otterIdleextraPixel -Sheet_0
+    21300002: otterIdleextraPixel -Sheet_1
+    21300004: otterIdleextraPixel -Sheet_2
+    21300006: otterIdleextraPixel -Sheet_3
+    21300008: otterIdleextraPixel -Sheet_4
+    21300010: otterIdleextraPixel -Sheet_5
+    21300012: otterIdleextraPixel -Sheet_6
+    21300014: otterIdleextraPixel -Sheet_7
+    21300016: otterIdleextraPixel -Sheet_8
+    21300018: otterIdleextraPixel -Sheet_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -62,7 +56,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -76,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -86,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_0
+      name: otterIdleextraPixel -Sheet_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 505
-        width: 432
-        height: 313
+        x: 1
+        y: 0
+        width: 128
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,13 +104,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_1
+      name: otterIdleextraPixel -Sheet_1
       rect:
         serializedVersion: 2
-        x: 498
-        y: 505
-        width: 416
-        height: 220
+        x: 131
+        y: 0
+        width: 128
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,13 +118,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_2
+      name: otterIdleextraPixel -Sheet_2
       rect:
         serializedVersion: 2
-        x: 950
-        y: 505
-        width: 421
-        height: 238
+        x: 261
+        y: 0
+        width: 128
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,13 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_3
+      name: otterIdleextraPixel -Sheet_3
       rect:
         serializedVersion: 2
-        x: 1371
-        y: 505
-        width: 452
-        height: 241
+        x: 391
+        y: 0
+        width: 128
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,13 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_4
+      name: otterIdleextraPixel -Sheet_4
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 505
-        width: 440
-        height: 238
+        x: 521
+        y: 0
+        width: 128
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,13 +160,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_5
+      name: otterIdleextraPixel -Sheet_5
       rect:
         serializedVersion: 2
-        x: 2287
-        y: 505
-        width: 446
-        height: 288
+        x: 652
+        y: 0
+        width: 127
+        height: 75
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,13 +174,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_6
+      name: otterIdleextraPixel -Sheet_6
       rect:
         serializedVersion: 2
-        x: 2744
-        y: 505
-        width: 432
-        height: 315
+        x: 782
+        y: 0
+        width: 127
+        height: 75
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,13 +188,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_7
+      name: otterIdleextraPixel -Sheet_7
       rect:
         serializedVersion: 2
-        x: 3204
-        y: 505
-        width: 418
-        height: 340
+        x: 912
+        y: 0
+        width: 127
+        height: 75
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,13 +202,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_8
+      name: otterIdleextraPixel -Sheet_8
       rect:
         serializedVersion: 2
-        x: 9
-        y: 48
-        width: 418
-        height: 340
+        x: 1042
+        y: 0
+        width: 127
+        height: 75
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,97 +216,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: OTTER_RUN_HQ_9
+      name: otterIdleextraPixel -Sheet_9
       rect:
         serializedVersion: 2
-        x: 455
-        y: 48
-        width: 432
-        height: 315
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: OTTER_RUN_HQ_10
-      rect:
-        serializedVersion: 2
-        x: 898
-        y: 48
-        width: 446
-        height: 288
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: OTTER_RUN_HQ_11
-      rect:
-        serializedVersion: 2
-        x: 1351
-        y: 48
-        width: 441
-        height: 238
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: OTTER_RUN_HQ_12
-      rect:
-        serializedVersion: 2
-        x: 1807
-        y: 48
-        width: 451
-        height: 241
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: OTTER_RUN_HQ_13
-      rect:
-        serializedVersion: 2
-        x: 2262
-        y: 48
-        width: 418
-        height: 238
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: OTTER_RUN_HQ_14
-      rect:
-        serializedVersion: 2
-        x: 2719
-        y: 48
-        width: 416
-        height: 223
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: OTTER_RUN_HQ_15
-      rect:
-        serializedVersion: 2
-        x: 3190
-        y: 48
-        width: 432
-        height: 313
+        x: 1172
+        y: 0
+        width: 127
+        height: 75
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
