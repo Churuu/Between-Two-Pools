@@ -387,63 +387,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1087217229425938, guid: 89b96e34534eed74ba7599c764551ffa,
     type: 2}
   m_PrefabInternal: {fileID: 1686587647}
---- !u!60 &377799280
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 377799279}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 4.51, y: 2.57}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.15632755, y: 0.1475562}
-      - {x: 0.55831265, y: 0.37088126}
-      - {x: 0.6476427, y: -0.008771342}
-      - {x: 1.6526054, y: -0.008771342}
-      - {x: 1.5409429, y: 0.32621625}
-      - {x: 1.5186105, y: 0.9068614}
-      - {x: 1.719603, y: 1.4205091}
-      - {x: 2.166253, y: 1.4428415}
-      - {x: 2.255583, y: 1.4875066}
-      - {x: 2.255583, y: 1.8448267}
-      - {x: 2.2332506, y: 1.9564892}
-      - {x: 2.255583, y: 2.470137}
-      - {x: 2.121588, y: 2.5817993}
-      - {x: 1.5186105, y: 2.5817993}
-      - {x: 1.2506204, y: 2.514802}
-      - {x: 0.9379653, y: 2.0904841}
-      - {x: 0.46898264, y: 1.5991691}
-      - {x: -0.3573201, y: 1.7331642}
-      - {x: -0.7816377, y: 1.7554966}
-      - {x: -1.0496278, y: 1.6438341}
-      - {x: -1.4962779, y: 1.1301864}
-      - {x: -1.5856079, y: 0.9291939}
-      - {x: -1.987593, y: 0.23688623}
-      - {x: -2.255583, y: 0.1475562}
-      - {x: -2.255583, y: -0.008771342}
-      - {x: -1.4739454, y: -0.008771342}
-      - {x: -1.1836228, y: 0.21455371}
-      - {x: -1.0719603, y: -0.008771342}
-      - {x: 0.06699752, y: -0.008771342}
-    - - {x: 1.0049628, y: 0.41554627}
-      - {x: 0.98263025, y: 0.30388373}
-      - {x: 1.0496278, y: 0.23688623}
-      - {x: 1.0496278, y: 0.25921872}
 --- !u!1 &527953702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,8 +1382,7 @@ Prefab:
       propertyPath: magneticRigidBodys.Array.data[2]
       value: 
       objectReference: {fileID: 879679755}
-    m_RemovedComponents:
-    - {fileID: 61086288487166552, guid: 89b96e34534eed74ba7599c764551ffa, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89b96e34534eed74ba7599c764551ffa, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1759407376
