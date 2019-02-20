@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114540269722994226}
   - component: {fileID: 95680845542791098}
   - component: {fileID: 114906808045132356}
-  - component: {fileID: 60656580231295096}
+  - component: {fileID: 60011817179717744}
   m_Layer: 10
   m_Name: Otter
   m_TagString: Untagged
@@ -65,7 +65,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &60656580231295096
+--- !u!60 &60011817179717744
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -81,47 +81,30 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 4.51, y: 2.57}
-    newSize: {x: 4.51, y: 2.57}
+    oldSize: {x: 3.96875, y: 2.34375}
+    newSize: {x: 4, y: 2.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.15632755, y: 0.1475562}
-      - {x: 0.55831265, y: 0.37088126}
-      - {x: 0.6476427, y: -0.008771342}
-      - {x: 1.6526054, y: -0.008771342}
-      - {x: 1.5409429, y: 0.32621625}
-      - {x: 1.5186105, y: 0.9068614}
-      - {x: 1.719603, y: 1.4205091}
-      - {x: 2.166253, y: 1.4428415}
-      - {x: 2.255583, y: 1.4875066}
-      - {x: 2.255583, y: 1.8448267}
-      - {x: 2.2332506, y: 1.9564892}
-      - {x: 2.255583, y: 2.470137}
-      - {x: 2.121588, y: 2.5817993}
-      - {x: 1.5186105, y: 2.5817993}
-      - {x: 1.2506204, y: 2.514802}
-      - {x: 0.9379653, y: 2.0904841}
-      - {x: 0.46898264, y: 1.5991691}
-      - {x: -0.3573201, y: 1.7331642}
-      - {x: -0.7816377, y: 1.7554966}
-      - {x: -1.0496278, y: 1.6438341}
-      - {x: -1.4962779, y: 1.1301864}
-      - {x: -1.5856079, y: 0.9291939}
-      - {x: -1.987593, y: 0.23688623}
-      - {x: -2.255583, y: 0.1475562}
-      - {x: -2.255583, y: -0.008771342}
-      - {x: -1.4739454, y: -0.008771342}
-      - {x: -1.1836228, y: 0.21455371}
-      - {x: -1.0719603, y: -0.008771342}
-      - {x: 0.06699752, y: -0.008771342}
-    - - {x: 1.0049628, y: 0.41554627}
-      - {x: 0.98263025, y: 0.30388373}
-      - {x: 1.0496278, y: 0.23688623}
-      - {x: 1.0496278, y: 0.25921872}
+    - - {x: 1.984375, y: 0.09375}
+      - {x: 1.578125, y: 0.375}
+      - {x: 1.328125, y: 1.0625}
+      - {x: 0.984375, y: 1.59375}
+      - {x: 0.421875, y: 1.6875}
+      - {x: -0.421875, y: 1.46875}
+      - {x: -0.859375, y: 2.125}
+      - {x: -1.140625, y: 2.34375}
+      - {x: -1.984375, y: 2.34375}
+      - {x: -1.984375, y: 1.28125}
+      - {x: -1.484375, y: 1.03125}
+      - {x: -1.421875, y: 0}
+      - {x: -0.484375, y: 0}
+      - {x: -0.265625, y: 0.25}
+      - {x: -0.078125, y: 0}
+      - {x: 1.984375, y: 0}
 --- !u!95 &95680845542791098
 Animator:
   serializedVersion: 3
@@ -198,6 +181,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
+  activePlayer: 0
 --- !u!212 &212018574807089346
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -232,12 +216,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 777
-  m_Sprite: {fileID: 21300000, guid: 5dcbb3ae85c01104390929010049effc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fa33efc2b421d742837b29b710b96c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.51, y: 2.57}
+  m_Size: {x: 4, y: 2.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
