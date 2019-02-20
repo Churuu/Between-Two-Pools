@@ -257,6 +257,7 @@ public class Motion
     {
         get
         {
+            Debug.Log("test " + InTargetRegionImp);
             return Valid ? InTargetRegionImp : true;
         }
     }

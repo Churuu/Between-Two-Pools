@@ -8,7 +8,7 @@ public class Reciever : MonoBehaviour
 
     public enum DoorType
     {
-        flip = 0, move, moveTimer
+        flip = 0, move, moveTimer, 
     }
     [SerializeField]
     DoorType doorType;
@@ -47,6 +47,8 @@ public class Reciever : MonoBehaviour
 
     float timerFloat = 0;
 
+    private float time;
+
     // Use this for initialization
     void Start ()
     {
@@ -59,7 +61,13 @@ public class Reciever : MonoBehaviour
 	void Update ()
     {
         if (moveBool)
+        {
+            //timer += Time.deltaTime;
             ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
+        }
+        //else
+        //    timer = 0;
+            
 	}
 
     public void ToggleObject()
@@ -73,13 +81,14 @@ public class Reciever : MonoBehaviour
             {
                 gameObjectToggle = !gameObjectToggle;
                 ToggleObjectComponents();
-                GetComponent<ObjectAudioClip>().PlaySingle(0);
+                GetComponent<ObjectAudioClip>().PlayRandom();
             }
 
             else if (doorType == DoorType.move)
             {
-                GetComponent<ObjectAudioClip>().PlaySingle(0);
+                
                 gameObjectToggle = !gameObjectToggle;
+                GetComponent<ObjectAudioClip>().PlayRandom();
             }
 
             else if (doorType == DoorType.moveTimer)
@@ -116,7 +125,7 @@ public class Reciever : MonoBehaviour
 
         Motion motion = new Motion(start, target, speed, acceleration, time, tolerance);
         motion.Source = transform.position;
-
+        print("test0");
         if (flip)
         {
             motion.Target = target;
@@ -129,9 +138,10 @@ public class Reciever : MonoBehaviour
         }
         if (doorType != DoorType.flip)
         {
+            print(motion.InTargetRegion);
             transform.Translate(motion.SourceToTarget * motion.Velocity * Time.deltaTime);
+            print("test1");
         }
-        
 
         if (timerToggle && motion.InTargetRegion)
         {
@@ -143,7 +153,7 @@ public class Reciever : MonoBehaviour
             else if (timerFloat >= timer)
             {
                 gameObjectToggle = !gameObjectToggle;
-                GetComponent<ObjectAudioClip>().PlaySingle(0);
+                GetComponent<ObjectAudioClip>().PlayRandom();
                 //timerToggle = false;
                 timerFloat = 0;
             }

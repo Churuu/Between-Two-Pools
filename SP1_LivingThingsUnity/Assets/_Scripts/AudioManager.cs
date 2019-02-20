@@ -8,6 +8,11 @@ public class AudioManager : MonoBehaviour
     private AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
     public static AudioManager instance = null;     //Allows other scripts to call functions from SoundManager.             
 
+    [SerializeField]
+    private List<AudioClip> musicClips = new List<AudioClip>();
+
+    [SerializeField]
+    private List<AudioClip> ambienceClips = new List<AudioClip>();
     void Awake()
     {
         //Check if there is already an instance of SoundManager
