@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2D;
     Collider2D coll2D;
     Animator anim;
-
+    [SerializeField] bool activePlayer = false;
 
 
     void Start()
@@ -39,16 +39,22 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
-        VerticalMovmenent();
-        JumpMovment();
+
+        if (activePlayer)
+        {
+            horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
+            VerticalMovmenent();
+            JumpMovment();
+        }
+
         AnimatePlayer();
     }
 
 
     private void FixedUpdate()
     {
-        HorizontalMovmenent();
+        if (activePlayer)
+            HorizontalMovmenent();
     }
 
     public bool Grounded()
@@ -100,7 +106,7 @@ public class PlayerController : MonoBehaviour
     private void HorizontalMovmenent()
     {
         Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
-        if(movement.x > 0) anim.SetBool("FaceingRight", true);
+        if (movement.x > 0) anim.SetBool("FaceingRight", true);
         else if (movement.x < 0) anim.SetBool("FaceingRight", false);
         rb2D.velocity = movement;
     }
@@ -110,7 +116,7 @@ public class PlayerController : MonoBehaviour
     {
         if (rb2D.velocity.x > 0)
             return Vector2.right;
-            
+
         else if (rb2D.velocity.x < 0)
             return Vector2.left;
 
@@ -133,6 +139,16 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawRay(transform.position, Vector3.down * gizmoRange);
+    }
+
+    public void SetPlayerState(bool state)
+    {
+        activePlayer = state;
+    }
+
+    public bool GetPlayerState()
+    {
+        return activePlayer;
     }
 
 
