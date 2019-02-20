@@ -86,7 +86,6 @@ public class PlayerController : MonoBehaviour
         if (Grounded())
         {
             sealJump = false;
-            print("grounded");
         }
 
     }
