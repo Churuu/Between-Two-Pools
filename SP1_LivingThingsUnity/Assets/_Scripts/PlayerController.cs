@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
 
     [SerializeField] bool canJump = true;
+    [SerializeField] bool sealJump = false;
     [Space]
     [SerializeField] string horizontalMoment = "Horizontal";
     [SerializeField] string jumpAxis = "wJump";
@@ -19,13 +20,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float fallMultiplier = 2.5f;
     [SerializeField] float lowJumpMultiplier = 2f;
     [SerializeField] float gizmoRange = 1f;
+    [SerializeField] LayerMask ground;
 
     float horizontalInput;
     Vector3 side;
     Rigidbody2D rb2D;
     Collider2D coll2D;
     Animator anim;
-
+    [SerializeField] bool activePlayer = false;
 
 
     void Start()
@@ -37,24 +39,30 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
-        VerticalMovmenent();
-        JumpMovment();
+
+        if (activePlayer)
+        {
+            horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
+            VerticalMovmenent();
+            JumpMovment();
+        }
+
         AnimatePlayer();
     }
 
 
     private void FixedUpdate()
     {
-        HorizontalMovmenent();
+        if (activePlayer)
+            HorizontalMovmenent();
     }
 
     public bool Grounded()
     {
 
-        RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, gizmoRange);
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, gizmoRange);
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, gizmoRange);
+        RaycastHit2D hitMid = Physics2D.Raycast(transform.position, Vector2.down, gizmoRange, ground);
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position - side, Vector2.down, gizmoRange, ground);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, gizmoRange, ground);
 
         if ((hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null) && canJump)
             return true;
@@ -70,10 +78,16 @@ public class PlayerController : MonoBehaviour
         {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        else if (rb2D.velocity.y > 0 && !Input.GetButton(jumpAxis))
+        else if (rb2D.velocity.y > 0 && !Input.GetButton(jumpAxis) && !sealJump)
         {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+
+        if (Grounded())
+        {
+            sealJump = false;
+        }
+
     }
 
     //AddForce För att hoppa
@@ -91,7 +105,7 @@ public class PlayerController : MonoBehaviour
     private void HorizontalMovmenent()
     {
         Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
-        if(movement.x > 0) anim.SetBool("FaceingRight", true);
+        if (movement.x > 0) anim.SetBool("FaceingRight", true);
         else if (movement.x < 0) anim.SetBool("FaceingRight", false);
         rb2D.velocity = movement;
     }
@@ -101,7 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         if (rb2D.velocity.x > 0)
             return Vector2.right;
-            
+
         else if (rb2D.velocity.x < 0)
             return Vector2.left;
 
@@ -115,10 +129,25 @@ public class PlayerController : MonoBehaviour
             anim.SetBool(jumpAnimParam, !Grounded());
     }
 
+    public void SealJump()
+    {
+        sealJump = true;
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawRay(transform.position, Vector3.down * gizmoRange);
+    }
+
+    public void SetPlayerState(bool state)
+    {
+        activePlayer = state;
+    }
+
+    public bool GetPlayerState()
+    {
+        return activePlayer;
     }
 
 

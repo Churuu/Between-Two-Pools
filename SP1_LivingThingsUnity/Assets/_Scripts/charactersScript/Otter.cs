@@ -26,15 +26,18 @@ public class Otter : MonoBehaviour
     [SerializeField] float maxStrengthToGetPulled = 30f;
     int numer = 0;
     public bool okToShangeMagnet = false;
+    Animator anim;
     private void Start()
     {
-
+        anim = GetComponent<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
+       
     }
 
 
     void Update()
     {
+       
         if (!magnetPowerActiv)
         {
             if (rb2D.velocity.x < 0)
@@ -83,14 +86,21 @@ public class Otter : MonoBehaviour
         {
             if (abilityOne == Ability.Pull)
             {
+                Debug.Log("pull");
+                anim.SetBool("PullActive", true);
                 Update_MagnetismPulled();
             }
             else if (abilityOne == Ability.Thrust)
             {
+                anim.SetBool("PullActive", false);
                 Update_MagnetismThrust();
             }
-        }
 
+        }
+        else
+        {
+            anim.SetBool("PullActive", false);
+        }
 
 
         //  Update_CupDirection();

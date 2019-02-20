@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActivePlayerSealState : ActivePlayerStateBase {
 
-    public GameObject spring;
+    public GameObject seal;
     public int playerNumber;
 
     [SerializeField] private string charakterOne = "1";
@@ -12,7 +12,7 @@ public class ActivePlayerSealState : ActivePlayerStateBase {
     [SerializeField] private string charakterThree = "3";
     public ActivePlayerSealState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
     {
-        spring = gameObjectPlayer;
+        seal = gameObjectPlayer;
         if (stateMachines == null)
         {
             stateMachines = stateMachine;
@@ -31,19 +31,15 @@ public class ActivePlayerSealState : ActivePlayerStateBase {
     public override void Enter()
     {
 
-        stateMachines.transform.position = spring.transform.position;
-        stateMachines.transform.parent = spring.transform;
-        spring.GetComponent<PlayerController>().enabled = true;
-        
+        stateMachines.transform.position = seal.transform.position;
+        stateMachines.transform.parent = seal.transform;
+        seal.GetComponent<PlayerController>().SetPlayerState(true);
     }
     public override void Exit()
     {
-
+        seal.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         stateMachines.transform.parent = null;
-        spring.GetComponent<PlayerController>().enabled = false;
-
-
-
+        seal.GetComponent<PlayerController>().SetPlayerState(false);
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {

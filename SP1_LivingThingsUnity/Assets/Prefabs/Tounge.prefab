@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212549551605743292}
   - component: {fileID: 251754724148854214}
   - component: {fileID: 61910189390664818}
-  m_Layer: 0
-  m_Name: Bridge
+  m_Layer: 11
+  m_Name: Tounge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1598041726788476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2795444, y: -2.054, z: 0}
+  m_LocalPosition: {x: 12.029571, y: -2.108179, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 744ee65dc3e162c4a8fd3c0b4203f56e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

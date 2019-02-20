@@ -8,14 +8,18 @@ public class Frog : MonoBehaviour
     public string abilityButton;
     public float maxExtendedDistance;
     public GameObject tounge;
+    public GameObject toungeEnd;
+    public Transform toungeStart;
+    public bool activated = false;
+    public GameObject rock;
 
     private bool extended;
-    private bool activated = true;
     private float extendToungeTimer = 5f;
     private float HeldInButtonTimer = 0.3f;
     private PlayerController playerController;
     private GameObject toungeTemp;
     private Vector2 direction;
+    private float rockCount = 1f;
 
 
     void Start()
@@ -36,17 +40,16 @@ public class Frog : MonoBehaviour
     void ExtendTounge()
     {
 
-        Vector2 playerPos = transform.position;
+        Vector2 playerPos = toungeStart.position;
         RaycastHit2D hit = Physics2D.Raycast(playerPos, direction, maxExtendedDistance);
+
+        print(playerController.Grounded());
 
         if (hit.collider != null && playerController.Grounded())
         {
-            Vector2 hitPoint;
 
-            if (direction == Vector2.left)
-                hitPoint = new Vector2(hit.point.x - 0.5f, hit.point.y);
-            else
-                hitPoint = new Vector2(hit.point.x + 0.5f, hit.point.y);
+            Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);
+
 
             Vector2 middlePoint = (playerPos + hitPoint) / 2;
 
@@ -60,19 +63,27 @@ public class Frog : MonoBehaviour
             toungeTempCol.size = size;
             toungeTempSprite.size = size;
 
+            Vector2 spawnPosition = new Vector2(toungeTemp.transform.position.x + 0.075f + ((toungeTempCol.size.x / 2) * direction.x), toungeTemp.transform.position.y);
+            GameObject toungeTempEnd = Instantiate(toungeEnd, spawnPosition, Quaternion.Inverse(transform.rotation), toungeTemp.transform) as GameObject;
+            toungeTempEnd.transform.localScale = new Vector3(toungeTempEnd.transform.localScale.x * direction.x, toungeTempEnd.transform.localScale.y, toungeTempEnd.transform.localScale.z);
+
+            if (direction == Vector2.left)
+                toungeTempEnd.transform.position = new Vector2(toungeTempEnd.transform.position.x - .15f, toungeTempEnd.transform.position.y);
+
             extended = true;
         }
-
-
-
     }
 
     void DisableMovementWhenExtended()
     {
         if (extended)
+        {
             playerController.enabled = false;
-        else
+        }
+        else if(!extended && playerController.GetPlayerState())
+        {
             playerController.enabled = true;
+        }
     }
 
 
@@ -86,7 +97,10 @@ public class Frog : MonoBehaviour
     {
         if (Input.GetButton(abilityButton))
         {
-            //Destroy walls with rocks
+            HeldInButtonTimer -= Time.deltaTime;
+
+            if (HeldInButtonTimer < 0 && rockCount == 1)
+                ShootRocks();
         }
         else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
         {
@@ -103,6 +117,24 @@ public class Frog : MonoBehaviour
         else
         {
             HeldInButtonTimer = 0.2f;
+        }
+    }
+
+    void ShootRocks()
+    {
+        //spawn rocks
+        GameObject rockTemp = Instantiate(rock, toungeStart.position, transform.rotation) as GameObject;
+        rockTemp.GetComponent<Rigidbody2D>().AddForce(direction * 500);
+        rockCount--;
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        GameObject col = other.gameObject;
+        if (col.CompareTag("Rock") && rockCount < 1)
+        {
+            rockCount++;
+            Destroy(col);
         }
 
     }
