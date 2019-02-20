@@ -31,6 +31,7 @@ public class Seal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if(col.gameObject.layer == 10 || col.gameObject.layer == 12)
         BoostLandingObject(col.gameObject);
     }
 
