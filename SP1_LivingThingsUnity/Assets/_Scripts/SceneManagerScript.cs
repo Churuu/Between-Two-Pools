@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Joakim
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour {
