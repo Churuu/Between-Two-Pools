@@ -13,31 +13,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: FaceingRight
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ShootRock
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ShootTounge
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jumped
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1210,16 +1210,16 @@ AnimatorStateMachine:
     m_Position: {x: 48, y: 336, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102940199316536212}
-    m_Position: {x: 360, y: 516, z: 0}
+    m_Position: {x: 432, y: 516, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102347118141406704}
-    m_Position: {x: 636, y: 516, z: 0}
+    m_Position: {x: 684, y: 516, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102217809702257956}
-    m_Position: {x: 12, y: 504, z: 0}
+    m_Position: {x: -48, y: 492, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102245083302584604}
-    m_Position: {x: 192, y: 564, z: 0}
+    m_Position: {x: 204, y: 492, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
