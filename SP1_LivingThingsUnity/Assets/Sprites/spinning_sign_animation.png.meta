@@ -1,0 +1,497 @@
+fileFormatVersion: 2
+guid: 0355b508b7afc5b419a0bf2562a3367f
+timeCreated: 1550751053
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spinning_sign_animation_0
+    21300002: spinning_sign_animation_1
+    21300004: spinning_sign_animation_2
+    21300006: spinning_sign_animation_3
+    21300008: spinning_sign_animation_4
+    21300010: spinning_sign_animation_5
+    21300012: spinning_sign_animation_6
+    21300014: spinning_sign_animation_7
+    21300016: spinning_sign_animation_8
+    21300018: spinning_sign_animation_9
+    21300020: spinning_sign_animation_10
+    21300022: spinning_sign_animation_11
+    21300024: spinning_sign_animation_12
+    21300026: spinning_sign_animation_13
+    21300028: spinning_sign_animation_14
+    21300030: spinning_sign_animation_15
+    21300032: spinning_sign_animation_16
+    21300034: spinning_sign_animation_17
+    21300036: spinning_sign_animation_18
+    21300038: spinning_sign_animation_19
+    21300040: spinning_sign_animation_20
+    21300042: spinning_sign_animation_21
+    21300044: spinning_sign_animation_22
+    21300046: spinning_sign_animation_23
+    21300048: spinning_sign_animation_24
+    21300050: spinning_sign_animation_25
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spinning_sign_animation_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 223
+        width: 106
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 223
+        width: 99
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 223
+        width: 92
+        height: 209
+      alignment: 9
+      pivot: {x: 0.479528, y: 0.49899876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_3
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 223
+        width: 87
+        height: 209
+      alignment: 9
+      pivot: {x: 0.44988978, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_4
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 223
+        width: 87
+        height: 209
+      alignment: 9
+      pivot: {x: 0.45759916, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_5
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 223
+        width: 87
+        height: 209
+      alignment: 9
+      pivot: {x: 0.4575988, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_6
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 223
+        width: 87
+        height: 209
+      alignment: 9
+      pivot: {x: 0.45374447, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_7
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 223
+        width: 87
+        height: 209
+      alignment: 9
+      pivot: {x: 0.45759952, y: 0.50160456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_8
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 223
+        width: 87
+        height: 209
+      alignment: 9
+      pivot: {x: 0.45759952, y: 0.50160456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_9
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 223
+        width: 87
+        height: 209
+      alignment: 9
+      pivot: {x: 0.45759952, y: 0.50160456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_10
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 223
+        width: 93
+        height: 209
+      alignment: 9
+      pivot: {x: 0.4891817, y: 0.49679098}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_11
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 223
+        width: 99
+        height: 209
+      alignment: 9
+      pivot: {x: 0.51693696, y: 0.49358183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_12
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 223
+        width: 102
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_13
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 6
+        width: 106
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_14
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 6
+        width: 100
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_15
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 6
+        width: 92
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_16
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 6
+        width: 87
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_17
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 6
+        width: 87
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_18
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 6
+        width: 87
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_19
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 6
+        width: 87
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_20
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 6
+        width: 87
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_21
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 6
+        width: 87
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_22
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 6
+        width: 87
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_23
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 6
+        width: 94
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_24
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 6
+        width: 99
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_sign_animation_25
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 6
+        width: 102
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
