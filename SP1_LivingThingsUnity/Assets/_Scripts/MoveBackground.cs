@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class MoveBackground : MonoBehaviour {
 
-    public Transform Cam;
+    public Camera Cam;
     Vector2 lastCamPos;
+    Vector2 BackgroundStartPos;
     Vector2 Diff = new Vector2(0, 0);
     public float speed;
     Vector2 Move;
@@ -16,17 +17,19 @@ public class MoveBackground : MonoBehaviour {
     void Start()
     {
 
-        lastCamPos = Cam.position;
+        lastCamPos = Cam.transform.position;
+        BackgroundStartPos = transform.position;
+
     }
 
 
     void Update()
     {
-        Diff.x = Cam.position.x;
-        Debug.Log(Diff.x);
-		Diff.y = Cam.position.y;
+        Diff.x = (Cam.transform.position.x + BackgroundStartPos.x) / speed;
+        Debug.Log(transform.position);
+		Diff.y = (Cam.transform.position.y + BackgroundStartPos.y) / speed;
         Move = new Vector2(Diff.x, Diff.y);
         transform.position = new Vector3(Move.x, Move.y, 0);
-        lastCamPos = Cam.position;
+        lastCamPos = Cam.transform.position;
     }
 }
