@@ -25,9 +25,9 @@ public class MoveBackground : MonoBehaviour {
 
     void Update()
     {
-        Diff.x = (Cam.transform.position.x + BackgroundStartPos.x) / speed;
+        Diff.x = (Cam.transform.position.x - BackgroundStartPos.x) * speed;
         Debug.Log(transform.position);
-		Diff.y = (Cam.transform.position.y + BackgroundStartPos.y) / speed;
+		Diff.y = (Cam.transform.position.y - BackgroundStartPos.y) * speed;
         Move = new Vector2(Diff.x, Diff.y);
         transform.position = new Vector3(Move.x, Move.y, 0);
         lastCamPos = Cam.transform.position;
