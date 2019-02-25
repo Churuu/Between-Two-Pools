@@ -23,7 +23,9 @@ public class Otter : MonoBehaviour
     [SerializeField] private bool ability2Activ = false;
     [SerializeField] private float minDistanceStopMoving = 0.9f;
     [SerializeField] private float maxDistanceToGetPulled = 10f;
-    [SerializeField] float maxStrengthToGetPulled = 30f;
+    [SerializeField] float maxStrengthToGetPulled = 50f;
+    [SerializeField] private float maxDistanceToGetThrust = 10f;
+    [SerializeField] float maxStrengthToGetThrust = 20f;
     int numer = 0;
     public bool okToShangeMagnet = false;
     Animator anim;
@@ -80,7 +82,14 @@ public class Otter : MonoBehaviour
         }
         if (ability2Activ)
         {
-            MagnetGetPulled();
+            if (abilityOne == Ability.Pull)
+            {
+                MagnetGetPulled();
+            }
+            else if(abilityOne == Ability.Thrust)
+            {
+                MagnetGetThrust();
+            }
         }
         if (magnetPowerActiv)
         {
@@ -161,6 +170,37 @@ public class Otter : MonoBehaviour
         }
     }
 
+    void MagnetGetThrust()
+    {
+        for (int i = 0; i < magneticRigidBodysMagnetToObject.Length; i++)
+        {
+            if (magneticRigidBodysMagnetToObject[i] != null && magneticRigidBodysMagnetToObject[i].gameObject.active)
+            {
+                float Distance = Vector3.Distance(magneticRigidBodysMagnetToObject[i].transform.position, this.transform.position);
+
+                if (Distance < maxDistanceToGetThrust) // Marble is in range of the magnet
+                {
+                    float TDistance = Mathf.InverseLerp(maxDistanceToGetThrust, 0f, Distance); // Give a decimal representing how far between 0 distance and max distance.
+                    float strength = Mathf.Lerp(0f, maxStrengthToGetThrust, TDistance); // Use that decimal to work out how much strength the magnet should apple
+                    Vector3 DirectionToCup = (this.transform.position - magneticRigidBodysMagnetToObject[i].transform.position).normalized; // Get the direction from the marble to the cup
+                    //if (Distance < minDistanceStopMoving)
+                    //{
+                    //    rb2D.velocity = new Vector2(0, 0);
+                    //    // magneticRigidBodys[i].velocity = new Vector2(0, magneticRigidBodys[i].velocity.y);
+                    //}
+                    //else
+                    //{
+                        rb2D.AddForce(DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                    //}
+
+
+                }
+            }
+        }
+    }
+
+
+
     void MagnetismPulled(int i)
     {
         float Distance = Vector3.Distance(magneticRigidBodys[i].transform.position, this.transform.position);
@@ -183,6 +223,8 @@ public class Otter : MonoBehaviour
 
         }
     }
+
+
 
     void Update_MagnetismThrust()
     {
