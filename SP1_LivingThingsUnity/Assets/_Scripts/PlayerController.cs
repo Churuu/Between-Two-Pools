@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
             HorizontalMovmenent();
     }
 
+    private void LateUpdate()
+    {
+        anim.SetBool("Jump", false);
+    }
+
     public bool Grounded()
     {
 
@@ -96,8 +101,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown(jumpAxis))
         {
             if (Grounded())
-            {
+            { 
                 rb2D.AddForce(Vector2.up * jumpAddForce);
+                anim.SetBool("Jump", true);
+                
             }
         }
     }

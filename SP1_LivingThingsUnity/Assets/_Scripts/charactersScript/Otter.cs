@@ -8,6 +8,7 @@ public class Otter : MonoBehaviour
     [SerializeField] private Ability abilityOne = Ability.Thrust;
     public MomentDerection magnetEnumMomentDerection = MomentDerection.Right;
     private Rigidbody2D rb2D;
+    private PlayerController playerController;
     [SerializeField] Rigidbody2D[] magneticRigidBodys;
     [SerializeField] Rigidbody2D[] magneticRigidBodysMagnetToObject;
     public bool magnetPowerActiv = false;
@@ -33,13 +34,33 @@ public class Otter : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
+        if (transform.GetComponent<PlayerController>() != null)
+        {
+            playerController = transform.GetComponent<PlayerController>();
+        }
        
     }
 
 
     void Update()
     {
-       
+        if (!playerController.Grounded())
+        {
+            anim.SetBool("Floating", true);
+        }
+        else { anim.SetBool("Floating", false); }
+        if (abilityOne == Ability.Pull)
+        {
+            Debug.Log("pull");
+            anim.SetBool("PullActive", true);
+            anim.SetBool("PushActive", false);    
+        }
+        else if (abilityOne == Ability.Thrust)
+        {
+            anim.SetBool("PullActive", false);
+            anim.SetBool("PushActive", true);
+        }
+
         if (!magnetPowerActiv)
         {
             if (rb2D.velocity.x < 0)
@@ -63,6 +84,7 @@ public class Otter : MonoBehaviour
             if (Input.GetButtonDown(buttonNameAbility1AvPå))//TODO
             {
                 magnetPowerActiv = !magnetPowerActiv;
+                anim.SetBool("PushedQ", magnetPowerActiv);
 
 
             }
@@ -97,11 +119,13 @@ public class Otter : MonoBehaviour
             {
                 Debug.Log("pull");
                 anim.SetBool("PullActive", true);
+                anim.SetBool("PushActive", false);
                 Update_MagnetismPulled();
             }
             else if (abilityOne == Ability.Thrust)
             {
                 anim.SetBool("PullActive", false);
+                anim.SetBool("PushActive", true);
                 Update_MagnetismThrust();
             }
 
