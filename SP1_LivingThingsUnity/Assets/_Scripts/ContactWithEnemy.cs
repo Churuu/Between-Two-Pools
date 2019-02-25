@@ -22,6 +22,9 @@ public class ContactWithEnemy : MonoBehaviour {
             if(GetComponent<Otter>() != null)
                 GetComponent<Otter>().enabled = false;
 
+            if(GetComponentInChildren<Seal>() != null)
+                GetComponentInChildren<Seal>().enabled = false;
+
             GetComponent<PlayerController>().enabled = false;
             anim.SetBool(deadAnimParam, true);
 
