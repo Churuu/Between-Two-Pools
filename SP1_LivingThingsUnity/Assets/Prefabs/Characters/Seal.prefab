@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114254835712255012}
   - component: {fileID: 60336653016447630}
   - component: {fileID: 114007620876071762}
+  - component: {fileID: 114204197687516788}
   m_Layer: 10
   m_Name: Seal
   m_TagString: Untagged
@@ -185,6 +186,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crushDistance: 1
   crushingColliders: []
+--- !u!114 &114204197687516788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406340737061300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30004734c521abb47a4d550fe120e590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTag: Enemy
+  deadAnimParam: Dead
 --- !u!114 &114254835712255012
 MonoBehaviour:
   m_ObjectHideFlags: 1

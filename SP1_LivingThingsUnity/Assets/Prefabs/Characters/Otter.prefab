@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 60011817179717744}
   - component: {fileID: 114465576892442958}
   - component: {fileID: 114642438435981828}
+  - component: {fileID: 114746241198943806}
   m_Layer: 10
   m_Name: Otter
   m_TagString: Untagged
@@ -183,6 +184,19 @@ MonoBehaviour:
   crushingColliders:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114746241198943806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087217229425938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30004734c521abb47a4d550fe120e590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTag: Enemy
+  deadAnimParam: Dead
 --- !u!114 &114906808045132356
 MonoBehaviour:
   m_ObjectHideFlags: 1
