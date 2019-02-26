@@ -14,16 +14,15 @@ public class DoorBlocks : MonoBehaviour
         foreach (var block in blocks)
         {
             var _block = block.GetComponent<Block>();
-            Vector2 blockPos = block.transform.position;
+            Vector2 blockPos = _block.startPosition;
             _block.SetTarget(blockPos + dir);
-            print(block.transform.position + Vector3.down);
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         var obj = col.gameObject;
-        if (obj.CompareTag("Otter"))
+        if (obj.CompareTag("Otter") || obj.CompareTag("Frog") || obj.CompareTag("Seal"))
         {
             if (gameObject.CompareTag("ButtonBlockUp"))
                 SwitchBlockPosition(new Vector2(0, blockMargin));
@@ -35,12 +34,12 @@ public class DoorBlocks : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
         var obj = col.gameObject;
-        if (obj.CompareTag("Otter"))
+        if (obj.CompareTag("Otter") || obj.CompareTag("Frog") || obj.CompareTag("Seal"))
         {
             if (gameObject.CompareTag("ButtonBlockUp"))
-                SwitchBlockPosition(new Vector2(0, -blockMargin));
+                SwitchBlockPosition(Vector2.zero);
             else
-                SwitchBlockPosition(new Vector2(0, blockMargin));
+                SwitchBlockPosition(Vector2.zero);
         }
     }
 
