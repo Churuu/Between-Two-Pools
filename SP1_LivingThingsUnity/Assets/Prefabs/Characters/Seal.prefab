@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4997813968742234}
   - component: {fileID: 61252769183173424}
   - component: {fileID: 114827953475127760}
+  - component: {fileID: 114866164697948936}
   m_Layer: 2
   m_Name: SealJumpCol
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406340737061300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.820404, y: 1.567094, z: -0.05078125}
+  m_LocalPosition: {x: 50.84, y: -2.98, z: -0.05078125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4997813968742234}
@@ -143,7 +144,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.043857574, y: -0.5262792}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -154,7 +155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.70590544, y: 0.38966942}
+  m_Size: {x: 1.2207718, y: 1.1288819}
   m_EdgeRadius: 0
 --- !u!95 &95866421896643362
 Animator:
@@ -228,7 +229,7 @@ MonoBehaviour:
   jumpAnimParam: 
   walkAnimParam: SpeedX
   speedVelocityHorizontal: 400
-  jumpAddForce: 500
+  jumpAddForce: 700
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   gizmoRange: 1
@@ -247,10 +248,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576f53991cd2efe43a13b7751640df17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springBoostMultiplier: 600
+  springBoostMultiplier: 800
   springBoostFallout: 25
-  BoostResetTimerDelta: 5
+  BoostResetTimerDelta: 0
   bounceAnimParam: Bounce
+--- !u!114 &114866164697948936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337532341299466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05afc1abb62a74f43a429bc72b8f3baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212762455887597468
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -12,15 +12,7 @@ public class OtterKilld : MonoBehaviour
         EventManager.instance.onKilld += OnKilld;
 
     }
-    private void Update()
-    {
-        if (Time.timeSinceLevelLoad > 5)
-        {
-            if (EventManager.instance.onKilld != null)
-                EventManager.instance.onKilld(gameObject);
-        }
-
-    }
+    
 
 
 
