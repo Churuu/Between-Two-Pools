@@ -81,6 +81,7 @@ public class Reciever : MonoBehaviour
             {
                 gameObjectToggle = !gameObjectToggle;
                 ToggleObjectComponents();
+                moveBool = true;
                 GetComponent<ObjectAudioClip>().PlayRandom();
             }
 
@@ -88,14 +89,15 @@ public class Reciever : MonoBehaviour
             {
                 
                 gameObjectToggle = !gameObjectToggle;
+                moveBool = true;
                 GetComponent<ObjectAudioClip>().PlayRandom();
             }
 
             else if (doorType == DoorType.moveTimer)
             {
-                print("test2");
+                //print("test2");
                 timerToggle = !timerToggle;
-                
+                moveBool = true;
             }
         }
         else
@@ -125,7 +127,7 @@ public class Reciever : MonoBehaviour
 
         Motion motion = new Motion(start, target, speed, acceleration, time, tolerance);
         motion.Source = transform.position;
-        print("test0");
+        //print("test0");
         if (flip)
         {
             motion.Target = target;
@@ -138,9 +140,9 @@ public class Reciever : MonoBehaviour
         }
         if (doorType != DoorType.flip)
         {
-            print(motion.InTargetRegion);
+            //print(motion.InTargetRegion);
             transform.Translate(motion.SourceToTarget * motion.Velocity * Time.deltaTime);
-            print("test1");
+            //print("test1");
         }
 
         if (timerToggle && motion.InTargetRegion)

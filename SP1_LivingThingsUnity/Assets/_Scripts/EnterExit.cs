@@ -57,8 +57,10 @@ public class EnterExit : MonoBehaviour
 
             else if (go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.sealSwitch)
             {
+                print("test1");
                 if (gameObject.GetComponent<Seal>() != null)
                 {
+                    print("test2");
                     go.GetComponent<Sender>().ActivatePlate();
                 }
             }
