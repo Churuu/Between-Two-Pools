@@ -36,15 +36,13 @@ public class CrushedPlayer : MonoBehaviour {
                         if (hitDown.collider == crushingColliders[i] && hitUp.collider == crushingColliders[j])
                         {
                             Debug.Log("Player crushed");
-                            //Eventmanager.instance.onkilled(this.gameObject);
+                            //EventManager.instance.onkilled(this.gameObject);
                             return true;
                         }
                            
                     }  
                 }
-
         return false;
-
     }
 
     void OnDrawGizmos()
