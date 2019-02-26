@@ -16,7 +16,7 @@ public class CrushedPlayer : MonoBehaviour {
         Crushed(); 
 	}
 
-    public bool Crushed()
+    public void Crushed()
     {
 
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, crushDistance);
@@ -31,13 +31,14 @@ public class CrushedPlayer : MonoBehaviour {
                         if (hitDown.collider == crushingColliders[i] && hitUp.collider == crushingColliders[j])
                         {
                             Debug.Log("Player crushed");
-                            EventManager.instance.onKilld(this.gameObject);
-                            return true;
+                            if(EventManager.instance.onKilld != null)
+                            {
+                                EventManager.instance.onKilld(this.gameObject);
+                            }
                         }
                            
                     }  
                 }
-        return false;
     }
 
     void OnDrawGizmos()

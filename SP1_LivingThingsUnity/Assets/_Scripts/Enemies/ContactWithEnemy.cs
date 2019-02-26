@@ -16,8 +16,12 @@ public class ContactWithEnemy : MonoBehaviour {
     {
         if (collision.collider.CompareTag(enemyTag))
         {
-            EventManager.instance.onKilld(this.gameObject);
-            anim.SetBool(deadAnimParam, true);
+            if (EventManager.instance.onKilld != null)
+            {
+                EventManager.instance.onKilld(this.gameObject);
+                anim.SetBool(deadAnimParam, true);
+            }
+           
         }
     }
 
