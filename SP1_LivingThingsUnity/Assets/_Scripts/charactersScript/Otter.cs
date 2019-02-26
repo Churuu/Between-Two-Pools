@@ -8,6 +8,7 @@ public class Otter : MonoBehaviour
     [SerializeField] private Ability abilityOne = Ability.Thrust;
     public MomentDerection magnetEnumMomentDerection = MomentDerection.Right;
     private Rigidbody2D rb2D;
+    private PlayerController playerController;
     [SerializeField] Rigidbody2D[] magneticRigidBodys;
     [SerializeField] Rigidbody2D[] magneticRigidBodysMagnetToObject;
     public bool magnetPowerActiv = false;
@@ -23,18 +24,54 @@ public class Otter : MonoBehaviour
     [SerializeField] private bool ability2Activ = false;
     [SerializeField] private float minDistanceStopMoving = 0.9f;
     [SerializeField] private float maxDistanceToGetPulled = 10f;
-    [SerializeField] float maxStrengthToGetPulled = 30f;
+    [SerializeField] float maxStrengthToGetPulled = 50f;
+    [SerializeField] private float maxDistanceToGetThrust = 10f;
+    [SerializeField] float maxStrengthToGetThrust = 20f;
     int numer = 0;
     public bool okToShangeMagnet = false;
+    Animator anim;
     private void Start()
     {
-
+        anim = GetComponent<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
+        if (transform.GetComponent<PlayerController>() != null)
+        {
+            playerController = transform.GetComponent<PlayerController>();
+        }
+
     }
 
 
     void Update()
     {
+        if (!playerController.Grounded())
+        {
+            anim.SetBool("Floating", true);
+        }
+        else { anim.SetBool("Floating", false); }
+        if (abilityOne == Ability.Pull)
+        {
+            Debug.Log("pull(O_O)");
+            anim.SetBool("PullActive", true);
+            anim.SetBool("PushActive", false);
+        }
+        else if (abilityOne == Ability.Thrust)
+        {
+         //   Debug.Log("Thrust(O_O)");
+            anim.SetBool("PushActive", true);
+            anim.SetBool("PullActive", false);
+        }
+
+        if (magnetPowerActiv || ability2Activ)
+        {
+            anim.SetBool("PushedQ", true);
+        }
+        else
+        {
+            anim.SetBool("PushedQ", false);
+        }
+
+
         if (!magnetPowerActiv)
         {
             if (rb2D.velocity.x < 0)
@@ -60,6 +97,7 @@ public class Otter : MonoBehaviour
                 magnetPowerActiv = !magnetPowerActiv;
 
 
+
             }
             if (Input.GetButtonDown(buttonNameAbility1Togel))
             {
@@ -77,18 +115,31 @@ public class Otter : MonoBehaviour
         }
         if (ability2Activ)
         {
-            MagnetGetPulled();
+            if (abilityOne == Ability.Pull)
+            {
+                MagnetGetPulled();
+            }
+            else if (abilityOne == Ability.Thrust)
+            {
+                MagnetGetThrust();
+            }
         }
         if (magnetPowerActiv)
         {
             if (abilityOne == Ability.Pull)
             {
+                Debug.Log("pull");
+                //anim.SetBool("PullActive", true);
+                //anim.SetBool("PushActive", false);
                 Update_MagnetismPulled();
             }
             else if (abilityOne == Ability.Thrust)
             {
+                // anim.SetBool("PullActive", false);
+                // anim.SetBool("PushActive", true);
                 Update_MagnetismThrust();
             }
+
         }
 
 
@@ -151,6 +202,37 @@ public class Otter : MonoBehaviour
         }
     }
 
+    void MagnetGetThrust()
+    {
+        for (int i = 0; i < magneticRigidBodysMagnetToObject.Length; i++)
+        {
+            if (magneticRigidBodysMagnetToObject[i] != null && magneticRigidBodysMagnetToObject[i].gameObject.active)
+            {
+                float Distance = Vector3.Distance(magneticRigidBodysMagnetToObject[i].transform.position, this.transform.position);
+
+                if (Distance < maxDistanceToGetThrust) // Marble is in range of the magnet
+                {
+                    float TDistance = Mathf.InverseLerp(maxDistanceToGetThrust, 0f, Distance); // Give a decimal representing how far between 0 distance and max distance.
+                    float strength = Mathf.Lerp(0f, maxStrengthToGetThrust, TDistance); // Use that decimal to work out how much strength the magnet should apple
+                    Vector3 DirectionToCup = (this.transform.position - magneticRigidBodysMagnetToObject[i].transform.position).normalized; // Get the direction from the marble to the cup
+                                                                                                                                            //if (Distance < minDistanceStopMoving)
+                                                                                                                                            //{
+                                                                                                                                            //    rb2D.velocity = new Vector2(0, 0);
+                                                                                                                                            //    // magneticRigidBodys[i].velocity = new Vector2(0, magneticRigidBodys[i].velocity.y);
+                                                                                                                                            //}
+                                                                                                                                            //else
+                                                                                                                                            //{
+                    rb2D.AddForce(DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                    //}
+
+
+                }
+            }
+        }
+    }
+
+
+
     void MagnetismPulled(int i)
     {
         float Distance = Vector3.Distance(magneticRigidBodys[i].transform.position, this.transform.position);
@@ -173,6 +255,8 @@ public class Otter : MonoBehaviour
 
         }
     }
+
+
 
     void Update_MagnetismThrust()
     {

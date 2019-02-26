@@ -34,17 +34,14 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
 
         stateMachines.transform.parent = frog.transform;
         frog.GetComponent<Frog>().SwitchActivation(true);
-        frog.GetComponent<PlayerController>().enabled = true;
+        frog.GetComponent<PlayerController>().SetPlayerState(true);
     }
     public override void Exit()
     {
-        frog.GetComponent<Frog>().SwitchActivation(false);
         frog.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         stateMachines.transform.parent = null;
-        frog.GetComponent<PlayerController>().enabled = false;
-
-
-
+        frog.GetComponent<Frog>().SwitchActivation(false);
+        frog.GetComponent<PlayerController>().SetPlayerState(false);
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {

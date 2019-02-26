@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+﻿//using UnityEditor;
 using UnityEngine;
 public abstract class ActivePlayerStateBase
 {//Påbörjad av Jonas Thunberg 2019-02-04
