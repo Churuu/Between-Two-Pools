@@ -12,6 +12,7 @@ public class Seal : MonoBehaviour
     public string bounceAnimParam = "Bounce";
 
     private float boostResetTimer;
+    private bool notDead = true;
     private bool jumped = false;
     private bool shrunken = false;
     private PlayerController playerController;
@@ -31,7 +32,7 @@ public class Seal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.layer == 10 || col.gameObject.layer == 12)
+        if((col.gameObject.layer == 10 || col.gameObject.layer == 12) && notDead)
         BoostLandingObject(col.gameObject);
     }
 
@@ -63,6 +64,10 @@ public class Seal : MonoBehaviour
 
         }
 
+    }
+    public void Die()
+    {
+        notDead = false;
     }
 
     void ResetBoostJump()

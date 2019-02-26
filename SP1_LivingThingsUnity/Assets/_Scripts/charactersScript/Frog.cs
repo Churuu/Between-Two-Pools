@@ -142,5 +142,7 @@ public class Frog : MonoBehaviour
     public void SwitchActivation(bool state)
     {
         activated = state;
+        if (state == false)
+            Destroy(toungeTemp);
     }
 }
