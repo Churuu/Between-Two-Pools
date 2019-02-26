@@ -57,7 +57,7 @@ public class Otter : MonoBehaviour
         }
         else if (abilityOne == Ability.Thrust)
         {
-            Debug.Log("Thrust(O_O)");
+         //   Debug.Log("Thrust(O_O)");
             anim.SetBool("PushActive", true);
             anim.SetBool("PullActive", false);
         }
