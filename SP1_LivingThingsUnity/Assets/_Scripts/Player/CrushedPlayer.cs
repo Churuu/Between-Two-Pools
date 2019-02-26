@@ -13,15 +13,10 @@ public class CrushedPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Crushed())
-        {
-            //Döda karaktären
-           
-        }
-        else { }
+        Crushed(); 
 	}
 
-    public bool Crushed()
+    public void Crushed()
     {
 
         RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, crushDistance);
@@ -36,15 +31,14 @@ public class CrushedPlayer : MonoBehaviour {
                         if (hitDown.collider == crushingColliders[i] && hitUp.collider == crushingColliders[j])
                         {
                             Debug.Log("Player crushed");
-                            //Eventmanager.instance.onkilled(this.gameObject);
-                            return true;
+                            if(EventManager.instance.onKilld != null)
+                            {
+                                EventManager.instance.onKilld(this.gameObject);
+                            }
                         }
                            
                     }  
                 }
-
-        return false;
-
     }
 
     void OnDrawGizmos()
