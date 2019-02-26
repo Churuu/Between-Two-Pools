@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerAudioPlaceholder : MonoBehaviour
 {
 
-    [SerializeField]
-    private List<AudioClip> walkingSounds = new List<AudioClip>();
+    
     [SerializeField]
     private bool test1;
     // Use this for initialization
@@ -29,8 +28,5 @@ public class PlayerAudioPlaceholder : MonoBehaviour
         }
     }
 
-    private void Step()
-    {
-        GetComponent<ObjectAudioClip>().PlaySingle(walkingSounds);
-    }
+
 }

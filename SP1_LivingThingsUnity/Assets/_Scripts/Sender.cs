@@ -40,7 +40,7 @@ public class Sender : MonoBehaviour
     {
         if (GetButtonType() == ButtonType.buttonSwitch)
         {
-            GetComponent<ObjectAudioClip>().PlaySingle(0);
+            GetComponent<ObjectAudioClip>().PlayRandom();
             if (switchType == SwitchType.door)
             {
                 for (int i = 0; i < gameObjects.Count; i++)
