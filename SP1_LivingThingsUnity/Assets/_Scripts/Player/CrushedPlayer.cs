@@ -13,12 +13,7 @@ public class CrushedPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Crushed())
-        {
-            //Döda karaktären
-           
-        }
-        else { }
+        Crushed(); 
 	}
 
     public bool Crushed()
@@ -36,7 +31,7 @@ public class CrushedPlayer : MonoBehaviour {
                         if (hitDown.collider == crushingColliders[i] && hitUp.collider == crushingColliders[j])
                         {
                             Debug.Log("Player crushed");
-                            //EventManager.instance.onkilled(this.gameObject);
+                            EventManager.instance.onKilld(this.gameObject);
                             return true;
                         }
                            

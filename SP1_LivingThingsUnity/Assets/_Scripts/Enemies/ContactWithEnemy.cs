@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ContactWithEnemy : MonoBehaviour {
-    public string enemyTag;
-    public string deadAnimParam;
+    public string enemyTag = "Enemy";
+    public string deadAnimParam = "Dead";
     private Animator anim;
     // Use this for initialization
     void Start () {
@@ -16,19 +16,8 @@ public class ContactWithEnemy : MonoBehaviour {
     {
         if (collision.collider.CompareTag(enemyTag))
         {
-            if (GetComponent<Frog>() != null)
-                GetComponent<Frog>().enabled = false;
-           
-            if(GetComponent<Otter>() != null)
-                GetComponent<Otter>().enabled = false;
-
-            if(GetComponentInChildren<Seal>() != null)
-                GetComponentInChildren<Seal>().enabled = false;
-
-            GetComponent<PlayerController>().enabled = false;
+            EventManager.instance.onKilld(this.gameObject);
             anim.SetBool(deadAnimParam, true);
-
-
         }
     }
 
