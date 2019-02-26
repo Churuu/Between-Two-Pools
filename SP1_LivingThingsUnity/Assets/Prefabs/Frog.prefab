@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 95074062268254054}
   - component: {fileID: 114224596387868210}
   - component: {fileID: 114411800868128848}
+  - component: {fileID: 114451959990602662}
   m_Layer: 12
   m_Name: Frog
   m_TagString: Player
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917016305584562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 198.3, y: -67.995, z: 0}
+  m_LocalPosition: {x: -1.115536, y: 0.44999814, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934351191650736}
@@ -192,6 +193,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   activePlayer: 0
+--- !u!114 &114451959990602662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1917016305584562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac23270a52adb5742aebb5773d159c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crushDistance: 1
+  crushingColliders: []
 --- !u!212 &212200907939946320
 SpriteRenderer:
   m_ObjectHideFlags: 1
