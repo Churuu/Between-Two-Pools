@@ -6,6 +6,8 @@ using UnityEngine;
 public class SignOfTruth : MonoBehaviour
 {
 
+    public string rats = "Seal", friends = "Frog";
+
     Animator anim;
 
     void Start()
@@ -17,11 +19,11 @@ public class SignOfTruth : MonoBehaviour
     {
         var col = collider.gameObject;
 
-        if (col.CompareTag("Seal"))
+        if (col.CompareTag(rats))
         {
             anim.SetBool("Rats", false);
         }
-        else if (col.CompareTag("Frog"))
+        else if (col.CompareTag(friends))
         {
             anim.SetBool("Rats", true);
         }
