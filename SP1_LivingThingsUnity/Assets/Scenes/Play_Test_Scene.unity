@@ -159,7 +159,7 @@ Prefab:
     - target: {fileID: 114397054348179248, guid: 8dcf3dba867e2de4dae6ccbff5e15310,
         type: 2}
       propertyPath: gameObjectToggle
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dcf3dba867e2de4dae6ccbff5e15310, type: 2}
@@ -1252,11 +1252,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4956228676894714, guid: ee244863b71baac4bb3bc9f0094a41ad, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 146.1
+      value: 216.3
       objectReference: {fileID: 0}
     - target: {fileID: 4956228676894714, guid: ee244863b71baac4bb3bc9f0094a41ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -74.2
+      value: -68
       objectReference: {fileID: 0}
     - target: {fileID: 4956228676894714, guid: ee244863b71baac4bb3bc9f0094a41ad, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1353,6 +1353,21 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61912584281467094, guid: 7c808decaecafbb468ed8d0718af7972,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.012031555
+      objectReference: {fileID: 0}
+    - target: {fileID: 61912584281467094, guid: 7c808decaecafbb468ed8d0718af7972,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61912584281467094, guid: 7c808decaecafbb468ed8d0718af7972,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 3.9601898
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c808decaecafbb468ed8d0718af7972, type: 2}
