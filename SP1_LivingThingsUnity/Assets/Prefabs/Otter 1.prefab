@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114906808045132356}
   - component: {fileID: 60011817179717744}
   - component: {fileID: 114465576892442958}
+  - component: {fileID: 114642438435981828}
   m_Layer: 10
   m_Name: Otter 1
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087217229425938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.909966, y: -13.116785, z: 0}
+  m_LocalPosition: {x: 2.0466716, y: -0.11930585, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -167,6 +168,21 @@ MonoBehaviour:
   maxDistanceToGetThrust: 10
   maxStrengthToGetThrust: 20
   okToShangeMagnet: 0
+--- !u!114 &114642438435981828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087217229425938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac23270a52adb5742aebb5773d159c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crushDistance: 1.3
+  crushingColliders:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114906808045132356
 MonoBehaviour:
   m_ObjectHideFlags: 1
