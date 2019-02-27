@@ -46,9 +46,4 @@ public class ActivePlayerStateMachine : MonoBehaviour
         curentState = nextState;
     }
 
-
-
-
-
-
 }

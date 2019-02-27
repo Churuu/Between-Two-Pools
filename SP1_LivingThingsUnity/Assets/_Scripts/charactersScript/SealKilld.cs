@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public class OtterKilld : MonoBehaviour
+public class SealKilld : MonoBehaviour
 {
+
     [SerializeField] Sprite ghost;
     [SerializeField] int layerGhost = 15;
     public bool notKilld = true;
@@ -12,7 +13,7 @@ public class OtterKilld : MonoBehaviour
         EventManager.instance.onKilld += OnKilld;
 
     }
-    
+
 
 
 
@@ -21,7 +22,11 @@ public class OtterKilld : MonoBehaviour
         if (gameObject == this.gameObject)
         {
             //ljud
-            GetComponent<Otter>().enabled = false;
+            if (transform.GetChild(0) != null)
+            {
+                transform.GetChild(0).gameObject.active = false;
+            }
+            //GetComponent<Seal>().enabled = false;
             GetComponent<Animator>().enabled = false;
             GetComponent<PlayerController>().enabled = false;
             GetComponent<CrushedPlayer>().enabled = false;
@@ -30,7 +35,9 @@ public class OtterKilld : MonoBehaviour
             gameObject.layer = layerGhost;
             GetComponent<EnterExit>().enabled = false;
             GetComponent<SpriteRenderer>().sprite = ghost;
+           
             notKilld = false;
+
             EventManager.instance.onKilld -= OnKilld;
 
         }

@@ -157,5 +157,8 @@ public class PlayerController : MonoBehaviour
         return activePlayer;
     }
 
-
+    public bool GetPlayerActive()
+    {
+        return activePlayer;
+    }
 }
