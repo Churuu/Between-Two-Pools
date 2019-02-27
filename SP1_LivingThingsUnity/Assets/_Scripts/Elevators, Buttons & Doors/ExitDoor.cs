@@ -9,7 +9,7 @@ public class ExitDoor : MonoBehaviour
 
     public string sceneToLoad;
 
-    void OnTriggerStay2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         var other = col.gameObject;
         if (other.CompareTag("Otter"))
