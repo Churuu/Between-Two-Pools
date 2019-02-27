@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CharacterIndictor : MonoBehaviour
 {
 
-    public GameObject otter;
+    public Transform otter;
     public Image otterIndicator;
     public Camera mainCamera;
 
@@ -16,17 +16,20 @@ public class CharacterIndictor : MonoBehaviour
 
     void Start()
     {
-        center = new Vector2(Screen.width / 2, Screen.height / 2);
+        center = new Vector2(0.5f, 0.5f);
     }
 
     void Update()
     {
-
+        UpdateIndicators();
     }
 
     void UpdateIndicators()
     {
         Vector3 centerWorldPoint = mainCamera.ViewportToWorldPoint(center);
-
+        Vector2 dir = otter.position - centerWorldPoint;
+        print(centerWorldPoint);
+        Debug.DrawRay(centerWorldPoint, dir);
+        otterIndicator.rectTransform.localPosition = new Vector2(100, 100);
     }
 }

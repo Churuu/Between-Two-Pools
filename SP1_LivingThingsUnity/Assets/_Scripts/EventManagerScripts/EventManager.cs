@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour {
     //public static events onKilled;
 
     public System.Action<GameObject> onKilld;
-    public System.Action OnKilld;
+    public System.Action OnGameOver;
     
 
 
