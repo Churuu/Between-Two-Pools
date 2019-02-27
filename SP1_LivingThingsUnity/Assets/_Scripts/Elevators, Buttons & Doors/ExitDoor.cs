@@ -7,6 +7,8 @@ public class ExitDoor : MonoBehaviour
 
     bool seal = false, frog = false, otter = false;
 
+    public string sceneToLoad;
+
     void OnTriggerStay2D(Collider2D col)
     {
         var other = col.gameObject;
@@ -18,7 +20,7 @@ public class ExitDoor : MonoBehaviour
             frog = true;
 
         if (otter && seal && frog)
-            FindObjectOfType<SceneTransitioner>().LoadScene("RobinTesting");
+            FindObjectOfType<SceneTransitioner>().LoadScene(sceneToLoad);
     }
 
     void OnTriggerExit2D(Collider2D col)
