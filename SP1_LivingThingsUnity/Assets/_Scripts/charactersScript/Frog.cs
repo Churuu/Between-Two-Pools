@@ -20,11 +20,13 @@ public class Frog : MonoBehaviour
     private GameObject toungeTemp;
     private Vector2 direction;
     private float rockCount = 1f;
+    private Animator anim;
 
 
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -47,7 +49,7 @@ public class Frog : MonoBehaviour
 
         if (hit.collider != null && playerController.Grounded())
         {
-
+            anim.SetBool("ShootTounge", true);
             Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);
 
 
@@ -100,10 +102,15 @@ public class Frog : MonoBehaviour
             HeldInButtonTimer -= Time.deltaTime;
 
             if (HeldInButtonTimer < 0 && rockCount == 1)
+            {
+                anim.SetBool("ShootRock", true);
                 ShootRocks();
+            }
+                
         }
         else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
         {
+           
             if (!extended)
             {
                 ExtendTounge();
@@ -112,20 +119,24 @@ public class Frog : MonoBehaviour
             {
                 Destroy(toungeTemp);
                 extended = false;
+                anim.SetBool("ShootTounge", false);
             }
         }
         else
         {
             HeldInButtonTimer = 0.2f;
+            anim.SetBool("ShootRock", false);
         }
     }
 
     void ShootRocks()
     {
         //spawn rocks
+       
         GameObject rockTemp = Instantiate(rock, toungeStart.position, transform.rotation) as GameObject;
         rockTemp.GetComponent<Rigidbody2D>().AddForce(direction * 500);
         rockCount--;
+       
     }
 
     void OnCollisionEnter2D(Collision2D other)
