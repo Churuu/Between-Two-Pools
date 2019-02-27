@@ -24,7 +24,8 @@ public class EnterExit : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Reciever>() != null)
         {
-            if (other.gameObject.GetComponent<Reciever>().GetDoorType(Reciever.DoorType.moveTimer))
+            if (other.gameObject.GetComponent<Reciever>().GetDoorType(Reciever.DoorType.moveTimer) 
+                || other.gameObject.GetComponent<Reciever>().GetDoorType(Reciever.DoorType.move))
             {
                 transform.SetParent(other.transform);
             }
@@ -37,7 +38,8 @@ public class EnterExit : MonoBehaviour
         //goBool = false;
         if (other.gameObject.GetComponent<Reciever>() != null)
         {
-            if (other.gameObject.GetComponent<Reciever>().GetDoorType(Reciever.DoorType.moveTimer))
+            if (other.gameObject.GetComponent<Reciever>().GetDoorType(Reciever.DoorType.moveTimer) 
+                || other.gameObject.GetComponent<Reciever>().GetDoorType(Reciever.DoorType.move))
             {
                 transform.SetParent(null);
             }

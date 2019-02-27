@@ -13,6 +13,12 @@ public class Reciever : MonoBehaviour
     [SerializeField]
     DoorType doorType;
 
+    public enum ElevatorState
+    {
+        target, moving, downTime,
+    }
+    ElevatorState elevatorState;
+    
     //Motion Variables
     [Space]
     [Header("Motion Variables")]
@@ -47,6 +53,8 @@ public class Reciever : MonoBehaviour
 
     float timerFloat = 0;
 
+    int testInt = 0;
+
     private float time;
 
     // Use this for initialization
@@ -60,14 +68,14 @@ public class Reciever : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (moveBool)
+        if (moveBool && doorType != DoorType.flip)
         {
             //timer += Time.deltaTime;
             ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
         }
         //else
         //    timer = 0;
-            
+
 	}
 
     public void ToggleObject()
@@ -81,7 +89,6 @@ public class Reciever : MonoBehaviour
             {
                 gameObjectToggle = !gameObjectToggle;
                 ToggleObjectComponents();
-                moveBool = true;
                 GetComponent<ObjectAudioClip>().PlayRandom();
             }
 
@@ -89,7 +96,6 @@ public class Reciever : MonoBehaviour
             {
                 
                 gameObjectToggle = !gameObjectToggle;
-                moveBool = true;
                 GetComponent<ObjectAudioClip>().PlayRandom();
             }
 
@@ -97,7 +103,6 @@ public class Reciever : MonoBehaviour
             {
                 //print("test2");
                 timerToggle = !timerToggle;
-                moveBool = true;
             }
         }
         else
@@ -150,16 +155,51 @@ public class Reciever : MonoBehaviour
 
             if (timerFloat < timer && moveBool)
             {
+                if (timerFloat == 0)
+                {
+                    GetComponent<ObjectAudioClip>().PlaySingle(0);
+                }
                 timerFloat += Time.deltaTime;
             }
             else if (timerFloat >= timer)
             {
                 gameObjectToggle = !gameObjectToggle;
-                GetComponent<ObjectAudioClip>().PlayRandom();
+                
                 //timerToggle = false;
                 timerFloat = 0;
             }
         }
+
+        else if (timerToggle && !motion.InTargetRegion)
+        {
+            if (!GetComponent<ObjectAudioClip>().audioSource.isPlaying)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(1);
+            }
+            
+        }
+        else if (gameObject.tag == "Elevator")
+        {
+            if (motion.InTargetRegion && elevatorState == ElevatorState.moving)
+            {
+                elevatorState = ElevatorState.target;
+            }
+            if (!motion.InTargetRegion)
+            {
+                elevatorState = ElevatorState.moving;
+                if (!GetComponent<ObjectAudioClip>().audioSource.isPlaying)
+                {
+                    GetComponent<ObjectAudioClip>().PlaySingle(1);
+                }
+            }
+            else if (motion.InTargetRegion && elevatorState == ElevatorState.target)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(0);
+                elevatorState = ElevatorState.downTime;
+            }
+        }
+
+        
     }
 
     public bool GetDoorType(DoorType dT)

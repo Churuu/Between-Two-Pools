@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212348261240393758}
   - component: {fileID: 50857169343658376}
   - component: {fileID: 61743257025438842}
-  m_Layer: 8
+  m_Layer: 31
   m_Name: MagnetBox2x2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566702899099132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 221.06, y: -69.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1.04}
+  m_LocalPosition: {x: 75.7073, y: -14.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,7 +120,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: d5d1002b282ac9947b61a6dc3db03b29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

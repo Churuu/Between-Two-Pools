@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
     [SerializeField]
     private AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
     public static AudioManager instance = null;     //Allows other scripts to call functions from SoundManager.             
@@ -28,5 +29,16 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Update()
+    {
+
+    }
+
+    void SongRequest(int musicIndex)
+    {
+        musicSource.clip = musicClips[musicIndex];
+
+        musicSource.Play();
+    }
 
 }

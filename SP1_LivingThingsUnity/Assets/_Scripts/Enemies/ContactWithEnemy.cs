@@ -12,14 +12,16 @@ public class ContactWithEnemy : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag(enemyTag))
+        
+        if (collision.gameObject.CompareTag(enemyTag))
         {
+            Debug.Log("EnemyHit");
             if (EventManager.instance.onKilld != null)
             {
                 EventManager.instance.onKilld(this.gameObject);
-                anim.SetBool(deadAnimParam, true);
+                //anim.SetBool(deadAnimParam, true);
             }
            
         }
