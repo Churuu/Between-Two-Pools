@@ -305,8 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938343166094c5045a860a249ca7bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canJump: 1
-  sealJump: 1
+  canJump: 0
+  sealJump: 0
   horizontalMoment: Horizontal
   jumpAxis: wJump
   jumpAnimParam: 
