@@ -35,10 +35,15 @@ public class SealKilld : MonoBehaviour
             gameObject.layer = layerGhost;
             GetComponent<EnterExit>().enabled = false;
             GetComponent<SpriteRenderer>().sprite = ghost;
-           
+
             notKilld = false;
 
             EventManager.instance.onKilld -= OnKilld;
+
+            if (EventManager.instance.OnGameOver != null)
+            {
+                EventManager.instance.OnGameOver();
+            }
 
         }
     }

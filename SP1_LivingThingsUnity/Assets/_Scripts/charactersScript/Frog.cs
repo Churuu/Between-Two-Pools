@@ -143,4 +143,9 @@ public class Frog : MonoBehaviour
     {
         activated = state;
     }
+
+    public void DestroyTounge()
+    {
+        Destroy(toungeTemp);
+    }
 }
