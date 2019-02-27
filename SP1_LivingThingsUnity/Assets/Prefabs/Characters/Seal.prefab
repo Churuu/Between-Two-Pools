@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61252769183173424}
   - component: {fileID: 114827953475127760}
   - component: {fileID: 114866164697948936}
+  - component: {fileID: 114417477704673120}
   m_Layer: 2
   m_Name: SealJumpCol
   m_TagString: Untagged
@@ -41,10 +42,10 @@ GameObject:
   - component: {fileID: 95866421896643362}
   - component: {fileID: 50909095787859020}
   - component: {fileID: 114269483148487460}
-  - component: {fileID: 114254835712255012}
   - component: {fileID: 60336653016447630}
   - component: {fileID: 114007620876071762}
   - component: {fileID: 114204197687516788}
+  - component: {fileID: 114387549546285852}
   m_Layer: 10
   m_Name: Seal
   m_TagString: Untagged
@@ -59,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406340737061300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.84, y: -2.98, z: -0.05078125}
+  m_LocalPosition: {x: -32, y: 46.5, z: -0.05078125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4997813968742234}
@@ -125,12 +126,15 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.703125, y: 1}
       - {x: -1.296875, y: 0.71875}
-      - {x: -1.859375, y: 0.90625}
-      - {x: -1.984375, y: 0.59375}
-      - {x: -1.984375, y: 0.09375}
-      - {x: -1.828125, y: 0}
-      - {x: 1.984375, y: 0}
-      - {x: 1.984375, y: 0.375}
+      - {x: -1.2949028, y: 0.6083336}
+      - {x: -1.7655678, y: 0.71741104}
+      - {x: -1.8197403, y: 0.51535034}
+      - {x: -1.89814, y: 0.17998886}
+      - {x: -1.6634865, y: 0.03919983}
+      - {x: -1.6650925, y: 0.02727127}
+      - {x: 1.1533508, y: 0.03135681}
+      - {x: 1.2700653, y: 0.1270256}
+      - {x: 1.0043945, y: 0.47691727}
       - {x: 0.390625, y: 1}
 --- !u!61 &61252769183173424
 BoxCollider2D:
@@ -144,7 +148,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.043857574, y: -0.5262792}
+  m_Offset: {x: 0.015510559, y: -0.4835062}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -155,7 +159,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2207718, y: 1.1288819}
+  m_Size: {x: 1.3158417, y: 1.2739735}
   m_EdgeRadius: 0
 --- !u!95 &95866421896643362
 Animator:
@@ -200,17 +204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTag: Enemy
   deadAnimParam: Dead
---- !u!114 &114254835712255012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1406340737061300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05afc1abb62a74f43a429bc72b8f3baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114269483148487460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,11 +225,33 @@ MonoBehaviour:
   jumpAddForce: 700
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
-  gizmoRange: 1
+  gizmoRange: 0.2
   ground:
     serializedVersion: 2
     m_Bits: 0
   activePlayer: 0
+--- !u!114 &114387549546285852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406340737061300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05afc1abb62a74f43a429bc72b8f3baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114417477704673120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337532341299466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05afc1abb62a74f43a429bc72b8f3baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114827953475127760
 MonoBehaviour:
   m_ObjectHideFlags: 1
