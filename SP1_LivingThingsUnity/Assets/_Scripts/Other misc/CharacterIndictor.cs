@@ -8,10 +8,15 @@ public class CharacterIndictor : MonoBehaviour
 {
 
     public Camera mainCamera;
-    [Space]
     [Header("Otter Indicator")]
-    public Transform otter, otterArrow;
     public Image otterIndicator;
+    public Transform otter, otterArrow;
+    [Header("Seal Indicator")]
+    public Image SealIndicator;
+    public Transform seal, sealArrow;
+    [Header("Frog Indicator")]
+    public Image FrogIndicator;
+    public Transform frog, frogArrow;
     [Space]
     [Header("Offets and max distance")]
     public float offset;
@@ -28,16 +33,17 @@ public class CharacterIndictor : MonoBehaviour
     void Update()
     {
         UpdateIndicators(otter, otterIndicator, otterArrow);
+        UpdateIndicators(frog, FrogIndicator, frogArrow);
+        UpdateIndicators(seal, SealIndicator, sealArrow);
     }
 
-    void UpdateIndicators(Transform Object, Image indicator, Transform arrow)
+    void UpdateIndicators(Transform _object, Image indicator, Transform arrow)
     {
         centerWorldPoint = mainCamera.ViewportToWorldPoint(center);
-        Vector2 dir = Object.position - centerWorldPoint;
+        Vector2 dir = _object.position - centerWorldPoint;
         indicator.rectTransform.localPosition = dir * offset;
-        var angleRadians = Mathf.Atan2(dir.y, dir.x);
-        var angle = Mathf.Rad2Deg * angleRadians;
-        arrow.transform.localRotation = Quaternion.RotateTowards(arrow.transform.localRotation, new Quaternion(0, 0, -angle, 0), 1f);
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        arrow.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle - 180));
 
 
         if (indicator.rectTransform.localPosition.x > maxDistanceX)
@@ -50,7 +56,9 @@ public class CharacterIndictor : MonoBehaviour
         else if (indicator.rectTransform.localPosition.y < -maxDistanceY)
             indicator.rectTransform.localPosition = new Vector2(indicator.rectTransform.localPosition.x, -maxDistanceY);
 
-
+        var renderer = _object.GetComponent<Renderer>();
+        arrow.gameObject.SetActive(!renderer.isVisible);
+        indicator.gameObject.SetActive(!renderer.isVisible);
     }
 
     void OnDrawGizmos()
