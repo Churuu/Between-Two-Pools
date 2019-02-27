@@ -134,5 +134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 82829241058205266}
-  musicClips: []
+  musicClips:
+  - {fileID: 8300000, guid: 4cecd26e35750ba44b762c1c4201abf3, type: 3}
+  - {fileID: 8300000, guid: cb999170132e56f47920230372285ba5, type: 3}
+  - {fileID: 8300000, guid: 96a98e881bfe4724fa81680e5a3d50d6, type: 3}
+  - {fileID: 8300000, guid: 5014526074b9cf043a271c03bd2c9567, type: 3}
+  - {fileID: 8300000, guid: f29b899bab6e4564eb94f735dafac76f, type: 3}
   ambienceClips: []
+  nextSong: NextSong
+  previousSong: PreviousSong

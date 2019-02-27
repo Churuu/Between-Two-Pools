@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4997813968742234}
   - component: {fileID: 61252769183173424}
   - component: {fileID: 114827953475127760}
-  - component: {fileID: 114866164697948936}
   m_Layer: 2
   m_Name: SealJumpCol
   m_TagString: Untagged
@@ -50,7 +49,7 @@ GameObject:
   - component: {fileID: 114283220763238602}
   m_Layer: 10
   m_Name: Seal 1
-  m_TagString: Untagged
+  m_TagString: Seal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406340737061300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.6, y: -12.13, z: -0.05078125}
+  m_LocalPosition: {x: 84, y: -12.9, z: -0.05078125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4997813968742234}
@@ -172,7 +171,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -306,8 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938343166094c5045a860a249ca7bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canJump: 1
-  sealJump: 1
+  canJump: 0
+  sealJump: 0
   horizontalMoment: Horizontal
   jumpAxis: wJump
   jumpAnimParam: 
@@ -343,8 +342,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8c4e2aa89f379194e9196d794877fbcf, type: 3}
   - {fileID: 8300000, guid: c13f6df4ab9b7ef44a2eb8490d4ac71f, type: 3}
   ability2List: []
-  ability1: {fileID: 0}
-  ability2: {fileID: 0}
+  landingSounds: []
 --- !u!114 &114283220763238602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,17 +371,6 @@ MonoBehaviour:
   springBoostFallout: 25
   BoostResetTimerDelta: 0
   bounceAnimParam: Bounce
---- !u!114 &114866164697948936
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1337532341299466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05afc1abb62a74f43a429bc72b8f3baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212762455887597468
 SpriteRenderer:
   m_ObjectHideFlags: 1

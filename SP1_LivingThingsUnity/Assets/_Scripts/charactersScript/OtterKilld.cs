@@ -32,7 +32,10 @@ public class OtterKilld : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = ghost;
             notKilld = false;
             EventManager.instance.onKilld -= OnKilld;
-
+            if (EventManager.instance.OnGameOver != null)
+            {
+                EventManager.instance.OnGameOver();
+            }
         }
     }
 }
