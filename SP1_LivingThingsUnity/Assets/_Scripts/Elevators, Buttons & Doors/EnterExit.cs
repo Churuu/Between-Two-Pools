@@ -59,10 +59,8 @@ public class EnterExit : MonoBehaviour
 
             else if (go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.sealSwitch)
             {
-                print("test1");
-                if (gameObject.GetComponent<Seal>() != null)
+                if (gameObject.tag == "Seal")
                 {
-                    print("test2");
                     go.GetComponent<Sender>().ActivatePlate();
                 }
             }
@@ -83,7 +81,7 @@ public class EnterExit : MonoBehaviour
 
             else if (go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.sealSwitch)
             {
-                if (gameObject.GetComponent<Seal>() != null)
+                if (gameObject.tag == "Seal")
                 {
                     go.GetComponent<Sender>().ActivatePlate();
                 }
@@ -97,7 +95,7 @@ public class EnterExit : MonoBehaviour
 
     private void TriggerStay()
     {
-        if (goBool)
+        if (goBool && GetComponent<PlayerController>().GetPlayerActive())
         {
             if (Input.GetKeyDown(KeyCode.E) && go.GetComponent<Sender>().GetButtonType() == Sender.ButtonType.buttonSwitch)
             {
