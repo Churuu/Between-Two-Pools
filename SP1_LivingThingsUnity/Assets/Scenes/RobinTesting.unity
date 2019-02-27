@@ -892,8 +892,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otter: {fileID: 1519567799}
+  otterArrow: {fileID: 225450343}
   otterIndicator: {fileID: 869479384}
   mainCamera: {fileID: 1994119610}
+  offset: 100
+  maxDistanceX: 800
+  maxDistanceY: 400
 --- !u!1001 &1079044000
 Prefab:
   m_ObjectHideFlags: 0
