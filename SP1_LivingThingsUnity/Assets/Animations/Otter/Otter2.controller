@@ -7,7 +7,19 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: Otter2
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: SpeedX
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: FaceingRight
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -48,7 +60,13 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: SpeedX
+    m_EventTreshold: -0.1
+  - m_ConditionMode: 2
+    m_ConditionEvent: FaceingRight
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102985595849411432}
   m_Solo: 0
@@ -90,7 +108,13 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: SpeedX
+    m_EventTreshold: -0.1
+  - m_ConditionMode: 2
+    m_ConditionEvent: FaceingRight
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102212864008533128}
   m_Solo: 0
@@ -111,7 +135,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Red Not Active
+  m_Name: BlueRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -136,7 +160,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Pink
+  m_Name: RedRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -161,7 +185,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Blue
+  m_Name: BlueLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -186,7 +210,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Red
+  m_Name: RedLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -218,13 +242,13 @@ AnimatorStateMachine:
     m_Position: {x: -372, y: -12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102212864008533128}
-    m_Position: {x: -372, y: 924, z: 0}
+    m_Position: {x: 984, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102005579419785922}
     m_Position: {x: 984, y: 924, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102120289877699936}
-    m_Position: {x: 1056, y: -36, z: 0}
+    m_Position: {x: -372, y: 936, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101582559931318722}
