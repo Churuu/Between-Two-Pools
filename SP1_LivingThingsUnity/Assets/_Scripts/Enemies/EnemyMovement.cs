@@ -46,7 +46,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         Vector2 movement = new Vector2(StartRiktning, 0.0f);
         Enemy_Rigid.velocity = new Vector2(movement.x * Enemy_Move_speed, movement.y * Enemy_Move_speed);
-        anim.SetFloat("SpeedX", StartRiktning);
+     //   anim.SetFloat("SpeedX", StartRiktning);
         ChangeDirection();
     }
     void ChangeDirection()
