@@ -39,6 +39,7 @@ public class Otter : MonoBehaviour
         {
             playerController = transform.GetComponent<PlayerController>();
         }
+        anim.SetBool("Pull", true);
     }
     private void AddBoxMagnetic(Rigidbody2D rb2D)
     {
@@ -88,6 +89,7 @@ public class Otter : MonoBehaviour
             if (Input.GetButtonDown(buttonNameAbility1AvPå))//Av/PÅ
             {
                 magnetPowerActiv = !magnetPowerActiv;
+                anim.SetBool("AbillityOn", magnetPowerActiv);
 
 
 
@@ -96,11 +98,15 @@ public class Otter : MonoBehaviour
             {
                 if (abilityOne == Ability.Pull)
                 {
+                    anim.SetBool("Thrust", true);
+                    anim.SetBool("Pull", false);
                     abilityOne = Ability.Thrust;
                 }
                 else if (abilityOne == Ability.Thrust)
                 {
                     abilityOne = Ability.Pull;
+                    anim.SetBool("Pull", true);
+                    anim.SetBool("Thrust", false);
                 }
 
             }

@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-       if(rb2D.velocity.y < 0)
-            anim.SetBool("Jump", false);
+       //if()
+            anim.SetBool("Jump", !Grounded());
 
     }
 

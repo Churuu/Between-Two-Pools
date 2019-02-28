@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: AbillityPushActiveIdleLeft
+  m_Name: BlueIdleRight
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -32,11 +32,11 @@ AnimationClip:
       value: {fileID: 21300010, guid: 52eb66a856b893f4b81523748d72d79c, type: 3}
     - time: 0.6
       value: {fileID: 21300012, guid: 52eb66a856b893f4b81523748d72d79c, type: 3}
-    - time: 0.70000005
+    - time: 0.7
       value: {fileID: 21300014, guid: 52eb66a856b893f4b81523748d72d79c, type: 3}
-    - time: 0.8000001
+    - time: 0.8
       value: {fileID: 21300016, guid: 52eb66a856b893f4b81523748d72d79c, type: 3}
-    - time: 0.9000001
+    - time: 0.9
       value: {fileID: 21300018, guid: 52eb66a856b893f4b81523748d72d79c, type: 3}
     attribute: m_Sprite
     path: 
@@ -72,7 +72,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0000001
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
