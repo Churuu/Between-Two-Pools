@@ -10,7 +10,9 @@ public class EventManager : MonoBehaviour {
 
     public System.Action<GameObject> onKilld;
     public System.Action OnGameOver;
-    
+    public System.Action<Rigidbody2D> OnStartAddMagneticWall;// Only Otter
+    public System.Action<Rigidbody2D> OnStartAddMagneticBox;// Only Otter
+
 
 
     private void Awake()
