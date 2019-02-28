@@ -59,7 +59,9 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        anim.SetBool("Jump", !Grounded());
+       if(rb2D.velocity.y < 0)
+            anim.SetBool("Jump", false);
+
     }
 
     public bool Grounded()
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, gizmoRange, ground);
 
         if ((hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null) && canJump)
+
             return true;
 
         return false;
