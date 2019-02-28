@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        anim.SetBool("Jump", false);
+        anim.SetBool("Jump", !Grounded());
     }
 
     public bool Grounded()
