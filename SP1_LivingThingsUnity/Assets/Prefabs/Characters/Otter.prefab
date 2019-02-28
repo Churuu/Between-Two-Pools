@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087217229425938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.34, y: -18.78, z: 0}
+  m_LocalPosition: {x: 15.21, y: -3.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 675f5fa0af45ce2439f9093dcc125dd1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
@@ -157,15 +157,7 @@ MonoBehaviour:
   magnetEnumMomentDerection: 0
   magneticRigidBodys:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   magneticRigidBodysMagnetToObject:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   magnetPowerActiv: 0
   MaxDistancePulled: 5
@@ -236,7 +228,7 @@ MonoBehaviour:
   gizmoRange: 0.2
   ground:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2147483648
   activePlayer: 0
 --- !u!212 &212018574807089346
 SpriteRenderer:
@@ -271,7 +263,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 777
+  m_SortingOrder: 77
   m_Sprite: {fileID: 21300000, guid: 1e16c82ee8d59e74da6b5e2058e3cb7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
