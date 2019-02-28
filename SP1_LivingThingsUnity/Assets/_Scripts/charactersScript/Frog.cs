@@ -40,7 +40,7 @@ public class Frog : MonoBehaviour
         }
     }
 
-    void ExtendTounge()
+    IEnumerator ExtendTounge()
     {
 
         Vector2 playerPos = toungeStart.position;
@@ -52,9 +52,14 @@ public class Frog : MonoBehaviour
         {
             anim.SetBool("ShootTounge", true);
             Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);
+            extended = true;
 
 
             Vector2 middlePoint = (playerPos + hitPoint) / 2;
+
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+            yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length - 0.25f);
 
             _tounge = Instantiate(tounge, middlePoint, Quaternion.identity) as GameObject;
 
@@ -73,7 +78,6 @@ public class Frog : MonoBehaviour
             if (direction == Vector2.left)
                 _toungeEnd.transform.position = new Vector2(_toungeEnd.transform.position.x - .15f, _toungeEnd.transform.position.y);
 
-            extended = true;
         }
     }
 
@@ -81,11 +85,11 @@ public class Frog : MonoBehaviour
     {
         if (extended)
         {
-            playerController.enabled = false;
+            playerController.SetPlayerState(false);
         }
-        else if (!extended && playerController.GetPlayerState())
+        else if (!extended)
         {
-            playerController.enabled = true;
+            playerController.SetPlayerState(true);
         }
     }
 
@@ -112,13 +116,12 @@ public class Frog : MonoBehaviour
         {
             if (!extended)
             {
-                ExtendTounge();
+                StartCoroutine(ExtendTounge());
             }
             else
             {
-                Destroy(_tounge);
-                extended = false;
                 anim.SetBool("ShootTounge", false);
+                Invoke("Unextend", anim.GetCurrentAnimatorStateInfo(0).length - .25f);
             }
         }
         else
@@ -148,6 +151,12 @@ public class Frog : MonoBehaviour
     public void SwitchActivation(bool state)
     {
         activated = state;
+    }
+
+    void Unextend()
+    {
+        Destroy(_tounge);
+        extended = false;
     }
 
     public void DestroyTounge()
