@@ -5,22 +5,23 @@ using UnityEngine;
 public class Frog : MonoBehaviour
 {
 
-    public string abilityButton;
     public float maxExtendedDistance;
+    public float HeldInButtonTimer = 0.3f;
+    public string abilityButton;
     public GameObject tounge;
     public GameObject toungeEnd;
-    public Transform toungeStart;
-    public bool activated = false;
     public GameObject rock;
+    public Transform toungeStart;
+    public LayerMask toungeStickLayer;
+    public bool activated = false;
 
-    private bool extended;
-    private float extendToungeTimer = 5f;
-    private float HeldInButtonTimer = 0.3f;
-    private PlayerController playerController;
-    private GameObject toungeTemp;
-    private Vector2 direction;
-    private float rockCount = 1f;
-    private Animator anim;
+    bool extended;
+    float extendToungeTimer = 5f;
+    PlayerController playerController;
+    GameObject _tounge;
+    Vector2 direction;
+    float rockCount = 1f;
+    Animator anim;
 
 
     void Start()
@@ -43,7 +44,7 @@ public class Frog : MonoBehaviour
     {
 
         Vector2 playerPos = toungeStart.position;
-        RaycastHit2D hit = Physics2D.Raycast(playerPos, direction, maxExtendedDistance);
+        RaycastHit2D hit = Physics2D.Raycast(playerPos, direction, maxExtendedDistance, toungeStickLayer);
 
         print(playerController.Grounded());
 
@@ -55,22 +56,22 @@ public class Frog : MonoBehaviour
 
             Vector2 middlePoint = (playerPos + hitPoint) / 2;
 
-            toungeTemp = Instantiate(tounge, middlePoint, Quaternion.identity) as GameObject;
+            _tounge = Instantiate(tounge, middlePoint, Quaternion.identity) as GameObject;
 
-            var toungeTempCol = toungeTemp.GetComponent<BoxCollider2D>();
-            var toungeTempSprite = toungeTemp.GetComponent<SpriteRenderer>();
+            var _toungeCol = _tounge.GetComponent<BoxCollider2D>();
+            var _toungeSprite = _tounge.GetComponent<SpriteRenderer>();
 
-            Vector3 size = new Vector3(Vector2.Distance(hitPoint, middlePoint) * 1.5f, toungeTempCol.size.y);
+            Vector3 size = new Vector3(Vector2.Distance(hitPoint, middlePoint) * 1.5f, _toungeCol.size.y);
 
-            toungeTempCol.size = size;
-            toungeTempSprite.size = size;
+            _toungeCol.size = size;
+            _toungeSprite.size = size;
 
-            Vector2 spawnPosition = new Vector2(toungeTemp.transform.position.x + 0.075f + ((toungeTempCol.size.x / 2) * direction.x), toungeTemp.transform.position.y);
-            GameObject toungeTempEnd = Instantiate(toungeEnd, spawnPosition, Quaternion.Inverse(transform.rotation), toungeTemp.transform) as GameObject;
-            toungeTempEnd.transform.localScale = new Vector3(toungeTempEnd.transform.localScale.x * direction.x, toungeTempEnd.transform.localScale.y, toungeTempEnd.transform.localScale.z);
+            Vector2 spawnPosition = new Vector2(_tounge.transform.position.x + 0.075f + ((_toungeCol.size.x / 2) * direction.x), _tounge.transform.position.y);
+            GameObject _toungeEnd = Instantiate(toungeEnd, spawnPosition, Quaternion.Inverse(transform.rotation), _tounge.transform) as GameObject;
+            _toungeEnd.transform.localScale = new Vector3(_toungeEnd.transform.localScale.x * direction.x, _toungeEnd.transform.localScale.y, _toungeEnd.transform.localScale.z);
 
             if (direction == Vector2.left)
-                toungeTempEnd.transform.position = new Vector2(toungeTempEnd.transform.position.x - .15f, toungeTempEnd.transform.position.y);
+                _toungeEnd.transform.position = new Vector2(_toungeEnd.transform.position.x - .15f, _toungeEnd.transform.position.y);
 
             extended = true;
         }
@@ -82,7 +83,7 @@ public class Frog : MonoBehaviour
         {
             playerController.enabled = false;
         }
-        else if(!extended && playerController.GetPlayerState())
+        else if (!extended && playerController.GetPlayerState())
         {
             playerController.enabled = true;
         }
@@ -106,18 +107,16 @@ public class Frog : MonoBehaviour
                 anim.SetBool("ShootRock", true);
                 ShootRocks();
             }
-                
         }
         else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
         {
-           
             if (!extended)
             {
                 ExtendTounge();
             }
             else
             {
-                Destroy(toungeTemp);
+                Destroy(_tounge);
                 extended = false;
                 anim.SetBool("ShootTounge", false);
             }
@@ -131,12 +130,9 @@ public class Frog : MonoBehaviour
 
     void ShootRocks()
     {
-        //spawn rocks
-       
         GameObject rockTemp = Instantiate(rock, toungeStart.position, transform.rotation) as GameObject;
         rockTemp.GetComponent<Rigidbody2D>().AddForce(direction * 500);
         rockCount--;
-       
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -147,7 +143,6 @@ public class Frog : MonoBehaviour
             rockCount++;
             Destroy(col);
         }
-
     }
 
     public void SwitchActivation(bool state)
@@ -157,6 +152,6 @@ public class Frog : MonoBehaviour
 
     public void DestroyTounge()
     {
-        Destroy(toungeTemp);
+        Destroy(_tounge);
     }
 }

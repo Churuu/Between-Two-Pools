@@ -412,6 +412,36 @@ Prefab:
       propertyPath: frog
       value: 
       objectReference: {fileID: 142663508}
+    - target: {fileID: 224522133147703090, guid: 75b5b29667987464392675f66b4358af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -813.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224522133147703090, guid: 75b5b29667987464392675f66b4358af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 466.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224736023595035208, guid: 75b5b29667987464392675f66b4358af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -816
+      objectReference: {fileID: 0}
+    - target: {fileID: 224736023595035208, guid: 75b5b29667987464392675f66b4358af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 221
+      objectReference: {fileID: 0}
+    - target: {fileID: 224160940145282480, guid: 75b5b29667987464392675f66b4358af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -817.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224160940145282480, guid: 75b5b29667987464392675f66b4358af,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -49.100006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75b5b29667987464392675f66b4358af, type: 2}
   m_IsPrefabParent: 0
@@ -746,6 +776,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114540269722994226, guid: b5b5240b0d75fcb42a43dc5349ed6a34,
+        type: 2}
+      propertyPath: magneticRigidBodys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114540269722994226, guid: b5b5240b0d75fcb42a43dc5349ed6a34,
+        type: 2}
+      propertyPath: magneticRigidBodysMagnetToObject.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4466748632239704, guid: b5b5240b0d75fcb42a43dc5349ed6a34, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10.316413
@@ -792,6 +832,11 @@ Prefab:
       propertyPath: ground.m_Bits
       value: 2147483904
       objectReference: {fileID: 0}
+    - target: {fileID: 114540269722994226, guid: b5b5240b0d75fcb42a43dc5349ed6a34,
+        type: 2}
+      propertyPath: magneticRigidBodys.Array.data[0]
+      value: 
+      objectReference: {fileID: 1414420837}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5b5240b0d75fcb42a43dc5349ed6a34, type: 2}
   m_IsPrefabParent: 0
@@ -881,6 +926,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1183751270
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 50857169343658376, guid: 06f5d22697aa57f4d881157e50480a3f,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566702899099132, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566702899099132, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+      propertyPath: m_Name
+      value: MagnetBox2x2 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 50857169343658376, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1215757276
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,10 +1093,6 @@ Prefab:
     - target: {fileID: 4956228676894714, guid: ee244863b71baac4bb3bc9f0094a41ad, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1917016305584562, guid: ee244863b71baac4bb3bc9f0094a41ad, type: 2}
-      propertyPath: m_TagString
-      value: Frog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee244863b71baac4bb3bc9f0094a41ad, type: 2}
@@ -1132,6 +1229,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
+--- !u!1 &1414420836 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1566702899099132, guid: 06f5d22697aa57f4d881157e50480a3f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183751270}
+--- !u!50 &1414420837
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414420836}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 150
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1479135612
 Prefab:
   m_ObjectHideFlags: 0
