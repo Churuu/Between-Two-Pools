@@ -3597,16 +3597,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114888415251225934, guid: f37af66e818d7c940a10fb781553e786,
-        type: 2}
-      propertyPath: ability1List.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114888415251225934, guid: f37af66e818d7c940a10fb781553e786,
-        type: 2}
-      propertyPath: ability2List.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4956228676894714, guid: f37af66e818d7c940a10fb781553e786, type: 2}
       propertyPath: m_LocalPosition.x
       value: 81
@@ -3639,26 +3629,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 114411800868128848, guid: f37af66e818d7c940a10fb781553e786,
-        type: 2}
-      propertyPath: activePlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114888415251225934, guid: f37af66e818d7c940a10fb781553e786,
-        type: 2}
-      propertyPath: ability1List.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: b36d64fc5b5c07349ae4a300de7c8133, type: 3}
-    - target: {fileID: 114888415251225934, guid: f37af66e818d7c940a10fb781553e786,
-        type: 2}
-      propertyPath: ability2List.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0976f27cdcdd80c46bd95506c6ccfb40, type: 3}
-    - target: {fileID: 114888415251225934, guid: f37af66e818d7c940a10fb781553e786,
-        type: 2}
-      propertyPath: ability2List.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: a37cb487a3a94a2448ea89da1c793ad5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f37af66e818d7c940a10fb781553e786, type: 2}
   m_IsPrefabParent: 0
@@ -3843,11 +3813,6 @@ Prefab:
     - target: {fileID: 4466748632239704, guid: 9cf2228d2202a9842a2745397aa01fd7, type: 2}
       propertyPath: m_RootOrder
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 114906808045132356, guid: 9cf2228d2202a9842a2745397aa01fd7,
-        type: 2}
-      propertyPath: activePlayer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cf2228d2202a9842a2745397aa01fd7, type: 2}
