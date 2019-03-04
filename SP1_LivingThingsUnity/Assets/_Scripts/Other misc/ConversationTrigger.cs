@@ -23,7 +23,7 @@ public class ConversationTrigger : MonoBehaviour
             var conversationCreator = FindObjectOfType<ConversationCreator>();
             var conversation = conversationCreator.FindConversationByName(conversationName);
 
-            for (int i = 0; i < conversation.thingsToSay.Length; i++)
+            for (int i = 0; i < conversation.thingsToSay.Count; i++)
             {
                 StartCoroutine(PlayConversation(conversation, i));
 
