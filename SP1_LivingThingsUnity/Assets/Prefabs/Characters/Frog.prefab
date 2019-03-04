@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917016305584562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.45, y: -4, z: 0}
+  m_LocalPosition: {x: 6.65, y: -3.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934351191650736}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74766cb37676a7b49811c15ce84141e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxExtendedDistance: 5
+  maxExtendedDistance: 4.5
   HeldInButtonTimer: 0.3
   abilityButton: Ability1
   tounge: {fileID: 1598041726788476, guid: eee1842e5e3b03e41a524776830bb8bf, type: 2}
@@ -172,7 +172,7 @@ MonoBehaviour:
   toungeStart: {fileID: 4934351191650736}
   toungeStickLayer:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 131072
   activated: 1
 --- !u!114 &114240866981501126
 MonoBehaviour:
@@ -210,6 +210,8 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 2147483648
+  animChild:
+  - {fileID: 95074062268254054}
   activePlayer: 0
 --- !u!114 &114451959990602662
 MonoBehaviour:

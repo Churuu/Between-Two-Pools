@@ -247,13 +247,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74766cb37676a7b49811c15ce84141e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityButton: Ability1
   maxExtendedDistance: 5
+  HeldInButtonTimer: 0.3
+  abilityButton: Ability1
   tounge: {fileID: 1598041726788476, guid: eee1842e5e3b03e41a524776830bb8bf, type: 2}
   toungeEnd: {fileID: 1869311221974478, guid: 7d7ae50840957db44be629d48a102a19, type: 2}
-  toungeStart: {fileID: 4934351191650736}
-  activated: 1
   rock: {fileID: 1521461176954430, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
+  toungeStart: {fileID: 4934351191650736}
+  toungeStickLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  activated: 1
 --- !u!114 &114240866981501126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,7 +294,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
-  activePlayer: 0
+  activePlayer: 1
 --- !u!114 &114451959990602662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -339,8 +343,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b25ba0e167475b843a36871798782bb8, type: 3}
   jumpSounds:
   - {fileID: 8300000, guid: b3331de48bacefd499da82cd36d81c59, type: 3}
-  ability1List: []
-  ability2List: []
+  ability1List:
+  - {fileID: 8300000, guid: b36d64fc5b5c07349ae4a300de7c8133, type: 3}
+  ability2List:
+  - {fileID: 8300000, guid: 0976f27cdcdd80c46bd95506c6ccfb40, type: 3}
+  - {fileID: 8300000, guid: a37cb487a3a94a2448ea89da1c793ad5, type: 3}
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
 --- !u!212 &212200907939946320

@@ -51,6 +51,7 @@ public class Frog : MonoBehaviour
         if (hit.collider != null && playerController.Grounded())
         {
             anim.SetBool("ShootTounge", true);
+			playerController.SetPlayerState(false);
             Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);
             extended = true;
 
@@ -85,11 +86,9 @@ public class Frog : MonoBehaviour
     {
         if (extended)
         {
-            playerController.SetPlayerState(false);
         }
         else if (!extended)
         {
-            playerController.SetPlayerState(true);
         }
     }
 
@@ -157,6 +156,7 @@ public class Frog : MonoBehaviour
     {
         Destroy(_tounge);
         extended = false;
+		playerController.SetPlayerState(true);
     }
 
     public void DestroyTounge()

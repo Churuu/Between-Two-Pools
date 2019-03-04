@@ -278,19 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityOne: 1
-  magnetEnumMomentDerection: 0
-  magneticRigidBodys:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  magneticRigidBodysMagnetToObject:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   magnetPowerActiv: 0
   MaxDistancePulled: 5
   MaxStrengthPulled: 2250
@@ -300,13 +287,11 @@ MonoBehaviour:
   thrust: 0
   "buttonNameAbility1AvP\xE5": Ability1
   buttonNameAbility1Togel: S
-  buttonNameAbility2: Ability2
-  ability2Activ: 0
-  minDistanceStopMoving: 0.9
   maxDistanceToGetPulled: 10
   maxStrengthToGetPulled: 50
   maxDistanceToGetThrust: 10
   maxStrengthToGetThrust: 20
+  minDistanceStopMoving: 0.9
   okToShangeMagnet: 0
 --- !u!114 &114642438435981828
 MonoBehaviour:
@@ -361,7 +346,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
-  activePlayer: 1
+  activePlayer: 0
 --- !u!212 &212018574807089346
 SpriteRenderer:
   m_ObjectHideFlags: 1

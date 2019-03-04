@@ -25,19 +25,26 @@ public class Otter : MonoBehaviour
     [SerializeField] private float maxDistanceToGetThrust = 10f;
     [SerializeField] float maxStrengthToGetThrust = 20f;
     [SerializeField] private float minDistanceStopMoving = 2.35f;
+    public Animator[] animChild; // 1. Normal/Red 2. RedActive 3. Blue 4. BlueActive
+    [HideInInspector] public bool pullActiv = true;
     int numer = 0;
     public bool okToShangeMagnet = false;
-    Animator anim;
+ //   Animator anim;
 
     private void Start()
     {
         EventManager.instance.OnStartAddMagneticWall += AddWallMagnetic;
         EventManager.instance.OnStartAddMagneticBox += AddBoxMagnetic;
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         rb2D = transform.GetComponent<Rigidbody2D>();
         if (transform.GetComponent<PlayerController>() != null)
         {
             playerController = transform.GetComponent<PlayerController>();
+        }
+        for (int i = 0; i < animChild.Length; i++)
+        {
+            if (animChild[i] != null)
+                animChild[i].SetBool("Pull", true);
         }
     }
     private void AddBoxMagnetic(Rigidbody2D rb2D)
@@ -52,31 +59,23 @@ public class Otter : MonoBehaviour
 
     void Update()
     {
-        //if (!playerController.Grounded())
-        //{
-        //    anim.SetBool("Floating", true);
-        //}
-        //else { anim.SetBool("Floating", false); }
-        //if (abilityOne == Ability.Pull)
-        //{
-        //    Debug.Log("pull(O_O)");
-        //    anim.SetBool("PullActive", true);
-        //    anim.SetBool("PushActive", false);
-        //}
-        //else if (abilityOne == Ability.Thrust)
-        //{
-        //    //   Debug.Log("Thrust(O_O)");
-        //    anim.SetBool("PushActive", true);
-        //    anim.SetBool("PullActive", false);
-        //}
+        
 
         if (magnetPowerActiv)
         {
-            anim.SetBool("PushedQ", true);
+            for (int i = 0; i < animChild.Length; i++)
+            {
+                if (animChild[i] != null)
+                    animChild[i].SetBool("PushedQ", true);
+            }
         }
         else
         {
-            anim.SetBool("PushedQ", false);
+            for (int i = 0; i < animChild.Length; i++)
+            {
+                if (animChild[i] != null)
+                    animChild[i].SetBool("PushedQ", false);
+            }
         }
 
 
@@ -88,6 +87,11 @@ public class Otter : MonoBehaviour
             if (Input.GetButtonDown(buttonNameAbility1AvPå))//Av/PÅ
             {
                 magnetPowerActiv = !magnetPowerActiv;
+                for (int i = 0; i < animChild.Length; i++)
+                {
+                    if (animChild[i] != null)
+                        animChild[i].SetBool("AbillityOn", magnetPowerActiv);
+                }
 
 
 
@@ -96,11 +100,30 @@ public class Otter : MonoBehaviour
             {
                 if (abilityOne == Ability.Pull)
                 {
+                    for (int i = 0; i < animChild.Length; i++)
+                    {
+                        if (animChild[i] != null)
+                        {
+                            animChild[i].SetBool("Thrust", true);
+                            animChild[i].SetBool("Pull", false);
+                        }
+                    }
+                           
                     abilityOne = Ability.Thrust;
+                    pullActiv = false;
                 }
                 else if (abilityOne == Ability.Thrust)
                 {
                     abilityOne = Ability.Pull;
+                    pullActiv = true;
+                    for (int i = 0; i < animChild.Length; i++)
+                    {
+                        if (animChild[i] != null)
+                        {
+                            animChild[i].SetBool("Thrust", false);
+                            animChild[i].SetBool("Pull", true);
+                        }
+                    }
                 }
 
             }
