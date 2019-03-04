@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1302628643144360
 GameObject:
   m_ObjectHideFlags: 1
@@ -211,6 +211,7 @@ MonoBehaviour:
   gameOverCanvas: {fileID: 223761095019417038}
   timerText: {fileID: 114358145938750398}
   timerDuration: 10
+  restartButton: RestartButton
 --- !u!114 &114356298509308724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,7 +246,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Game Over
 
-    Game will restart in:
+    Game will restart automatically in:
 
 
 

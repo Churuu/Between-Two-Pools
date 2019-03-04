@@ -114,7 +114,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243386080139177198, guid: 58439c3261a1a554db09ed5b5ab31fb4,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
@@ -292,6 +292,8 @@ MonoBehaviour:
   maxDistanceToGetThrust: 10
   maxStrengthToGetThrust: 20
   minDistanceStopMoving: 0.9
+  animChild: []
+  pullActiv: 1
   okToShangeMagnet: 0
 --- !u!114 &114642438435981828
 MonoBehaviour:
@@ -346,6 +348,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
+  animChild: []
   activePlayer: 0
 --- !u!212 &212018574807089346
 SpriteRenderer:

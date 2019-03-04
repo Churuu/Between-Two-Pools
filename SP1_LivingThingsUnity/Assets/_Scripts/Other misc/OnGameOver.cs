@@ -14,6 +14,9 @@ public class OnGameOver : MonoBehaviour
     private float timerDuration;
     private float timerFloat;
 
+    [SerializeField]
+    private string restartButton = "RestartButton";
+
     private bool GameOverActivation = false;
 
 	// Use this for initialization
@@ -42,13 +45,21 @@ public class OnGameOver : MonoBehaviour
     private void GameOverFunction()
     {
 
-        timerText.text = timerFloat + "Game Over";
+        timerText.text = timerFloat + " seconds";
         if (timerFloat >= 0)
         {
             timerFloat -= Time.deltaTime;
         }
         else if (timerFloat < 0)
         {
+            gameOverCanvas.gameObject.SetActive(true);
+            GameOverActivation = false;
+            FindObjectOfType<SceneManagerScript>().ReloadCurrentScene();
+        }
+        if (Input.GetButtonDown(restartButton)) 
+        {
+            gameOverCanvas.gameObject.SetActive(true);
+            GameOverActivation = false;
             FindObjectOfType<SceneManagerScript>().ReloadCurrentScene();
         }
     }
