@@ -6,7 +6,17 @@ public class Conversation
 {
 
     public string name;
-    public List<string> thingsToSay = new List<string>();
+    public List<string> Dialog = new List<string> {
+        "Default"
+    };
+
+    public string[] options
+    {
+        get {
+
+            return Dialog.ToArray();
+        }
+    }
 
     public Conversation(string name)
     {
