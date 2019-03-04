@@ -21,10 +21,11 @@ GameObject:
   - component: {fileID: 4506182451989650}
   - component: {fileID: 212532328237411294}
   - component: {fileID: 50788999036598460}
+  - component: {fileID: 114029271459373828}
   - component: {fileID: 60409745539552712}
-  m_Layer: 17
-  m_Name: Rock
-  m_TagString: AnchorPoint
+  m_Layer: 0
+  m_Name: Rock 1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +50,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521461176954430}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -71,14 +72,14 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.90625, y: 0.90625}
     newSize: {x: 0.90625, y: 0.90625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -90,6 +91,17 @@ PolygonCollider2D:
       - {x: 0.453125, y: -0.453125}
       - {x: 0.453125, y: 0.453125}
       - {x: -0.453125, y: 0.453125}
+--- !u!114 &114029271459373828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521461176954430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2665c9a4e36b7cf41b8f5f8ce72f0715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212532328237411294
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -124,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300088, guid: 9a1de0d8406dcd342a4c66ed98dbeafa, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 0f5fa378cea4ddc47b74f9c43233d535, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
