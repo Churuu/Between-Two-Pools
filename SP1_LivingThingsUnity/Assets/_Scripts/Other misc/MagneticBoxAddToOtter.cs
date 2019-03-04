@@ -3,13 +3,17 @@
 public class MagneticBoxAddToOtter : MonoBehaviour
 {
     [SerializeField] private float minDistanceStopMoving = 2.35f;
-    public GameObject[] characters;
+    private GameObject[] characters;
     bool One = true;
     private Rigidbody2D rb2D;
 
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        characters = new GameObject[2];
+        characters[0] = GameObject.Find("Frog");
+        characters[1] = GameObject.Find("Seal");
+        Debug.Log(characters[1]);
     }
     // Update is called once per frame
     void Update()
