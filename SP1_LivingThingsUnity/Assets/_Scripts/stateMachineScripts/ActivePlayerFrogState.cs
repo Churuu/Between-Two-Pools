@@ -34,7 +34,11 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
 
         stateMachines.transform.parent = frog.transform;
         frog.GetComponent<Frog>().SwitchActivation(true);
-        frog.GetComponent<PlayerController>().SetPlayerState(true);
+        if (!frog.GetComponent<Frog>().GetToungeState())
+        {
+            frog.GetComponent<PlayerController>().SetPlayerState(true);
+        }
+
     }
     public override void Exit()
     {
