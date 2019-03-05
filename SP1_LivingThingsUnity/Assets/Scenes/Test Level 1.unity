@@ -56008,6 +56008,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1469403258969274, guid: 762e62a22b87824439fe59bd1c858d1e, type: 2}
+      propertyPath: m_TagString
+      value: Otter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 762e62a22b87824439fe59bd1c858d1e, type: 2}
   m_IsPrefabParent: 0
@@ -57041,7 +57045,6 @@ GameObject:
   - component: {fileID: 1529047340}
   - component: {fileID: 1529047339}
   - component: {fileID: 1529047338}
-  - component: {fileID: 1529047337}
   - component: {fileID: 1529047336}
   m_Layer: 31
   m_Name: Platform
@@ -57071,18 +57074,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1529047337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114928971790304304, guid: cb6d2b39c70c53e40aa56c5ff3a3d910,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1529047335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cd3580517bb934a9b047108e70aef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1529047338
 AudioSource:
   m_ObjectHideFlags: 0

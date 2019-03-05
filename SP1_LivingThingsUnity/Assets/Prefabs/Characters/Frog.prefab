@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917016305584562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.65, y: -3.84, z: 0}
+  m_LocalPosition: {x: 213.8, y: -67.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934351191650736}
@@ -109,7 +109,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
+  m_Offset: {x: 0, y: 0.9372673}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.40625, y: 2}
+  m_Size: {x: 1.40625, y: 1.8745346}
   m_EdgeRadius: 0
 --- !u!95 &95074062268254054
 Animator:
@@ -168,12 +168,11 @@ MonoBehaviour:
   abilityButton: Ability1
   tounge: {fileID: 1598041726788476, guid: eee1842e5e3b03e41a524776830bb8bf, type: 2}
   toungeEnd: {fileID: 1869311221974478, guid: 7d7ae50840957db44be629d48a102a19, type: 2}
-  rock: {fileID: 1521461176954430, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
+  rock: {fileID: 1521461176954430, guid: 60df7374b189a72468f13aac8efae2ed, type: 2}
   toungeStart: {fileID: 4934351191650736}
   toungeStickLayer:
     serializedVersion: 2
     m_Bits: 131072
-  activated: 1
 --- !u!114 &114240866981501126
 MonoBehaviour:
   m_ObjectHideFlags: 1
