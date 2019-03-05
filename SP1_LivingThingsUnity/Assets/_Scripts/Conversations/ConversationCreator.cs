@@ -27,7 +27,9 @@ public class ConversationCreator : MonoBehaviour
     {
         "Otter",
         "Seal",
-        "Frog"
+        "Frog",
+        "Plankton",
+        "Shrimp"
     };
 
     public int character
