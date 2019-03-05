@@ -13,15 +13,14 @@ public class Frog : MonoBehaviour
     public GameObject rock;
     public Transform toungeStart;
     public LayerMask toungeStickLayer;
-    public bool activated = false;
 
-    bool extended;
-    float extendToungeTimer = 5f;
     PlayerController playerController;
-    GameObject _tounge;
-    Vector2 direction;
+    bool activated = false;
+    bool extended;
     float rockCount = 1f;
+    GameObject _tounge;
     Animator anim;
+    Vector2 direction =  Vector2.right;
 
 
     void Start()
@@ -150,6 +149,11 @@ public class Frog : MonoBehaviour
     public void SwitchActivation(bool state)
     {
         activated = state;
+    }
+
+    public bool GetToungeState()
+    {
+        return extended;
     }
 
     void Unextend()
