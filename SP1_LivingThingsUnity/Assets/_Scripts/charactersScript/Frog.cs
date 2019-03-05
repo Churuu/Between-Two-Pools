@@ -103,7 +103,7 @@ public class Frog : MonoBehaviour
         if (Input.GetButton(abilityButton))
         {
             HeldInButtonTimer -= Time.deltaTime;
-
+            anim.SetBool("ShootRock", false);
             if (HeldInButtonTimer < 0 && rockCount == 1)
             {
                 anim.SetBool("ShootRock", true);
