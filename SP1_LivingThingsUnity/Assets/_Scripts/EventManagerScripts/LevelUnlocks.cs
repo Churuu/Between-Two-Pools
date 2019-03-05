@@ -40,7 +40,7 @@ public class LevelUnlocks : MonoBehaviour
                 {
                     if (i < levelButton.Length)
                     {
-                        Debug.Log(i + " " + levelButton.Length);
+                      
                         levelButton[i].interactable = true;
                     }
                 }
