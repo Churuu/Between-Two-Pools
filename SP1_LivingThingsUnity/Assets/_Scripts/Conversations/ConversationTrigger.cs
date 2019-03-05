@@ -7,15 +7,14 @@ using UnityEngine.UI;
 public class ConversationTrigger : MonoBehaviour
 {
     public Text convoText;
-
+    public float TypingDelay = 0.1f;
     public string conversationName;
-
     public enum characterTypes { Otter = 1, Seal = 2, Frog = 3 };
     public characterTypes characters;
 
-    float letterTimer = 0.1f;
+
     bool entered = false;
-    public int currentIndex = 0;
+    int currentIndex = 0;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -33,6 +32,7 @@ public class ConversationTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) // Skips current dialog
         {
             currentIndex++;
+            StopAllCoroutines();
             PlayConversation();
         }
 
@@ -42,11 +42,11 @@ public class ConversationTrigger : MonoBehaviour
     {
         var conversationCreator = FindObjectOfType<ConversationCreator>();
         var conversation = conversationCreator.FindConversationByName(conversationName);
-        if (currentIndex < conversation.Dialog.Count)
+        if (currentIndex < conversation.dialog.Count)
             StartCoroutine(PlayDialog(conversation));
 
 
-        if (currentIndex == conversation.Dialog.Count)
+        if (currentIndex == conversation.dialog.Count)
         {
             convoText.text = "";
             Destroy(gameObject);
@@ -57,10 +57,10 @@ public class ConversationTrigger : MonoBehaviour
     {
 
         convoText.text = "";
-        foreach (var letter in conversation.Dialog[currentIndex].ToCharArray())
+        foreach (var letter in conversation.dialog[currentIndex].ToCharArray())
         {
             convoText.text += letter;
-            yield return new WaitForSeconds(letterTimer);
+            yield return new WaitForSeconds(TypingDelay);
         }
     }
 }

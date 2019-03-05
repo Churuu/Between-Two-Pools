@@ -8,15 +8,29 @@ public class Conversation
 {
 
     public string name;
-    public List<string> Dialog = new List<string> {
+    public List<string> dialog = new List<string> {
         "Default"
+    };
+
+    public List<int> characterDialog = new List<int>
+    {
+        0
     };
 
     public string[] options
     {
-        get {
+        get
+        {
 
-            return Dialog.ToArray();
+            return dialog.ToArray();
+        }
+    }
+
+    public int[] characters
+    {
+        get
+        {
+            return characterDialog.ToArray();
         }
     }
 

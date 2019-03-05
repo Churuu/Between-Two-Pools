@@ -39,6 +39,7 @@ public class ConversationCreatorEditor : Editor
 
 
         conversationCreator.selectedDialog = EditorGUILayout.Popup("Dialog", conversationCreator.selectedDialog, conversationCreator.dialogOptions);
+        conversationCreator.character = EditorGUILayout.Popup("Character", conversationCreator.character, conversationCreator.CharacterOptions);
 
         if (conversationCreator.selectedDialog != oldSelection)
             oldSelection = conversationCreator.selectedDialog;
