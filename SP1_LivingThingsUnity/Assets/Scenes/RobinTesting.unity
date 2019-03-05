@@ -688,17 +688,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cName: 
   selectedConversation: 0
-  selectedDialog: 4
+  selectedDialog: 0
   conversations:
   - name: Default
-    Dialog:
+    dialog:
     - Default
-    - Hello people
-    - Goodbye, we will never meet again
-    - The world is no place for villains
-    - Did you just!?
+    - 1
+    - 2
+    - 3
+    characterDialog: 00000000010000000200000000000000
   optionsList:
   - Default
+  CharacterOptions:
+  - Otter
+  - Seal
+  - Frog
 --- !u!114 &466530848
 MonoBehaviour:
   m_ObjectHideFlags: 0

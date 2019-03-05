@@ -42,11 +42,11 @@ public class ConversationTrigger : MonoBehaviour
     {
         var conversationCreator = FindObjectOfType<ConversationCreator>();
         var conversation = conversationCreator.FindConversationByName(conversationName);
-        if (currentIndex < conversation.Dialog.Count)
+        if (currentIndex < conversation.dialog.Count)
             StartCoroutine(PlayDialog(conversation));
 
 
-        if (currentIndex == conversation.Dialog.Count)
+        if (currentIndex == conversation.dialog.Count)
         {
             convoText.text = "";
             Destroy(gameObject);
@@ -57,7 +57,7 @@ public class ConversationTrigger : MonoBehaviour
     {
 
         convoText.text = "";
-        foreach (var letter in conversation.Dialog[currentIndex].ToCharArray())
+        foreach (var letter in conversation.dialog[currentIndex].ToCharArray())
         {
             convoText.text += letter;
             yield return new WaitForSeconds(TypingDelay);

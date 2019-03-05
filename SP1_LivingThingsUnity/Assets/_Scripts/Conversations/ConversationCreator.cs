@@ -10,23 +10,48 @@ public class ConversationCreator : MonoBehaviour
     [HideInInspector] public string cName;
     [HideInInspector] public int selectedConversation = 0;
     [HideInInspector] public int selectedDialog = 0;
+
+
+    [HideInInspector]
     public List<Conversation> conversations = new List<Conversation> {
         new Conversation("Default")
     };
+
+    [HideInInspector]
     public List<string> optionsList = new List<string> {
         "Default"
     };
+
+    [HideInInspector]
+    public string[] CharacterOptions =
+    {
+        "Otter",
+        "Seal",
+        "Frog"
+    };
+
+    public int character
+    {
+        get
+        {
+            return conversations[selectedConversation].characterDialog[selectedDialog];
+        }
+        set
+        {
+            conversations[selectedConversation].characterDialog[selectedDialog] = value;
+        }
+    }
 
 
     public string cText
     {
         get
         {
-            return conversations[selectedConversation].Dialog[selectedDialog];
+            return conversations[selectedConversation].dialog[selectedDialog];
         }
         set
         {
-            conversations[selectedConversation].Dialog[selectedDialog] = value;
+            conversations[selectedConversation].dialog[selectedDialog] = value;
         }
     }
 
@@ -42,7 +67,7 @@ public class ConversationCreator : MonoBehaviour
     {
         get
         {
-            return conversations[selectedConversation].Dialog.ToArray();
+            return conversations[selectedConversation].dialog.ToArray();
         }
     }
 
@@ -55,12 +80,14 @@ public class ConversationCreator : MonoBehaviour
     public void AddDialog()
     {
 
-        conversations[selectedConversation].Dialog.Add(conversations[selectedConversation].Dialog.Count.ToString());
+        conversations[selectedConversation].dialog.Add(conversations[selectedConversation].dialog.Count.ToString());
+        conversations[selectedConversation].characterDialog.Add(0);
     }
 
     public void DeleteDialog()
     {
-        conversations[selectedConversation].Dialog.RemoveAt(selectedDialog);
+        conversations[selectedConversation].dialog.RemoveAt(selectedDialog);
+        conversations[selectedConversation].characterDialog.RemoveAt(selectedDialog);
         selectedDialog = 0;
     }
 
