@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 212072048277800630}
   m_Layer: 10
   m_Name: Otter Orginal
-  m_TagString: Untagged
+  m_TagString: Otter
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469403258969274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 148.5, y: -73.6, z: 0}
+  m_LocalPosition: {x: 7.61, y: -1.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4434361656406910}
@@ -217,13 +217,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.4375, y: 1.15625}
-      - {x: -0.96875, y: 1.15625}
-      - {x: -0.96875, y: 0.15625}
-      - {x: -0.90625, y: 0}
-      - {x: 0.96875, y: 0}
-      - {x: 0.96875, y: 0.15625}
-      - {x: 0.59375, y: 0.90625}
+    - - {x: 0.71779966, y: 0.8442012}
+      - {x: -0.035372734, y: 1.4251944}
+      - {x: -0.730999, y: 0.8472153}
+      - {x: -0.75765514, y: 0.021375775}
+      - {x: 0.7012806, y: 0.014859438}
 --- !u!95 &95256204118674962
 Animator:
   serializedVersion: 3
