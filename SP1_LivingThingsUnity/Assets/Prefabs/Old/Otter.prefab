@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114746241198943806}
   - component: {fileID: 114500226501757298}
   m_Layer: 10
-  m_Name: OtterRedActive
+  m_Name: Otter
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -168,6 +168,8 @@ MonoBehaviour:
   maxDistanceToGetThrust: 10
   maxStrengthToGetThrust: 20
   minDistanceStopMoving: 0.9
+  animChild: []
+  pullActiv: 1
   okToShangeMagnet: 0
 --- !u!114 &114642438435981828
 MonoBehaviour:
@@ -222,6 +224,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 2147483648
+  animChild: []
   activePlayer: 0
 --- !u!212 &212018574807089346
 SpriteRenderer:

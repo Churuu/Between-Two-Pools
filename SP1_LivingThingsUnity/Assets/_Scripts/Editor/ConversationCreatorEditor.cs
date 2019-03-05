@@ -6,13 +6,8 @@ using UnityEditor;
 [CustomEditor(typeof(ConversationCreator))]
 public class ConversationCreatorEditor : Editor
 {
-    SerializedProperty textBox;
-
     int oldSelection = 0;
     string oldText = "";
-
-    public GameObject conversationPrefab;
-    public GameObject conversationTrigger;
 
     public override void OnInspectorGUI()
     {

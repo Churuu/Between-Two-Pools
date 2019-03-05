@@ -15,7 +15,7 @@ public class ConversationTrigger : MonoBehaviour
 
     float letterTimer = 0.1f;
     bool entered = false;
-    int currentIndex = 0;
+    public int currentIndex = 0;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -42,12 +42,15 @@ public class ConversationTrigger : MonoBehaviour
     {
         var conversationCreator = FindObjectOfType<ConversationCreator>();
         var conversation = conversationCreator.FindConversationByName(conversationName);
-
         if (currentIndex < conversation.Dialog.Count)
             StartCoroutine(PlayDialog(conversation));
 
+
         if (currentIndex == conversation.Dialog.Count)
+        {
+            convoText.text = "";
             Destroy(gameObject);
+        }
     }
 
     IEnumerator PlayDialog(Conversation conversation)
