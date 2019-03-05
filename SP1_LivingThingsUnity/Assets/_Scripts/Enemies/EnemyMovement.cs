@@ -46,7 +46,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         Vector2 movement = new Vector2(StartRiktning, 0.0f);
         Enemy_Rigid.velocity = new Vector2(movement.x * Enemy_Move_speed, movement.y * Enemy_Move_speed);
-     //   anim.SetFloat("SpeedX", StartRiktning);
+        anim.SetFloat("SpeedX", StartRiktning);
         ChangeDirection();
     }
     void ChangeDirection()
@@ -55,14 +55,14 @@ public class EnemyMovement : MonoBehaviour {
         if (transform.position.x > MaxDist && going_right == true)
         {
             StartRiktning = StartRiktning * -1;
-           
+
             going_right = false;
             going_left = true;
         }
         else if (transform.position.x < NegMaxDist && going_left == true)
         {
             StartRiktning = StartRiktning * -1;
-            
+
             going_right = true;
             going_left = false;
         }
@@ -73,7 +73,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         // Byt riktning vid kollition med vägg
             StartRiktning = StartRiktning * -1;
-           
+
             going_right = !going_right;
             going_left = !going_left;
     }

@@ -8,7 +8,7 @@ public class LevelUnlocks : MonoBehaviour
     public Button[] levelButton;
     private void Start()
     {
-      //  SaveCharacter(0);
+        //  SaveCharacter(0);
         LoadCharacter();
     }
     void Update()
@@ -20,7 +20,7 @@ public class LevelUnlocks : MonoBehaviour
         //        characterData = LoadCharacter(0);
     }
 
-   public void SaveCharacter( int characterSlot)
+    public void SaveCharacter(int characterSlot)
     {
         int numer = 1;
 
@@ -30,19 +30,27 @@ public class LevelUnlocks : MonoBehaviour
 
     public void LoadCharacter()
     {
-       // LevelUnlocksSave lod = new LevelUnlocksSave();
+        // LevelUnlocksSave lod = new LevelUnlocksSave();
 
         for (int i = 0; i < levelUnlocksSave.stringNameLevel.Length; i++)
         {
-            if (PlayerPrefs.GetInt(levelUnlocksSave.stringNameLevel[i]) > 0)
+            if (PlayerPrefs.GetInt(levelUnlocksSave.stringNameLevel[i]) != null)
             {
-                levelButton[i].interactable = true;
-            }
-            else
-            {
-                levelButton[i].interactable = false;
+                if (PlayerPrefs.GetInt(levelUnlocksSave.stringNameLevel[i]) > 0)
+                {
+                    if (i < levelButton.Length)
+                    {
+                        Debug.Log(i + " " + levelButton.Length);
+                        levelButton[i].interactable = true;
+                    }
+                }
+                else
+                if (i < levelButton.Length)
+                {
+                    levelButton[i].interactable = false;
+                }
             }
         }
-     
+
     }
 }
