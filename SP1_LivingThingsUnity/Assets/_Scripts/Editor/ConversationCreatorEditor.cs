@@ -7,6 +7,10 @@ using UnityEditor;
 public class ConversationCreatorEditor : Editor
 {
     SerializedProperty textBox;
+
+    int oldSelection = 0;
+    string oldText = "";
+
     public GameObject conversationPrefab;
     public GameObject conversationTrigger;
 
@@ -14,22 +18,46 @@ public class ConversationCreatorEditor : Editor
     {
         DrawDefaultInspector();
 
-        ConversationCreator convo = (ConversationCreator)target;
+        ConversationCreator conversationCreator = (ConversationCreator)target;
 
-        convo.selectedConversation = EditorGUILayout.Popup("Selected conversation", convo.selectedConversation, convo.options);
-        GUILayout.Label("Conversation");
-        convo.cName = EditorGUILayout.TextField(convo.cName);
+        conversationCreator.selectedConversation = EditorGUILayout.Popup("Conversations", conversationCreator.selectedConversation, conversationCreator.options);
 
-        if (GUILayout.Button("Create new conversation"))
+
+        GUILayout.Label("Name");
+        conversationCreator.cName = EditorGUILayout.TextField(conversationCreator.cName);
+
+
+        if (GUILayout.Button("Create new conversation") && !conversationCreator.cName.Contains(" "))
         {
-            convo.CreateNewConversation(convo.cName);
+            conversationCreator.CreateNewConversation(conversationCreator.cName);
+        }
+        else
+        {
+            Debug.LogWarning("The conversation must have a name and cannot have spaces in the name!");
+        }
+
+        if (GUILayout.Button("Delete selected conversation") && conversationCreator.selectedConversation < conversationCreator.conversations.Count && conversationCreator.selectedConversation >= 0 && conversationCreator.conversations.Count != 0)
+        {
+            conversationCreator.DeleteConversation(conversationCreator.selectedConversation);
         }
         GUILayout.Space(10);
 
-        if (GUILayout.Button("Add Text to selected conversation"))
+
+        conversationCreator.selectedDialog = EditorGUILayout.Popup("Dialog", conversationCreator.selectedDialog, conversationCreator.dialogOptions);
+
+        if (conversationCreator.selectedDialog != oldSelection)
+            oldSelection = conversationCreator.selectedDialog;
+
+        if (GUILayout.Button("Add new dialog"))
         {
-            convo.CreateNewConversation(convo.cName);
+            conversationCreator.AddDialog();
         }
-        convo.cText = EditorGUILayout.TextArea(convo.cText, GUILayout.Height(100f));
+        if (GUILayout.Button("Delete dialog"))
+        {
+            conversationCreator.DeleteDialog();
+        }
+
+        conversationCreator.cText = EditorGUILayout.TextArea(conversationCreator.cText, GUILayout.Height(100f));
+
     }
 }
