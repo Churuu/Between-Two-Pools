@@ -7,15 +7,14 @@ using UnityEngine.UI;
 public class ConversationTrigger : MonoBehaviour
 {
     public Text convoText;
-
+    public float TypingDelay = 0.1f;
     public string conversationName;
-
     public enum characterTypes { Otter = 1, Seal = 2, Frog = 3 };
     public characterTypes characters;
 
-    float letterTimer = 0.1f;
+
     bool entered = false;
-    public int currentIndex = 0;
+    int currentIndex = 0;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -61,7 +60,7 @@ public class ConversationTrigger : MonoBehaviour
         foreach (var letter in conversation.Dialog[currentIndex].ToCharArray())
         {
             convoText.text += letter;
-            yield return new WaitForSeconds(letterTimer);
+            yield return new WaitForSeconds(TypingDelay);
         }
     }
 }
