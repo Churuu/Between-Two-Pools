@@ -33,6 +33,7 @@ public class ConversationTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) // Skips current dialog
         {
             currentIndex++;
+            StopAllCoroutines();
             PlayConversation();
         }
 
