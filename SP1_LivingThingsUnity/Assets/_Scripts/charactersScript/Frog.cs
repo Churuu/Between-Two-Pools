@@ -7,6 +7,8 @@ public class Frog : MonoBehaviour
 
     public float maxExtendedDistance;
     public float HeldInButtonTimer = 0.3f;
+    [Range(0, 1)]
+    public int rockCount = 0;
     public string abilityButton;
     public GameObject tounge;
     public GameObject toungeEnd;
@@ -17,7 +19,7 @@ public class Frog : MonoBehaviour
     PlayerController playerController;
     bool activated = false;
     bool extended;
-    float rockCount = 1f;
+
     GameObject _tounge;
     Animator anim;
     Vector2 direction =  Vector2.right;
