@@ -10,10 +10,10 @@ public class ConversationCreator : MonoBehaviour
     [HideInInspector] public string cName;
     [HideInInspector] public int selectedConversation = 0;
     [HideInInspector] public int selectedDialog = 0;
-    [HideInInspector] public List<Conversation> conversations = new List<Conversation> {
+    public List<Conversation> conversations = new List<Conversation> {
         new Conversation("Default")
     };
-    [HideInInspector] public List<string> optionsList = new List<string> {
+    public List<string> optionsList = new List<string> {
         "Default"
     };
 
