@@ -36,8 +36,39 @@ public class Frog : MonoBehaviour
         if (activated)
         {
             ButtonHandler();
-            DisableMovementWhenExtended();
             SetDirection();
+        }
+    }
+
+    void ButtonHandler()
+    {
+        if (Input.GetButton(abilityButton))
+        {
+            HeldInButtonTimer -= Time.deltaTime;
+            anim.SetBool("ShootRock", false);
+            if (HeldInButtonTimer < 0 && rockCount == 1)
+            {
+                anim.SetBool("ShootRock", true);
+                ShootRocks();
+            }
+        }
+        else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
+        {
+            if (!extended)
+            {
+                extended = true;
+                StartCoroutine(ExtendTounge());
+            }
+            else
+            {
+                anim.SetBool("ShootTounge", false);
+                Invoke("Unextend", anim.GetCurrentAnimatorStateInfo(0).length - .25f);
+            }
+        }
+        else
+        {
+            HeldInButtonTimer = 0.2f;
+            anim.SetBool("ShootRock", false);
         }
     }
 
@@ -54,8 +85,6 @@ public class Frog : MonoBehaviour
             anim.SetBool("ShootTounge", true);
 			playerController.SetPlayerState(false);
             Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);
-            extended = true;
-
 
             Vector2 middlePoint = (playerPos + hitPoint) / 2;
 
@@ -83,52 +112,10 @@ public class Frog : MonoBehaviour
         }
     }
 
-    void DisableMovementWhenExtended()
-    {
-        if (extended)
-        {
-        }
-        else if (!extended)
-        {
-        }
-    }
-
-
     void SetDirection()
     {
         if (playerController.GetMoveDirection() != Vector2.zero)
             direction = playerController.GetMoveDirection();
-    }
-
-    void ButtonHandler()
-    {
-        if (Input.GetButton(abilityButton))
-        {
-            HeldInButtonTimer -= Time.deltaTime;
-            anim.SetBool("ShootRock", false);
-            if (HeldInButtonTimer < 0 && rockCount == 1)
-            {
-                anim.SetBool("ShootRock", true);
-                ShootRocks();
-            }
-        }
-        else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
-        {
-            if (!extended)
-            {
-                StartCoroutine(ExtendTounge());
-            }
-            else
-            {
-                anim.SetBool("ShootTounge", false);
-                Invoke("Unextend", anim.GetCurrentAnimatorStateInfo(0).length - .25f);
-            }
-        }
-        else
-        {
-            HeldInButtonTimer = 0.2f;
-            anim.SetBool("ShootRock", false);
-        }
     }
 
     void ShootRocks()

@@ -45,9 +45,14 @@ public class ConversationTrigger : MonoBehaviour
         if (currentIndex < conversation.dialog.Count)
             StartCoroutine(PlayDialog(conversation));
 
+        if (EventManager.instance.OnChatActiv != null)
+            EventManager.instance.OnChatActiv();
 
         if (currentIndex == conversation.dialog.Count)
         {
+            if (EventManager.instance.OnChatEnd != null)
+                EventManager.instance.OnChatEnd();
+
             convoText.text = "";
             Destroy(gameObject);
         }
