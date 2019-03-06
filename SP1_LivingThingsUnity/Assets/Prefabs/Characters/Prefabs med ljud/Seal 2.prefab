@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114116129243021318}
   - component: {fileID: 82816953908724060}
   - component: {fileID: 114225732888102230}
+  - component: {fileID: 114165769322612526}
   m_Layer: 10
   m_Name: Seal 2
   m_TagString: Untagged
@@ -274,6 +275,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   audioClips: []
+--- !u!114 &114165769322612526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055048055555166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65809072f6420f24a8450f4c7a368e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 21300000, guid: 94674bd0471dbff4c92fc2747c99df8d, type: 3}
+  layerGhost: 15
+  notKilld: 1
 --- !u!114 &114225732888102230
 MonoBehaviour:
   m_ObjectHideFlags: 1

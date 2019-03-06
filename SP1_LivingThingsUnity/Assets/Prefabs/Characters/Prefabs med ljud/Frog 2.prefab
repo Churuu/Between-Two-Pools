@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 114897856247774130}
   - component: {fileID: 82348000984014968}
   - component: {fileID: 114705747418875250}
+  - component: {fileID: 114904509596658124}
   m_Layer: 12
   m_Name: Frog 2
   m_TagString: Frog
@@ -352,6 +353,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   audioClips: []
+--- !u!114 &114904509596658124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803797600898554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10237ba0a96c09f48bb335ccaa1ad77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 21300000, guid: 94674bd0471dbff4c92fc2747c99df8d, type: 3}
+  layerGhost: 15
+  notKilld: 1
 --- !u!212 &212116515362063684
 SpriteRenderer:
   m_ObjectHideFlags: 1
