@@ -48,19 +48,21 @@ public class ConversationTrigger : MonoBehaviour
         if (EventManager.instance.OnChatActiv != null)
             EventManager.instance.OnChatActiv();
 
+		print (conversation.dialog.Count);
+		print ("index: " + currentIndex);
+
         if (currentIndex == conversation.dialog.Count)
         {
             if (EventManager.instance.OnChatEnd != null)
                 EventManager.instance.OnChatEnd();
 
             convoText.text = "";
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 
     IEnumerator PlayDialog(Conversation conversation)
     {
-
         convoText.text = "";
         foreach (var letter in conversation.dialog[currentIndex].ToCharArray())
         {
