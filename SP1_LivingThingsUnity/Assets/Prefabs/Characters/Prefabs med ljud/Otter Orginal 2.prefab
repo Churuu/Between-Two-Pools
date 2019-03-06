@@ -921,9 +921,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redNarmal: {fileID: 212814680891868542}
+  redNormalAudio: {fileID: 82704809489048430}
   redActiv: {fileID: 212678596616978220}
+  redActiveAudio: {fileID: 82454014751348364}
   blueNarmal: {fileID: 212338907840024426}
+  blueNormalAudio: {fileID: 82146459740023684}
   blueActiv: {fileID: 212558200146812660}
+  blueActiveAudio: {fileID: 82485284530936850}
 --- !u!212 &212338907840024426
 SpriteRenderer:
   m_ObjectHideFlags: 1
