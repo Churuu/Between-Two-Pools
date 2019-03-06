@@ -52,13 +52,13 @@ public class OnGameOver : MonoBehaviour
         }
         else if (timerFloat < 0)
         {
-            gameOverCanvas.gameObject.SetActive(true);
+            gameOverCanvas.gameObject.SetActive(false);
             GameOverActivation = false;
             FindObjectOfType<SceneManagerScript>().ReloadCurrentScene();
         }
         if (Input.GetButtonDown(restartButton)) 
         {
-            gameOverCanvas.gameObject.SetActive(true);
+            gameOverCanvas.gameObject.SetActive(false);
             GameOverActivation = false;
             FindObjectOfType<SceneManagerScript>().ReloadCurrentScene();
         }
