@@ -23,12 +23,17 @@ public class OnGameOver : MonoBehaviour
 	void Start ()
     {
         gameOverCanvas.gameObject.SetActive(false);
-        EventManager.instance.OnGameOver += OnGameOverEvent;
+        
         
     }
 
     void Update()
     {
+        if (EventManager.instance.OnGameOver == null)
+        {
+            EventManager.instance.OnGameOver += OnGameOverEvent;
+        }
+
         if (GameOverActivation)
             GameOverFunction();
     }
@@ -44,8 +49,8 @@ public class OnGameOver : MonoBehaviour
 
     private void GameOverFunction()
     {
-
-        timerText.text = timerFloat + " seconds";
+        
+        timerText.text = Mathf.RoundToInt(timerFloat) + " seconds";
         if (timerFloat >= 0)
         {
             timerFloat -= Time.deltaTime;
