@@ -13,6 +13,14 @@ public class ActivePlayerStateMachine : MonoBehaviour
     [HideInInspector] public ChatState chatState; // Förlora Lägge//TODO
     //  [HideInInspector] public StartState startState; // Vinst Lägge//TODO
     // [HideInInspector] public StartState startState; // Paus lägge//TODO
+
+    [SerializeField]
+    private AudioClip switchToOtter;
+    [SerializeField]
+    private AudioClip switchToSeal;
+    [SerializeField]
+    private AudioClip switchToFrog;
+
     private void Awake()
     {
         // Start startState = new StartState(this);
@@ -41,10 +49,30 @@ public class ActivePlayerStateMachine : MonoBehaviour
             curentState.Exit();
             curentState.OnTransision(nextState);
         }
-
+        
+        PlaySwitchAudio(nextState); //Kallar på funktionen som sedan kör igång ljud för karaktärsbyte
         nextState.Enter();
         nextState.OnTransisionFrom(curentState);
         curentState = nextState;
     }
-
+    //Funktion for karaktärsbytesljud
+    public void PlaySwitchAudio(ActivePlayerStateBase nextState)
+    {
+        if (nextState != chatState)
+        {
+            if (nextState == activePlayerStateOtter)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(switchToOtter);
+            }
+            if (nextState == activePlayerStateSeal)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(switchToSeal);
+            }
+            if (nextState == activePlayerStateFrog)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(switchToFrog);
+            }
+        }
+        
+    }
 }
