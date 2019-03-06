@@ -19,7 +19,8 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
         }
         otter = snubbe.GetComponent<Otter>();
         playerNumber = number;
-
+        numderCharakter = playerNumber;
+       
     }
 
     public override void UpdateState()
@@ -36,6 +37,7 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
 
         stateMachines.transform.parent = snubbe.transform;
         snubbe.GetComponent<PlayerController>().SetPlayerState(true);
+        EventManager.instance.OnChatActiv += ChangeToChat;
     }
     public override void Exit()
     {
@@ -43,6 +45,7 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
         otter.okToShangeMagnet = false;
         stateMachines.transform.parent = null;
         snubbe.GetComponent<PlayerController>().SetPlayerState(false);
+        EventManager.instance.OnChatActiv -= ChangeToChat;
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {
@@ -66,5 +69,9 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
         {
             stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }
+    }
+   void ChangeToChat()
+    {
+        stateMachines.ChangeState(stateMachines.chatState);
     }
 }

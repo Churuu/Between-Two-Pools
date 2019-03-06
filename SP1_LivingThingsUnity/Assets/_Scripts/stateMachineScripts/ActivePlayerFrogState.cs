@@ -18,6 +18,7 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
         }
 
         playerNumber = number;
+        numderCharakter = playerNumber;
 
     }
 
@@ -38,6 +39,7 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
         {
             frog.GetComponent<PlayerController>().SetPlayerState(true);
         }
+        EventManager.instance.OnChatActiv += ChangeToChat;
 
     }
     public override void Exit()
@@ -46,6 +48,7 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
         stateMachines.transform.parent = null;
         frog.GetComponent<Frog>().SwitchActivation(false);
         frog.GetComponent<PlayerController>().SetPlayerState(false);
+        EventManager.instance.OnChatActiv -= ChangeToChat;
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {
@@ -73,5 +76,9 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
         //    stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         //}
 
+    }
+    void ChangeToChat()
+    {
+        stateMachines.ChangeState(stateMachines.chatState);
     }
 }

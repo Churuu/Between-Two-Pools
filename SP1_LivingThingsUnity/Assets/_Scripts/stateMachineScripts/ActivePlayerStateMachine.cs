@@ -10,7 +10,7 @@ public class ActivePlayerStateMachine : MonoBehaviour
     [HideInInspector] public ActivePlayerOtterState activePlayerStateOtter;
     [HideInInspector] public ActivePlayerSealState activePlayerStateSeal;
     [HideInInspector] public ActivePlayerFrogState activePlayerStateFrog;
-    // [HideInInspector] public GameOver startState; // Förlora Lägge//TODO
+    [HideInInspector] public ChatState chatState; // Förlora Lägge//TODO
     //  [HideInInspector] public StartState startState; // Vinst Lägge//TODO
     // [HideInInspector] public StartState startState; // Paus lägge//TODO
     private void Awake()
@@ -22,7 +22,8 @@ public class ActivePlayerStateMachine : MonoBehaviour
         activePlayerStateSeal = new ActivePlayerSealState(this, Seal,2);
      //   Debug.Log(activePlayerState2);
         activePlayerStateFrog = new ActivePlayerFrogState(this, Frog,3);
-      //  Debug.Log(activePlayerState3);
+        //  Debug.Log(activePlayerState3);
+        chatState = new ChatState(this);
     }
     private void Start()
     {

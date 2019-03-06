@@ -8,7 +8,7 @@ public abstract class ActivePlayerStateBase
     public virtual void Exit() { }
     public virtual void OnTransision(ActivePlayerStateBase nextState) { }
     public virtual void OnTransisionFrom(ActivePlayerStateBase nextState) { }
-
+    public int numderCharakter;
    
     
 }
