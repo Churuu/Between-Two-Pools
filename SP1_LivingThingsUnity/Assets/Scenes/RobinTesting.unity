@@ -1341,28 +1341,37 @@ Prefab:
       propertyPath: m_RootOrder
       value: 28
       objectReference: {fileID: 0}
-    - target: {fileID: 114412542247802420, guid: 11086b851930c164bbc9e7250993dad1,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114412542247802420, guid: 11086b851930c164bbc9e7250993dad1,
-        type: 2}
-      propertyPath: offset.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114412542247802420, guid: 11086b851930c164bbc9e7250993dad1,
-        type: 2}
-      propertyPath: meanCommentTimerDelta
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 114406536307806822, guid: 11086b851930c164bbc9e7250993dad1,
         type: 2}
       propertyPath: m_Text
-      value: '
-
-'
+      value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 224367919947606318, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 224367919947606318, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 425.6315
+      objectReference: {fileID: 0}
+    - target: {fileID: 224367919947606318, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 78.9364
+      objectReference: {fileID: 0}
+    - target: {fileID: 224367919947606318, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 114406536307806822, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 62dc18f22bdd8894389e9927ebb72851,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11086b851930c164bbc9e7250993dad1, type: 2}
   m_IsPrefabParent: 0
@@ -8180,34 +8189,4 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 3.3125, y: 6.53125}
-  m_EdgeRadius: 0
---- !u!1 &2132048918 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1699052536553276, guid: 11086b851930c164bbc9e7250993dad1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1168533466}
---- !u!61 &2132048919
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2132048918}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.75}
-    newSize: {x: 1, y: 0.75}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.51, y: 3.42}
   m_EdgeRadius: 0

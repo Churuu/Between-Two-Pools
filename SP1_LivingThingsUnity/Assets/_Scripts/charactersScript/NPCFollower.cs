@@ -14,6 +14,7 @@ public class NPCFollower : MonoBehaviour
     [Space]
     public GameObject target;
     public Text commentText;
+    public Image conversationImage;
     [Space]
     public string[] meanComments;
 
@@ -46,6 +47,11 @@ public class NPCFollower : MonoBehaviour
 
     void SayMeanComment()
     {
+        if (commentText.text == "")
+            conversationImage.enabled = false;
+        else
+            conversationImage.enabled = true;
+
         if (timer < Time.time && target != null)
         {
             commentText.text = meanComments[Random.Range(0, meanComments.Length)];
