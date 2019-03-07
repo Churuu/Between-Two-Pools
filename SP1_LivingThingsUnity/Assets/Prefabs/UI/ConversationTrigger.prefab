@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610097870488322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.41, y: -2.08, z: -0.296875}
+  m_LocalPosition: {x: 18.289494, y: 0.88, z: -0.296875}
   m_LocalScale: {x: 3.6836483, y: 3.6836483, z: 3.6836483}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,6 +78,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convoText: {fileID: 0}
-  conversationName: Hello
-  characters: 3
-  currentIndex: 0
+  TypingDelay: 0.03
+  conversationName: poster
+  characters: 1
