@@ -94,6 +94,7 @@ public class MenuSystem : MonoBehaviour {
         MainMenu.gameObject.SetActive(true);
         PauseMenu.gameObject.SetActive(false);
         P_Pressed = false;
+        NextScene.LoadNextScene("MainMenu");
         StartButton.Select();
     }
 }
