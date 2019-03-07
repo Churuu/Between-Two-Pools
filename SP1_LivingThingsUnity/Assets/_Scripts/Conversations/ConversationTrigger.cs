@@ -14,6 +14,7 @@ public class ConversationTrigger : MonoBehaviour
 
 
     bool entered = false;
+    bool thisActive = false;
     int currentIndex = 0;
 
     void OnTriggerEnter2D(Collider2D col)
@@ -23,13 +24,14 @@ public class ConversationTrigger : MonoBehaviour
         {
             currentIndex = 0;
             PlayConversation();
+            thisActive = true;
             entered = true;
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) // Skips current dialog
+        if (Input.GetKeyDown(KeyCode.E) && thisActive) // Skips current dialog
         {
             currentIndex++;
             StopAllCoroutines();
@@ -48,16 +50,16 @@ public class ConversationTrigger : MonoBehaviour
         if (EventManager.instance.OnChatActiv != null)
             EventManager.instance.OnChatActiv();
 
-		print (conversation.dialog.Count);
-		print ("index: " + currentIndex);
 
         if (currentIndex == conversation.dialog.Count)
         {
             if (EventManager.instance.OnChatEnd != null)
                 EventManager.instance.OnChatEnd();
 
+            thisActive = false;
+
             convoText.text = "";
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 

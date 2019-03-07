@@ -460,6 +460,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &195292495 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1610097870488322, guid: 44a025f64b397ac4886c067c818535ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 618382512}
+--- !u!114 &195292499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195292495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04146e7f6b424b74babd7019dd7e617d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  convoText: {fileID: 597605731}
+  TypingDelay: 0.1
+  conversationName: Default
+  characters: 1
 --- !u!4 &286636721 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4421167679797314, guid: a92b19e6b41f6b7419a85e610c63733d,
@@ -935,6 +955,62 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 515c794038457fc4f8deee297750d695, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &549304887
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
+        type: 2}
+      propertyPath: convoText
+      value: 
+      objectReference: {fileID: 597605731}
+    - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
+        type: 2}
+      propertyPath: conversationName
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610097870488322, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+      propertyPath: m_Name
+      value: ConversationTrigger (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &582347235
 GameObject:
@@ -1532,6 +1608,11 @@ Prefab:
       propertyPath: Otter
       value: 
       objectReference: {fileID: 1918315420}
+    - target: {fileID: 114517921787290798, guid: a92b19e6b41f6b7419a85e610c63733d,
+        type: 2}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1546054409}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a92b19e6b41f6b7419a85e610c63733d, type: 2}
   m_IsPrefabParent: 0
@@ -7752,6 +7833,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!82 &1546054409 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82067272209500252, guid: a92b19e6b41f6b7419a85e610c63733d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1275185214}
 --- !u!1 &1593816538
 GameObject:
   m_ObjectHideFlags: 0
