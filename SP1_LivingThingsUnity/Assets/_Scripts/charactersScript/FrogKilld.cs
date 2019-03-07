@@ -46,7 +46,7 @@ public class FrogKilld : MonoBehaviour {
             {
                 EventManager.instance.OnGameOver();
             }
-
+            GetComponent<PlayerAudioScript>().Death();
         }
     }
 }

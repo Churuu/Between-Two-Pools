@@ -45,6 +45,16 @@ public class OtterKilld : MonoBehaviour
             {
                 EventManager.instance.OnGameOver();
             }
+
+            for (int i = 0; i < animChild.Length; i++)
+            {
+                if (animChild[i] != null && animChild[i].GetComponent<AudioSource>().enabled == true)
+                {
+                    animChild[i].GetComponent<PlayerAudioScript>().Death();
+                }
+            }
+
+            
         }
     }
 }

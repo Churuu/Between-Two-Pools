@@ -19,6 +19,9 @@ public class PlayerAudioScript : MonoBehaviour
     [SerializeField]
     private List<AudioClip> landingSounds = new List<AudioClip>();
 
+    [SerializeField]
+    private AudioClip deathSound;
+
     // Use this for initialization
     void Start ()
     {
@@ -54,5 +57,10 @@ public class PlayerAudioScript : MonoBehaviour
     private void Ability2()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(ability2List);
+    }
+    
+    public void Death()
+    {
+        GetComponent<ObjectAudioClip>().PlaySingle(deathSound);
     }
 }

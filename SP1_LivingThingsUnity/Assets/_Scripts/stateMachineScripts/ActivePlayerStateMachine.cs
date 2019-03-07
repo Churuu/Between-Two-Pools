@@ -59,7 +59,8 @@ public class ActivePlayerStateMachine : MonoBehaviour
     //Funktion for karaktärsbytesljud
     private void PlaySwitchAudio(ActivePlayerStateBase nextState)
     {
-        if (nextState != chatState)
+        if (nextState != chatState) //om nextState inte är chat så kollar den igenom vilken state den är, 
+            //och kör ljudet som den behöver
         {
             if (nextState == activePlayerStateOtter)
             {

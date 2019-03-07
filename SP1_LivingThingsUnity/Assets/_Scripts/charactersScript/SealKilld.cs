@@ -44,7 +44,7 @@ public class SealKilld : MonoBehaviour
             {
                 EventManager.instance.OnGameOver();
             }
-
+            GetComponent<PlayerAudioScript>().Death();
         }
     }
 }
