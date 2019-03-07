@@ -10,6 +10,8 @@ public class NPCFollower : MonoBehaviour
     public float followSpeed;
     public float meanCommentTimerDelta;
     [Space]
+    public Vector2 offset;
+    [Space]
     public GameObject target;
     public Text commentText;
     [Space]
@@ -31,18 +33,31 @@ public class NPCFollower : MonoBehaviour
 
     void FollowTarget()
     {
+        if (target == null)
+            return;
+
         float distance = Vector2.Distance(transform.position, target.transform.position);
 
+        Vector2 followPosition = new Vector2(target.transform.position.x + offset.x, target.transform.position.y + offset.y);
+
         if (distance > minDistance)
-            transform.position = Vector2.Lerp(transform.position, target.transform.position, followSpeed * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, followPosition, followSpeed * Time.deltaTime);
     }
 
     void SayMeanComment()
     {
-        if (timer < Time.time)
+        if (timer < Time.time && target != null)
         {
             commentText.text = meanComments[Random.Range(0, meanComments.Length)];
             timer = meanCommentTimerDelta + Time.time;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Otter"))
+        {
+            target = other.gameObject;
         }
     }
 
