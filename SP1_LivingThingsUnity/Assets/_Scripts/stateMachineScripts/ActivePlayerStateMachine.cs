@@ -49,14 +49,15 @@ public class ActivePlayerStateMachine : MonoBehaviour
             curentState.Exit();
             curentState.OnTransision(nextState);
         }
+
         
-        PlaySwitchAudio(nextState); //Kallar på funktionen som sedan kör igång ljud för karaktärsbyte
         nextState.Enter();
         nextState.OnTransisionFrom(curentState);
         curentState = nextState;
+        PlaySwitchAudio(nextState); //Kallar på funktionen som sedan kör igång ljud för karaktärsbyte
     }
     //Funktion for karaktärsbytesljud
-    public void PlaySwitchAudio(ActivePlayerStateBase nextState)
+    private void PlaySwitchAudio(ActivePlayerStateBase nextState)
     {
         if (nextState != chatState)
         {
@@ -73,6 +74,6 @@ public class ActivePlayerStateMachine : MonoBehaviour
                 GetComponent<ObjectAudioClip>().PlaySingle(switchToFrog);
             }
         }
-        
+
     }
 }
