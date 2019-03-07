@@ -65,8 +65,8 @@ public class MenuSystem : MonoBehaviour {
             Time.timeScale = 0;
         }
 
-        //press any key
-        if (Input.anyKey)
+        //press any key LÄGG I ANNAN SCEN
+        if (Input.anyKey && PauseMenu.enabled == false)
         {
             PressAnyButton.gameObject.SetActive(false);
             MainMenu.gameObject.SetActive(true);
