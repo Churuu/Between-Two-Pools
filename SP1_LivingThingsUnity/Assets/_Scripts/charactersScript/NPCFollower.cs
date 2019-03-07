@@ -26,6 +26,7 @@ public class NPCFollower : MonoBehaviour
     void Update()
     {
         FollowTarget();
+        SayMeanComment();
     }
 
     void FollowTarget()
