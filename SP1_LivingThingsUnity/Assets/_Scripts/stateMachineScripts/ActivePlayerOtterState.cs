@@ -31,6 +31,10 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
     }
     public override void Enter()
     {
+        if (EventManager.instance.OnNewActiveCharacter != null)
+        {
+            EventManager.instance.OnNewActiveCharacter(this.numderCharakter);
+        }
         otter.okToShangeMagnet = true;
 
         stateMachines.transform.position = snubbe.transform.position;

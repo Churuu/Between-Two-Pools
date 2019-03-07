@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghost: {fileID: 21300000, guid: 94674bd0471dbff4c92fc2747c99df8d, type: 3}
   layerGhost: 15
+  animChild: []
   notKilld: 1
 --- !u!114 &114110206004292088
 MonoBehaviour:
@@ -346,9 +347,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redNarmal: {fileID: 212202512263021376}
+  redNormalAudio: {fileID: 0}
   redActiv: {fileID: 212540223420449322}
+  redActiveAudio: {fileID: 0}
   blueNarmal: {fileID: 212886484216959846}
+  blueNormalAudio: {fileID: 0}
   blueActiv: {fileID: 212153470789330560}
+  blueActiveAudio: {fileID: 0}
 --- !u!114 &114311071466254478
 MonoBehaviour:
   m_ObjectHideFlags: 1

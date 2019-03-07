@@ -1,15 +1,19 @@
 fileFormatVersion: 2
-guid: ade90c4e17b4dce4c97f8726cb750069
-timeCreated: 1551257007
-licenseType: Pro
+guid: 54aa4bc580a2ae142aec55eb85ba22ba
+timeCreated: 1551963327
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UI_Otter_Animations_01_0
-    21300002: UI_Otter_Animations_01_1
-    21300004: UI_Otter_Animations_01_2
-    21300006: UI_Otter_Animations_01_3
-    21300008: UI_Otter_Animations_01_4
-    21300010: UI_Otter_Animations_01_5
+    21300000: pause_menu_var_02_0
+    21300002: pause_menu_var_02_1
+    21300004: pause_menu_var_02_2
+    21300006: pause_menu_var_02_3
+    21300008: pause_menu_var_02_4
+    21300010: pause_menu_var_02_5
+    21300012: pause_menu_var_02_6
+    21300014: pause_menu_var_02_7
+    21300016: pause_menu_var_02_8
+    21300018: pause_menu_var_02_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -64,9 +68,9 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -74,29 +78,9 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 1
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 1
-    textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_0
+      name: pause_menu_var_02_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 48
-        height: 48
+        x: 0
+        y: 632
+        width: 347
+        height: 348
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,13 +104,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_1
+      name: pause_menu_var_02_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 48
-        height: 48
+        x: 385
+        y: 635
+        width: 347
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,13 +118,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_2
+      name: pause_menu_var_02_2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
+        x: 797
+        y: 635
+        width: 347
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,13 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_3
+      name: pause_menu_var_02_3
       rect:
         serializedVersion: 2
-        x: 208
-        y: 0
-        width: 48
-        height: 48
+        x: 1165
+        y: 635
+        width: 347
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,13 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_4
+      name: pause_menu_var_02_4
       rect:
         serializedVersion: 2
-        x: 272
-        y: 0
-        width: 48
-        height: 48
+        x: 1550
+        y: 635
+        width: 347
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,13 +160,69 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_5
+      name: pause_menu_var_02_5
       rect:
         serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
+        x: 0
+        y: 108
+        width: 347
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pause_menu_var_02_6
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 111
+        width: 347
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pause_menu_var_02_7
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 111
+        width: 347
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pause_menu_var_02_8
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 108
+        width: 347
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pause_menu_var_02_9
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 111
+        width: 347
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

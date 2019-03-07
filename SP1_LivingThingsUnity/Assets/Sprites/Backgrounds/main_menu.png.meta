@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: ade90c4e17b4dce4c97f8726cb750069
-timeCreated: 1551257007
-licenseType: Pro
+guid: 3f66821c66f0d6949a8a575e63d349d5
+timeCreated: 1551962220
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UI_Otter_Animations_01_0
-    21300002: UI_Otter_Animations_01_1
-    21300004: UI_Otter_Animations_01_2
-    21300006: UI_Otter_Animations_01_3
-    21300008: UI_Otter_Animations_01_4
-    21300010: UI_Otter_Animations_01_5
+    21300000: main_menu_0
+    21300002: main_menu_1
+    21300004: main_menu_2
+    21300006: main_menu_3
+    21300008: main_menu_4
+    21300010: main_menu_5
+    21300012: main_menu_6
+    21300014: main_menu_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -48,7 +50,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -64,9 +66,9 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -74,9 +76,9 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,9 +86,9 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,9 +96,9 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,85 +108,113 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_0
+      name: main_menu_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 48
-        height: 48
+        x: 0
+        y: 1083
+        width: 347
+        height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_1
+      name: main_menu_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 48
-        height: 48
+        x: 529
+        y: 1083
+        width: 347
+        height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_2
+      name: main_menu_2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
+        x: 0
+        y: 702
+        width: 347
+        height: 275
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_3
+      name: main_menu_3
       rect:
         serializedVersion: 2
-        x: 208
-        y: 0
-        width: 48
-        height: 48
+        x: 529
+        y: 702
+        width: 347
+        height: 275
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_4
+      name: main_menu_4
       rect:
         serializedVersion: 2
-        x: 272
-        y: 0
-        width: 48
-        height: 48
+        x: 0
+        y: 376
+        width: 347
+        height: 275
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UI_Otter_Animations_01_5
+      name: main_menu_5
       rect:
         serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
+        x: 529
+        y: 376
+        width: 347
+        height: 275
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: main_menu_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 347
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: main_menu_7
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 0
+        width: 347
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -9,14 +9,20 @@ public class MenuSystem : MonoBehaviour {
     //Lägg till fler knappar om det behövs
     public Button StartButton;
     public Button ExitButton;
-    public Button Level;
     public Button Restart;
     public Button Back;
     public Button Lvl1;
     public Button BackToMainMenu;
+    public Button ExitGame;
+    public Button ResumeGame;
+    public Button SoundOption;
+    public Button Options;
+    public Button Credits;
     public Canvas MainMenu;
     public Canvas Levels;
     public Canvas PauseMenu;
+    public Canvas PressAnyButton;
+
     private bool P_Pressed;
     private SceneManagerScript NextScene;
 
@@ -27,13 +33,19 @@ public class MenuSystem : MonoBehaviour {
         Time.timeScale = 1;
         StartButton.Select();
         //Main Menu
-        StartButton.onClick.AddListener(TaskOnStart);
+        StartButton.onClick.AddListener(TaskOnLevel);
         ExitButton.onClick.AddListener(TaskOnExitClick);
-        Level.onClick.AddListener(TaskOnLevel);
+       
         Back.onClick.AddListener(TaskOnBack);
         //Pause menu
         Restart.onClick.AddListener(TaskOnRestart);
         BackToMainMenu.onClick.AddListener(TaskOnBackToMainMenu);
+        ExitGame.onClick.AddListener(TaskOnExitClick);
+        ResumeGame.onClick.AddListener(TaskOnResumeGame);
+        SoundOption.onClick.AddListener(TaskOnSoundOption);
+        Options.onClick.AddListener(TaskOnSoundOption);
+        Credits.onClick.AddListener(TaskOnCredits);
+
     }
     //Lägg till en knapp för varje level 
     private void Update()
@@ -52,7 +64,32 @@ public class MenuSystem : MonoBehaviour {
             P_Pressed = true;
             Time.timeScale = 0;
         }
+
+        //press any key
+        if (Input.anyKey)
+        {
+            PressAnyButton.gameObject.SetActive(false);
+            MainMenu.gameObject.SetActive(true);
+        }
     }
+
+    void TaskOnCredits()
+    {
+        //creditscen
+    }
+
+    void TaskOnSoundOption()
+    {
+       //Gör något här med sound option
+    }
+
+    void TaskOnResumeGame()
+    {
+        PauseMenu.gameObject.SetActive(false);
+        P_Pressed = false;
+        Time.timeScale = 1;
+    }
+
     void TaskOnStart()
     {
         NextScene.StartScene(/*Namn på scenen med lvl1*/" ");
@@ -91,8 +128,7 @@ public class MenuSystem : MonoBehaviour {
 
     void TaskOnBackToMainMenu()
     {
-        MainMenu.gameObject.SetActive(true);
-        PauseMenu.gameObject.SetActive(false);
+     
         P_Pressed = false;
         NextScene.LoadNextScene("MainMenu");
         StartButton.Select();
