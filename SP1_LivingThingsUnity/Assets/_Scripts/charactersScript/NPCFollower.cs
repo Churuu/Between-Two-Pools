@@ -66,5 +66,4 @@ public class NPCFollower : MonoBehaviour
             target = other.gameObject;
         }
     }
-
 }
