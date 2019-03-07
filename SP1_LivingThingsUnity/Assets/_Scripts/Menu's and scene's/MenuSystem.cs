@@ -25,7 +25,7 @@ public class MenuSystem : MonoBehaviour {
         NextScene = GetComponent<SceneManagerScript>();
         P_Pressed = false;
         Time.timeScale = 1;
-        StartButton.OnSelect(null);
+        StartButton.Select();
         //Main Menu
         StartButton.onClick.AddListener(TaskOnStart);
         ExitButton.onClick.AddListener(TaskOnExitClick);
