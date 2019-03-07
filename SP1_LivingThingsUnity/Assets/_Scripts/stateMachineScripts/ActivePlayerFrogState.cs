@@ -30,6 +30,10 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
     }
     public override void Enter()
     {
+        if (EventManager.instance.OnNewActiveCharacter != null)
+        {
+            EventManager.instance.OnNewActiveCharacter(this.numderCharakter);
+        }
 
         stateMachines.transform.position = frog.transform.position;
 

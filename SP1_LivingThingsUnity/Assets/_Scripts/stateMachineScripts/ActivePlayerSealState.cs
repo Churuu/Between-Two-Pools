@@ -30,6 +30,10 @@ public class ActivePlayerSealState : ActivePlayerStateBase {
     }
     public override void Enter()
     {
+        if (EventManager.instance.OnNewActiveCharacter != null)
+        {
+            EventManager.instance.OnNewActiveCharacter(this.numderCharakter);
+        }
 
         stateMachines.transform.position = seal.transform.position;
         stateMachines.transform.parent = seal.transform;
