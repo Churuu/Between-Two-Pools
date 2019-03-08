@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 82694403081315512}
   - component: {fileID: 114179394724881594}
   - component: {fileID: 114345497537962612}
+  - component: {fileID: 114531617134392748}
   m_Layer: 12
   m_Name: Frog
   m_TagString: Frog
@@ -352,6 +353,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crushDistance: 1
   crushingColliders: []
+--- !u!114 &114531617134392748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1917016305584562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10237ba0a96c09f48bb335ccaa1ad77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 0}
+  layerGhost: 15
+  notKilld: 1
 --- !u!212 &212200907939946320
 SpriteRenderer:
   m_ObjectHideFlags: 1

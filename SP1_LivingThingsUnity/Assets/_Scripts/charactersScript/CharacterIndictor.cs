@@ -63,7 +63,7 @@ public class CharacterIndictor : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.gray;
         Gizmos.DrawWireCube(transform.position, new Vector2(maxDistanceX * 2, maxDistanceY * 2));
     }
 }
