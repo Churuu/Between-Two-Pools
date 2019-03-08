@@ -200,6 +200,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1932281985}
   m_Script: {fileID: 11500000, guid: aa805ed2ea2bf0f4cbd48e8a3b84e9d9, type: 3}
+--- !u!223 &578335017 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 223341540864983498, guid: f7e6aebd788d3fd49a5270140b948079,
+    type: 2}
+  m_PrefabInternal: {fileID: 1932281985}
 --- !u!1001 &1932281985
 Prefab:
   m_ObjectHideFlags: 0
@@ -207,10 +212,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114444799252147912, guid: f7e6aebd788d3fd49a5270140b948079,
+    - target: {fileID: 114782504103308458, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142834230718858, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
       propertyPath: m_LocalPosition.x
@@ -244,57 +249,45 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114708279816218312, guid: f7e6aebd788d3fd49a5270140b948079,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dbf3fa8e83fb1e64f89764454dfd88bb,
-        type: 3}
-    - target: {fileID: 114351702255248452, guid: f7e6aebd788d3fd49a5270140b948079,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dbf3fa8e83fb1e64f89764454dfd88bb,
-        type: 3}
-    - target: {fileID: 1202194823197568, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224465347993097278, guid: f7e6aebd788d3fd49a5270140b948079,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -104
-      objectReference: {fileID: 0}
-    - target: {fileID: 114444799252147912, guid: f7e6aebd788d3fd49a5270140b948079,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114444799252147912, guid: f7e6aebd788d3fd49a5270140b948079,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114444799252147912, guid: f7e6aebd788d3fd49a5270140b948079,
+    - target: {fileID: 114782504103308458, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 130774567}
-    - target: {fileID: 114444799252147912, guid: f7e6aebd788d3fd49a5270140b948079,
+    - target: {fileID: 114782504103308458, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadLevel
       objectReference: {fileID: 0}
-    - target: {fileID: 114444799252147912, guid: f7e6aebd788d3fd49a5270140b948079,
+    - target: {fileID: 114782504103308458, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114782504103308458, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 114444799252147912, guid: f7e6aebd788d3fd49a5270140b948079,
+    - target: {fileID: 114782504103308458, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Options
+      value: "SKA VA PAUSEOPTION SCEN H\xC4R"
       objectReference: {fileID: 0}
+    - target: {fileID: 114782504103308458, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201363521662448, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711408718329624, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: PauseSettings
+      value: 
+      objectReference: {fileID: 578335017}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
   m_IsPrefabParent: 0
