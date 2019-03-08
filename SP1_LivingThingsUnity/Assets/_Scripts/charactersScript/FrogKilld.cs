@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FrogKilld : MonoBehaviour {
+public class FrogKilld : MonoBehaviour
+{
 
     [SerializeField] Sprite ghost;
     [SerializeField] int layerGhost = 15;
+
     public bool notKilld = true;
     //Jonas Thunberg 2019-02-26
 
@@ -28,7 +28,7 @@ public class FrogKilld : MonoBehaviour {
             {
                 transform.GetChild(0).gameObject.active = false;
             }
-            //GetComponent<Seal>().enabled = false;
+            GetComponent<Frog>().enabled = false;
             GetComponent<Animator>().enabled = false;
             GetComponent<PlayerController>().enabled = false;
             GetComponent<CrushedPlayer>().enabled = false;
