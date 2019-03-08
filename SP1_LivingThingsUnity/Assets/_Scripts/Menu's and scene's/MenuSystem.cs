@@ -60,17 +60,11 @@ public class MenuSystem : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == false && MainMenu.gameObject.activeInHierarchy == false && Levels.gameObject.activeInHierarchy == false)
         {
             PauseMenu.gameObject.SetActive(true);
-            Restart.Select();
+            ResumeGame.Select();
             P_Pressed = true;
             Time.timeScale = 0;
         }
 
-        //press any key LÄGG I ANNAN SCEN
-        if (Input.anyKey && PauseMenu.enabled == false)
-        {
-            PressAnyButton.gameObject.SetActive(false);
-            MainMenu.gameObject.SetActive(true);
-        }
     }
 
     void TaskOnCredits()
