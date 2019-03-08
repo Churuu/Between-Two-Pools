@@ -10,9 +10,17 @@ public class ActivePlayerStateMachine : MonoBehaviour
     [HideInInspector] public ActivePlayerOtterState activePlayerStateOtter;
     [HideInInspector] public ActivePlayerSealState activePlayerStateSeal;
     [HideInInspector] public ActivePlayerFrogState activePlayerStateFrog;
-    // [HideInInspector] public GameOver startState; // Förlora Lägge//TODO
+    [HideInInspector] public ChatState chatState; // Förlora Lägge//TODO
     //  [HideInInspector] public StartState startState; // Vinst Lägge//TODO
     // [HideInInspector] public StartState startState; // Paus lägge//TODO
+
+    [SerializeField]
+    private AudioClip switchToOtter;
+    [SerializeField]
+    private AudioClip switchToSeal;
+    [SerializeField]
+    private AudioClip switchToFrog;
+
     private void Awake()
     {
         // Start startState = new StartState(this);
@@ -22,7 +30,8 @@ public class ActivePlayerStateMachine : MonoBehaviour
         activePlayerStateSeal = new ActivePlayerSealState(this, Seal,2);
      //   Debug.Log(activePlayerState2);
         activePlayerStateFrog = new ActivePlayerFrogState(this, Frog,3);
-      //  Debug.Log(activePlayerState3);
+        //  Debug.Log(activePlayerState3);
+        chatState = new ChatState(this);
     }
     private void Start()
     {
@@ -41,14 +50,31 @@ public class ActivePlayerStateMachine : MonoBehaviour
             curentState.OnTransision(nextState);
         }
 
+        
         nextState.Enter();
         nextState.OnTransisionFrom(curentState);
         curentState = nextState;
+        PlaySwitchAudio(nextState); //Kallar på funktionen som sedan kör igång ljud för karaktärsbyte
     }
+    //Funktion for karaktärsbytesljud
+    private void PlaySwitchAudio(ActivePlayerStateBase nextState)
+    {
+        if (nextState != chatState) //om nextState inte är chat så kollar den igenom vilken state den är, 
+            //och kör ljudet som den behöver
+        {
+            if (nextState == activePlayerStateOtter)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(switchToOtter);
+            }
+            if (nextState == activePlayerStateSeal)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(switchToSeal);
+            }
+            if (nextState == activePlayerStateFrog)
+            {
+                GetComponent<ObjectAudioClip>().PlaySingle(switchToFrog);
+            }
+        }
 
-
-
-
-
-
+    }
 }

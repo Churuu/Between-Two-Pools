@@ -19,7 +19,7 @@ public class ActivePlayerSealState : ActivePlayerStateBase {
         }
 
         playerNumber = number;
-
+        numderCharakter = playerNumber;
     }
 
     public override void UpdateState()
@@ -30,16 +30,22 @@ public class ActivePlayerSealState : ActivePlayerStateBase {
     }
     public override void Enter()
     {
+        if (EventManager.instance.OnNewActiveCharacter != null)
+        {
+            EventManager.instance.OnNewActiveCharacter(this.numderCharakter);
+        }
 
         stateMachines.transform.position = seal.transform.position;
         stateMachines.transform.parent = seal.transform;
         seal.GetComponent<PlayerController>().SetPlayerState(true);
+        EventManager.instance.OnChatActiv += ChangeToChat;
     }
     public override void Exit()
     {
         seal.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         stateMachines.transform.parent = null;
         seal.GetComponent<PlayerController>().SetPlayerState(false);
+        EventManager.instance.OnChatActiv -= ChangeToChat;
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {
@@ -67,5 +73,9 @@ public class ActivePlayerSealState : ActivePlayerStateBase {
             stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }
 
+    }
+    void ChangeToChat()
+    {
+        stateMachines.ChangeState(stateMachines.chatState);
     }
 }

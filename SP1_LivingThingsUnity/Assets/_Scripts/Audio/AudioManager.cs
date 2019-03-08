@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
     [SerializeField]
     private AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
     public static AudioManager instance = null;     //Allows other scripts to call functions from SoundManager.             
@@ -13,6 +14,15 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private List<AudioClip> ambienceClips = new List<AudioClip>();
+
+    [SerializeField]
+    private string nextSong = "NextSong";
+
+    [SerializeField]
+    private string previousSong = "PreviousSong";
+
+    private int musicIndex = 0;
+
     void Awake()
     {
         //Check if there is already an instance of SoundManager
@@ -28,5 +38,48 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Update()
+    {
+        if (musicIndex < 0)
+        {
+            musicIndex = musicClips.Count - 1;
+        }
+        else if (musicIndex >= musicClips.Count)
+        {
+            musicIndex = 0;
+        }
+        SwitchMusic();
+    }
+
+    
+
+    public void SongRequest()
+    {
+        musicSource.clip = musicClips[musicIndex];
+
+        musicSource.Play();
+    }
+
+    public void SongRequest(int musicI)
+    {
+        musicIndex = musicI;
+        musicSource.clip = musicClips[musicIndex];
+
+        musicSource.Play();
+    }
+
+    public void SwitchMusic()
+    {
+        if (Input.GetButtonDown(nextSong))
+        {
+            musicIndex++;
+            SongRequest();
+        }
+        else if (Input.GetButtonDown(previousSong))
+        {
+            musicIndex--;
+            SongRequest();
+        }
+    }
 
 }

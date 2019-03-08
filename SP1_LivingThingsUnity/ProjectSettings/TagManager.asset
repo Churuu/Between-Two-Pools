@@ -16,6 +16,7 @@ TagManager:
   - Enemy
   - ButtonBlockUp
   - "V\xE4gg"
+  - Elevator
   layers:
   - Default
   - TransparentFX
@@ -25,15 +26,16 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - Ground2
   - DestructableWall
   - Character
-  - Bridge
+  - FrogTounge
   - Frog
   - Anchor
   - IceCube
   - OnlyGround
   - 
+  - FrogStick
   - 
   - 
   - 
@@ -47,8 +49,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Ground
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -1,0 +1,867 @@
+fileFormatVersion: 2
+guid: 41f8673be48080a419c55bf1a9ca7273
+timeCreated: 1551359599
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: otterBLUE_noFluff_0
+    21300002: otterBLUE_noFluff_1
+    21300004: otterBLUE_noFluff_2
+    21300006: otterBLUE_noFluff_3
+    21300008: otterBLUE_noFluff_4
+    21300010: otterBLUE_noFluff_5
+    21300012: otterBLUE_noFluff_6
+    21300014: otterBLUE_noFluff_7
+    21300016: otterBLUE_noFluff_8
+    21300018: otterBLUE_noFluff_9
+    21300020: otterBLUE_noFluff_10
+    21300022: otterBLUE_noFluff_11
+    21300024: otterBLUE_noFluff_12
+    21300026: otterBLUE_noFluff_13
+    21300028: otterBLUE_noFluff_14
+    21300030: otterBLUE_noFluff_15
+    21300032: otterBLUE_noFluff_16
+    21300034: otterBLUE_noFluff_17
+    21300036: otterBLUE_noFluff_18
+    21300038: otterBLUE_noFluff_19
+    21300040: otterBLUE_noFluff_20
+    21300042: otterBLUE_noFluff_21
+    21300044: otterBLUE_noFluff_22
+    21300046: otterBLUE_noFluff_23
+    21300048: otterBLUE_noFluff_24
+    21300050: otterBLUE_noFluff_25
+    21300052: otterBLUE_noFluff_26
+    21300054: otterBLUE_noFluff_27
+    21300056: otterBLUE_noFluff_28
+    21300058: otterBLUE_noFluff_29
+    21300060: otterBLUE_noFluff_30
+    21300062: otterBLUE_noFluff_31
+    21300064: otterBLUE_noFluff_32
+    21300066: otterBLUE_noFluff_33
+    21300068: otterBLUE_noFluff_34
+    21300070: otterBLUE_noFluff_35
+    21300072: otterBLUE_noFluff_36
+    21300074: otterBLUE_noFluff_37
+    21300076: otterBLUE_noFluff_38
+    21300078: otterBLUE_noFluff_39
+    21300080: otterBLUE_noFluff_40
+    21300082: otterBLUE_noFluff_41
+    21300084: otterBLUE_noFluff_42
+    21300086: otterBLUE_noFluff_43
+    21300088: otterBLUE_noFluff_44
+    21300090: otterBLUE_noFluff_45
+    21300092: otterBLUE_noFluff_46
+    21300094: otterBLUE_noFluff_47
+    21300096: otterBLUE_noFluff_48
+    21300098: otterBLUE_noFluff_49
+    21300100: otterBLUE_noFluff_50
+    21300102: otterBLUE_noFluff_51
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 512
+        width: 61
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 512
+        width: 60
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 512
+        width: 59
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 512
+        width: 63
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 512
+        width: 63
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_5
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 512
+        width: 62
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 448
+        width: 60
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_7
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 448
+        width: 58
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_8
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 448
+        width: 61
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_9
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 448
+        width: 60
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_10
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 448
+        width: 59
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_11
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 448
+        width: 63
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 384
+        width: 63
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_13
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 384
+        width: 62
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_14
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 384
+        width: 60
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_15
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 384
+        width: 58
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_16
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 384
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_17
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 384
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 320
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_19
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 320
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_20
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 320
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_21
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 320
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_22
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 320
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_23
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 320
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 256
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_25
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 256
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_26
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 256
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_27
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 256
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_28
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 256
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_29
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 256
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 192
+        width: 64
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_31
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 192
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_32
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 192
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_33
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 192
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_34
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 192
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_35
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 192
+        width: 62
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_36
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 61
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_37
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 128
+        width: 61
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_38
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 129
+        width: 60
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_39
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 129
+        width: 60
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_40
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 134
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_41
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 134
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_42
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 64
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_43
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 64
+        width: 64
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_44
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 64
+        width: 61
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_45
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 64
+        width: 61
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_46
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 65
+        width: 60
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_47
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 65
+        width: 60
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 6
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_49
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 6
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_50
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 64
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: otterBLUE_noFluff_51
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 64
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

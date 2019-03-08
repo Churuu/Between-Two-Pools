@@ -23,6 +23,14 @@ public class TextColliderOnOff : MonoBehaviour
                 text.enabled = true;
             }
         }
+
+		if (text != null && collision.transform.childCount != 0)
+		{
+			if (collision.transform.GetChild(1).GetComponent<ActivePlayerStateMachine>() != null)
+			{
+				text.enabled = true;
+			}
+		}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -36,5 +44,14 @@ public class TextColliderOnOff : MonoBehaviour
             }
 
         }
+
+		if (text != null && collision.transform.childCount != 0)
+		{
+			if (collision.transform.GetChild(1).GetComponent<ActivePlayerStateMachine>() != null)
+			{
+				text.enabled = false;
+			}
+
+		}
     }
 }

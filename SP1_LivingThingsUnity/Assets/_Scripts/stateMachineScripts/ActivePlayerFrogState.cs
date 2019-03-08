@@ -18,6 +18,7 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
         }
 
         playerNumber = number;
+        numderCharakter = playerNumber;
 
     }
 
@@ -29,12 +30,21 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
     }
     public override void Enter()
     {
+        if (EventManager.instance.OnNewActiveCharacter != null)
+        {
+            EventManager.instance.OnNewActiveCharacter(this.numderCharakter);
+        }
 
         stateMachines.transform.position = frog.transform.position;
 
         stateMachines.transform.parent = frog.transform;
         frog.GetComponent<Frog>().SwitchActivation(true);
-        frog.GetComponent<PlayerController>().SetPlayerState(true);
+        if (!frog.GetComponent<Frog>().GetToungeState())
+        {
+            frog.GetComponent<PlayerController>().SetPlayerState(true);
+        }
+        EventManager.instance.OnChatActiv += ChangeToChat;
+
     }
     public override void Exit()
     {
@@ -42,6 +52,7 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
         stateMachines.transform.parent = null;
         frog.GetComponent<Frog>().SwitchActivation(false);
         frog.GetComponent<PlayerController>().SetPlayerState(false);
+        EventManager.instance.OnChatActiv -= ChangeToChat;
     }
     public override void OnTransision(ActivePlayerStateBase nextState)
     {
@@ -69,5 +80,9 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
         //    stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         //}
 
+    }
+    void ChangeToChat()
+    {
+        stateMachines.ChangeState(stateMachines.chatState);
     }
 }

@@ -21,12 +21,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float lowJumpMultiplier = 2f;
     [SerializeField] float gizmoRange = 1f;
     [SerializeField] LayerMask ground;
+    public Animator[] animChild; // 1. Normal/Red 2. RedActive 3. Blue 4. BlueActive
 
     float horizontalInput;
     Vector3 side;
     Rigidbody2D rb2D;
     Collider2D coll2D;
-    Animator anim;
+    //Animator anim;
     [SerializeField] bool activePlayer = false;
 
 
@@ -35,10 +36,17 @@ public class PlayerController : MonoBehaviour
         coll2D = GetComponent<Collider2D>();
         rb2D = GetComponent<Rigidbody2D>();
         side = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
-        anim = GetComponent<Animator>();
+        
+        
+        
     }
     private void Update()
     {
+        for (int i = 0; i < animChild.Length; i++)
+        {
+            if (animChild[i] != null)
+                AnimatePlayer(i);
+        }
 
         if (activePlayer)
         {
@@ -47,7 +55,7 @@ public class PlayerController : MonoBehaviour
             JumpMovment();
         }
 
-        AnimatePlayer();
+        
     }
 
 
@@ -59,7 +67,13 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        anim.SetBool("Jump", false);
+        for (int i = 0; i < animChild.Length; i++)
+        {
+            if (animChild[i] != null)
+                animChild[i].SetBool("Jump", !Grounded());
+        }
+          
+
     }
 
     public bool Grounded()
@@ -70,6 +84,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position + side, Vector2.down, gizmoRange, ground);
 
         if ((hitMid.collider != null || hitLeft.collider != null || hitRight.collider != null) && canJump)
+
             return true;
 
         return false;
@@ -103,8 +118,11 @@ public class PlayerController : MonoBehaviour
             if (Grounded())
             { 
                 rb2D.AddForce(Vector2.up * jumpAddForce);
-                anim.SetBool("Jump", true);
-                
+                for (int i = 0; i < animChild.Length; i++)
+                {
+                    if (animChild[i] != null)
+                        animChild[i].SetBool("Jump", true);
+                }
             }
         }
     }
@@ -112,8 +130,22 @@ public class PlayerController : MonoBehaviour
     private void HorizontalMovmenent()
     {
         Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
-        if (movement.x > 0) anim.SetBool("FaceingRight", true);
-        else if (movement.x < 0) anim.SetBool("FaceingRight", false);
+        if (movement.x > 0)
+        {
+            for (int i = 0; i < animChild.Length; i++)
+            {
+                if (animChild[i] != null)
+                    animChild[i].SetBool("FaceingRight", true);
+            }
+        }
+        else if (movement.x < 0)
+        {
+            for (int i = 0; i < animChild.Length; i++)
+            {
+                if (animChild[i] != null)
+                    animChild[i].SetBool("FaceingRight", false);
+            }
+        }
         rb2D.velocity = movement;
     }
 
@@ -129,11 +161,11 @@ public class PlayerController : MonoBehaviour
         return Vector2.zero;
     }
 
-    void AnimatePlayer()
+    void AnimatePlayer(int i)
     {
-        anim.SetFloat(walkAnimParam, rb2D.velocity.x);
+        animChild[i].SetFloat(walkAnimParam, rb2D.velocity.x);
         if (canJump)
-            anim.SetBool(jumpAnimParam, !Grounded());
+            animChild[i].SetBool(jumpAnimParam, !Grounded());
     }
 
     public void SealJump()
@@ -157,5 +189,8 @@ public class PlayerController : MonoBehaviour
         return activePlayer;
     }
 
-
+    public bool GetPlayerActive()
+    {
+        return activePlayer;
+    }
 }

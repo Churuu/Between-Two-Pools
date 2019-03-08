@@ -1,0 +1,440 @@
+fileFormatVersion: 2
+guid: e151bee0a834acb438e14d12d843e965
+timeCreated: 1551780719
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Underground_Object_01_0
+    21300002: Underground_Object_01_2
+    21300004: Underground_Object_01_3
+    21300006: Underground_Object_01_4
+    21300008: Underground_Object_01_5
+    21300010: Underground_Object_01_6
+    21300012: Underground_Object_01_7
+    21300014: Underground_Object_01_8
+    21300016: Underground_Object_01_9
+    21300018: Underground_Object_01_10
+    21300020: Underground_Object_01_11
+    21300022: Underground_Object_01_12
+    21300024: Underground_Object_01_13
+    21300026: Underground_Object_01_14
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Underground_Object_01_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 205
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 210
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_3
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 203
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 147
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_5
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 151
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_6
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 142
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 135
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 125
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_9
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 123
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 114
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_11
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 113
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_12
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 115
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_13
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 115
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Underground_Object_01_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 11
+        width: 150
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -12, y: -102}
+      - {x: -28, y: -102}
+      - {x: -15, y: -102}
+      - {x: -10, y: -101}
+      - {x: 17, y: -95}
+      - {x: 50, y: -103}
+      - {x: 59, y: -101}
+      - {x: 59, y: -16}
+      - {x: 48, y: -10}
+      - {x: -42, y: -10}
+      - {x: -76, y: -27}
+      - {x: -95, y: -75}
+      - {x: -95, y: -106}
+      - {x: -58, y: -111}
+      - {x: -7, y: -111}
+      - {x: 5, y: -103}
+      - {x: 2, y: -100}
+      - {x: -3, y: -100}
+    - - {x: 18, y: 17}
+      - {x: 1, y: 17}
+      - {x: 0, y: 12}
+      - {x: 0, y: 5}
+      - {x: 9, y: -7}
+      - {x: 15, y: -9}
+      - {x: 26, y: -9}
+      - {x: 29, y: -7}
+      - {x: 29, y: 5}
+      - {x: 27, y: 12}
+    - - {x: -28, y: 17}
+      - {x: -37, y: 16}
+      - {x: -39, y: 9}
+      - {x: -39, y: -4}
+      - {x: -36, y: -8}
+      - {x: -20, y: -8}
+      - {x: -15, y: -6}
+      - {x: -15, y: 10}
+      - {x: -22, y: 17}
+    - - {x: -82, y: 3}
+      - {x: -87, y: -2}
+      - {x: -87, y: -4}
+      - {x: -84, y: -7}
+      - {x: -78, y: -7}
+      - {x: -76, y: -3}
+      - {x: -76, y: 1}
+      - {x: -79, y: 3}
+    - - {x: 73, y: 11}
+      - {x: 60, y: 11}
+      - {x: 58, y: 6}
+      - {x: 58, y: -3}
+      - {x: 62, y: -7}
+      - {x: 71, y: -7}
+      - {x: 76, y: -1}
+      - {x: 76, y: 5}
+    - - {x: -62, y: 10}
+      - {x: -64, y: 6}
+      - {x: -64, y: 3}
+      - {x: -61, y: 1}
+      - {x: -59, y: 1}
+      - {x: -56, y: 4}
+      - {x: -56, y: 7}
+      - {x: -59, y: 10}
+    - - {x: -69, y: 12}
+      - {x: -75, y: 12}
+      - {x: -78, y: 11}
+      - {x: -78, y: 6}
+      - {x: -75, y: 3}
+      - {x: -70, y: 3}
+      - {x: -67, y: 6}
+      - {x: -67, y: 9}
+    - - {x: -82, y: 25}
+      - {x: -88, y: 23}
+      - {x: -88, y: 14}
+      - {x: -86, y: 13}
+      - {x: -82, y: 13}
+      - {x: -76, y: 17}
+      - {x: -76, y: 22}
+      - {x: -77, y: 25}
+    - - {x: 23, y: 78}
+      - {x: 18, y: 64}
+      - {x: 18, y: 20}
+      - {x: 72, y: 20}
+      - {x: 78, y: 21}
+      - {x: 78, y: 74}
+      - {x: 73, y: 78}
+    - - {x: -89, y: 77}
+      - {x: -90, y: 74}
+      - {x: -90, y: 27}
+      - {x: -85, y: 25}
+      - {x: -61, y: 25}
+      - {x: -41, y: 53}
+      - {x: -41, y: 76}
+      - {x: -47, y: 77}
+    - - {x: -16, y: 71}
+      - {x: -30, y: 64}
+      - {x: -30, y: 32}
+      - {x: -28, y: 29}
+      - {x: -4, y: 29}
+      - {x: 2, y: 49}
+      - {x: 2, y: 71}
+    - - {x: 49, y: 118}
+      - {x: 35, y: 118}
+      - {x: 32, y: 117}
+      - {x: 32, y: 83}
+      - {x: 34, y: 81}
+      - {x: 53, y: 81}
+      - {x: 55, y: 83}
+      - {x: 55, y: 113}
+    - - {x: -93, y: 119}
+      - {x: -95, y: 117}
+      - {x: -95, y: 85}
+      - {x: -93, y: 83}
+      - {x: -29, y: 83}
+      - {x: -27, y: 85}
+      - {x: -27, y: 117}
+      - {x: -29, y: 119}
+    - - {x: -6, y: 116}
+      - {x: -16, y: 105}
+      - {x: -16, y: 89}
+      - {x: -15, y: 88}
+      - {x: 4, y: 88}
+      - {x: 18, y: 104}
+      - {x: 18, y: 111}
+      - {x: 4, y: 116}
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
