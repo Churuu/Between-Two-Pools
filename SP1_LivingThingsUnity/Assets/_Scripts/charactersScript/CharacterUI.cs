@@ -34,11 +34,22 @@ public class CharacterUI : MonoBehaviour
         otterKilld = FindObjectOfType<OtterKilld>();
         frogKilld = FindObjectOfType<FrogKilld>();
         EventManager.instance.OnNewActiveCharacter += SetActiveCharacter;
+        EventManager.instance.onKilld += UpdateDeathState;
     }
 
     void Update()
     {
         States();
+    }
+
+    void UpdateDeathState(GameObject obj)
+    {
+        if (obj == otterKilld.gameObject)
+            otterState = states.dead;
+        if (obj == sealKilld.gameObject)
+            sealState = states.dead;
+        if (obj == frogKilld.gameObject)
+            frogState = states.dead;
     }
 
 
