@@ -51282,11 +51282,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -102.32
+      value: -81.71
       objectReference: {fileID: 0}
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -37.87
+      value: -53.94
       objectReference: {fileID: 0}
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.z
@@ -53120,8 +53120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 2
-  start: {x: -102.81, y: -57.63, z: 0}
-  target: {x: -90.49, y: -57.63, z: 0}
+  start: {x: -90.59, y: -57.63, z: 0}
+  target: {x: -102.81, y: -57.63, z: 0}
   speed: 1
   acceleration: 1.1
   tolerance: 0.15

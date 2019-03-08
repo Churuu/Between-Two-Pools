@@ -748,7 +748,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4848845172062806, guid: 7c808decaecafbb468ed8d0718af7972, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 23.06
+      value: 23.61
       objectReference: {fileID: 0}
     - target: {fileID: 4848845172062806, guid: 7c808decaecafbb468ed8d0718af7972, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5969,9 +5969,13 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 473
     m_Data: {fileID: 11400000, guid: 94251eb3e6e903e43bc4333329dcb1b8, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 473
     m_Data: {fileID: 21300142, guid: 8cf49b48753b90548aca549301891a95, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 473
     m_Data:
@@ -6018,6 +6022,8 @@ Tilemap:
     e32: 0
     e33: 1
   m_TileRefreshArray:
+  - serializedVersion: 1
+    m_DirtyIndex: 0
   - serializedVersion: 1
     m_DirtyIndex: 0
 --- !u!19719996 &1029191072
