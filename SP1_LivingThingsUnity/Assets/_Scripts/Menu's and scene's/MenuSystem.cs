@@ -18,10 +18,11 @@ public class MenuSystem : MonoBehaviour {
     public Button SoundOption;
     public Button Options;
     public Button Credits;
+    public Button ReturnToPauseMenu;
     public Canvas MainMenu;
     public Canvas Levels;
     public Canvas PauseMenu;
-    public Canvas PressAnyButton;
+    public Canvas PauseSettings;
 
     private bool P_Pressed;
     private SceneManagerScript NextScene;
@@ -45,6 +46,7 @@ public class MenuSystem : MonoBehaviour {
         SoundOption.onClick.AddListener(TaskOnSoundOption);
         Options.onClick.AddListener(TaskOnSoundOption);
         Credits.onClick.AddListener(TaskOnCredits);
+        ReturnToPauseMenu.onClick.AddListener(TaskOnReturnPause);
 
     }
     //Lägg till en knapp för varje level 
@@ -66,6 +68,12 @@ public class MenuSystem : MonoBehaviour {
         }
 
     }
+    void TaskOnReturnPause()
+    {
+        PauseMenu.gameObject.SetActive(true);
+        PauseSettings.gameObject.SetActive(false);
+
+    }
 
     void TaskOnCredits()
     {
@@ -74,7 +82,8 @@ public class MenuSystem : MonoBehaviour {
 
     void TaskOnSoundOption()
     {
-       //Gör något här med sound option
+        PauseMenu.gameObject.SetActive(false);
+        PauseSettings.gameObject.SetActive(true);
     }
 
     void TaskOnResumeGame()
