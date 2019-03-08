@@ -26,7 +26,7 @@ public class SealKilld : MonoBehaviour
             {
                 transform.GetChild(0).gameObject.active = false;
             }
-            //GetComponent<Seal>().enabled = false;
+        //  GetComponent<Seal>().enabled = false;
             GetComponent<Animator>().enabled = false;
             GetComponent<PlayerController>().enabled = false;
             GetComponent<CrushedPlayer>().enabled = false;
