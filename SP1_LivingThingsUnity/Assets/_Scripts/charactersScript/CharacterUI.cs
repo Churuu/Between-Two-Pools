@@ -18,14 +18,22 @@ public class CharacterUI : MonoBehaviour
     [Header("Frog Sprites")]
     public Image frog;
     public Sprite frogDead, frogAsleep, frogDeadAndAsleep, frogSelected, frogActive;
+    [Space]
+    public Image selectedCharacterImage;
 
-
-    public enum states {dead, asleep, active, deadAndAsleep }
+    public enum states { dead, asleep, active, deadAndInactive }
     public states otterState, frogState, sealState;
+
+    OtterKilld otterKilld;
+    FrogKilld frogKilld;
+    SealKilld sealKilld;
 
     void Start()
     {
-
+        sealKilld = FindObjectOfType<SealKilld>();
+        otterKilld = FindObjectOfType<OtterKilld>();
+        frogKilld = FindObjectOfType<FrogKilld>();
+        EventManager.instance.OnNewActiveCharacter += SetActiveCharacter;
     }
 
     void Update()
@@ -47,7 +55,7 @@ public class CharacterUI : MonoBehaviour
             case states.active:
                 otter.sprite = otterActive;
                 break;
-            case states.deadAndAsleep:
+            case states.deadAndInactive:
                 otter.sprite = otterDeadAndAsleep;
                 break;
         }
@@ -62,7 +70,7 @@ public class CharacterUI : MonoBehaviour
             case states.active:
                 frog.sprite = frogActive;
                 break;
-            case states.deadAndAsleep:
+            case states.deadAndInactive:
                 frog.sprite = frogDeadAndAsleep;
                 break;
         }
@@ -77,8 +85,67 @@ public class CharacterUI : MonoBehaviour
             case states.active:
                 seal.sprite = sealActive;
                 break;
-            case states.deadAndAsleep:
+            case states.deadAndInactive:
                 seal.sprite = sealDeadAndAsleep;
+                break;
+        }
+    }
+
+    void SetActiveCharacter(int character)
+    {
+        switch (character)
+        {
+            case 1:
+                if (otterKilld.notKilld)
+                    otterState = states.active;
+                else
+                    otterState = states.dead;
+
+                if (sealKilld.notKilld)
+                    sealState = states.asleep;
+                else
+                    sealState = states.deadAndInactive;
+
+                if (frogKilld.notKilld)
+                    frogState = states.asleep;
+                else
+                    frogState = states.deadAndInactive;
+
+                    selectedCharacterImage.sprite = otterSelected;
+                break;
+            case 2:
+                if (otterKilld.notKilld)
+                    otterState = states.asleep;
+                else
+                    otterState = states.deadAndInactive;
+
+                if (sealKilld.notKilld)
+                    sealState = states.active;
+                else
+                    sealState = states.dead;
+
+                if (frogKilld.notKilld)
+                    frogState = states.asleep;
+                else
+                    frogState = states.deadAndInactive;
+                selectedCharacterImage.sprite = sealSelected;
+                break;
+            case 3:
+                if (otterKilld.notKilld)
+                    otterState = states.asleep;
+                else
+                    otterState = states.deadAndInactive;
+
+                if (sealKilld.notKilld)
+                    sealState = states.asleep;
+                else
+                    sealState = states.deadAndInactive;
+
+                if (frogKilld.notKilld)
+                    frogState = states.active;
+                else
+                    frogState = states.dead;
+                selectedCharacterImage.sprite = frogSelected;
                 break;
         }
     }
