@@ -6,6 +6,7 @@ public class AudioSettings : MonoBehaviour
 {
     public AudioMixer sound;
     public Slider soundSlider;
+    public string volymeToChangeName;
     
 
     private float soundSliderValue = 50f;
@@ -15,7 +16,8 @@ public class AudioSettings : MonoBehaviour
     {
         soundSliderValue = soundSlider.value;
         float soundLevel = soundSliderValue * 100f;
-        // LJudvolum stuff
+        sound.SetFloat("Master", soundLevel);
+        Debug.Log(sound);
 
 
        
