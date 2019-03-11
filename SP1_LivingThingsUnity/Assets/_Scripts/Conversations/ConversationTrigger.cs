@@ -9,6 +9,7 @@ public class ConversationTrigger : MonoBehaviour
     public Text convoText;
     public float TypingDelay = 0.1f;
     public string conversationName;
+    public Image conversationImage;
     public enum characterTypes { Otter = 1, Seal = 2, Frog = 3 };
     public characterTypes characters;
 
@@ -42,10 +43,11 @@ public class ConversationTrigger : MonoBehaviour
 
     void PlayConversation()
     {
-        var conversationCreator = FindObjectOfType<ConversationCreator>();
+        var conversationCreator = FindObjectOfType<ConversationCreatorTest>();
         var conversation = conversationCreator.FindConversationByName(conversationName);
         if (currentIndex < conversation.dialog.Count)
             StartCoroutine(PlayDialog(conversation));
+        conversationImage.gameObject.SetActive(true);
 
         if (EventManager.instance.OnChatActiv != null)
             EventManager.instance.OnChatActiv();
@@ -57,15 +59,16 @@ public class ConversationTrigger : MonoBehaviour
                 EventManager.instance.OnChatEnd();
 
             thisActive = false;
-
+            conversationImage.gameObject.SetActive(false);
             convoText.text = "";
             Destroy(gameObject);
         }
     }
 
-    IEnumerator PlayDialog(Conversation conversation)
+    IEnumerator PlayDialog(ConversationTest conversation)
     {
         convoText.text = "";
+        conversationImage.sprite = conversation.characterDialog[currentIndex];
         foreach (var letter in conversation.dialog[currentIndex].ToCharArray())
         {
             convoText.text += letter;
