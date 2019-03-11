@@ -154,11 +154,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1201363521662448, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1202194823197568, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711408718329624, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: PauseSettings
+      value: 
+      objectReference: {fileID: 348663678}
+    - target: {fileID: 114968051622078770, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: volymeToChangeName
+      value: Ljud
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541011990793342, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: volymeToChangeName
+      value: Musik
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
@@ -244,3 +259,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &348663678 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 223341540864983498, guid: f7e6aebd788d3fd49a5270140b948079,
+    type: 2}
+  m_PrefabInternal: {fileID: 314296625}
