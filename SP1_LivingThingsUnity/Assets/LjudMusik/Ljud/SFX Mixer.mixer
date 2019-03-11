@@ -14,7 +14,11 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 614a8ba6c4c66ac439f188628ee29d16
+    name: Musik
+  - guid: bc3264f640cf53f498d69aeef2059518
+    name: Ljud
   m_AudioMixerGroupViews:
   - guids:
     - 8fa75c3f85321f244b3c8f01cbbfd4bf
@@ -66,7 +70,7 @@ AudioMixerSnapshotController:
   m_FloatValues:
     614a8ba6c4c66ac439f188628ee29d16: -6.4
     bc3264f640cf53f498d69aeef2059518: -8.6
-    1c38b2ab0f65d3f44975f95f48b7f2d2: 0
+    1c38b2ab0f65d3f44975f95f48b7f2d2: 20
   m_TransitionOverrides: {}
 --- !u!243 &243244725490520478
 AudioMixerGroupController:
