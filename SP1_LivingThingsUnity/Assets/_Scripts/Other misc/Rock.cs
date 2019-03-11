@@ -12,6 +12,8 @@ public class Rock : MonoBehaviour
         Destroy(gameObject);
 
         if (col.CompareTag("DestructableWall"))
-            Destroy(col);
+        {
+            col.GetComponent<DestructableWall>().ExplodeWall();
+        }
     }
 }
