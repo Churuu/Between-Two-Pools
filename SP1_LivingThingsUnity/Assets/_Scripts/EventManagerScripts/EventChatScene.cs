@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class EventChatScene : MonoBehaviour
-{//Jonas 1019-03-11
+{//Jonas 2019-03-11
 
   [SerializeField]  GameObject[] gameObjects;
     // Use this for initialization
