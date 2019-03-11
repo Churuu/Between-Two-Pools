@@ -36,9 +36,16 @@ public class PlayerController : MonoBehaviour
         coll2D = GetComponent<Collider2D>();
         rb2D = GetComponent<Rigidbody2D>();
         side = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
-        
-        
-        
+
+        for (int i = 0; i < animChild.Length; i++)
+        {
+            if (animChild[i] != null)
+            {
+                animChild[i].SetBool("FaceingRight", true);
+            }
+
+        }
+
     }
     private void Update()
     {
@@ -135,7 +142,10 @@ public class PlayerController : MonoBehaviour
             for (int i = 0; i < animChild.Length; i++)
             {
                 if (animChild[i] != null)
-                    animChild[i].SetBool("FaceingRight", true);
+                {
+animChild[i].SetBool("FaceingRight", true);
+                }
+                    
             }
         }
         else if (movement.x < 0)
