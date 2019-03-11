@@ -2387,7 +2387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   convoText: {fileID: 1731896160}
   TypingDelay: 0.04
-  conversationName: SealSay
+  conversationName: Badboll1
+  conversationImage: {fileID: 2046032341}
   characters: 2
 --- !u!1 &451734571
 GameObject:
@@ -50233,7 +50234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4506182451989650, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
       propertyPath: m_RootOrder
-      value: 36
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4506182451989650, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
       propertyPath: m_LocalScale.x
@@ -50838,13 +50839,18 @@ Prefab:
     - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
         type: 2}
       propertyPath: conversationName
-      value: FrogSay
+      value: Badboll
       objectReference: {fileID: 0}
     - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
         type: 2}
       propertyPath: characters
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
+        type: 2}
+      propertyPath: conversationImage
+      value: 
+      objectReference: {fileID: 2046032341}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
   m_IsPrefabParent: 0
@@ -50857,11 +50863,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4149180866981382, guid: a6bf14fa283c3e84e9f144b49114ff8f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -109.49
+      value: -103
       objectReference: {fileID: 0}
     - target: {fileID: 4149180866981382, guid: a6bf14fa283c3e84e9f144b49114ff8f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -38.06
+      value: -80.9
       objectReference: {fileID: 0}
     - target: {fileID: 4149180866981382, guid: a6bf14fa283c3e84e9f144b49114ff8f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -51282,11 +51288,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -81.71
+      value: -102.79
       objectReference: {fileID: 0}
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -53.94
+      value: -37.6
       objectReference: {fileID: 0}
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.z
@@ -53638,6 +53644,7 @@ GameObject:
   - component: {fileID: 1417624987}
   - component: {fileID: 1417624986}
   - component: {fileID: 1417624985}
+  - component: {fileID: 1417624988}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -53655,7 +53662,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1731896158}
+  - {fileID: 2046032343}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53691,10 +53698,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -53721,6 +53728,52 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 32767
   m_TargetDisplay: 0
+--- !u!114 &1417624988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417624983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160800de073ba8e47a9b6c1aefbb694d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cName: Badboll1
+  selectedConversation: 3
+  selectedDialog: 1
+  conversations:
+  - name: Default
+    dialog:
+    - Default
+    characterDialog:
+    - {fileID: 0}
+  - name: Utter
+    dialog:
+    - Maybe this was an unrealistic dream...
+    characterDialog:
+    - {fileID: 21300002, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+  - name: Badboll
+    dialog:
+    - This childish object will definitely distract Pinniped.
+    - I'm too tired for this.
+    - I guess it's just in the way.
+    characterDialog:
+    - {fileID: 21300002, guid: 37dcd7a1c58b6bb49a340b96dddaec8a, type: 3}
+    - {fileID: 21300004, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+    - {fileID: 21300008, guid: 37dcd7a1c58b6bb49a340b96dddaec8a, type: 3}
+  - name: Badboll1
+    dialog:
+    - I'm too tired for this.
+    - I thought seals loved beach balls.
+    characterDialog:
+    - {fileID: 21300002, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+    - {fileID: 21300002, guid: 37dcd7a1c58b6bb49a340b96dddaec8a, type: 3}
+  optionsList:
+  - Default
+  - Utter
+  - Badboll
+  - Badboll1
 --- !u!1 &1422199516
 GameObject:
   m_ObjectHideFlags: 0
@@ -54990,7 +55043,6 @@ GameObject:
   - component: {fileID: 1731896158}
   - component: {fileID: 1731896161}
   - component: {fileID: 1731896160}
-  - component: {fileID: 1731896159}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -55008,64 +55060,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -946.12805}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
-  m_Father: {fileID: 1417624984}
+  m_Father: {fileID: 2046032343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000005722, y: 118.07623}
-  m_SizeDelta: {x: 701.97, y: 142.72}
+  m_AnchoredPosition: {x: 84.2, y: 21.3}
+  m_SizeDelta: {x: 884.4, y: 144.5}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &1731896159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1731896157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160800de073ba8e47a9b6c1aefbb694d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cName: OtterSay
-  selectedConversation: 4
-  selectedDialog: 0
-  conversations:
-  - name: Default
-    dialog:
-    - This childish object will definitely distract Pinniped.
-    characterDialog: 02000000
-  - name: 
-    dialog:
-    - Default
-    characterDialog: 00000000
-  - name: FrogSay
-    dialog:
-    - This childish object will definitely distract Pinniped.
-    - I'm too tired for this...
-    - I guess it's just in the way.
-    characterDialog: 020000000100000002000000
-  - name: SealSay
-    dialog:
-    - I'm too tired for this...
-    - I thought seals loved beach balls...
-    characterDialog: 0100000001000000
-  - name: OtterSay
-    dialog:
-    - Maybe this was an unrealistic dream...
-    characterDialog: 00000000
-  optionsList:
-  - Default
-  - 
-  - FrogSay
-  - SealSay
-  - OtterSay
-  CharacterOptions:
-  - Otter
-  - Seal
-  - Frog
-  - Plankton
-  - Shrimp
 --- !u!114 &1731896160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55087,7 +55089,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 62dc18f22bdd8894389e9927ebb72851, type: 3}
-    m_FontSize: 20
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -55896,11 +55898,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -106
+      value: -106.7
       objectReference: {fileID: 0}
     - target: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -38.11
+      value: -80.9
       objectReference: {fileID: 0}
     - target: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
       propertyPath: m_LocalPosition.z
@@ -93552,7 +93554,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4506182451989650, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1521461176954430, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
       propertyPath: m_Name
@@ -93674,7 +93676,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4637191751417482, guid: fa9c21a26e4a71b4a835643702e89cff, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 42.72
+      value: 46.06
       objectReference: {fileID: 0}
     - target: {fileID: 4637191751417482, guid: fa9c21a26e4a71b4a835643702e89cff, type: 2}
       propertyPath: m_LocalPosition.z
@@ -93699,6 +93701,26 @@ Prefab:
     - target: {fileID: 4637191751417482, guid: fa9c21a26e4a71b4a835643702e89cff, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 61621210347627970, guid: fa9c21a26e4a71b4a835643702e89cff,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 95025610661372988, guid: fa9c21a26e4a71b4a835643702e89cff,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e101047bf53456f4daedfb4e771df375, type: 2}
+    - target: {fileID: 61621210347627970, guid: fa9c21a26e4a71b4a835643702e89cff,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.032614708
+      objectReference: {fileID: 0}
+    - target: {fileID: 61621210347627970, guid: fa9c21a26e4a71b4a835643702e89cff,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 6.910536
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa9c21a26e4a71b4a835643702e89cff, type: 2}
@@ -94526,7 +94548,7 @@ Prefab:
     - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
         type: 2}
       propertyPath: conversationName
-      value: OtterSay
+      value: Utter
       objectReference: {fileID: 0}
     - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
         type: 2}
@@ -94538,6 +94560,11 @@ Prefab:
       propertyPath: TypingDelay
       value: 0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
+        type: 2}
+      propertyPath: conversationImage
+      value: 
+      objectReference: {fileID: 2046032341}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
   m_IsPrefabParent: 0
@@ -94614,6 +94641,75 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &2046032340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2046032343}
+  - component: {fileID: 2046032342}
+  - component: {fileID: 2046032341}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2046032341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046032340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300002, guid: f43146c18dece684d9c2a7f3356add0a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2046032342
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046032340}
+--- !u!224 &2046032343
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046032340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1731896158}
+  m_Father: {fileID: 1417624984}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 313.7, y: -388.5}
+  m_SizeDelta: {x: 1093.1, y: 231.1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2053151290
 GameObject:
   m_ObjectHideFlags: 0
