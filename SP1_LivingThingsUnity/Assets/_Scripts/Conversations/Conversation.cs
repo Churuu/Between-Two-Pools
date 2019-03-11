@@ -12,7 +12,9 @@ public class Conversation
         "Default"
     };
 
-    public List<Sprite> characterDialog = new List<Sprite>();
+    public List<Sprite> characterDialog = new List<Sprite> {
+        new Sprite()
+    };
 
     public string[] dialogOptions
     {
