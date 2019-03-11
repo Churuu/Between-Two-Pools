@@ -43,7 +43,7 @@ public class ConversationTrigger : MonoBehaviour
 
     void PlayConversation()
     {
-        var conversationCreator = FindObjectOfType<ConversationCreatorTest>();
+        var conversationCreator = FindObjectOfType<ConversationCreator>();
         var conversation = conversationCreator.FindConversationByName(conversationName);
         if (currentIndex < conversation.dialog.Count)
             StartCoroutine(PlayDialog(conversation));
@@ -65,7 +65,7 @@ public class ConversationTrigger : MonoBehaviour
         }
     }
 
-    IEnumerator PlayDialog(ConversationTest conversation)
+    IEnumerator PlayDialog(Conversation conversation)
     {
         convoText.text = "";
         conversationImage.sprite = conversation.characterDialog[currentIndex];

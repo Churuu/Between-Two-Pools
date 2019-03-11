@@ -12,12 +12,9 @@ public class Conversation
         "Default"
     };
 
-    public List<int> characterDialog = new List<int>
-    {
-        0
-    };
+    public List<Sprite> characterDialog = new List<Sprite>();
 
-    public string[] options
+    public string[] dialogOptions
     {
         get
         {
@@ -26,17 +23,8 @@ public class Conversation
         }
     }
 
-    public int[] characters
-    {
-        get
-        {
-            return characterDialog.ToArray();
-        }
-    }
-
     public Conversation(string name)
     {
         this.name = name;
     }
-
 }

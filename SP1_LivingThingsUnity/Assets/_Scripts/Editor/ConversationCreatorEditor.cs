@@ -15,7 +15,7 @@ public class ConversationCreatorEditor : Editor
 
         ConversationCreator conversationCreator = (ConversationCreator)target;
 
-        conversationCreator.selectedConversation = EditorGUILayout.Popup("Conversations", conversationCreator.selectedConversation, conversationCreator.options);
+        conversationCreator.selectedConversation = EditorGUILayout.Popup("Conversations", conversationCreator.selectedConversation, conversationCreator.conversationOptions);
 
 
         GUILayout.Label("Name");
@@ -39,7 +39,8 @@ public class ConversationCreatorEditor : Editor
 
 
         conversationCreator.selectedDialog = EditorGUILayout.Popup("Dialog", conversationCreator.selectedDialog, conversationCreator.dialogOptions);
-        conversationCreator.character = EditorGUILayout.Popup("Character", conversationCreator.character, conversationCreator.CharacterOptions);
+        conversationCreator.selectedCharacterSprite = (Sprite)EditorGUILayout.ObjectField(conversationCreator.selectedCharacterSprite, typeof(Sprite), false);
+
 
         if (conversationCreator.selectedDialog != oldSelection)
             oldSelection = conversationCreator.selectedDialog;
@@ -53,7 +54,7 @@ public class ConversationCreatorEditor : Editor
             conversationCreator.DeleteDialog();
         }
 
-        conversationCreator.cText = EditorGUILayout.TextArea(conversationCreator.cText, GUILayout.Height(100f));
+        conversationCreator.dialogText = EditorGUILayout.TextArea(conversationCreator.dialogText, GUILayout.Height(100f));
 
     }
 }
