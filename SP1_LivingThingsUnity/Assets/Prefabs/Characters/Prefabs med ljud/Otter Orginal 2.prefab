@@ -680,6 +680,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
+  deathSound: {fileID: 0}
 --- !u!114 &114170270046522928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -697,6 +698,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  crushedOfSet: {x: 0, y: 1, z: 0}
 --- !u!114 &114207464905006744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -719,7 +721,7 @@ MonoBehaviour:
   "buttonNameAbility1AvP\xE5": Ability1
   buttonNameAbility1Togel: S
   maxDistanceToGetPulled: 10
-  maxStrengthToGetPulled: 50
+  maxStrengthToGetPulled: 20
   maxDistanceToGetThrust: 10
   maxStrengthToGetThrust: 20
   minDistanceStopMoving: 2.35
@@ -758,6 +760,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
+  deathSound: {fileID: 0}
 --- !u!114 &114332902441835020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -786,6 +789,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
+  deathSound: {fileID: 0}
 --- !u!114 &114367737375061908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -838,6 +842,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
+  deathSound: {fileID: 0}
 --- !u!114 &114664131524452426
 MonoBehaviour:
   m_ObjectHideFlags: 1
