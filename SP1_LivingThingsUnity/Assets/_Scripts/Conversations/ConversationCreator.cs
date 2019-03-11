@@ -5,12 +5,9 @@ using UnityEngine.UI;
 
 public class ConversationCreator : MonoBehaviour
 {
-
-
     [HideInInspector] public string cName;
     [HideInInspector] public int selectedConversation = 0;
     [HideInInspector] public int selectedDialog = 0;
-
 
     [HideInInspector]
     public List<Conversation> conversations = new List<Conversation> {
@@ -22,17 +19,9 @@ public class ConversationCreator : MonoBehaviour
         "Default"
     };
 
-    [HideInInspector]
-    public string[] CharacterOptions =
-    {
-        "Otter",
-        "Seal",
-        "Frog",
-        "Plankton",
-        "Shrimp"
-    };
 
-    public int character
+    [HideInInspector]
+    public Sprite selectedCharacterSprite
     {
         get
         {
@@ -45,7 +34,7 @@ public class ConversationCreator : MonoBehaviour
     }
 
 
-    public string cText
+    public string dialogText
     {
         get
         {
@@ -57,7 +46,7 @@ public class ConversationCreator : MonoBehaviour
         }
     }
 
-    public string[] options
+    public string[] conversationOptions
     {
         get
         {
@@ -83,7 +72,7 @@ public class ConversationCreator : MonoBehaviour
     {
 
         conversations[selectedConversation].dialog.Add(conversations[selectedConversation].dialog.Count.ToString());
-        conversations[selectedConversation].characterDialog.Add(0);
+        conversations[selectedConversation].characterDialog.Add(null);
     }
 
     public void DeleteDialog()
