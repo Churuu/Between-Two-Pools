@@ -18,7 +18,8 @@ public class Reciever : MonoBehaviour
         target, moving, downTime,
     }
     ElevatorState elevatorState;
-    
+
+    private bool motionCreate = true;
     //Motion Variables
     [Space]
     [Header("Motion Variables")]
@@ -32,6 +33,7 @@ public class Reciever : MonoBehaviour
     private float acceleration = 1.1f;
     [SerializeField]
     private float tolerance = 0.15f;
+
 
     //Variables for different door states
     [Space]
@@ -55,7 +57,7 @@ public class Reciever : MonoBehaviour
 
     int testInt = 0;
 
-    private float time;
+    private float timeD;
 
     // Use this for initialization
     void Start ()
@@ -63,15 +65,16 @@ public class Reciever : MonoBehaviour
         
         start = transform.position;
         ToggleObjectComponents();
+
     }
-    
-	// Update is called once per frame
-	void Update ()
+
+// Update is called once per frame
+void Update ()
     {
         if (moveBool && doorType != DoorType.flip)
         {
             //timer += Time.deltaTime;
-            ToggleElevator(start, target, speed, acceleration, Time.deltaTime, tolerance, gameObjectToggle);
+            ToggleElevator(start, target, speed, acceleration, timeD += Time.deltaTime, tolerance, gameObjectToggle);
         }
         //else
         //    timer = 0;
@@ -83,7 +86,7 @@ public class Reciever : MonoBehaviour
         if (lockBool)
         {
             //gameObjectToggle = !gameObjectToggle;
-            
+            timeD = 0;
 
             if (doorType == DoorType.flip)
             {
@@ -128,24 +131,37 @@ public class Reciever : MonoBehaviour
     private void ToggleElevator(Vector3 start, Vector3 target, float speed, float acceleration,
         float time, float tolerance, bool flip)
     {
-
         Motion motion = new Motion(start, target, speed, acceleration, time, tolerance);
+
         motion.Source = transform.position;
+        //print("current: " + motion.Current);
+        //print("valid?: " + motion.Valid);
         //print("test0");
         if (flip)
         {
             motion.Target = target;
-
+            //motion.Source = start;
+            
         }
         else
         {
             motion.Target = start;
+            //motion.Source = target;
 
         }
         if (doorType != DoorType.flip)
         {
             //print(motion.InTargetRegion);
             transform.Translate(motion.SourceToTarget * motion.Velocity * Time.deltaTime);
+            //if (motion.SourceToTarget.sqrMagnitude >= 0)
+            //{
+            //    transform.Translate((motion.Source - transform.position) * (speed + acceleration * Time.deltaTime));
+            //}
+            //else if (motion.SourceToTarget.sqrMagnitude < 0)
+            //{
+            //    transform.Translate(-(motion.Source - transform.position) * (speed + acceleration * Time.deltaTime));
+            //}
+
             //print("test1");
         }
 
@@ -162,6 +178,7 @@ public class Reciever : MonoBehaviour
             }
             else if (timerFloat >= timer)
             {
+                timeD = 0;
                 gameObjectToggle = !gameObjectToggle;
                 
                 //timerToggle = false;
