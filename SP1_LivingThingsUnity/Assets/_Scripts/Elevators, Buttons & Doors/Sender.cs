@@ -5,7 +5,7 @@ using UnityEngine;
 //Jesper Li 07/02 - 19
 public class Sender : MonoBehaviour
 {
-    
+    public Animator anim;
     public enum SwitchType
     {
         door, lock1, all
@@ -27,7 +27,7 @@ public class Sender : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -41,6 +41,7 @@ public class Sender : MonoBehaviour
         if (GetButtonType() == ButtonType.buttonSwitch)
         {
             GetComponent<ObjectAudioClip>().PlayRandom();
+            anim.SetBool("Pressed", true);
             if (switchType == SwitchType.door)
             {
                 for (int i = 0; i < gameObjects.Count; i++)
@@ -68,17 +69,15 @@ public class Sender : MonoBehaviour
                     
                 }
             }
+            
         }
-
-        else if (buttonType == ButtonType.sealSwitch)
-        {
-
-        }
+        anim.SetBool("Pressed", false);
     }
 
     public void ActivatePlate()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(0);
+        anim.SetBool("Pressed", true);
         if (switchType == SwitchType.door)
         {
             for (int i = 0; i < gameObjects.Count; i++)
@@ -104,6 +103,7 @@ public class Sender : MonoBehaviour
                 gameObjects[i].GetComponent<Reciever>().BoolToogle();
             }
         }
+        anim.SetBool("Pressed", false);
 
     }
 

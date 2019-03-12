@@ -17,9 +17,5 @@ public class AudioSettings : MonoBehaviour
         soundSliderValue = soundSlider.value;
         float soundLevel = soundSliderValue;
         sound.SetFloat(volymeToChangeName, soundLevel);
-        Debug.Log(sound);
-
-
-       
     }
 }
