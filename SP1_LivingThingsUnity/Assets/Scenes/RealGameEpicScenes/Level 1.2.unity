@@ -353,6 +353,11 @@ Prefab:
       propertyPath: Seal
       value: 
       objectReference: {fileID: 805955535}
+    - target: {fileID: 114517921787290798, guid: a92b19e6b41f6b7419a85e610c63733d,
+        type: 2}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 856986449}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a92b19e6b41f6b7419a85e610c63733d, type: 2}
   m_IsPrefabParent: 0
@@ -1315,14 +1320,14 @@ Prefab:
       objectReference: {fileID: 1285422239}
     - target: {fileID: 114820620022374932, guid: 75b5b29667987464392675f66b4358af,
         type: 2}
-      propertyPath: seal
-      value: 
-      objectReference: {fileID: 805955547}
-    - target: {fileID: 114820620022374932, guid: 75b5b29667987464392675f66b4358af,
-        type: 2}
       propertyPath: otter
       value: 
       objectReference: {fileID: 1540613037}
+    - target: {fileID: 114820620022374932, guid: 75b5b29667987464392675f66b4358af,
+        type: 2}
+      propertyPath: seal
+      value: 
+      objectReference: {fileID: 805955547}
     - target: {fileID: 114820620022374932, guid: 75b5b29667987464392675f66b4358af,
         type: 2}
       propertyPath: frog
@@ -1923,6 +1928,11 @@ MonoBehaviour:
   objectToFollow: {fileID: 856986447}
   cameraObject: {fileID: 1285422240}
   followSpeed: 5
+--- !u!82 &856986449 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82067272209500252, guid: a92b19e6b41f6b7419a85e610c63733d,
+    type: 2}
+  m_PrefabInternal: {fileID: 140606687}
 --- !u!1 &862967496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,11 +2189,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 200.5
+      value: 142.3
       objectReference: {fileID: 0}
     - target: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -78.9
+      value: -74.8
       objectReference: {fileID: 0}
     - target: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
       propertyPath: m_LocalPosition.z
@@ -51436,6 +51446,11 @@ Prefab:
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: maxStrengthToGetPulled
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
