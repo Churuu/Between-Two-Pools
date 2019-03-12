@@ -35,10 +35,10 @@ public class CrushedPlayer : MonoBehaviour
                 {
                     for (int j = 0; j < crushingColliders.Length; j++)
                     {
-                        Debug.Log(hitDown.collider + " = " + crushingColliders[i] + "    " + hitUp.collider + " " + crushingColliders[j]);
+                 //       Debug.Log(hitDown.collider + " = " + crushingColliders[i] + "    " + hitUp.collider + " " + crushingColliders[j]);
                         if (hitDown.collider == crushingColliders[i] && hitUp.collider == crushingColliders[j])
                         {
-                            Debug.Log("Player crushed");
+                       //     Debug.Log("Player crushed");
                             if (EventManager.instance.onKilld != null)
                             {
                                 EventManager.instance.onKilld(this.gameObject);

@@ -22,13 +22,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gizmoRange = 1f;
     [SerializeField] LayerMask ground;
     public Animator[] animChild; // 1. Normal/Red 2. RedActive 3. Blue 4. BlueActive
-
+    float time = 0;
     float horizontalInput;
     Vector3 side;
     Rigidbody2D rb2D;
     Collider2D coll2D;
     //Animator anim;
     [SerializeField] bool activePlayer = false;
+
+    [SerializeField] [Range(0.0001f, 1f)] float gravity = 0.1f;
+    float minGravity = 0.0005f;
 
 
     void Start()
@@ -59,17 +62,38 @@ public class PlayerController : MonoBehaviour
         {
             horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
             VerticalMovmenent();
-            JumpMovment();
-        }
 
-        
+        }
+        else
+        {
+            horizontalInput = GetComponent<Rigidbody2D>().velocity.x;
+            if (horizontalInput < minGravity || horizontalInput > -minGravity)
+            {
+                horizontalInput = 0;
+            }
+            else
+            {
+                horizontalInput *= gravity;
+            }
+
+
+        }
+        JumpMovment();
+
+
     }
 
 
     private void FixedUpdate()
     {
         if (activePlayer)
+        {
             HorizontalMovmenent();
+        }
+        else
+        {
+            HorizontalMovmenentNotActive();
+        }
     }
 
     private void LateUpdate()
@@ -79,7 +103,7 @@ public class PlayerController : MonoBehaviour
             if (animChild[i] != null)
                 animChild[i].SetBool("Jump", !Grounded());
         }
-          
+
 
     }
 
@@ -123,7 +147,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown(jumpAxis))
         {
             if (Grounded())
-            { 
+            {
                 rb2D.AddForce(Vector2.up * jumpAddForce);
                 for (int i = 0; i < animChild.Length; i++)
                 {
@@ -143,9 +167,9 @@ public class PlayerController : MonoBehaviour
             {
                 if (animChild[i] != null)
                 {
-animChild[i].SetBool("FaceingRight", true);
+                    animChild[i].SetBool("FaceingRight", true);
                 }
-                    
+
             }
         }
         else if (movement.x < 0)
@@ -156,6 +180,12 @@ animChild[i].SetBool("FaceingRight", true);
                     animChild[i].SetBool("FaceingRight", false);
             }
         }
+        rb2D.velocity = movement;
+    }
+    private void HorizontalMovmenentNotActive()
+    {
+        Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
+       
         rb2D.velocity = movement;
     }
 

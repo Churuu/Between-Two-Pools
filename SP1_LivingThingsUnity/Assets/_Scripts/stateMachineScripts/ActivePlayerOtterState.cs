@@ -20,7 +20,7 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
         otter = snubbe.GetComponent<Otter>();
         playerNumber = number;
         numderCharakter = playerNumber;
-       
+
     }
 
     public override void UpdateState()
@@ -74,7 +74,7 @@ public class ActivePlayerOtterState : ActivePlayerStateBase
             stateMachines.ChangeState(stateMachines.activePlayerStateFrog);
         }
     }
-   void ChangeToChat()
+    void ChangeToChat()
     {
         stateMachines.ChangeState(stateMachines.chatState);
     }
