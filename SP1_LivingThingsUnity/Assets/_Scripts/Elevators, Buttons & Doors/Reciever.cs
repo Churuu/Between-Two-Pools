@@ -65,7 +65,7 @@ public class Reciever : MonoBehaviour
         anim = GetComponent<Animator>();
         start = transform.position;
         ToggleObjectComponents();
-
+        anim.SetBool("Pressed", !gameObjectToggle);
     }
 
 // Update is called once per frame
