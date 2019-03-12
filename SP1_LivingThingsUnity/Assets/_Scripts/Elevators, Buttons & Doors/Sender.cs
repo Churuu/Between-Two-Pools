@@ -52,14 +52,19 @@ public class Sender : MonoBehaviour
         else
             timer = 0;
 
-        for (int i = 0; i < gameObjects.Count; i++)
+        for (int i = 0; i < nonActivatableGameObjects.Count; i++)
         {
             if (nonActivatableGameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
             {
                 test++;
-                //nonActivatableGameObjects[i]
+                nonActivatableGameObjects.RemoveAt(i);
+                break;
             }
             
+        }
+        if (test == gameObjects.Count)
+        {
+
         }
     }
 
