@@ -32,7 +32,7 @@ public class ConversationTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && thisActive) // Skips current dialog
+        if (Input.GetKeyDown(KeyCode.E) && thisActive && !FindObjectOfType<MenuSystem>().P_Pressed) // Skips current dialog
         {
             currentIndex++;
             StopAllCoroutines();
