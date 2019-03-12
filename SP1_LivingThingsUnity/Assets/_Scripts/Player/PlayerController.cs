@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
                 AnimatePlayer(i);
         }
 
-        if (activePlayer && !menuSystem.P_Pressed)
+        if (activePlayer && !menuSystem.P_Pressed)// !menuSystem.P_Pressed
         {
             horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
             VerticalMovmenent();
