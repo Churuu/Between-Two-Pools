@@ -114,9 +114,8 @@ public class Reciever : MonoBehaviour
         if (gameObject.activeInHierarchy)
         {
             GetComponent<BoxCollider2D>().enabled = gameObjectToggle;
-            GetComponent<SpriteRenderer>().enabled = gameObjectToggle;
+            //GetComponent<SpriteRenderer>().enabled = gameObjectToggle;
         }
-        
     }
 
     public void BoolToogle()
@@ -210,6 +209,11 @@ public class Reciever : MonoBehaviour
         }
         else
             return false;
+    }
+
+    public bool GetDoorActivatable()
+    {
+        return lockBool;
     }
 }
 
