@@ -603,6 +603,11 @@ Prefab:
       propertyPath: gameObjectToggle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82796513704141662, guid: 8dcf3dba867e2de4dae6ccbff5e15310,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.329
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dcf3dba867e2de4dae6ccbff5e15310, type: 2}
   m_IsPrefabParent: 0
@@ -1121,11 +1126,6 @@ Transform:
   m_Father: {fileID: 1157793466}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &242608811 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82771115592901402, guid: 515c794038457fc4f8deee297750d695,
-    type: 2}
-  m_PrefabInternal: {fileID: 857964706}
 --- !u!1 &277599492
 GameObject:
   m_ObjectHideFlags: 0
@@ -48107,116 +48107,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 114982481058377898, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: sealStemAudioSource
-      value: 
-      objectReference: {fileID: 1737811570}
-    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: otterStemAudioSource
-      value: 
-      objectReference: {fileID: 922321009}
-    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: frogStemAudioSource
-      value: 
-      objectReference: {fileID: 242608811}
-    - target: {fileID: 82511216925882584, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a8d0f01e81f5da24abd65ada0f929884, type: 3}
-    - target: {fileID: 82990364121773868, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 6d0c35835d421094692988f563559ac7, type: 3}
-    - target: {fileID: 82447081628418366, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a7cd2c4c34aa17d4e9ace4d601b7bbf0, type: 3}
-    - target: {fileID: 82771115592901402, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: b406c0bad00aba942b05b8a847fa6d15, type: 3}
-    - target: {fileID: 82829241058205266, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82511216925882584, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82511216925882584, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82990364121773868, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82990364121773868, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82447081628418366, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82447081628418366, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82771115592901402, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82771115592901402, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: BypassReverbZones
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82771115592901402, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82511216925882584, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 82990364121773868, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 82447081628418366, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 82771115592901402, guid: 515c794038457fc4f8deee297750d695,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 515c794038457fc4f8deee297750d695, type: 2}
   m_IsPrefabParent: 0
@@ -48449,11 +48339,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964,
     type: 2}
   m_PrefabInternal: {fileID: 1391793519}
---- !u!82 &922321009 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82447081628418366, guid: 515c794038457fc4f8deee297750d695,
-    type: 2}
-  m_PrefabInternal: {fileID: 857964706}
 --- !u!1 &930934299
 GameObject:
   m_ObjectHideFlags: 0
@@ -57178,11 +57063,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75b5b29667987464392675f66b4358af, type: 2}
   m_IsPrefabParent: 0
---- !u!82 &1737811570 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82990364121773868, guid: 515c794038457fc4f8deee297750d695,
-    type: 2}
-  m_PrefabInternal: {fileID: 857964706}
 --- !u!1 &1744303494
 GameObject:
   m_ObjectHideFlags: 0
