@@ -5,7 +5,7 @@ using UnityEngine;
 //Jesper Li 07/02 - 19
 public class Reciever : MonoBehaviour
 {
-
+    public Animator anim;
     public enum DoorType
     {
         flip = 0, move, moveTimer, 
@@ -62,7 +62,7 @@ public class Reciever : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        
+        anim = GetComponent<Animator>();
         start = transform.position;
         ToggleObjectComponents();
 
@@ -91,6 +91,7 @@ void Update ()
             if (doorType == DoorType.flip)
             {
                 gameObjectToggle = !gameObjectToggle;
+                anim.SetBool("Pressed", !gameObjectToggle);
                 ToggleObjectComponents();
                 GetComponent<ObjectAudioClip>().PlayRandom();
             }

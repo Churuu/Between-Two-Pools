@@ -16,13 +16,15 @@ public class Frog : MonoBehaviour
     public Transform toungeStart;
     public LayerMask toungeStickLayer;
 
+    public AnimationClip extendClip, retractClip;
+
     PlayerController playerController;
     bool activated = false;
     bool extended;
 
     GameObject _tounge;
     Animator anim;
-    Vector2 direction =  Vector2.right;
+    Vector2 direction = Vector2.right;
 
 
     void Start()
@@ -38,6 +40,8 @@ public class Frog : MonoBehaviour
             ButtonHandler();
             SetDirection();
         }
+
+        //playerController.SetPlayerState(!extended);
     }
 
     void ButtonHandler()
@@ -59,10 +63,10 @@ public class Frog : MonoBehaviour
                 extended = true;
                 StartCoroutine(ExtendTounge());
             }
-            else
+            else if (extended)
             {
                 anim.SetBool("ShootTounge", false);
-                Invoke("Unextend", anim.GetCurrentAnimatorStateInfo(0).length - .25f);
+                Invoke("Unextend", retractClip.length / 2);
             }
         }
         else
@@ -83,16 +87,17 @@ public class Frog : MonoBehaviour
         if (hit.collider != null && playerController.Grounded())
         {
             anim.SetBool("ShootTounge", true);
-			playerController.SetPlayerState(false);
+            playerController.SetPlayerState(false);
+
             Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);
-
             Vector2 middlePoint = (playerPos + hitPoint) / 2;
-
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length - 0.25f);
+            yield return new WaitForSeconds(extendClip.length);
 
             _tounge = Instantiate(tounge, middlePoint, Quaternion.identity) as GameObject;
+
+
 
             var _toungeCol = _tounge.GetComponent<BoxCollider2D>();
             var _toungeSprite = _tounge.GetComponent<SpriteRenderer>();
@@ -125,16 +130,6 @@ public class Frog : MonoBehaviour
         rockCount--;
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        GameObject col = other.gameObject;
-        if (col.CompareTag("Rock") && rockCount < 1)
-        {
-            rockCount++;
-            Destroy(col);
-        }
-    }
-
     public void SwitchActivation(bool state)
     {
         activated = state;
@@ -149,11 +144,21 @@ public class Frog : MonoBehaviour
     {
         Destroy(_tounge);
         extended = false;
-		playerController.SetPlayerState(true);
+        playerController.SetPlayerState(true);
     }
 
     public void DestroyTounge()
     {
         Destroy(_tounge);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        GameObject col = other.gameObject;
+        if (col.CompareTag("Rock") && rockCount < 1)
+        {
+            rockCount++;
+            Destroy(col);
+        }
     }
 }
