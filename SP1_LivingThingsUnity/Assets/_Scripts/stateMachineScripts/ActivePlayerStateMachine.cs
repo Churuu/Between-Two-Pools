@@ -65,14 +65,17 @@ public class ActivePlayerStateMachine : MonoBehaviour
             if (nextState == activePlayerStateOtter)
             {
                 GetComponent<ObjectAudioClip>().PlaySingle(switchToOtter);
+                FindObjectOfType<StemsManager>().ToOtter();
             }
             if (nextState == activePlayerStateSeal)
             {
                 GetComponent<ObjectAudioClip>().PlaySingle(switchToSeal);
+                FindObjectOfType<StemsManager>().ToSeal();
             }
             if (nextState == activePlayerStateFrog)
             {
                 GetComponent<ObjectAudioClip>().PlaySingle(switchToFrog);
+                FindObjectOfType<StemsManager>().ToFrog();
             }
         }
 
