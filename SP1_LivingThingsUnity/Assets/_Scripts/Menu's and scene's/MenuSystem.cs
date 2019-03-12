@@ -24,7 +24,7 @@ public class MenuSystem : MonoBehaviour {
     public Canvas PauseMenu;
     public Canvas PauseSettings;
 
-    private bool P_Pressed;
+    public bool P_Pressed;
     private SceneManagerScript NextScene;
 
     void Start()
