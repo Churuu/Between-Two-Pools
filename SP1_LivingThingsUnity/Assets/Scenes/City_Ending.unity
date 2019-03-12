@@ -122,7 +122,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.98
+      value: 11.13
       objectReference: {fileID: 0}
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.y
@@ -228,6 +228,11 @@ Prefab:
         type: 2}
       propertyPath: canJump
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114917011982065754, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: activePlayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
@@ -6428,24 +6433,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cName: 
   selectedConversation: 0
-  selectedDialog: 8
+  selectedDialog: 6
   conversations:
   - name: Default
     dialog:
     - It looks like this place has been abandoned. I think it's time we stop to rest.
     - It looks a bit creepy.
     - I'm sure it's fine.
-    - this journey is more challenging than what we prepared for. Are we sure this
-      was a good idea?
-    - It's too late to turn back. We have nothing good to come back to.
-    - I don't like thi at all. We don't even know the way...
-    - Stop bringing us down. You don't have to come along, but I must at least try.
-    - You can't leave me behind. We are on the same team.
+    - 'this journey is more challenging than what we prepared for. '
+    - Are we sure this was a good idea?
+    - It's too late to turn back.
+    - I don't like this at all... We don't even know the way.
+    - Stop bringing us down. You don't have to go if you don't want to.
+    - You can't leave me behind. We are a team.
     - I'm starting to feel like you are just slowing me down.
     characterDialog:
     - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300002, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
     - {fileID: 21300000, guid: 37dcd7a1c58b6bb49a340b96dddaec8a, type: 3}
+    - {fileID: 21300002, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
     - {fileID: 21300002, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
     - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300008, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
@@ -8129,15 +8135,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.739637
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -36.406517
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.1500547
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8184,7 +8190,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981310341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.720311, y: -2.5647473, z: 0}
+  m_LocalPosition: {x: 13.86, y: -2.5647473, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1466210273}
