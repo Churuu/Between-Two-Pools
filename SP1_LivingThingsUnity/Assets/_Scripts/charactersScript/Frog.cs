@@ -41,6 +41,9 @@ public class Frog : MonoBehaviour
             SetDirection();
         }
 
+        if (!extended && _tounge != null)
+            Destroy(_tounge);
+
         //playerController.SetPlayerState(!extended);
     }
 
@@ -95,7 +98,7 @@ public class Frog : MonoBehaviour
 
             yield return new WaitForSeconds(extendClip.length);
 
-            _tounge = Instantiate(tounge, middlePoint, Quaternion.identity) as GameObject;
+            _tounge = Instantiate(tounge, middlePoint, Quaternion.identity);
 
 
 
