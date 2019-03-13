@@ -54648,7 +54648,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.67
+      value: 14.79
       objectReference: {fileID: 0}
     - target: {fileID: 4733729021429288, guid: 06f5d22697aa57f4d881157e50480a3f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -55617,7 +55617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1529047336
 Rigidbody2D:
   serializedVersion: 4
@@ -55773,6 +55773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba812583f8a00a340aac7d0700869e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   doorType: 1
   start: {x: 47.01, y: -4.2, z: 0}
   target: {x: 47.01, y: -21.66, z: 0}
@@ -57222,6 +57223,11 @@ Prefab:
       propertyPath: animChild.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: animChild.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 114170270046522928, guid: 8364e7e733df4a04fa8681099f4fc557,
         type: 2}
       propertyPath: crushingColliders.Array.size
@@ -57368,6 +57374,31 @@ Prefab:
         type: 2}
       propertyPath: gravity
       value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: abilityOne
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: MaxDistanceBoxPulled
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: MaxStrengthBoxPulled
+      value: 2250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: MaxDistanceBoxThrust
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: MaxStrengthBoxThrust
+      value: 2250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
