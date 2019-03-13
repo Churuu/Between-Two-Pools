@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class ActivePlayerFrogState : ActivePlayerStateBase
 {
 
@@ -11,6 +10,7 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
     [SerializeField] private string charakterThree = "3";
     public ActivePlayerFrogState(ActivePlayerStateMachine stateMachine, GameObject gameObjectPlayer, int number)
     {
+
         frog = gameObjectPlayer;
         if (stateMachines == null)
         {
@@ -39,7 +39,10 @@ public class ActivePlayerFrogState : ActivePlayerStateBase
 
         stateMachines.transform.parent = frog.transform;
         frog.GetComponent<Frog>().SwitchActivation(true);
-        if (!frog.GetComponent<Frog>().GetToungeState())
+        
+
+        
+        if (!frog.GetComponent<Frog>().GetToungeState() || GameObject.FindWithTag("FrogTounge") == null)
         {
             frog.GetComponent<PlayerController>().SetPlayerState(true);
         }
