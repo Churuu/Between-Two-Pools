@@ -28,7 +28,7 @@ public class Sender : MonoBehaviour
 
 
     private float timer;
-    private bool timerBool;
+	private bool timerBool;
     // Use this for initialization
     void Start ()
     {
@@ -39,15 +39,19 @@ public class Sender : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (timerBool)
+		
+		
+		if (timerBool == true)
         {
+			
             if (timer > 0.6f)
             {
-                anim.SetBool("Pressed", false);
+				
+				anim.SetBool("Pressed", false);
                 timerBool = false;
             }
-            else
-                timer += Time.deltaTime;
+           else
+				timer += 0.1f;
         }
         else
             timer = 0;
@@ -118,6 +122,7 @@ public class Sender : MonoBehaviour
             }
 
             timerBool = true;
+
         }
         
     }
@@ -130,7 +135,7 @@ public class Sender : MonoBehaviour
             for (int i = 0; i < gameObjects.Count; i++)
             {
                 if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
-                {
+				{
                     GetComponent<ObjectAudioClip>().PlaySingle(0);
                     anim.SetBool("Pressed", true);
                     gameObjects[i].GetComponent<Reciever>().ToggleObject();
@@ -168,6 +173,7 @@ public class Sender : MonoBehaviour
             }
         }
         timerBool = true;
+
         
     }
 

@@ -1105,6 +1105,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8b20e519cff813c45b608612e8f0ac3f, type: 2}
+    - target: {fileID: 82796513704141662, guid: 8dcf3dba867e2de4dae6ccbff5e15310,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dcf3dba867e2de4dae6ccbff5e15310, type: 2}
   m_IsPrefabParent: 0
@@ -1365,6 +1370,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.x
       value: 0.9980879
+      objectReference: {fileID: 0}
+    - target: {fileID: 82951931172819086, guid: 1a3ea155c6585de49805c27648cf610f,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a3ea155c6585de49805c27648cf610f, type: 2}
@@ -4239,6 +4249,11 @@ Prefab:
     - target: {fileID: 4218817309869178, guid: 8dcf3dba867e2de4dae6ccbff5e15310, type: 2}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82796513704141662, guid: 8dcf3dba867e2de4dae6ccbff5e15310,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dcf3dba867e2de4dae6ccbff5e15310, type: 2}
@@ -50433,6 +50448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba812583f8a00a340aac7d0700869e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   doorType: 2
   start: {x: -64.69, y: -71.54, z: 0}
   target: {x: -64.69, y: -82.67, z: 0}
@@ -51134,7 +51150,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8b20e519cff813c45b608612e8f0ac3f, type: 2}
+      objectReference: {fileID: 9100000, guid: 31ec99b54e706f641ab7f05be9c17850, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dcf3dba867e2de4dae6ccbff5e15310, type: 2}
   m_IsPrefabParent: 0
@@ -53135,6 +53151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba812583f8a00a340aac7d0700869e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   doorType: 2
   start: {x: -90.59, y: -57.63, z: 0}
   target: {x: -102.81, y: -57.63, z: 0}
@@ -55191,6 +55208,11 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95855865614405926, guid: 8dcf3dba867e2de4dae6ccbff5e15310,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dcf3dba867e2de4dae6ccbff5e15310, type: 2}
   m_IsPrefabParent: 0
@@ -55305,6 +55327,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 0.9880266
+      objectReference: {fileID: 0}
+    - target: {fileID: 82951931172819086, guid: 1a3ea155c6585de49805c27648cf610f,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a3ea155c6585de49805c27648cf610f, type: 2}
@@ -94164,6 +94191,7 @@ GameObject:
   - component: {fileID: 1993003351}
   - component: {fileID: 1993003350}
   - component: {fileID: 1993003349}
+  - component: {fileID: 1993003355}
   m_Layer: 31
   m_Name: OneTimeUseSwitch
   m_TagString: Untagged
@@ -94240,7 +94268,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -94372,6 +94400,23 @@ Transform:
   m_Father: {fileID: 850212930}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1993003355
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1993003348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a14c92e6867dcab4ba80ffddd54c0606, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1993394414
 Prefab:
   m_ObjectHideFlags: 0
