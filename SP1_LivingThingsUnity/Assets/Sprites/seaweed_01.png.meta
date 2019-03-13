@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: e27c594d934862b479bf0f8a537a925f
-timeCreated: 1552402634
+guid: 275bfeffe8612c14fa9cab4ceaf80b12
+timeCreated: 1552486395
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Stone_02 (1)_0
-    21300002: Stone_02 (1)_1
-    21300004: Stone_02 (1)_2
-    21300006: Stone_02 (1)_3
-    21300008: Stone_02 (1)_4
-    21300010: Stone_02 (1)_5
+    21300000: seaweed_01_0
+    21300002: seaweed_01_1
+    21300004: seaweed_01_2
+    21300006: seaweed_01_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -106,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stone_02 (1)_0
+      name: seaweed_01_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 44
-        width: 32
-        height: 32
+        x: 19
+        y: 16
+        width: 45
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,13 +118,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Stone_02 (1)_1
+      name: seaweed_01_1
       rect:
         serializedVersion: 2
-        x: 43
-        y: 44
-        width: 32
-        height: 32
+        x: 86
+        y: 16
+        width: 45
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,13 +132,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Stone_02 (1)_2
+      name: seaweed_01_2
       rect:
         serializedVersion: 2
-        x: 87
-        y: 44
-        width: 32
-        height: 32
+        x: 154
+        y: 16
+        width: 53
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,41 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Stone_02 (1)_3
+      name: seaweed_01_3
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Stone_02 (1)_4
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Stone_02 (1)_5
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 7
-        width: 32
-        height: 32
+        x: 249
+        y: 16
+        width: 53
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
