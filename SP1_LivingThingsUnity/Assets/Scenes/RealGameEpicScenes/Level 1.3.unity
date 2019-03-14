@@ -1510,6 +1510,16 @@ Prefab:
       propertyPath: sceneToLoad
       value: City_Ending
       objectReference: {fileID: 0}
+    - target: {fileID: 212100129209089836, guid: 296f4377b46aeb04cba3863ddc61cfc8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 32767
+      objectReference: {fileID: 0}
+    - target: {fileID: 212535718445065940, guid: 296f4377b46aeb04cba3863ddc61cfc8,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 9999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 296f4377b46aeb04cba3863ddc61cfc8, type: 2}
   m_IsPrefabParent: 0
@@ -51212,7 +51222,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -18.27
+      value: -20.25
       objectReference: {fileID: 0}
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.y
@@ -95267,7 +95277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e6c0613ecc52f43a9033e354a4d557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1993003349}
   audioClips:
   - {fileID: 8300000, guid: 57dd3ae9a42733d498ea6c3d91ef8f08, type: 3}
 --- !u!114 &1993003351
@@ -95282,12 +95292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56a0d706fc7b894a87f17db772ef764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 1993003355}
   switchType: 2
   buttonType: 0
   gameObjects:
   - {fileID: 1330909912}
-  - {fileID: 0}
 --- !u!61 &1993003352
 BoxCollider2D:
   m_ObjectHideFlags: 0

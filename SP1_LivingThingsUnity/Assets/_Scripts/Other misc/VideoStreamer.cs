@@ -9,6 +9,7 @@ public class VideoStreamer : MonoBehaviour
     [Header("Playback image on canvas")]
     public RawImage image;
     public string nextScene;
+    public bool startCutsceneImmidietly;
 
     VideoPlayer videoPlayer;
     AudioSource source;
@@ -18,7 +19,8 @@ public class VideoStreamer : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         source = GetComponent<AudioSource>();
 
-        PrepareVideo();
+        if (startCutsceneImmidietly)
+            PrepareVideo();
     }
 
     public void PrepareVideo()
