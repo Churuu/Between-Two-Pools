@@ -56,7 +56,6 @@ public class SceneTransitioner : MonoBehaviour
         Fade(1f);
         if (alpha >= .99f)
         {
-            videoStreamer.image.gameObject.SetActive(false);
             SceneManager.LoadScene(sceneToLoad);
             Fade(0f);
             CancelInvoke();
