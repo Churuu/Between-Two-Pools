@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Frog : MonoBehaviour
@@ -21,7 +20,7 @@ public class Frog : MonoBehaviour
     PlayerController playerController;
     bool activated = false;
     bool extended;
-    bool canRetract = false;
+    //  bool canRetract = false;
 
     GameObject _tounge;
     Animator anim;
@@ -45,7 +44,14 @@ public class Frog : MonoBehaviour
         if (!extended && _tounge != null)
         {
             Destroy(_tounge);
-           
+            if (GameObject.FindGameObjectsWithTag("FrogTounge") != null)
+            {
+                GameObject[] games = GameObject.FindGameObjectsWithTag("FrogTounge");
+                for (int i = 0; i < games.Length; i++)
+                {
+                    Destroy(games[i]);
+                }
+            }
         }
 
         //playerController.SetPlayerState(!extended);
@@ -65,12 +71,12 @@ public class Frog : MonoBehaviour
         }
         else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
         {
-            if (!extended && !canRetract)
+            if (!extended)//&& !canRetract)
             {
                 extended = true;
                 StartCoroutine(ExtendTounge());
             }
-            else if (extended && canRetract)
+            else if (extended)//&& canRetract)
             {
                 anim.SetBool("ShootTounge", false);
                 Invoke("Unextend", retractClip.length / 2);
@@ -120,7 +126,7 @@ public class Frog : MonoBehaviour
 
             if (direction == Vector2.left)
                 _toungeEnd.transform.position = new Vector2(_toungeEnd.transform.position.x - .15f, _toungeEnd.transform.position.y);
-            canRetract = true;
+            //  canRetract = true;
 
         }
     }
@@ -152,7 +158,7 @@ public class Frog : MonoBehaviour
     {
         Destroy(_tounge);
         extended = false;
-        canRetract = false;
+        //  canRetract = false;
         playerController.SetPlayerState(true);
     }
 
