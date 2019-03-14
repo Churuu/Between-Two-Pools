@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 
@@ -10,6 +8,7 @@ public class VideoStreamer : MonoBehaviour
 {
     [Header("Playback image on canvas")]
     public RawImage image;
+    public string nextScene;
 
     VideoPlayer videoPlayer;
     AudioSource source;
@@ -18,14 +17,17 @@ public class VideoStreamer : MonoBehaviour
     {
         videoPlayer = GetComponent<VideoPlayer>();
         source = GetComponent<AudioSource>();
+
+        PrepareVideo();
     }
 
     public void PrepareVideo()
     {
         videoPlayer.Prepare();
+        Invoke("PlayVideo", 1);
     }
 
-    public void PlayVideo()
+    void PlayVideo()
     {
         image.texture = videoPlayer.texture;
         image.gameObject.SetActive(true);
@@ -33,6 +35,12 @@ public class VideoStreamer : MonoBehaviour
         videoPlayer.Play();
         source.Play();
 
+        Invoke("LoadNextScene", GetVideoLength());
+    }
+
+    public void LoadNextScene()
+    {
+        FindObjectOfType<SceneTransitioner>().LoadScene(nextScene);
     }
 
     public bool IsVideoPrepared()

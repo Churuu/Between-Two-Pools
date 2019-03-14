@@ -10,7 +10,6 @@ public class SceneTransitioner : MonoBehaviour
 {
     public RawImage fadeImage;
     public float fadeSpeed;
-    public bool playCutscene;
 
     string sceneToLoad;
     static SceneTransitioner scene;
@@ -38,9 +37,6 @@ public class SceneTransitioner : MonoBehaviour
             scene = this;
         else
             Destroy(gameObject);
-
-        videoStreamer = FindObjectOfType<VideoStreamer>();
-
     }
 
     void Update()
@@ -52,21 +48,7 @@ public class SceneTransitioner : MonoBehaviour
     {
         sceneToLoad = name;
         Fade(1f);
-        if (playCutscene)
-            InvokeRepeating("PlayEndCutscene", 0, Time.deltaTime);
-        else
-            InvokeRepeating("SwitchScene", 0, Time.deltaTime);
-    }
-
-    void PlayEndCutscene()
-    {
-        videoStreamer.PrepareVideo();
-        if (alpha >= .99f && videoStreamer.IsVideoPrepared())
-        {
-            videoStreamer.PlayVideo();
-            Fade(0f);
-            InvokeRepeating("SwitchScene", videoStreamer.GetVideoLength(), Time.deltaTime);
-        }
+        InvokeRepeating("SwitchScene", 0, Time.deltaTime);
     }
 
     void SwitchScene()
