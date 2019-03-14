@@ -13,7 +13,7 @@ public class MagneticBoxAddToOtter : MonoBehaviour
         characters = new GameObject[2];
         characters[0] = GameObject.Find("Frog");
         characters[1] = GameObject.Find("Seal");
-        Debug.Log(characters[1]);
+      //  Debug.Log(characters[1]);
     }
     // Update is called once per frame
     void Update()
@@ -22,7 +22,7 @@ public class MagneticBoxAddToOtter : MonoBehaviour
         {
             if (EventManager.instance.OnStartAddMagneticBox != null)
             {
-                Debug.Log("Im In Guys");
+               // Debug.Log("Im In Guys");
                 EventManager.instance.OnStartAddMagneticBox(gameObject.GetComponent<Rigidbody2D>());
             }
             One = false;

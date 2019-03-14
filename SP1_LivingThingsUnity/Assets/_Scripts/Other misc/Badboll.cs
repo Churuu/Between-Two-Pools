@@ -13,7 +13,7 @@ public class Badboll : MonoBehaviour {
 	
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit");
+      //  Debug.Log("hit");
         if(collision.gameObject.CompareTag("Rock"))
         {
             changeSprite.sprite = Deflated;
