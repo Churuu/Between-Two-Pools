@@ -51,7 +51,8 @@ public class Otter : MonoBehaviour
 
     private void Start()
     {
-        menuSystem = FindObjectOfType<MenuSystem>();
+        
+           menuSystem = FindObjectOfType<MenuSystem>();
         EventManager.instance.OnStartAddMagneticWall += AddWallMagnetic;
         EventManager.instance.OnStartAddMagneticBox += AddBoxMagnetic;
         //anim = GetComponent<Animator>();
