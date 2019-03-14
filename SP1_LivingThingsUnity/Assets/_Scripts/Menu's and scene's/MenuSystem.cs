@@ -36,7 +36,8 @@ public class MenuSystem : MonoBehaviour {
         //Main Menu
         StartButton.onClick.AddListener(TaskOnLevel);
         ExitButton.onClick.AddListener(TaskOnExitClick);
-       
+        Credits.onClick.AddListener(TaskOnCredits);
+
         Back.onClick.AddListener(TaskOnBack);
         //Pause menu
         Restart.onClick.AddListener(TaskOnRestart);
@@ -44,14 +45,12 @@ public class MenuSystem : MonoBehaviour {
         ExitGame.onClick.AddListener(TaskOnExitClick);
         ResumeGame.onClick.AddListener(TaskOnResumeGame);
         SoundOption.onClick.AddListener(TaskOnSoundOption);
-        Options.onClick.AddListener(TaskOnSoundOption);
-        Credits.onClick.AddListener(TaskOnCredits);
         ReturnToPauseMenu.onClick.AddListener(TaskOnReturnPause);
 
     }
     //Lägg till en knapp för varje level 
     private void Update()
-    {   // visar pause menyn och Pausar också spelet och omvänt
+    {   
         if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == true)
         {
             PauseMenu.gameObject.SetActive(false);
@@ -59,7 +58,7 @@ public class MenuSystem : MonoBehaviour {
             Time.timeScale = 1;
         }
         //Aktivera Pause menyn och pausar spelet
-        else if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == false && MainMenu.gameObject.activeInHierarchy == false && Levels.gameObject.activeInHierarchy == false)
+        else if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == false && MainMenu.gameObject.activeInHierarchy == false && Levels.gameObject.activeInHierarchy == false && PauseSettings.gameObject.activeInHierarchy == false)
         {
             PauseMenu.gameObject.SetActive(true);
             ResumeGame.Select();
@@ -72,6 +71,7 @@ public class MenuSystem : MonoBehaviour {
     {
         PauseMenu.gameObject.SetActive(true);
         PauseSettings.gameObject.SetActive(false);
+        ResumeGame.Select();
 
     }
 
@@ -84,6 +84,7 @@ public class MenuSystem : MonoBehaviour {
     {
         PauseMenu.gameObject.SetActive(false);
         PauseSettings.gameObject.SetActive(true);
+        
     }
 
     void TaskOnResumeGame()
@@ -93,11 +94,6 @@ public class MenuSystem : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-    void TaskOnStart()
-    {
-        NextScene.StartScene(/*Namn på scenen med lvl1*/" ");
-        MainMenu.gameObject.SetActive(false);
-    }
     void TaskOnLevel()
     {   
         Levels.gameObject.SetActive(true);
