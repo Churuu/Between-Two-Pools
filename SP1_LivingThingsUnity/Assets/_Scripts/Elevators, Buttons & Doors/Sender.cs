@@ -5,7 +5,7 @@ using UnityEngine;
 //Jesper Li 07/02 - 19
 public class Sender : MonoBehaviour
 {
-    
+    public Animator anim;
     public enum SwitchType
     {
         door, lock1, all
@@ -23,29 +23,71 @@ public class Sender : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> gameObjects = new List<GameObject>();
+    private List<GameObject> nonActivatableGameObjects = new List<GameObject>();
+    private int test = 0;
 
+
+    private float timer;
+	private bool timerBool;
     // Use this for initialization
     void Start ()
     {
-		
+        anim = GetComponent<Animator>();
+        nonActivatableGameObjects = gameObjects;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+		
+		
+		if (timerBool == true)
+        {
+			
+            if (timer > 0.6f)
+            {
+				
+				anim.SetBool("Pressed", false);
+                timerBool = false;
+            }
+           else
+				timer += 0.1f;
+        }
+        else
+            timer = 0;
 
+        for (int i = 0; i < nonActivatableGameObjects.Count; i++)
+        {
+            if (nonActivatableGameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
+            {
+                test++;
+                nonActivatableGameObjects.RemoveAt(i);
+                break;
+            }
+            
+        }
+        if (test == gameObjects.Count)
+        {
+
+        }
     }
 
     public void BoolToggle()
     {
         if (GetButtonType() == ButtonType.buttonSwitch)
         {
-            GetComponent<ObjectAudioClip>().PlayRandom();
+            
             if (switchType == SwitchType.door)
             {
                 for (int i = 0; i < gameObjects.Count; i++)
                 {
-                    gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                    if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
+                    {
+                        GetComponent<ObjectAudioClip>().PlayRandom();
+                        anim.SetBool("Pressed", true);
+                        gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                    }
+                       
                 }
             }
 
@@ -53,7 +95,14 @@ public class Sender : MonoBehaviour
             {
                 for (int i = 0; i < gameObjects.Count; i++)
                 {
-                    gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                    if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
+                    {
+                        GetComponent<ObjectAudioClip>().PlayRandom();
+                        anim.SetBool("Pressed", true);
+                        gameObjects[i].GetComponent<Reciever>().BoolToogle();
+
+                    }
+                        
                 }
             }
 
@@ -61,29 +110,37 @@ public class Sender : MonoBehaviour
             {
                 for (int i = 0; i < gameObjects.Count; i++)
                 {
-                    print("test1");
-                    gameObjects[i].GetComponent<Reciever>().ToggleObject();
-                    gameObjects[i].GetComponent<Reciever>().BoolToogle();
-                    
-                    
+                    if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
+                    {
+                        GetComponent<ObjectAudioClip>().PlayRandom();
+                        anim.SetBool("Pressed", true);
+                        gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                        gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                    }
+
                 }
             }
-        }
 
-        else if (buttonType == ButtonType.sealSwitch)
-        {
+            timerBool = true;
 
         }
+        
     }
 
     public void ActivatePlate()
     {
-        GetComponent<ObjectAudioClip>().PlaySingle(0);
+        
         if (switchType == SwitchType.door)
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
-                gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
+				{
+                    GetComponent<ObjectAudioClip>().PlaySingle(0);
+                    anim.SetBool("Pressed", true);
+                    gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                }
+                
             }
         }
 
@@ -91,7 +148,14 @@ public class Sender : MonoBehaviour
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
-                gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
+                {
+                    GetComponent<ObjectAudioClip>().PlaySingle(0);
+                    anim.SetBool("Pressed", true);
+                    gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                }
+                
+                
             }
         }
 
@@ -99,12 +163,18 @@ public class Sender : MonoBehaviour
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
-                
-                gameObjects[i].GetComponent<Reciever>().ToggleObject();
-                gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
+                {
+                    GetComponent<ObjectAudioClip>().PlaySingle(0);
+                    anim.SetBool("Pressed", true);
+                    gameObjects[i].GetComponent<Reciever>().ToggleObject();
+                    gameObjects[i].GetComponent<Reciever>().BoolToogle();
+                }
             }
         }
+        timerBool = true;
 
+        
     }
 
     public ButtonType GetButtonType()

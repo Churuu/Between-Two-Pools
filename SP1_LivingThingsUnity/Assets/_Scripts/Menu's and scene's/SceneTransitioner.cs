@@ -1,23 +1,37 @@
 ﻿//Skapad av Robin Nechovski 07-02-2019
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class SceneTransitioner : MonoBehaviour
 {
+    public RawImage fadeImage;
+    public float fadeSpeed;
+    public bool playCutscene;
 
-    public AnimationClip fadeAnim;
-
-    Animator anim;
     string sceneToLoad;
+    static SceneTransitioner scene;
+    float target = 0;
+    VideoStreamer videoStreamer;
 
-    private static SceneTransitioner scene;
+    float alpha
+    {
+        get
+        {
+            return fadeImage.color.a;
+        }
+        set
+        {
+            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, value);
+        }
+
+    }
 
     void Start()
     {
-
         DontDestroyOnLoad(this);
 
         if (scene == null)
@@ -25,31 +39,52 @@ public class SceneTransitioner : MonoBehaviour
         else
             Destroy(gameObject);
 
-        anim = GetComponent<Animator>();
+        videoStreamer = FindObjectOfType<VideoStreamer>();
 
-        if (GameObject.Find("Exit Door") == null)
-            Debug.LogError("Exit door kunde inte hittas, gå till prefab mappen och lägg ut den på banan");
+    }
+
+    void Update()
+    {
+        Fade(target);
     }
 
     public void LoadScene(string name)
     {
         sceneToLoad = name;
-        anim.SetTrigger("Fade");
-        Invoke("SwitchScene", fadeAnim.length + 1);
+        Fade(1f);
+        if (playCutscene)
+            InvokeRepeating("PlayEndCutscene", 0, Time.deltaTime);
+        else
+            InvokeRepeating("SwitchScene", 0, Time.deltaTime);
     }
 
+    void PlayEndCutscene()
+    {
+        videoStreamer.PrepareVideo();
+        if (alpha >= .99f && videoStreamer.isVideoPrepared())
+        {
+            videoStreamer.PlayVideo();
+            Fade(0f);
+            InvokeRepeating("SwitchScene", videoStreamer.GetVideoLength(), Time.deltaTime);
+        }
+    }
 
     void SwitchScene()
     {
-        SceneManager.LoadScene(sceneToLoad);
-        anim.SetTrigger("FadeOut");
-        Invoke("Reset", 1.5f);
-
+        Fade(1f);
+        if (alpha >= .99f)
+        {
+            videoStreamer.image.gameObject.SetActive(false);
+            SceneManager.LoadScene(sceneToLoad);
+            Fade(0f);
+            CancelInvoke();
+        }
     }
 
-    void Reset()
+    public void Fade(float target)
     {
-        anim.ResetTrigger("Fade");
-        anim.ResetTrigger("FadeOut");
+        this.target = target;
+        alpha = Mathf.Lerp(alpha, target, fadeSpeed * Time.deltaTime);
     }
 }
+

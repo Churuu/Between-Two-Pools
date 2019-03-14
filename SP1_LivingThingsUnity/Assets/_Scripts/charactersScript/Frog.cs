@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Frog : MonoBehaviour
@@ -16,13 +15,16 @@ public class Frog : MonoBehaviour
     public Transform toungeStart;
     public LayerMask toungeStickLayer;
 
+    public AnimationClip extendClip, retractClip;
+
     PlayerController playerController;
     bool activated = false;
     bool extended;
+    //  bool canRetract = false;
 
     GameObject _tounge;
     Animator anim;
-    Vector2 direction =  Vector2.right;
+    Vector2 direction = Vector2.right;
 
 
     void Start()
@@ -38,6 +40,21 @@ public class Frog : MonoBehaviour
             ButtonHandler();
             SetDirection();
         }
+
+        if (!extended && _tounge != null)
+        {
+            Destroy(_tounge);
+            if (GameObject.FindGameObjectsWithTag("FrogTounge") != null)
+            {
+                GameObject[] games = GameObject.FindGameObjectsWithTag("FrogTounge");
+                for (int i = 0; i < games.Length; i++)
+                {
+                    Destroy(games[i]);
+                }
+            }
+        }
+
+        //playerController.SetPlayerState(!extended);
     }
 
     void ButtonHandler()
@@ -54,15 +71,15 @@ public class Frog : MonoBehaviour
         }
         else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
         {
-            if (!extended)
+            if (!extended)//&& !canRetract)
             {
                 extended = true;
                 StartCoroutine(ExtendTounge());
             }
-            else
+            else if (extended)//&& canRetract)
             {
                 anim.SetBool("ShootTounge", false);
-                Invoke("Unextend", anim.GetCurrentAnimatorStateInfo(0).length - .25f);
+                Invoke("Unextend", retractClip.length / 2);
             }
         }
         else
@@ -83,16 +100,17 @@ public class Frog : MonoBehaviour
         if (hit.collider != null && playerController.Grounded())
         {
             anim.SetBool("ShootTounge", true);
-			playerController.SetPlayerState(false);
+            playerController.SetPlayerState(false);
+
             Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);
-
             Vector2 middlePoint = (playerPos + hitPoint) / 2;
-
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length - 0.25f);
+            yield return new WaitForSeconds(extendClip.length);
 
-            _tounge = Instantiate(tounge, middlePoint, Quaternion.identity) as GameObject;
+            _tounge = Instantiate(tounge, middlePoint, Quaternion.identity);
+
+
 
             var _toungeCol = _tounge.GetComponent<BoxCollider2D>();
             var _toungeSprite = _tounge.GetComponent<SpriteRenderer>();
@@ -108,6 +126,7 @@ public class Frog : MonoBehaviour
 
             if (direction == Vector2.left)
                 _toungeEnd.transform.position = new Vector2(_toungeEnd.transform.position.x - .15f, _toungeEnd.transform.position.y);
+            //  canRetract = true;
 
         }
     }
@@ -125,16 +144,6 @@ public class Frog : MonoBehaviour
         rockCount--;
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        GameObject col = other.gameObject;
-        if (col.CompareTag("Rock") && rockCount < 1)
-        {
-            rockCount++;
-            Destroy(col);
-        }
-    }
-
     public void SwitchActivation(bool state)
     {
         activated = state;
@@ -149,11 +158,22 @@ public class Frog : MonoBehaviour
     {
         Destroy(_tounge);
         extended = false;
-		playerController.SetPlayerState(true);
+        //  canRetract = false;
+        playerController.SetPlayerState(true);
     }
 
     public void DestroyTounge()
     {
         Destroy(_tounge);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        GameObject col = other.gameObject;
+        if (col.CompareTag("Rock") && rockCount < 1)
+        {
+            rockCount++;
+            Destroy(col);
+        }
     }
 }

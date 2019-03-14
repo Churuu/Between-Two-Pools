@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gizmoRange = 1f;
     [SerializeField] LayerMask ground;
     public Animator[] animChild; // 1. Normal/Red 2. RedActive 3. Blue 4. BlueActive
-
+    float time = 0;
     float horizontalInput;
     Vector3 side;
     Rigidbody2D rb2D;
@@ -30,15 +30,27 @@ public class PlayerController : MonoBehaviour
     //Animator anim;
     [SerializeField] bool activePlayer = false;
 
+    [SerializeField] [Range(0.0001f, 1f)] float gravity = 0.1f;
+    float minGravity = 0.0005f;
+   MenuSystem menuSystem;
+
 
     void Start()
     {
+        menuSystem = FindObjectOfType<MenuSystem>();
         coll2D = GetComponent<Collider2D>();
         rb2D = GetComponent<Rigidbody2D>();
         side = new Vector3(coll2D.bounds.size.x * 0.5f, 0f, 0f);
-        
-        
-        
+
+        for (int i = 0; i < animChild.Length; i++)
+        {
+            if (animChild[i] != null)
+            {
+                animChild[i].SetBool("FaceingRight", true);
+            }
+
+        }
+
     }
     private void Update()
     {
@@ -48,21 +60,42 @@ public class PlayerController : MonoBehaviour
                 AnimatePlayer(i);
         }
 
-        if (activePlayer)
+        if (activePlayer && !menuSystem.P_Pressed)// !menuSystem.P_Pressed
         {
             horizontalInput = Input.GetAxis(horizontalMoment); //Höger Vänster styrning 
             VerticalMovmenent();
-            JumpMovment();
-        }
 
-        
+        }
+        else
+        {
+            horizontalInput = GetComponent<Rigidbody2D>().velocity.x;
+            if (horizontalInput < minGravity || horizontalInput > -minGravity)
+            {
+                horizontalInput = 0;
+            }
+            else
+            {
+                horizontalInput *= gravity;
+            }
+
+
+        }
+        JumpMovment();
+
+
     }
 
 
     private void FixedUpdate()
     {
         if (activePlayer)
+        {
             HorizontalMovmenent();
+        }
+        else
+        {
+            HorizontalMovmenentNotActive();
+        }
     }
 
     private void LateUpdate()
@@ -72,7 +105,7 @@ public class PlayerController : MonoBehaviour
             if (animChild[i] != null)
                 animChild[i].SetBool("Jump", !Grounded());
         }
-          
+
 
     }
 
@@ -116,7 +149,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown(jumpAxis))
         {
             if (Grounded())
-            { 
+            {
                 rb2D.AddForce(Vector2.up * jumpAddForce);
                 for (int i = 0; i < animChild.Length; i++)
                 {
@@ -135,7 +168,10 @@ public class PlayerController : MonoBehaviour
             for (int i = 0; i < animChild.Length; i++)
             {
                 if (animChild[i] != null)
+                {
                     animChild[i].SetBool("FaceingRight", true);
+                }
+
             }
         }
         else if (movement.x < 0)
@@ -146,6 +182,12 @@ public class PlayerController : MonoBehaviour
                     animChild[i].SetBool("FaceingRight", false);
             }
         }
+        rb2D.velocity = movement;
+    }
+    private void HorizontalMovmenentNotActive()
+    {
+        Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
+       
         rb2D.velocity = movement;
     }
 

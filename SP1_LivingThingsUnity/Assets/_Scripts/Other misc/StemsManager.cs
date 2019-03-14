@@ -4,46 +4,52 @@ using UnityEngine;
 
 public class StemsManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource SealStemAudioSource;
+    [SerializeField] private AudioSource sealStemAudioSource;
 
-    [SerializeField] private AudioSource OtterStemAudioSource;
+    [SerializeField] private AudioSource otterStemAudioSource;
 
-    [SerializeField] private AudioSource FrogStemAudioSource;
+    [SerializeField] private AudioSource frogStemAudioSource;
 
-    private float SealStemVolume;
-    private float OtterStemVolume;
-    private float FrogStemVolume;
+    //[SerializeField] private AudioSource mainStemAudioSource;
+
+    private float sealStemVolume;
+    private float otterStemVolume;
+    private float frogStemVolume;
 
     // Use this for initialization
     void Start ()
     {
-        SealStemVolume = SealStemAudioSource.volume;
-        OtterStemVolume = OtterStemAudioSource.volume;
-        FrogStemVolume = FrogStemAudioSource.volume;
+        sealStemVolume = sealStemAudioSource.volume;
+        otterStemVolume = otterStemAudioSource.volume;
+        frogStemVolume = frogStemAudioSource.volume;
+
+        ToOtter();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        print(sealStemAudioSource.volume + ": seal");
+        print(otterStemAudioSource.volume + ": otter");
+        print(frogStemAudioSource.volume + ": frog");
+    }
 
     public void ToSeal()
     {
-        SealStemAudioSource.volume = SealStemVolume;
-        OtterStemAudioSource.volume = 0;
-        FrogStemAudioSource.volume = 0;
+        sealStemAudioSource.volume = sealStemVolume;
+        otterStemAudioSource.volume = 0;
+        frogStemAudioSource.volume = 0;
     }
     public void ToOtter()
     {
-        SealStemAudioSource.volume = 0;
-        OtterStemAudioSource.volume = OtterStemVolume;
-        FrogStemAudioSource.volume = 0;
+        sealStemAudioSource.volume = 0;
+        otterStemAudioSource.volume = otterStemVolume;
+        frogStemAudioSource.volume = 0;
     }
     public void ToFrog()
     {
-        SealStemAudioSource.volume = 0;
-        OtterStemAudioSource.volume = 0;
-        FrogStemAudioSource.volume = FrogStemVolume;
+        sealStemAudioSource.volume = 0;
+        otterStemAudioSource.volume = 0;
+        frogStemAudioSource.volume = frogStemVolume;
     }
 }
