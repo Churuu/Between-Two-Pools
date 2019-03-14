@@ -29,46 +29,54 @@ public class Sender : MonoBehaviour
 
     private float timer;
 	private bool timerBool;
+
+    private bool pressedAnimBool = false;
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
         nonActivatableGameObjects = gameObjects;
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-		
-		
-		if (timerBool == true)
-        {
-			
-            if (timer > 0.6f)
-            {
-				
-				anim.SetBool("Pressed", false);
-                timerBool = false;
-            }
-           else
-				timer += 0.1f;
-        }
-        else
-            timer = 0;
+        //print(gameObject.name + "Count: " + gameObjects.Count);
+        //print(gameObject.name + "test: " + test);
 
-        for (int i = 0; i < nonActivatableGameObjects.Count; i++)
-        {
-            if (nonActivatableGameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
-            {
-                test++;
-                nonActivatableGameObjects.RemoveAt(i);
-                break;
-            }
-            
-        }
-        if (test == gameObjects.Count)
-        {
+        //if (timerBool == true)
+        //{
 
+        //    if (timer > 0.6f)
+        //    {
+
+        //        anim.SetBool("Pressed", false);
+        //        timerBool = false;
+        //    }
+        //    else
+        //        timer += 0.1f;
+        //}
+        //else
+        //    timer = 0;
+
+        anim.SetBool("Pressed", pressedAnimBool);
+
+        if (nonActivatableGameObjects.Count == 0)
+        {
+            print(gameObject.name + "Should stop anim");
+            AnimBoolTrue();
+        }
+        else if (nonActivatableGameObjects.Count != 0)
+        {
+            for (int i = 0; i < nonActivatableGameObjects.Count; i++)
+            {
+                if (nonActivatableGameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
+                {
+                    nonActivatableGameObjects.RemoveAt(i);
+                    break;
+                }
+
+            }
         }
     }
 
@@ -84,7 +92,8 @@ public class Sender : MonoBehaviour
                     if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
                     {
                         GetComponent<ObjectAudioClip>().PlayRandom();
-                        anim.SetBool("Pressed", true);
+                        pressedAnimBool = true;
+                        //anim.SetBool("Pressed", true);
                         gameObjects[i].GetComponent<Reciever>().ToggleObject();
                     }
                        
@@ -98,7 +107,7 @@ public class Sender : MonoBehaviour
                     if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
                     {
                         GetComponent<ObjectAudioClip>().PlayRandom();
-                        anim.SetBool("Pressed", true);
+                        //anim.SetBool("Pressed", true);
                         gameObjects[i].GetComponent<Reciever>().BoolToogle();
 
                     }
@@ -113,7 +122,9 @@ public class Sender : MonoBehaviour
                     if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
                     {
                         GetComponent<ObjectAudioClip>().PlayRandom();
-                        anim.SetBool("Pressed", true);
+                        pressedAnimBool = true;
+                        //anim.SetBool("Pressed", true);
+                        print("SwitchTypeAll: true");
                         gameObjects[i].GetComponent<Reciever>().ToggleObject();
                         gameObjects[i].GetComponent<Reciever>().BoolToogle();
                     }
@@ -121,7 +132,7 @@ public class Sender : MonoBehaviour
                 }
             }
 
-            timerBool = true;
+            //timerBool = true;
 
         }
         
@@ -180,5 +191,15 @@ public class Sender : MonoBehaviour
     public ButtonType GetButtonType()
     {
         return buttonType;
+    }
+
+    public void AnimBoolTrue()
+    {
+        pressedAnimBool = true;
+    }
+
+    public void AnimBoolFalse()
+    {
+        pressedAnimBool = false;
     }
 }
