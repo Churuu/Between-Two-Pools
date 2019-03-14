@@ -61,7 +61,7 @@ public class SceneTransitioner : MonoBehaviour
     void PlayEndCutscene()
     {
         videoStreamer.PrepareVideo();
-        if (alpha >= .99f && videoStreamer.isVideoPrepared())
+        if (alpha >= .99f && videoStreamer.IsVideoPrepared())
         {
             videoStreamer.PlayVideo();
             Fade(0f);

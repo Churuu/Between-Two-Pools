@@ -35,9 +35,14 @@ public class VideoStreamer : MonoBehaviour
 
     }
 
-    public bool isVideoPrepared()
+    public bool IsVideoPrepared()
     {
         return videoPlayer.isPrepared;
+    }
+
+    public bool IsVideoPlaying()
+    {
+        return videoPlayer.isPlaying;
     }
 
     public float GetVideoLength()
