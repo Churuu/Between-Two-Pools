@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
     private bool pause = false;
     private bool winLoseStingerPlaying = false;
 
-    private void Start()
+    void Start()
     {
         musicSource = GetComponent<AudioSource>();
     }
@@ -116,7 +116,12 @@ public class AudioManager : MonoBehaviour
             if (musicSource.clip.name != pauseMenuMusic.name)
             {
                 musicSource.clip = pauseMenuMusic;
-                musicSource.Play();
+
+                if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                {
+                    musicSource.Play();
+                }
+                
             }
         }
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
