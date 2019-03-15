@@ -9,8 +9,8 @@ public class AudioSettings : MonoBehaviour
     public string volymeToChangeName = "Ljud";
     
 
-    private float soundSliderValue = 50f;
-    private float soundSliderValue2 = 50f;
+    private float soundSliderValue;
+    private float soundSliderValue2;
 
     private void Update()
     {

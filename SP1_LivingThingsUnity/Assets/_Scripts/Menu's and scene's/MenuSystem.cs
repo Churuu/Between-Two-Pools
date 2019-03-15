@@ -51,8 +51,9 @@ public class MenuSystem : MonoBehaviour {
     //Lägg till en knapp för varje level 
     private void Update()
     {   
-        if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == true)
+        if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == true && PauseSettings.gameObject.activeInHierarchy == false)
         {
+            Debug.Log("UnPause");
             PauseMenu.gameObject.SetActive(false);
             P_Pressed = false;
             Time.timeScale = 1;
