@@ -1,14 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-
 public class TextColliderOnOff : MonoBehaviour
 {// Jonas Thunberg 2019-02-09
 
     [SerializeField] Text text;
-
+    List<GameObject> gameObjects = new List<GameObject>();
 
     private void Start()
     {
+        var playerControllers = FindObjectsOfType<PlayerController>();
+        foreach (PlayerController controller in playerControllers)
+        {
+            gameObjects.Add(controller.gameObject);
+        }
         if (text != null)
         {
             text.enabled = false;
@@ -16,42 +21,26 @@ public class TextColliderOnOff : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (text != null && collision.transform.childCount != 0)
+        for (int i = 0; i < gameObjects.Count; i++)
         {
-            if (collision.transform.GetChild(0).GetComponent<ActivePlayerStateMachine>() != null)
+            if (text != null && collision.gameObject == gameObjects[i])
             {
                 text.enabled = true;
             }
         }
 
-		if (text != null && collision.transform.childCount != 0)
-		{
-			if (collision.transform.GetChild(1).GetComponent<ActivePlayerStateMachine>() != null)
-			{
-				text.enabled = true;
-			}
-		}
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (text != null && collision.transform.childCount != 0)
+        for (int i = 0; i < gameObjects.Count; i++)
         {
-            if (collision.transform.GetChild(0).GetComponent<ActivePlayerStateMachine>() != null)
+            if (text != null && collision.gameObject == gameObjects[i])
             {
                 text.enabled = false;
             }
-
         }
-
-		if (text != null && collision.transform.childCount != 0)
-		{
-			if (collision.transform.GetChild(1).GetComponent<ActivePlayerStateMachine>() != null)
-			{
-				text.enabled = false;
-			}
-
-		}
     }
 }

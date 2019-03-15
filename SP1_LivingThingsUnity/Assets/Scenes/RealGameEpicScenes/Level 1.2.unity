@@ -3816,8 +3816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cName: Rats
-  selectedConversation: 1
-  selectedDialog: 0
+  selectedConversation: 0
+  selectedDialog: 2
   conversations:
   - name: Default
     dialog:
@@ -3825,9 +3825,9 @@ MonoBehaviour:
     - So what if they are a little bigger than anticipated?
     - stop complaining!
     characterDialog:
-    - {fileID: 21300008, guid: f4aeff6c0a9c6a24ea47c51bebef3328, type: 3}
-    - {fileID: 21300004, guid: 5dd5371a84186234aae18446fab24823, type: 3}
-    - {fileID: 21300006, guid: 5dd5371a84186234aae18446fab24823, type: 3}
+    - {fileID: 21300008, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+    - {fileID: 21300004, guid: 37dcd7a1c58b6bb49a340b96dddaec8a, type: 3}
+    - {fileID: 21300006, guid: 37dcd7a1c58b6bb49a340b96dddaec8a, type: 3}
   - name: Rats
     dialog:
     - These signs are very confusing...
@@ -57812,7 +57812,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 347.4, y: -383.4}
-  m_SizeDelta: {x: 1146.1, y: 241.6}
+  m_SizeDelta: {x: 1146.1, y: 241.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2136817799
 GameObject:

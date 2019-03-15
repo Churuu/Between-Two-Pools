@@ -11,6 +11,7 @@ public class SceneManagerScript : MonoBehaviour {
 
     public void ReloadCurrentScene()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
