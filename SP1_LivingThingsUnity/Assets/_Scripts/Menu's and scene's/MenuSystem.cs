@@ -53,7 +53,6 @@ public class MenuSystem : MonoBehaviour {
     {   
         if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == true && PauseSettings.gameObject.activeInHierarchy == false)
         {
-            Debug.Log("UnPause");
             PauseMenu.gameObject.SetActive(false);
             P_Pressed = false;
             Time.timeScale = 1;
