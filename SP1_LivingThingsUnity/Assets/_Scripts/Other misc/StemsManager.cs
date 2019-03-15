@@ -71,6 +71,8 @@ public class StemsManager : MonoBehaviour
         AudioSources.Add(sealStemAudioSource);
         AudioSources.Add(otterStemAudioSource);
         AudioSources.Add(frogStemAudioSource);
+
+        UpdateStems();
         
     }
 	
