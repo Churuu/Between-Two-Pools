@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StemsManager : MonoBehaviour
 {
+    [SerializeField]
     private AudioSource mainStemAudioSource;
     [SerializeField] private AudioSource sealStemAudioSource;
 
@@ -76,6 +77,8 @@ public class StemsManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        print("Saved Index: " + savedMapIndex);
+        print("Build Index: " + SceneManager.GetActiveScene().buildIndex);
         if (savedMapIndex != SceneManager.GetActiveScene().buildIndex && SceneManager.GetActiveScene().buildIndex > 3)
         {
             UpdateStems();
