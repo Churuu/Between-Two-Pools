@@ -116,12 +116,38 @@ public class AudioManager : MonoBehaviour
             if (musicSource.clip.name != pauseMenuMusic.name)
             {
                 musicSource.clip = pauseMenuMusic;
-
-                if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                print("mS = pMM");
+                if (FindObjectOfType<VideoStreamer>() != null)
+                {
+                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                    {
+                        musicSource.Play();
+                        print("mS.Play");
+                    }
+                }
+                else
                 {
                     musicSource.Play();
+                    print("mS.Play");
                 }
                 
+            }
+            else if (musicSource.clip.name == pauseMenuMusic.name)
+            {
+                print("");
+                if (FindObjectOfType<VideoStreamer>() != null)
+                {
+                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                    {
+                        musicSource.Play();
+                        print("mS.Play");
+                    }
+                }
+                else
+                {
+                    musicSource.Play();
+                    print("mS.Play");
+                }
             }
         }
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
@@ -145,6 +171,7 @@ public class AudioManager : MonoBehaviour
 
     public void PauseBool(bool pBool)
     {
+        print("pausebool");
         if (pBool)
         {
             stemsManager.GetComponent<StemsManager>().OnMenuPause();
