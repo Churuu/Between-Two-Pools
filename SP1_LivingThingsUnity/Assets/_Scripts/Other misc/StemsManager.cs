@@ -29,9 +29,7 @@ public class StemsManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        print(sealStemAudioSource.volume + ": seal");
-        print(otterStemAudioSource.volume + ": otter");
-        print(frogStemAudioSource.volume + ": frog");
+
     }
 
     public void ToSeal()

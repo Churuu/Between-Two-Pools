@@ -156,16 +156,13 @@ public class Otter : MonoBehaviour
             {
                 if (abilityOne == Ability.Pull)
                 {
-                    Debug.Log("pull");
-                    //anim.SetBool("PullActive", true);
-                    //anim.SetBool("PushActive", false);
+                
                     Update_OtterPulledBox();
                     OtterGetPulledToWall();
                 }
                 else if (abilityOne == Ability.Thrust)
                 {
-                    // anim.SetBool("PullActive", false);
-                    // anim.SetBool("PushActive", true);
+                 
                     Update_OtterThrustBox();
                     OtterGetThrustFromWall();
                 }
@@ -246,7 +243,7 @@ public class Otter : MonoBehaviour
             Vector3 DirectionToCup = (this.transform.position - magneticBoxRigidBodys[i].transform.position).normalized; // Get the direction from the marble to the cup
             if (Distance < minDistanceBoxStopMoving)
             {
-                Debug.Log("Nu ska den vara stilla");
+           //     Debug.Log("Nu ska den vara stilla");
                 magneticBoxRigidBodys[i].velocity = new Vector2(0, 0);
             }
             else

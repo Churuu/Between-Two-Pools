@@ -8,6 +8,7 @@ public class ExitDoor : MonoBehaviour
     bool seal = false, frog = false, otter = false;
 
     public string sceneToLoad;
+    public bool playCutscene;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -19,7 +20,9 @@ public class ExitDoor : MonoBehaviour
         else if (other.CompareTag("Frog"))
             frog = true;
 
-        if (otter && seal && frog)
+        if (otter && seal && frog && playCutscene)
+            FindObjectOfType<VideoStreamer>().PrepareVideo();
+        else if (otter && seal && frog)
             FindObjectOfType<SceneTransitioner>().LoadScene(sceneToLoad);
     }
 

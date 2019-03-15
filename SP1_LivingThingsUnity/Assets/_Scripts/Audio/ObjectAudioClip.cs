@@ -30,6 +30,7 @@ public class ObjectAudioClip : MonoBehaviour
 
     public void PlaySingle(int min, int max)
     {
+
         audioSource.clip = audioClips[RandomizeClip(min, max)];
         
         audioSource.Play();

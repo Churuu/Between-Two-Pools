@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205545660621750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 164.17, y: -82.3, z: 0}
+  m_LocalPosition: {x: 145.79, y: -74.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4903611599864076}
@@ -712,26 +712,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityOne: 0
   magnetPowerActiv: 0
-  MaxDistancePulled: 5
-  MaxStrengthPulled: 2250
-  pulled: 0
-  MaxDistanceThrust: 5
-  MaxStrengthThrust: 2250
-  thrust: 0
+  okToShangeMagnet: 0
+  minDistanceBoxStopMoving: 2.35
+  minDistanceWallStopMoving: 1
   "buttonNameAbility1AvP\xE5": Ability1
   buttonNameAbility1Togel: S
+  maxDistanceBoxPulled: 5
+  maxStrengthBoxPulled: 2250
+  pulled: 0
+  maxDistanceBoxThrust: 5
+  maxStrengthBoxThrust: 2250
+  thrust: 0
   maxDistanceToGetPulled: 10
   maxStrengthToGetPulled: 50
   maxDistanceToGetThrust: 10
   maxStrengthToGetThrust: 20
-  minDistanceStopMoving: 1
   animChild:
   - {fileID: 95969427200792614}
   - {fileID: 95046753551042796}
   - {fileID: 95570516382208320}
   - {fileID: 95106450044501466}
   pullActiv: 1
-  okToShangeMagnet: 0
 --- !u!114 &114265623190518884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -914,7 +915,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghost: {fileID: 21300000, guid: 94674bd0471dbff4c92fc2747c99df8d, type: 3}
   layerGhost: 15
-  animChild: []
+  animChild:
+  - {fileID: 1987911501208034}
+  - {fileID: 1810849516535830}
+  - {fileID: 1898799423475250}
+  - {fileID: 1332039129442848}
   notKilld: 1
 --- !u!114 &114967802222521746
 MonoBehaviour:

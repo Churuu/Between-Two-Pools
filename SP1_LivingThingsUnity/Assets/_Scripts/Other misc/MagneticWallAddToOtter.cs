@@ -14,7 +14,7 @@ public class MagneticWallAddToOtter : MonoBehaviour {
         {
             if (EventManager.instance.OnStartAddMagneticWall != null)
             {
-                Debug.Log("Wall");
+          //      Debug.Log("Wall");
                 EventManager.instance.OnStartAddMagneticWall(gameObject.GetComponent<Rigidbody2D>());
             }
             One = false;
