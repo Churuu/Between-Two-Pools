@@ -54,12 +54,11 @@ public class MenuSystem : MonoBehaviour {
     //Lägg till en knapp för varje level 
     private void Update()
     {   
-        if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == true && PauseSettings.gameObject.activeInHierarchy == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && P_Pressed == true)
         {
-            Debug.Log("UnPause");
             PauseMenu.gameObject.SetActive(false);
             P_Pressed = false;
-            FindObjectOfType<AudioManager>().pauseBool(false);
+            FindObjectOfType<AudioManager>().PauseBool(false);
             Time.timeScale = 1;
         }
         //Aktivera Pause menyn och pausar spelet
@@ -67,7 +66,7 @@ public class MenuSystem : MonoBehaviour {
         {
             PauseMenu.gameObject.SetActive(true);
             ResumeGame.Select();
-            FindObjectOfType<AudioManager>().pauseBool(true);
+            FindObjectOfType<AudioManager>().PauseBool(true);
             P_Pressed = true;
             Time.timeScale = 0;
         }
@@ -90,14 +89,13 @@ public class MenuSystem : MonoBehaviour {
     {
         PauseMenu.gameObject.SetActive(false);
         PauseSettings.gameObject.SetActive(true);
-        ReturnToPauseMenu.Select();
-
+        
     }
 
     void TaskOnResumeGame()
     {
         PauseMenu.gameObject.SetActive(false);
-        FindObjectOfType<AudioManager>().pauseBool(false);
+        FindObjectOfType<AudioManager>().PauseBool(false);
         P_Pressed = false;
         Time.timeScale = 1;
     }

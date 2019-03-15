@@ -63,7 +63,10 @@ public class StemsManager : MonoBehaviour
         ToOtter();
 
         AudioSources.Add(mainStemAudioSource);
-	}
+        AudioSources.Add(sealStemAudioSource);
+        AudioSources.Add(otterStemAudioSource);
+        AudioSources.Add(frogStemAudioSource);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -110,18 +113,26 @@ public class StemsManager : MonoBehaviour
 
     public void OnMenuPause()
     {
-        mainStemAudioSource.Pause();
-        sealStemAudioSource.Pause();
-        otterStemAudioSource.Pause();
-        frogStemAudioSource.Pause();
+        //mainStemAudioSource.Pause();
+        //sealStemAudioSource.Pause();
+        //otterStemAudioSource.Pause();
+        //frogStemAudioSource.Pause();
+        for (int i = 0; i < AudioSources.Count; i++)
+        {
+            AudioSources[i].Pause();
+        }
     }
 
     public void OnMenuUnPause()
     {
-        mainStemAudioSource.UnPause();
-        sealStemAudioSource.UnPause();
-        otterStemAudioSource.UnPause();
-        frogStemAudioSource.UnPause();
+        //mainStemAudioSource.UnPause();
+        //sealStemAudioSource.UnPause();
+        //otterStemAudioSource.UnPause();
+        //frogStemAudioSource.UnPause();
+        for (int i = 0; i < AudioSources.Count; i++)
+        {
+            AudioSources[i].UnPause();
+        }
         //switch (stemFocus)
         //{
         //    case StemFocus.Otter:

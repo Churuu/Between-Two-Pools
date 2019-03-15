@@ -63,15 +63,19 @@ public class AudioManager : MonoBehaviour
         {
             if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
             {
-                if (musicSource.isPlaying)
+                if (!musicSource.isPlaying)
                 {
+                    musicSource.loop = true;
                     winLoseStingerPlaying = false;
                 }
             }
         }
         else if (!winLoseStingerPlaying)
         {
+            musicSource.clip = mainMenuMusic;
             musicChange();
+            
+            musicSource.Pause();
         }
         
     }
@@ -134,15 +138,16 @@ public class AudioManager : MonoBehaviour
         winLoseStingerPlaying = true;
         stemsManager.GetComponent<StemsManager>().OnMenuPause();
         musicSource.clip = winMusic;
-
+        musicSource.loop = false;
         musicSource.Play();
     }
 
     public void OnLoseStinger()
     {
         winLoseStingerPlaying = true;
+        stemsManager.GetComponent<StemsManager>().OnMenuPause();
         musicSource.clip = loseMusic;
-
+        musicSource.loop = false;
         musicSource.Play();
     }
 
