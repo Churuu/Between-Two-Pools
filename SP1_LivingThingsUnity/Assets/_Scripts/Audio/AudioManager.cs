@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -16,12 +17,26 @@ public class AudioManager : MonoBehaviour
     private List<AudioClip> ambienceClips = new List<AudioClip>();
 
     [SerializeField]
+    private AudioClip mainMenuMusic;
+    [SerializeField]
+    private AudioClip pauseMenuMusic;
+
+    [SerializeField]
+    private AudioClip winMusic;
+    [SerializeField]
+    private AudioClip loseMusic;
+
+    [SerializeField]
     private string nextSong = "NextSong";
 
     [SerializeField]
     private string previousSong = "PreviousSong";
 
     private int musicIndex = 0;
+
+    private GameObject stemsManager;
+
+    private bool pause = false;
 
     void Awake()
     {
@@ -36,22 +51,64 @@ public class AudioManager : MonoBehaviour
 
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);
+
+        stemsManager = FindObjectOfType<StemsManager>().gameObject;
     }
 
     void Update()
     {
-        if (musicIndex < 0)
+        if (!pause)
         {
-            musicIndex = musicClips.Count - 1;
+            //if (musicIndex < 0)
+            //{
+            //    musicIndex = musicClips.Count - 1;
+            //}
+            //else if (musicIndex >= musicClips.Count)
+            //{
+            //    musicIndex = 0;
+            //}
+            
+
+            //SwitchMusic();
         }
-        else if (musicIndex >= musicClips.Count)
+        else if (pause)
         {
-            musicIndex = 0;
+            
+            if (musicSource.clip.name != pauseMenuMusic.name)
+            {
+                musicSource.clip = pauseMenuMusic;
+                musicSource.Play();
+            }
         }
-        SwitchMusic();
+        if (SceneManager.GetActiveScene().name == "MainMenu" ||
+                SceneManager.GetActiveScene().name == "StartScene" ||
+                SceneManager.GetActiveScene().name == "Options" ||
+                SceneManager.GetActiveScene().name == "Credits")
+        {
+            if (musicSource.clip.name != mainMenuMusic.name)
+            {
+                musicSource.clip = mainMenuMusic;
+                musicSource.Play();            }
+        }
+        print("isPlaying: " + musicSource.isPlaying);
     }
 
-    
+    public void pauseBool(bool pBool)
+    {
+        if (pBool)
+        {
+            stemsManager.GetComponent<StemsManager>().OnMenuPause();
+            pause = true;
+            musicSource.UnPause();
+        }
+        if (!pBool)
+        {
+            stemsManager.GetComponent<StemsManager>().OnMenuUnPause();
+            pause = false;
+            musicSource.Pause();
+        }
+    }
+
 
     public void SongRequest()
     {

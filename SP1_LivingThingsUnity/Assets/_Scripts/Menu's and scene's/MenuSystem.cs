@@ -27,6 +27,8 @@ public class MenuSystem : MonoBehaviour {
     public bool P_Pressed;
     private SceneManagerScript NextScene;
 
+    
+
     void Start()
     {
         NextScene = GetComponent<SceneManagerScript>();
@@ -47,6 +49,7 @@ public class MenuSystem : MonoBehaviour {
         SoundOption.onClick.AddListener(TaskOnSoundOption);
         ReturnToPauseMenu.onClick.AddListener(TaskOnReturnPause);
 
+        
     }
     //Lägg till en knapp för varje level 
     private void Update()
@@ -55,6 +58,7 @@ public class MenuSystem : MonoBehaviour {
         {
             PauseMenu.gameObject.SetActive(false);
             P_Pressed = false;
+            FindObjectOfType<AudioManager>().pauseBool(false);
             Time.timeScale = 1;
         }
         //Aktivera Pause menyn och pausar spelet
@@ -62,6 +66,7 @@ public class MenuSystem : MonoBehaviour {
         {
             PauseMenu.gameObject.SetActive(true);
             ResumeGame.Select();
+            FindObjectOfType<AudioManager>().pauseBool(true);
             P_Pressed = true;
             Time.timeScale = 0;
         }
@@ -90,6 +95,7 @@ public class MenuSystem : MonoBehaviour {
     void TaskOnResumeGame()
     {
         PauseMenu.gameObject.SetActive(false);
+        FindObjectOfType<AudioManager>().pauseBool(false);
         P_Pressed = false;
         Time.timeScale = 1;
     }
