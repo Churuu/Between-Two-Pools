@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crushDistance: 1
   crushingColliders: []
+  crushedOfSet: {x: 0, y: 1, z: 0}
 --- !u!114 &114204197687516788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,6 +317,7 @@ MonoBehaviour:
   animChild:
   - {fileID: 95866421896643362}
   activePlayer: 0
+  gravity: 0.1
 --- !u!114 &114387549546285852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65809072f6420f24a8450f4c7a368e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 0}
+  ghost: {fileID: 21300080, guid: df1f0b9a2d62d154388fad7bad5822bc, type: 3}
   layerGhost: 15
   notKilld: 1
 --- !u!114 &114698298206948208
@@ -377,6 +379,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c13f6df4ab9b7ef44a2eb8490d4ac71f, type: 3}
   ability2List: []
   landingSounds: []
+  deathSound: {fileID: 0}
 --- !u!114 &114827953475127760
 MonoBehaviour:
   m_ObjectHideFlags: 1

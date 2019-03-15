@@ -307,6 +307,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  crushedOfSet: {x: 0, y: 1, z: 0}
 --- !u!114 &114108207752148246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfdb3a349f1ffc4f9bb2ca211c43c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 21300000, guid: 94674bd0471dbff4c92fc2747c99df8d, type: 3}
+  ghost: {fileID: 21300028, guid: df1f0b9a2d62d154388fad7bad5822bc, type: 3}
   layerGhost: 15
   animChild: []
   notKilld: 1
@@ -367,26 +368,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityOne: 0
   magnetPowerActiv: 0
-  MaxDistancePulled: 5
-  MaxStrengthPulled: 2250
-  pulled: 0
-  MaxDistanceThrust: 5
-  MaxStrengthThrust: 2250
-  thrust: 0
+  okToShangeMagnet: 0
+  minDistanceBoxStopMoving: 2.35
+  minDistanceWallStopMoving: 1
   "buttonNameAbility1AvP\xE5": Ability1
   buttonNameAbility1Togel: S
+  maxDistanceBoxPulled: 5
+  maxStrengthBoxPulled: 2250
+  pulled: 0
+  maxDistanceBoxThrust: 5
+  maxStrengthBoxThrust: 2250
+  thrust: 0
   maxDistanceToGetPulled: 10
   maxStrengthToGetPulled: 50
   maxDistanceToGetThrust: 10
   maxStrengthToGetThrust: 20
-  minDistanceStopMoving: 2.35
   animChild:
   - {fileID: 95950200089645666}
   - {fileID: 95633755743279994}
   - {fileID: 95256204118674962}
   - {fileID: 95458106015453186}
   pullActiv: 1
-  okToShangeMagnet: 0
 --- !u!114 &114546895044668474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +431,7 @@ MonoBehaviour:
   - {fileID: 95256204118674962}
   - {fileID: 95458106015453186}
   activePlayer: 1
+  gravity: 0.1
 --- !u!212 &212072048277800630
 SpriteRenderer:
   m_ObjectHideFlags: 1
