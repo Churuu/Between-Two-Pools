@@ -7,11 +7,12 @@ public class SceneManagerScript : MonoBehaviour {
 	public void LoadNextScene(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
+        
     }
 
     public void ReloadCurrentScene()
     {
-
+        FindObjectOfType<StemsManager>().RestartStems();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
