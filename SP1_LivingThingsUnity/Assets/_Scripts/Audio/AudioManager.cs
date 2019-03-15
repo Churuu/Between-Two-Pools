@@ -103,15 +103,19 @@ public class AudioManager : MonoBehaviour
                 musicSource.Play();
             }
         }
-        if (SceneManager.GetActiveScene().name == "MainMenu" ||
-                SceneManager.GetActiveScene().name == "StartScene" ||
-                SceneManager.GetActiveScene().name == "Options" ||
-                SceneManager.GetActiveScene().name == "Credits")
+        if (SceneManager.GetActiveScene().buildIndex == 0 ||
+            SceneManager.GetActiveScene().buildIndex == 1 ||
+            SceneManager.GetActiveScene().buildIndex == 2)
         {
             if (musicSource.clip.name != mainMenuMusic.name)
             {
                 musicSource.clip = mainMenuMusic;
-                musicSource.Play();
+                if (!musicSource.isPlaying)
+                {
+                    musicSource.Play();
+                }
+                
+
             }
         }
         print("isPlaying: " + musicSource.isPlaying);
