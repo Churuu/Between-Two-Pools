@@ -39,6 +39,11 @@ public class AudioManager : MonoBehaviour
     private bool pause = false;
     private bool winLoseStingerPlaying = false;
 
+    private void Start()
+    {
+        musicSource = GetComponent<AudioSource>();
+    }
+
     void Awake()
     {
         //Check if there is already an instance of SoundManager
@@ -77,6 +82,17 @@ public class AudioManager : MonoBehaviour
             
             musicSource.Pause();
         }
+
+        if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+        {
+            PauseBool(true);
+            FindObjectOfType<StemsManager>().OnMenuPause();
+        }
+        else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+        {
+            PauseBool(false);
+            FindObjectOfType<StemsManager>().OnMenuUnPause();
+        }
         
     }
 
@@ -107,6 +123,7 @@ public class AudioManager : MonoBehaviour
             SceneManager.GetActiveScene().buildIndex == 1 ||
             SceneManager.GetActiveScene().buildIndex == 2)
         {
+            stemsManager.GetComponent<StemsManager>().OnMenuPause();
             if (musicSource.clip.name != mainMenuMusic.name)
             {
                 musicSource.clip = mainMenuMusic;
