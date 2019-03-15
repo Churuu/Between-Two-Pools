@@ -48842,8 +48842,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53.87, y: -4.93}
-  m_SizeDelta: {x: 261.84, y: 100.01}
+  m_AnchoredPosition: {x: -53.87, y: -5.171}
+  m_SizeDelta: {x: 261.84, y: 124.119}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &743636137
 MonoBehaviour:
@@ -48877,8 +48877,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "Q" with frog to latch on to sewerpipe endings. (Warning!! You cant
-    walk on it)
+  m_Text: Press "Q" with frog to latch on to sewerpipe endings. (Warning!! You can't
+    walk on sewerpipe endings)
 --- !u!222 &743636138
 CanvasRenderer:
   m_ObjectHideFlags: 0
