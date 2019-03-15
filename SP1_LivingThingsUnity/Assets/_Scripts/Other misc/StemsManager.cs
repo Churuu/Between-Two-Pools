@@ -76,7 +76,7 @@ public class StemsManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex)
+        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex && SceneManager.GetActiveScene().buildIndex > 3)
         {
             UpdateStems();
             savedMapIndex = SceneManager.GetActiveScene().buildIndex;
