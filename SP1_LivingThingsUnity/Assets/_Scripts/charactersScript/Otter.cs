@@ -156,13 +156,11 @@ public class Otter : MonoBehaviour
             {
                 if (abilityOne == Ability.Pull)
                 {
-                
                     Update_OtterPulledBox();
                     OtterGetPulledToWall();
                 }
                 else if (abilityOne == Ability.Thrust)
                 {
-                 
                     Update_OtterThrustBox();
                     OtterGetThrustFromWall();
                 }
@@ -191,7 +189,7 @@ public class Otter : MonoBehaviour
                     }
                     else
                     {
-                        rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                        rb2D.AddForce(-DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
                     }
 
 
@@ -214,7 +212,7 @@ public class Otter : MonoBehaviour
                     float strength = Mathf.Lerp(0f, maxStrengthToGetThrust, TDistance); // Use that decimal to work out how much strength the magnet should apple
                     Vector3 DirectionToCup = (this.transform.position - magneticWallRigidBodys[i].transform.position).normalized; // Get the direction from the marble to the cup
 
-                    rb2D.AddForce(DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                    rb2D.AddForce(DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
                 }
             }
         }
@@ -248,7 +246,7 @@ public class Otter : MonoBehaviour
             }
             else
             {
-                magneticBoxRigidBodys[i].AddForce(DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                magneticBoxRigidBodys[i].AddForce(DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
             }
 
 
@@ -265,7 +263,7 @@ public class Otter : MonoBehaviour
             float strength = Mathf.Lerp(0f, maxStrengthBoxThrust, TDistance); // Use that decimal to work out how much strength the magnet should apple
             Vector3 DirectionToCup = (this.transform.position - magneticBoxRigidBodys[i].transform.position).normalized; // Get the direction from the marble to the cup
 
-            magneticBoxRigidBodys[i].AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+            magneticBoxRigidBodys[i].AddForce(-DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
 
         }
     }

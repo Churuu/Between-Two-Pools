@@ -266,6 +266,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a37cb487a3a94a2448ea89da1c793ad5, type: 3}
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
+  deathSound: {fileID: 0}
 --- !u!114 &114224596387868210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,6 +289,8 @@ MonoBehaviour:
   toungeStickLayer:
     serializedVersion: 2
     m_Bits: 8192
+  extendClip: {fileID: 7400000, guid: 062ecd6405c9b454eb76e7beef83c26f, type: 2}
+  retractClip: {fileID: 7400000, guid: 939105854d018dd4baf23dbe1120ae26, type: 2}
 --- !u!114 &114240866981501126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,6 +343,7 @@ MonoBehaviour:
   animChild:
   - {fileID: 95074062268254054}
   activePlayer: 0
+  gravity: 0.1
 --- !u!114 &114451959990602662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,6 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crushDistance: 1
   crushingColliders: []
+  crushedOfSet: {x: 0, y: 1, z: 0}
 --- !u!114 &114531617134392748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10237ba0a96c09f48bb335ccaa1ad77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 0}
+  ghost: {fileID: 21300000, guid: df1f0b9a2d62d154388fad7bad5822bc, type: 3}
   layerGhost: 15
   notKilld: 1
 --- !u!212 &212200907939946320
