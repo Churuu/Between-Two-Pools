@@ -43,7 +43,7 @@ public class StemsManager : MonoBehaviour
     private float otterStemVolume;
     private float frogStemVolume;
 
-    private float savedMapIndex = 0;
+    private float savedMapIndex = 4;
 
     public enum StemFocus
     {
@@ -70,6 +70,7 @@ public class StemsManager : MonoBehaviour
         AudioSources.Add(sealStemAudioSource);
         AudioSources.Add(otterStemAudioSource);
         AudioSources.Add(frogStemAudioSource);
+        
     }
 	
 	// Update is called once per frame
@@ -77,7 +78,12 @@ public class StemsManager : MonoBehaviour
     {
         if (savedMapIndex != SceneManager.GetActiveScene().buildIndex)
         {
-
+            UpdateStems();
+            savedMapIndex = SceneManager.GetActiveScene().buildIndex;
+        }
+        for (int i = 0; i < AudioSources.Count; i++)
+        {
+            print(AudioSources[i].name + " " + AudioSources[i].isPlaying);
         }
     }
 
@@ -117,6 +123,7 @@ public class StemsManager : MonoBehaviour
             AudioSources[i].clip = thisLevelStems[i];
         }
         RestartStems();
+        ToOtter();
     }
 
     public void RestartStems()

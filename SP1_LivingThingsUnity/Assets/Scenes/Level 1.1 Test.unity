@@ -49061,6 +49061,11 @@ Prefab:
       propertyPath: music13.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: cfdc47265f1e2ea43a46f8d10e135ccc, type: 3}
+    - target: {fileID: 82511216925882584, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 515c794038457fc4f8deee297750d695, type: 2}
   m_IsPrefabParent: 0
@@ -60867,6 +60872,16 @@ Prefab:
     - target: {fileID: 4142834230718858, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114674815556153662, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Value
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863127304183378, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Value
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
