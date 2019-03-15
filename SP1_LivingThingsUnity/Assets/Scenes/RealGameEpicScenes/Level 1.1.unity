@@ -589,8 +589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46.78, y: 0.35}
-  m_SizeDelta: {x: 261.84, y: 100.01}
+  m_AnchoredPosition: {x: -46.78, y: 0.131}
+  m_SizeDelta: {x: 261.84, y: 121.928}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &108235928
 MonoBehaviour:
@@ -624,8 +624,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Walk on the stone to pick it up. Hold "Q" to shoot. (If you miss the stone
-    will be back in ~5 sec)
+  m_Text: Walk on the stone to pick it up. Hold "Q" to shoot. (If you miss with the
+    stone will be back in ~5 sec)
 --- !u!222 &108235929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1240,7 +1240,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This button can only be pressed by the Seal
+  m_Text: This button can only be pressed down by the Seal
 --- !u!222 &173039840
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48877,7 +48877,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "Q" with frog to latch on to sewerpipe ending (Warning!! You cant
+  m_Text: Press "Q" with frog to latch on to sewerpipe endings. (Warning!! You cant
     walk on it)
 --- !u!222 &743636138
 CanvasRenderer:
@@ -49396,7 +49396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.74264705, g: 0.049145762, b: 0.049145762, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -49405,7 +49405,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 62dc18f22bdd8894389e9927ebb72851, type: 3}
-    m_FontSize: 0
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -49416,7 +49416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Watch out for rats
+  m_Text: Watch out for rats!!!
 --- !u!222 &842925249
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49970,7 +49970,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use "A" "D" and "W" to move and jump (seal cant jump)
+  m_Text: Use "A" "D" and "W" to move and jump (seal can't jump)
 --- !u!222 &981362740
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -56558,8 +56558,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is a breakabe wall but you need the frog to spit a rock at it (Find
-    the rock first)
+  m_Text: This is a breakabe wall but you need the frog to spit a rock at it. (Find
+    the rock first!)
 --- !u!222 &1265949663
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -61477,11 +61477,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19.729998
+      value: 19.66
       objectReference: {fileID: 0}
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.7499986
+      value: -3.66
       objectReference: {fileID: 0}
     - target: {fileID: 4477631338481562, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
       propertyPath: m_LocalPosition.z
@@ -61555,6 +61555,26 @@ Prefab:
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: maxStrengthToGetPulled
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: maxStrengthToGetThrust
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: maxStrengthBoxPulled
+      value: 157500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207464905006744, guid: 8364e7e733df4a04fa8681099f4fc557,
+        type: 2}
+      propertyPath: maxStrengthBoxThrust
+      value: 157500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8364e7e733df4a04fa8681099f4fc557, type: 2}
@@ -70068,7 +70088,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '"S" to change polarity and "Q" to activate magnet (Red stands for attraction)'
+  m_Text: '"S" to change polarity and "Q" to activate magnetism (Red stands for attraction)'
 --- !u!222 &2110634463
 CanvasRenderer:
   m_ObjectHideFlags: 0
