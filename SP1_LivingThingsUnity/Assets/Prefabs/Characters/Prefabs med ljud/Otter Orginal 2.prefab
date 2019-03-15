@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205545660621750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -102.8, y: -37.98, z: 0}
+  m_LocalPosition: {x: 19.66, y: -3.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4903611599864076}
@@ -696,8 +696,6 @@ MonoBehaviour:
   crushingColliders:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   crushedOfSet: {x: 0, y: 0.5, z: 0}
 --- !u!114 &114207464905006744
 MonoBehaviour:
@@ -718,15 +716,15 @@ MonoBehaviour:
   "buttonNameAbility1AvP\xE5": Ability1
   buttonNameAbility1Togel: S
   maxDistanceBoxPulled: 5
-  maxStrengthBoxPulled: 2250
+  maxStrengthBoxPulled: 157500
   pulled: 0
   maxDistanceBoxThrust: 5
-  maxStrengthBoxThrust: 2250
+  maxStrengthBoxThrust: 157500
   thrust: 0
   maxDistanceToGetPulled: 10
-  maxStrengthToGetPulled: 50
+  maxStrengthToGetPulled: 3500
   maxDistanceToGetThrust: 10
-  maxStrengthToGetThrust: 20
+  maxStrengthToGetThrust: 1400
   animChild:
   - {fileID: 95969427200792614}
   - {fileID: 95046753551042796}
