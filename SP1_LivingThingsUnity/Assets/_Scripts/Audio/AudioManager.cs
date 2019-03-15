@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
     private GameObject stemsManager;
 
     private bool pause = false;
+    private bool winLoseStingerPlaying = false;
 
     void Awake()
     {
@@ -57,7 +58,31 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+
+        if (winLoseStingerPlaying)
+        {
+            if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
+            {
+                if (musicSource.isPlaying)
+                {
+                    winLoseStingerPlaying = false;
+                }
+            }
+        }
+        else if (!winLoseStingerPlaying)
+        {
+            musicChange();
+        }
+        
+    }
+
+    private void musicChange()
+    {
         if (!pause)
+        {
+
+        }
+        else if (pause)
         {
             //if (musicIndex < 0)
             //{
@@ -67,13 +92,7 @@ public class AudioManager : MonoBehaviour
             //{
             //    musicIndex = 0;
             //}
-            
-
             //SwitchMusic();
-        }
-        else if (pause)
-        {
-            
             if (musicSource.clip.name != pauseMenuMusic.name)
             {
                 musicSource.clip = pauseMenuMusic;
@@ -88,12 +107,13 @@ public class AudioManager : MonoBehaviour
             if (musicSource.clip.name != mainMenuMusic.name)
             {
                 musicSource.clip = mainMenuMusic;
-                musicSource.Play();            }
+                musicSource.Play();
+            }
         }
         print("isPlaying: " + musicSource.isPlaying);
     }
 
-    public void pauseBool(bool pBool)
+    public void PauseBool(bool pBool)
     {
         if (pBool)
         {
@@ -109,6 +129,22 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void OnWinStinger()
+    {
+        winLoseStingerPlaying = true;
+        stemsManager.GetComponent<StemsManager>().OnMenuPause();
+        musicSource.clip = winMusic;
+
+        musicSource.Play();
+    }
+
+    public void OnLoseStinger()
+    {
+        winLoseStingerPlaying = true;
+        musicSource.clip = loseMusic;
+
+        musicSource.Play();
+    }
 
     public void SongRequest()
     {
