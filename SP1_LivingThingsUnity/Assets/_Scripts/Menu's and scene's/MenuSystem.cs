@@ -85,7 +85,8 @@ public class MenuSystem : MonoBehaviour {
     {
         PauseMenu.gameObject.SetActive(false);
         PauseSettings.gameObject.SetActive(true);
-        
+        ReturnToPauseMenu.Select();
+
     }
 
     void TaskOnResumeGame()
