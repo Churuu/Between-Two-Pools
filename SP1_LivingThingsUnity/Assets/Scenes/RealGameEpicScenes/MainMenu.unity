@@ -154,7 +154,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -306,8 +306,159 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1761582205391114, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114480129130275000, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176327826329940, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114509782640068654, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114811874520829046, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114920906860646812, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114480129130275000, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114274405169810842, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362382568028302, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: CityStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 224634949650651996, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -275
+      objectReference: {fileID: 0}
+    - target: {fileID: 224634949650651996, guid: f7e6aebd788d3fd49a5270140b948079,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 73
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &870233813
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.739637
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -36.406517
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.1500547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027005587434226, guid: 515c794038457fc4f8deee297750d695, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114982481058377898, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: mainMenuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: e1a29856436a232469d4a75bcea8e9ac, type: 3}
+    - target: {fileID: 114982481058377898, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: pauseMenuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: e1a29856436a232469d4a75bcea8e9ac, type: 3}
+    - target: {fileID: 114982481058377898, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: winMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: be9c7145a7b93ce459d2dc64db79109b, type: 3}
+    - target: {fileID: 114982481058377898, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: loseMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ea35b2e59de7b5439a8e9d7fc2f3631, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 515c794038457fc4f8deee297750d695, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1506286862 stripped
 MonoBehaviour:

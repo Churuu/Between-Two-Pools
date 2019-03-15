@@ -5,15 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/RobinTesting.unity
-    guid: 9f5a81fd505e7464b81f12346b3ff075
-  - enabled: 0
-    path: Assets/Scenes/Test Level 1.unity
-    guid: 69920d6030ea01b499a22d3737a6b8f1
-  - enabled: 0
-    path: Assets/Scenes/Jonas Test.unity
-    guid: 17a3a18dda39abe409ea4e3e2271f49f
   - enabled: 1
     path: Assets/Scenes/RealGameEpicScenes/StartScene.unity
     guid: a510172f491e6c445a7fcc496ebb8540
@@ -24,14 +15,20 @@ EditorBuildSettings:
     path: Assets/Scenes/RealGameEpicScenes/Options.unity
     guid: 491c39783752c2640ae328165f7cfe0a
   - enabled: 1
+    path: Assets/Scenes/RealGameEpicScenes/CityStart.unity
+    guid: 3f7445532c6308e47889d76e8e582a5f
+  - enabled: 1
     path: Assets/Scenes/RealGameEpicScenes/Level 1.1.unity
     guid: 15b749f4c750a8449960677f16ea67cd
-  - enabled: 1
-    path: Assets/Scenes/RealGameEpicScenes/Level 1.1 Backup.unity
-    guid: 96a5c46810d900c42888cb33a7b3e88c
   - enabled: 1
     path: Assets/Scenes/RealGameEpicScenes/Level 1.2.unity
     guid: 8e2ccd72d54b2d34495698c41c31809f
   - enabled: 1
     path: Assets/Scenes/RealGameEpicScenes/Level 1.3.unity
     guid: 6687a33b873bf0243a204864d8c2947a
+  - enabled: 1
+    path: Assets/Scenes/RealGameEpicScenes/City_Ending.unity
+    guid: 9442c3eb4e2190d4093f64bcc1679c17
+  - enabled: 1
+    path: Assets/Scenes/RealGameEpicScenes/Credits.unity
+    guid: af99fc650b4bc5a4b86722ab43bd586c

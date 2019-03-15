@@ -43,6 +43,7 @@ public class OnGameOver : MonoBehaviour
         timerFloat = timerDuration;
         gameOverCanvas.gameObject.SetActive(true);
         GameOverActivation = true;
+        FindObjectOfType<AudioManager>().OnLoseStinger();
 
         EventManager.instance.OnGameOver -= OnGameOverEvent;
     }
@@ -59,6 +60,7 @@ public class OnGameOver : MonoBehaviour
         {
             gameOverCanvas.gameObject.SetActive(false);
             GameOverActivation = false;
+            FindObjectOfType<StemsManager>().OnMenuUnPause();
             FindObjectOfType<SceneManagerScript>().ReloadCurrentScene();
         }
         if (Input.GetButtonDown(restartButton)) 

@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65809072f6420f24a8450f4c7a368e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 21300000, guid: 94674bd0471dbff4c92fc2747c99df8d, type: 3}
+  ghost: {fileID: 21300080, guid: df1f0b9a2d62d154388fad7bad5822bc, type: 3}
   layerGhost: 15
   notKilld: 1
 --- !u!114 &114225732888102230
@@ -312,7 +312,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c13f6df4ab9b7ef44a2eb8490d4ac71f, type: 3}
   ability2List: []
   landingSounds: []
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a66c4dc081bb9704dbedcf621c4bd324, type: 3}
 --- !u!114 &114372677744664496
 MonoBehaviour:
   m_ObjectHideFlags: 1

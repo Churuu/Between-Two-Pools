@@ -156,16 +156,11 @@ public class Otter : MonoBehaviour
             {
                 if (abilityOne == Ability.Pull)
                 {
-                    Debug.Log("pull");
-                    //anim.SetBool("PullActive", true);
-                    //anim.SetBool("PushActive", false);
                     Update_OtterPulledBox();
                     OtterGetPulledToWall();
                 }
                 else if (abilityOne == Ability.Thrust)
                 {
-                    // anim.SetBool("PullActive", false);
-                    // anim.SetBool("PushActive", true);
                     Update_OtterThrustBox();
                     OtterGetThrustFromWall();
                 }
@@ -194,7 +189,7 @@ public class Otter : MonoBehaviour
                     }
                     else
                     {
-                        rb2D.AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                        rb2D.AddForce(-DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
                     }
 
 
@@ -217,7 +212,7 @@ public class Otter : MonoBehaviour
                     float strength = Mathf.Lerp(0f, maxStrengthToGetThrust, TDistance); // Use that decimal to work out how much strength the magnet should apple
                     Vector3 DirectionToCup = (this.transform.position - magneticWallRigidBodys[i].transform.position).normalized; // Get the direction from the marble to the cup
 
-                    rb2D.AddForce(DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                    rb2D.AddForce(DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
                 }
             }
         }
@@ -246,12 +241,12 @@ public class Otter : MonoBehaviour
             Vector3 DirectionToCup = (this.transform.position - magneticBoxRigidBodys[i].transform.position).normalized; // Get the direction from the marble to the cup
             if (Distance < minDistanceBoxStopMoving)
             {
-                Debug.Log("Nu ska den vara stilla");
+           //     Debug.Log("Nu ska den vara stilla");
                 magneticBoxRigidBodys[i].velocity = new Vector2(0, 0);
             }
             else
             {
-                magneticBoxRigidBodys[i].AddForce(DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+                magneticBoxRigidBodys[i].AddForce(DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
             }
 
 
@@ -268,7 +263,7 @@ public class Otter : MonoBehaviour
             float strength = Mathf.Lerp(0f, maxStrengthBoxThrust, TDistance); // Use that decimal to work out how much strength the magnet should apple
             Vector3 DirectionToCup = (this.transform.position - magneticBoxRigidBodys[i].transform.position).normalized; // Get the direction from the marble to the cup
 
-            magneticBoxRigidBodys[i].AddForce(-DirectionToCup * strength, ForceMode2D.Force);// apply force to the marble
+            magneticBoxRigidBodys[i].AddForce(-DirectionToCup * strength * Time.deltaTime, ForceMode2D.Force);// apply force to the marble
 
         }
     }
