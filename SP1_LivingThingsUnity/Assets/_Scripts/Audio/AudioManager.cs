@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-
+        print(name + " " + musicSource.isPlaying);
         if (winLoseStingerPlaying)
         {
             if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
@@ -83,16 +83,21 @@ public class AudioManager : MonoBehaviour
             musicSource.Pause();
         }
 
-        if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+        if (FindObjectOfType<VideoStreamer>() != null)
         {
-            PauseBool(true);
-            FindObjectOfType<StemsManager>().OnMenuPause();
+            print("FoundVideoStreamer");
+            if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+            {
+                PauseBool(true);
+                FindObjectOfType<StemsManager>().OnMenuPause();
+            }
+            else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+            {
+                PauseBool(false);
+                FindObjectOfType<StemsManager>().OnMenuUnPause();
+            }
         }
-        else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-        {
-            PauseBool(false);
-            FindObjectOfType<StemsManager>().OnMenuUnPause();
-        }
+        
         
     }
 
@@ -113,42 +118,7 @@ public class AudioManager : MonoBehaviour
             //    musicIndex = 0;
             //}
             //SwitchMusic();
-            if (musicSource.clip.name != pauseMenuMusic.name)
-            {
-                musicSource.clip = pauseMenuMusic;
-                print("mS = pMM");
-                if (FindObjectOfType<VideoStreamer>() != null)
-                {
-                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-                    {
-                        musicSource.Play();
-                        print("mS.Play");
-                    }
-                }
-                else
-                {
-                    musicSource.Play();
-                    print("mS.Play");
-                }
-                
-            }
-            else if (musicSource.clip.name == pauseMenuMusic.name)
-            {
-                print("");
-                if (FindObjectOfType<VideoStreamer>() != null)
-                {
-                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-                    {
-                        musicSource.Play();
-                        print("mS.Play");
-                    }
-                }
-                else
-                {
-                    musicSource.Play();
-                    print("mS.Play");
-                }
-            }
+            musicSource.UnPause();
         }
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
             SceneManager.GetActiveScene().buildIndex == 1 ||
@@ -177,6 +147,43 @@ public class AudioManager : MonoBehaviour
             stemsManager.GetComponent<StemsManager>().OnMenuPause();
             pause = true;
             musicSource.UnPause();
+            if (musicSource.clip.name != pauseMenuMusic.name)
+            {
+                musicSource.clip = pauseMenuMusic;
+                print("mS != pMM");
+                if (FindObjectOfType<VideoStreamer>() != null)
+                {
+                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                    {
+                        musicSource.Play();
+                        print("mS.Play");
+                    }
+                }
+                else
+                {
+                    musicSource.Play();
+                    print("mS.Play");
+                }
+
+            }
+            else if (musicSource.clip.name == pauseMenuMusic.name)
+            {
+                musicSource.clip = pauseMenuMusic;
+                print("mS == pMM");
+                if (FindObjectOfType<VideoStreamer>() != null)
+                {
+                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                    {
+                        musicSource.Play();
+                        print("mS.Play");
+                    }
+                }
+                else
+                {
+                    musicSource.Play();
+                    print("mS.Play");
+                }
+            }
         }
         if (!pBool)
         {
