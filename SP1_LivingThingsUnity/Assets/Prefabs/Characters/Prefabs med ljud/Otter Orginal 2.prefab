@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205545660621750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.66, y: -3.66, z: 0}
+  m_LocalPosition: {x: 12.15, y: -15.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4903611599864076}
@@ -327,7 +327,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -489,7 +489,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -715,7 +715,7 @@ MonoBehaviour:
   minDistanceWallStopMoving: 1
   "buttonNameAbility1AvP\xE5": Ability1
   buttonNameAbility1Togel: S
-  maxDistanceBoxPulled: 5
+  maxDistanceBoxPulled: 7
   maxStrengthBoxPulled: 157500
   pulled: 0
   maxDistanceBoxThrust: 5
