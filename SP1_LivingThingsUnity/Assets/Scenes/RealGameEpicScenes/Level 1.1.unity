@@ -292,8 +292,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.43, y: 1.07}
-  m_SizeDelta: {x: 261.84, y: 100.01}
+  m_AnchoredPosition: {x: -60.04, y: 1.82}
+  m_SizeDelta: {x: 261.84, y: 127.425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49198382
 MonoBehaviour:
@@ -327,7 +327,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Press "E" to actiate the button
+  m_Text: 'Press "E" to activate the button
 
     (buttons are used to move platforms or open doors)'
 --- !u!222 &49198383
@@ -46789,7 +46789,7 @@ Prefab:
     - target: {fileID: 114142870739022546, guid: a6bf14fa283c3e84e9f144b49114ff8f,
         type: 2}
       propertyPath: maxExtendedDistance
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 82348000984014968, guid: a6bf14fa283c3e84e9f144b49114ff8f,
         type: 2}
@@ -59110,12 +59110,12 @@ Prefab:
     - target: {fileID: 61714235925744420, guid: 162005d3b15f72749b19eada372a8dfd,
         type: 2}
       propertyPath: m_Offset.x
-      value: -0.08095169
+      value: 0.03974691
       objectReference: {fileID: 0}
     - target: {fileID: 61714235925744420, guid: 162005d3b15f72749b19eada372a8dfd,
         type: 2}
       propertyPath: m_Size.x
-      value: 0.30979174
+      value: 0.5511889
       objectReference: {fileID: 0}
     - target: {fileID: 114859301799013754, guid: 162005d3b15f72749b19eada372a8dfd,
         type: 2}
