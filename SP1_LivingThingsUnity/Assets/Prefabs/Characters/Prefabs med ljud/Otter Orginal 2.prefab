@@ -136,7 +136,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205545660621750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -102.8, y: -37.98, z: 0}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 12.15, y: -15.12, z: 0}
+=======
+  m_LocalPosition: {x: 19.729996, y: -3.8599987, z: 0}
+>>>>>>> 0ad70fb12a399dd3c2a3ffff56fa3edc64979d1e
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4903611599864076}
@@ -246,7 +250,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -327,7 +331,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -408,7 +412,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -489,7 +493,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -696,8 +700,6 @@ MonoBehaviour:
   crushingColliders:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   crushedOfSet: {x: 0, y: 0.5, z: 0}
 --- !u!114 &114207464905006744
 MonoBehaviour:
@@ -717,16 +719,16 @@ MonoBehaviour:
   minDistanceWallStopMoving: 1
   "buttonNameAbility1AvP\xE5": Ability1
   buttonNameAbility1Togel: S
-  maxDistanceBoxPulled: 5
-  maxStrengthBoxPulled: 2250
+  maxDistanceBoxPulled: 7
+  maxStrengthBoxPulled: 157500
   pulled: 0
   maxDistanceBoxThrust: 5
-  maxStrengthBoxThrust: 2250
+  maxStrengthBoxThrust: 157500
   thrust: 0
   maxDistanceToGetPulled: 10
-  maxStrengthToGetPulled: 50
+  maxStrengthToGetPulled: 3500
   maxDistanceToGetThrust: 10
-  maxStrengthToGetThrust: 20
+  maxStrengthToGetThrust: 1400
   animChild:
   - {fileID: 95969427200792614}
   - {fileID: 95046753551042796}

@@ -466,7 +466,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037851530624666}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243244725490520478, guid: 58439c3261a1a554db09ed5b5ab31fb4,
     type: 2}
@@ -752,9 +752,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63fab9ff0d4f064396aad11672b9123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainStemAudioSource: {fileID: 0}
   sealStemAudioSource: {fileID: 82990364121773868}
   otterStemAudioSource: {fileID: 82447081628418366}
   frogStemAudioSource: {fileID: 82771115592901402}
+  music11:
+  - {fileID: 8300000, guid: ca9cb50a091a41246b0aec6f6cf01261, type: 3}
+  - {fileID: 8300000, guid: 92854ecc697d0c54dbb8401622c60194, type: 3}
+  - {fileID: 8300000, guid: 94f5f09714663354fb0eb8373a70e7fa, type: 3}
+  - {fileID: 8300000, guid: 661efdb130e64c643b8fca3cdb5cd6fe, type: 3}
+  music12:
+  - {fileID: 8300000, guid: 7592bdbdbc833c74bacc73e1d8184d71, type: 3}
+  - {fileID: 8300000, guid: 8f8f26639f944734dbb7696c74d6fd2b, type: 3}
+  - {fileID: 8300000, guid: 50bb78d0bcb9626478a4d303b6ce7d50, type: 3}
+  - {fileID: 8300000, guid: ffc538aebfeebcf40b78c09ffd0ca346, type: 3}
+  music13:
+  - {fileID: 8300000, guid: ce23c16a18f5b2b4aa6ab03c693506b7, type: 3}
+  - {fileID: 8300000, guid: 46b714634c08e6a40858872d8b553d21, type: 3}
+  - {fileID: 8300000, guid: 1404f44eae236fc48bcc95aef5106631, type: 3}
+  - {fileID: 8300000, guid: cfdc47265f1e2ea43a46f8d10e135ccc, type: 3}
+  music21: []
+  music22: []
+  music31: []
+  music32: []
+  stemFocus: 0
 --- !u!114 &114783954291008314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -777,7 +798,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037851530624666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 442c8579c6ffd4144b36a6b0ebc2b003, type: 3}
   m_Name: 
@@ -790,6 +811,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5014526074b9cf043a271c03bd2c9567, type: 3}
   - {fileID: 8300000, guid: f29b899bab6e4564eb94f735dafac76f, type: 3}
   ambienceClips: []
+  mainMenuMusic: {fileID: 8300000, guid: e1a29856436a232469d4a75bcea8e9ac, type: 3}
+  pauseMenuMusic: {fileID: 8300000, guid: 06627aad10fdec7419b8f2e594a8f867, type: 3}
+  winMusic: {fileID: 8300000, guid: be9c7145a7b93ce459d2dc64db79109b, type: 3}
+  loseMusic: {fileID: 8300000, guid: 2ea35b2e59de7b5439a8e9d7fc2f3631, type: 3}
   nextSong: NextSong
   previousSong: PreviousSong
 --- !u!222 &222652169035523192

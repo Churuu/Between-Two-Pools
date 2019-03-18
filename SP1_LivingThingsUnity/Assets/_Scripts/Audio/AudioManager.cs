@@ -39,6 +39,12 @@ public class AudioManager : MonoBehaviour
     private bool pause = false;
     private bool winLoseStingerPlaying = false;
 
+    void Start()
+    {
+        musicSource = GetComponent<AudioSource>();
+        stemsManager = FindObjectOfType<StemsManager>().gameObject;
+    }
+
     void Awake()
     {
         //Check if there is already an instance of SoundManager
@@ -53,12 +59,12 @@ public class AudioManager : MonoBehaviour
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);
 
-        stemsManager = FindObjectOfType<StemsManager>().gameObject;
+        
     }
 
     void Update()
     {
-
+        print(name + " " + musicSource.isPlaying);
         if (winLoseStingerPlaying)
         {
             if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
@@ -72,11 +78,31 @@ public class AudioManager : MonoBehaviour
         }
         else if (!winLoseStingerPlaying)
         {
-            musicSource.clip = mainMenuMusic;
-            musicChange();
+            if (!pause)
+            {
+                musicSource.clip = mainMenuMusic;
+                musicChange();
+                print("no pause no stinger");   
+                //musicSource.Pause();
+            }
             
-            musicSource.Pause();
         }
+
+        if (FindObjectOfType<VideoStreamer>() != null)
+        {
+            print("FoundVideoStreamer");
+            if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+            {
+                PauseBool(true);
+                FindObjectOfType<StemsManager>().OnMenuPause();
+            }
+            else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+            {
+                PauseBool(false);
+                FindObjectOfType<StemsManager>().OnMenuUnPause();
+            }
+        }
+        
         
     }
 
@@ -97,33 +123,117 @@ public class AudioManager : MonoBehaviour
             //    musicIndex = 0;
             //}
             //SwitchMusic();
-            if (musicSource.clip.name != pauseMenuMusic.name)
-            {
-                musicSource.clip = pauseMenuMusic;
-                musicSource.Play();
-            }
+            musicSource.UnPause();
         }
-        if (SceneManager.GetActiveScene().name == "MainMenu" ||
-                SceneManager.GetActiveScene().name == "StartScene" ||
-                SceneManager.GetActiveScene().name == "Options" ||
-                SceneManager.GetActiveScene().name == "Credits")
+        print("buildindex: " + SceneManager.GetActiveScene().buildIndex);
+        if (SceneManager.GetActiveScene().buildIndex == 0 ||
+            SceneManager.GetActiveScene().buildIndex == 1 ||
+            SceneManager.GetActiveScene().buildIndex == 2)
         {
-            if (musicSource.clip.name != mainMenuMusic.name)
+            if (FindObjectOfType<VideoStreamer>() != null)
             {
-                musicSource.clip = mainMenuMusic;
-                musicSource.Play();
+                print("vid1");
+                if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                {
+                    print("vid2");
+                    stemsManager.GetComponent<StemsManager>().OnMenuPause();
+                    if (musicSource.clip.name != mainMenuMusic.name)
+                    {
+                        print("vid3");
+                        musicSource.clip = mainMenuMusic;
+                        if (!musicSource.isPlaying)
+                        {
+                            print("vid4");
+                            musicSource.Play();
+                        }
+
+
+                    }
+                    else if (musicSource.clip.name == mainMenuMusic.name)
+                    {
+                        if (!musicSource.isPlaying)
+                        {
+                            musicSource.Play();
+                        }
+                    }
+                }
+
             }
+            else
+            {
+                print("novid1");
+
+                stemsManager.GetComponent<StemsManager>().OnMenuPause();
+                if (musicSource.clip.name != mainMenuMusic.name)
+                {
+                    print("novid2");
+                    musicSource.clip = mainMenuMusic;
+                    if (!musicSource.isPlaying)
+                    {
+                        print("novid3");
+                        musicSource.Play();
+                    }
+
+
+                }
+                else if (musicSource.clip.name == mainMenuMusic.name)
+                {
+                    if (!musicSource.isPlaying)
+                    {
+                        musicSource.Play();
+                    }
+                }
+            }
+            
         }
         print("isPlaying: " + musicSource.isPlaying);
     }
 
     public void PauseBool(bool pBool)
     {
+        print("pausebool");
         if (pBool)
         {
             stemsManager.GetComponent<StemsManager>().OnMenuPause();
             pause = true;
             musicSource.UnPause();
+            if (musicSource.clip.name != pauseMenuMusic.name)
+            {
+                musicSource.clip = pauseMenuMusic;
+                print("mS != pMM");
+                if (FindObjectOfType<VideoStreamer>() != null)
+                {
+                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                    {
+                        musicSource.Play();
+                        print("mS.Play");
+                    }
+                }
+                else
+                {
+                    musicSource.Play();
+                    print("mS.Play");
+                }
+
+            }
+            else if (musicSource.clip.name == pauseMenuMusic.name)
+            {
+                musicSource.clip = pauseMenuMusic;
+                print("mS == pMM");
+                if (FindObjectOfType<VideoStreamer>() != null)
+                {
+                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                    {
+                        musicSource.Play();
+                        print("mS.Play");
+                    }
+                }
+                else
+                {
+                    musicSource.Play();
+                    print("mS.Play");
+                }
+            }
         }
         if (!pBool)
         {

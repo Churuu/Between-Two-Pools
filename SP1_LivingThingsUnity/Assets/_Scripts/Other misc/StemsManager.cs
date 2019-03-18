@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StemsManager : MonoBehaviour
 {
+    [SerializeField]
     private AudioSource mainStemAudioSource;
     [SerializeField] private AudioSource sealStemAudioSource;
 
@@ -43,7 +44,7 @@ public class StemsManager : MonoBehaviour
     private float otterStemVolume;
     private float frogStemVolume;
 
-    private float savedMapIndex = 0;
+    private float savedMapIndex = 4;
 
     public enum StemFocus
     {
@@ -70,14 +71,24 @@ public class StemsManager : MonoBehaviour
         AudioSources.Add(sealStemAudioSource);
         AudioSources.Add(otterStemAudioSource);
         AudioSources.Add(frogStemAudioSource);
+
+        UpdateStems();
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex)
+        print("Saved Index: " + savedMapIndex);
+        print("Build Index: " + SceneManager.GetActiveScene().buildIndex);
+        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex && SceneManager.GetActiveScene().buildIndex > 3)
         {
-
+            UpdateStems();
+            savedMapIndex = SceneManager.GetActiveScene().buildIndex;
+        }
+        for (int i = 0; i < AudioSources.Count; i++)
+        {
+            print(AudioSources[i].name + " " + AudioSources[i].isPlaying);
         }
     }
 
@@ -117,6 +128,7 @@ public class StemsManager : MonoBehaviour
             AudioSources[i].clip = thisLevelStems[i];
         }
         RestartStems();
+        ToOtter();
     }
 
     public void RestartStems()
