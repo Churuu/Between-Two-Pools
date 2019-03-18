@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VideoStreamer : MonoBehaviour
 {
     [Header("Playback image on canvas")]
-    public RawImage image;
+    public RawImage image ;
     public string nextScene;
     public bool startCutsceneImmidietly;
 
@@ -16,6 +16,10 @@ public class VideoStreamer : MonoBehaviour
 
     void Start()
     {
+        if( image == null)
+        {
+            GameObject.FindGameObjectWithTag("SkiftNyckel");
+        }
         videoPlayer = GetComponent<VideoPlayer>();
         source = GetComponent<AudioSource>();
 
