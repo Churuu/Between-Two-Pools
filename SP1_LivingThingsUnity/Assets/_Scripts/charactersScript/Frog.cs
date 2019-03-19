@@ -5,10 +5,9 @@ public class Frog : MonoBehaviour
 {
 
     public float maxExtendedDistance;
-    public float HeldInButtonTimer = 0.3f;
     [Range(0, 1)]
     public int rockCount = 0;
-    public string abilityButton;
+    public string extendToungeButton, shootRockButton;
     public GameObject tounge;
     public GameObject toungeEnd;
     public GameObject rock;
@@ -59,17 +58,16 @@ public class Frog : MonoBehaviour
 
     void ButtonHandler()
     {
-        if (Input.GetButton(abilityButton))
+        if (Input.GetButtonDown(shootRockButton))
         {
-            HeldInButtonTimer -= Time.deltaTime;
             anim.SetBool("ShootRock", false);
-            if (HeldInButtonTimer < 0 && rockCount == 1)
+            if (rockCount == 1)
             {
                 anim.SetBool("ShootRock", true);
                 ShootRocks();
             }
         }
-        else if (Input.GetButtonUp(abilityButton) && HeldInButtonTimer > 0)
+        else if (Input.GetButtonDown(extendToungeButton))
         {
             if (!extended)//&& !canRetract)
             {
@@ -84,7 +82,6 @@ public class Frog : MonoBehaviour
         }
         else
         {
-            HeldInButtonTimer = 0.2f;
             anim.SetBool("ShootRock", false);
         }
     }

@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917016305584562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.45, y: -4, z: 0}
+  m_LocalPosition: {x: 4.44, y: -3.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934351191650736}
@@ -279,9 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxExtendedDistance: 4.5
-  HeldInButtonTimer: 0.3
   rockCount: 1
-  abilityButton: Ability1
+  extendToungeButton: Ability1
+  shootRockButton: S
   tounge: {fileID: 1598041726788476, guid: eee1842e5e3b03e41a524776830bb8bf, type: 2}
   toungeEnd: {fileID: 1869311221974478, guid: 7d7ae50840957db44be629d48a102a19, type: 2}
   rock: {fileID: 1521461176954430, guid: 60df7374b189a72468f13aac8efae2ed, type: 2}
@@ -289,7 +289,7 @@ MonoBehaviour:
   toungeStickLayer:
     serializedVersion: 2
     m_Bits: 8192
-  extendClip: {fileID: 7400000, guid: 062ecd6405c9b454eb76e7beef83c26f, type: 2}
+  extendClip: {fileID: 7400000, guid: f35ed14e55b7bf84a8b40dd955813686, type: 2}
   retractClip: {fileID: 7400000, guid: 939105854d018dd4baf23dbe1120ae26, type: 2}
 --- !u!114 &114240866981501126
 MonoBehaviour:
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e6c0613ecc52f43a9033e354a4d557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 82694403081315512}
   audioClips: []
 --- !u!114 &114411800868128848
 MonoBehaviour:
