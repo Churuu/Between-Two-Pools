@@ -20,6 +20,7 @@ public class Sender : MonoBehaviour
     [SerializeField]
     private ButtonType buttonType;
 
+    
 
     [SerializeField]
     private List<GameObject> gameObjects = new List<GameObject>();
@@ -36,7 +37,8 @@ public class Sender : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         nonActivatableGameObjects = gameObjects;
-	}
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -91,6 +93,7 @@ public class Sender : MonoBehaviour
                 {
                     if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
                     {
+                        gameObjects[i].GetComponent<Reciever>().ObjectCamera();
                         GetComponent<ObjectAudioClip>().PlayRandom();
                         pressedAnimBool = true;
                         //anim.SetBool("Pressed", true);
@@ -106,6 +109,7 @@ public class Sender : MonoBehaviour
                 {
                     if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
                     {
+                        gameObjects[i].GetComponent<Reciever>().ObjectCamera();
                         GetComponent<ObjectAudioClip>().PlayRandom();
                         //anim.SetBool("Pressed", true);
                         gameObjects[i].GetComponent<Reciever>().BoolToogle();
@@ -121,6 +125,7 @@ public class Sender : MonoBehaviour
                 {
                     if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
                     {
+                        gameObjects[i].GetComponent<Reciever>().ObjectCamera();
                         GetComponent<ObjectAudioClip>().PlayRandom();
                         pressedAnimBool = true;
                         //anim.SetBool("Pressed", true);
@@ -147,6 +152,7 @@ public class Sender : MonoBehaviour
             {
                 if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
 				{
+                    gameObjects[i].GetComponent<Reciever>().ObjectCamera();
                     GetComponent<ObjectAudioClip>().PlaySingle(0);
                     anim.SetBool("Pressed", true);
                     gameObjects[i].GetComponent<Reciever>().ToggleObject();
@@ -161,6 +167,7 @@ public class Sender : MonoBehaviour
             {
                 if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable() == false)
                 {
+                    gameObjects[i].GetComponent<Reciever>().ObjectCamera();
                     GetComponent<ObjectAudioClip>().PlaySingle(0);
                     anim.SetBool("Pressed", true);
                     gameObjects[i].GetComponent<Reciever>().BoolToogle();
@@ -176,6 +183,7 @@ public class Sender : MonoBehaviour
             {
                 if (gameObjects[i].GetComponent<Reciever>().GetDoorActivatable())
                 {
+                    gameObjects[i].GetComponent<Reciever>().ObjectCamera();
                     GetComponent<ObjectAudioClip>().PlaySingle(0);
                     anim.SetBool("Pressed", true);
                     gameObjects[i].GetComponent<Reciever>().ToggleObject();
