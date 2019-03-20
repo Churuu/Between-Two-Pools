@@ -279,6 +279,14 @@ public class Otter : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("PlanktonRun"))
+        {
+            FindObjectOfType<NPCFollower>().RunAway();
+        }
+    }
+
 
 
 

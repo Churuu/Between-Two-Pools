@@ -13,6 +13,7 @@ public class NPCFollower : MonoBehaviour
     public Vector2 offset;
     [Space]
     public GameObject target;
+    public Transform runAwayPoint;
     public Text commentText;
     public Image conversationImage;
     [Space]
@@ -57,6 +58,11 @@ public class NPCFollower : MonoBehaviour
             commentText.text = meanComments[Random.Range(0, meanComments.Length)];
             timer = meanCommentTimerDelta + Time.time;
         }
+    }
+
+    public void RunAway()
+    {
+        target = runAwayPoint.gameObject;
     }
 
     void OnTriggerEnter2D(Collider2D other)
