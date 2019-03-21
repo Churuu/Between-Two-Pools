@@ -88,29 +88,34 @@ public class AudioManager : MonoBehaviour
             
         }
 
-        if (FindObjectOfType<VideoStreamer>() != null)
-        {
-            print("FoundVideoStreamer");
-            if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-            {
-                PauseBool(true);
-                FindObjectOfType<StemsManager>().OnMenuPause();
-            }
-            else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-            {
-                PauseBool(false);
-                FindObjectOfType<StemsManager>().OnMenuUnPause();
-            }
-        }
+        
+        
         
         
     }
 
     private void musicChange()
     {
+
+        
         if (!pause)
         {
-
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                musicSource.Pause();
+            }
+            if (FindObjectOfType<VideoStreamer>() != null)
+            {
+                print("FoundVideoStreamer");
+                if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                {
+                    PauseBool(true);
+                }
+                else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                {
+                    PauseBool(false);
+                }
+            }
         }
         else if (pause)
         {
@@ -187,7 +192,6 @@ public class AudioManager : MonoBehaviour
         {
             stemsManager.GetComponent<StemsManager>().OnMenuPause();
             pause = true;
-            musicSource.UnPause();
             musicSource.clip = pauseMenuMusic;
             print("mS == pMM");
             if (FindObjectOfType<VideoStreamer>() != null)
@@ -197,8 +201,12 @@ public class AudioManager : MonoBehaviour
                     musicSource.Play();
                     print("mS.Play");
                 }
+                else if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                {
+                    musicSource.Pause();
+                }
             }
-            else
+            else if (FindObjectOfType<VideoStreamer>() == null)
             {
                 musicSource.Play();
                 print("mS.Play");
