@@ -46,7 +46,7 @@ public class Otter : MonoBehaviour
     int numer = 0;
     MenuSystem menuSystem;
 
-
+    GameObject test;
     //   Animator anim;
 
     private void Start()
@@ -80,6 +80,8 @@ public class Otter : MonoBehaviour
 
     void Update()
     {
+
+        
         if (!menuSystem.P_Pressed)
         {
 
@@ -108,6 +110,7 @@ public class Otter : MonoBehaviour
 
                 if (Input.GetButtonDown(buttonNameAbility1AvPå))//Av/PÅ
                 {
+                    GetComponent<AudioSource>().Play();
                     magnetPowerActiv = !magnetPowerActiv;
                     for (int i = 0; i < animChild.Length; i++)
                     {

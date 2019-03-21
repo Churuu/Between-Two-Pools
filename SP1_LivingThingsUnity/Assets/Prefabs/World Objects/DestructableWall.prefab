@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61912584281467094}
   - component: {fileID: 212236713363093368}
   - component: {fileID: 114424598636166506}
+  - component: {fileID: 82933927273064306}
   m_Layer: 9
   m_Name: DestructableWall
   m_TagString: DestructableWall
@@ -67,6 +68,87 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
+--- !u!82 &82933927273064306
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419742074148018}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243386080139177198, guid: 58439c3261a1a554db09ed5b5ab31fb4,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: a8b280f5302d6114a90db84973e9d20d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 30
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114424598636166506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6800c387666ad7142a8585b71fa66823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsToDestroy: 0.5
   pieces:
   - {fileID: 1780339900787742, guid: 2753fc6a041b8a745b626c9a04e52c8c, type: 2}
   - {fileID: 1568101650178998, guid: 7f33945c11384a04294fd0bb6ffff368, type: 2}

@@ -142,10 +142,6 @@ public class StemsManager : MonoBehaviour
 
     public void OnMenuPause()
     {
-        //mainStemAudioSource.Pause();
-        //sealStemAudioSource.Pause();
-        //otterStemAudioSource.Pause();
-        //frogStemAudioSource.Pause();
         for (int i = 0; i < AudioSources.Count; i++)
         {
             AudioSources[i].Pause();
@@ -154,10 +150,6 @@ public class StemsManager : MonoBehaviour
 
     public void OnMenuUnPause()
     {
-        //mainStemAudioSource.UnPause();
-        //sealStemAudioSource.UnPause();
-        //otterStemAudioSource.UnPause();
-        //frogStemAudioSource.UnPause();
         for (int i = 0; i < AudioSources.Count; i++)
         {
             AudioSources[i].UnPause();

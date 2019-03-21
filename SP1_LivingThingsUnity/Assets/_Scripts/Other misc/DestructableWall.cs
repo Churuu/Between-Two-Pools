@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DestructableWall : MonoBehaviour
 {
-
+    [SerializeField]
+    float secondsToDestroy = 0.5f;
     public GameObject[] pieces;
 
     public void ExplodeWall()
@@ -15,6 +16,10 @@ public class DestructableWall : MonoBehaviour
             _piece.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)));
             _piece.GetComponent<Rigidbody2D>().AddForce(335 * new Vector2(Random.Range(-1, 2), Random.Range(-1, 2)));
         }
-        Destroy(gameObject);
+        if (GetComponent<AudioSource>() != null)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+        Destroy(gameObject,secondsToDestroy);
     }
 }

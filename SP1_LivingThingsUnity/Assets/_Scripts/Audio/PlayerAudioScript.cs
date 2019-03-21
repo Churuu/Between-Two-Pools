@@ -34,27 +34,27 @@ public class PlayerAudioScript : MonoBehaviour
 		
 	}
 
-    private void Walk()
+    public void Walk()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(walkingSounds);
     }
 
-    private void Jump()
+    public void Jump()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(jumpSounds);
     }
 
-    private void Landing()
+    public void Landing()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(landingSounds);
     }
 
-    private void Ability1()
+    public void Ability1()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(ability1List);
     }
 
-    private void Ability2()
+    public void Ability2()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(ability2List);
     }

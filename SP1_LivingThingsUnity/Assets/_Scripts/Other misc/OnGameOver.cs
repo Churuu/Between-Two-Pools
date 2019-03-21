@@ -67,6 +67,7 @@ public class OnGameOver : MonoBehaviour
         {
             gameOverCanvas.gameObject.SetActive(false);
             GameOverActivation = false;
+            FindObjectOfType<StemsManager>().OnMenuUnPause();
             FindObjectOfType<SceneManagerScript>().ReloadCurrentScene();
         }
     }
