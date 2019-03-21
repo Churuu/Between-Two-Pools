@@ -8,6 +8,7 @@ public class NPCFollower : MonoBehaviour
 
     public float minDistance;
     public float followSpeed;
+    public float runAwaySpeed;
     public float meanCommentTimerDelta;
     [Space]
     public Vector2 offset;
@@ -43,7 +44,7 @@ public class NPCFollower : MonoBehaviour
         Vector2 followPosition = new Vector2(target.transform.position.x + offset.x, target.transform.position.y + offset.y);
 
         if (distance > minDistance)
-            transform.position = Vector2.Lerp(transform.position, followPosition, followSpeed * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, followPosition, (target != runAwayPoint.gameObject ? followSpeed : runAwaySpeed) * Time.deltaTime);
     }
 
     void SayMeanComment()
