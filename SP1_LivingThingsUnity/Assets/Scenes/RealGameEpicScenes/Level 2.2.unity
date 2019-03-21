@@ -53633,6 +53633,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4041347777687298, guid: 5a1c1c31f7a2de14ca52ed53a4ce39ff,
     type: 2}
   m_PrefabInternal: {fileID: 1236570585}
+--- !u!1 &474603109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 474603110}
+  m_Layer: 0
+  m_Name: Planktonrun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &474603110
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 474603109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.23, y: 2.93, z: 0.28739056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 75
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &482874147
 Prefab:
   m_ObjectHideFlags: 0
@@ -66472,11 +66500,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.23
+      value: 16.44
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -15.5
+      value: 17.56
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -68699,6 +68727,60 @@ Transform:
   - {fileID: 1940758773}
   m_Father: {fileID: 0}
   m_RootOrder: 63
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1471532619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1471532621}
+  - component: {fileID: 1471532620}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: PlanktonRun
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1471532620
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1471532619}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.20615721, y: 0.95259}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4123144, y: 5.606554}
+  m_EdgeRadius: 0
+--- !u!4 &1471532621
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1471532619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.856518, y: -15.209963, z: 0.27662405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1471954828 stripped
 Transform:
@@ -82163,7 +82245,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1933074994477196, guid: 75b5b29667987464392675f66b4358af, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75b5b29667987464392675f66b4358af, type: 2}
@@ -82255,7 +82337,22 @@ Prefab:
     - target: {fileID: 114412542247802420, guid: 11086b851930c164bbc9e7250993dad1,
         type: 2}
       propertyPath: meanCommentTimerDelta
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412542247802420, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: runAwayPoint
+      value: 
+      objectReference: {fileID: 474603110}
+    - target: {fileID: 212578748756830820, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 111
+      objectReference: {fileID: 0}
+    - target: {fileID: 223361521972297786, guid: 11086b851930c164bbc9e7250993dad1,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 111
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11086b851930c164bbc9e7250993dad1, type: 2}
