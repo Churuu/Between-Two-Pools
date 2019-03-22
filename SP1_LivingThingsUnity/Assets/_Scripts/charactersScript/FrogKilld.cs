@@ -2,7 +2,8 @@
 
 public class FrogKilld : MonoBehaviour
 {
-
+    [SerializeField] GameObject normel;
+    [SerializeField] GameObject rocke;
     [SerializeField] Sprite ghost;
     [SerializeField] int layerGhost = 15;
 
@@ -29,7 +30,8 @@ public class FrogKilld : MonoBehaviour
                 transform.GetChild(0).gameObject.active = false;
             }
             GetComponent<Frog>().enabled = false;
-            GetComponent<Animator>().enabled = false;
+            normel.SetActive(false);
+            rocke.SetActive(false);
             GetComponent<PlayerController>().enabled = false;
             GetComponent<CrushedPlayer>().enabled = false;
             GetComponent<ContactWithEnemy>().enabled = false;
