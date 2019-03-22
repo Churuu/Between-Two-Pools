@@ -46,7 +46,13 @@ public class Otter : MonoBehaviour
     int numer = 0;
     MenuSystem menuSystem;
 
-    GameObject test;
+    [Header("OtterPower")]
+    [SerializeField]
+    private AudioClip powerOnAudio;
+    [SerializeField]
+    private AudioClip powerOffAudio;
+
+
     //   Animator anim;
 
     private void Start()
@@ -110,8 +116,20 @@ public class Otter : MonoBehaviour
 
                 if (Input.GetButtonDown(buttonNameAbility1AvPå))//Av/PÅ
                 {
-                    GetComponent<AudioSource>().Play();
+                    
                     magnetPowerActiv = !magnetPowerActiv;
+                    if (magnetPowerActiv)
+                    {
+                        GetComponent<AudioSource>().clip = powerOnAudio;
+                        GetComponent<AudioSource>().Play();
+
+                    }
+                    else if (!magnetPowerActiv)
+                    {
+                        GetComponent<AudioSource>().clip = powerOffAudio;
+                        GetComponent<AudioSource>().Play();
+
+                    }
                     for (int i = 0; i < animChild.Length; i++)
                     {
                         if (animChild[i] != null)

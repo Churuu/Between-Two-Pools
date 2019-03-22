@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758359753268972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.38, y: 1.79, z: 0}
+  m_LocalPosition: {x: 20.38, y: -3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4257100695675672}
@@ -276,7 +276,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 4267fce6c4a416046a88eb200c70e059, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a66c4dc081bb9704dbedcf621c4bd324, type: 3}
 --- !u!114 &114028797490336338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -844,6 +844,8 @@ MonoBehaviour:
   - {fileID: 95988062886998838}
   - {fileID: 95082616376972718}
   pullActiv: 1
+  powerOnAudio: {fileID: 8300000, guid: 4267fce6c4a416046a88eb200c70e059, type: 3}
+  powerOffAudio: {fileID: 8300000, guid: 5448efbd413770a4bb54c72680c12d4d, type: 3}
 --- !u!114 &114235007652003376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -976,7 +978,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a66c4dc081bb9704dbedcf621c4bd324, type: 3}
 --- !u!114 &114911146021292160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1005,7 +1007,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a66c4dc081bb9704dbedcf621c4bd324, type: 3}
 --- !u!114 &114930940693837752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1047,7 +1049,7 @@ MonoBehaviour:
   ability2List: []
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a66c4dc081bb9704dbedcf621c4bd324, type: 3}
 --- !u!212 &212408890535036900
 SpriteRenderer:
   m_ObjectHideFlags: 1
