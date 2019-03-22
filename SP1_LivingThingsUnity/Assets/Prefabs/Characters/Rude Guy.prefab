@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 61569108179637728}
   - component: {fileID: 95304130793074570}
   m_Layer: 0
-  m_Name: RudeNpc
+  m_Name: Rude Guy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,9 +210,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistance: 0
   followSpeed: 1
+  runAwaySpeed: 0
   meanCommentTimerDelta: 10
   offset: {x: 0, y: 3}
   target: {fileID: 0}
+  runAwayPoint: {fileID: 0}
   commentText: {fileID: 114406536307806822}
   conversationImage: {fileID: 114881707221976922}
   meanComments:
