@@ -49862,6 +49862,11 @@ Transform:
   m_Father: {fileID: 1157793466}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1029523180 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1016825817228224, guid: 63fb09175a9e49d4cb5db92d0e362d09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1920104542}
 --- !u!1 &1031601155
 GameObject:
   m_ObjectHideFlags: 0
@@ -57079,6 +57084,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1523798734 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1219873433129290, guid: 63fb09175a9e49d4cb5db92d0e362d09,
+    type: 2}
+  m_PrefabInternal: {fileID: 1920104542}
 --- !u!1 &1529047335
 GameObject:
   m_ObjectHideFlags: 0
@@ -60105,6 +60115,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114384293926692768, guid: 63fb09175a9e49d4cb5db92d0e362d09,
+        type: 2}
+      propertyPath: normel
+      value: 
+      objectReference: {fileID: 1523798734}
+    - target: {fileID: 114384293926692768, guid: 63fb09175a9e49d4cb5db92d0e362d09,
+        type: 2}
+      propertyPath: rocke
+      value: 
+      objectReference: {fileID: 1029523180}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63fb09175a9e49d4cb5db92d0e362d09, type: 2}
   m_IsPrefabParent: 0

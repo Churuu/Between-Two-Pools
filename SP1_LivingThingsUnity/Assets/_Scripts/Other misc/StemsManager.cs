@@ -35,16 +35,18 @@ public class StemsManager : MonoBehaviour
 
     private List<AudioSource> AudioSources = new List<AudioSource>();
 
+    [SerializeField]
+    private List<int> worldList = new List<int>();
 
     private float mainStemVolume;
     private float sealStemVolume;
     private float otterStemVolume;
     private float frogStemVolume;
 
-    private float savedMapIndex = 4;
+    private float savedMapIndex = 0;
 
     [SerializeField]
-    private int stemCount = 1;
+    private int stemCount = 0;
 
     public enum StemFocus
     {
@@ -64,8 +66,10 @@ public class StemsManager : MonoBehaviour
         sealStemVolume = sealStemAudioSource.volume;
         otterStemVolume = otterStemAudioSource.volume;
         frogStemVolume = frogStemAudioSource.volume;
+
         menuSystem = FindObjectOfType<MenuSystem>();
         mainStemAudioSource = GetComponent<AudioSource>();
+
 
         ToOtter();
 
@@ -76,8 +80,12 @@ public class StemsManager : MonoBehaviour
         AudioSources.Add(otterStemAudioSource);
         AudioSources.Add(frogStemAudioSource);
 
-        UpdateStems();
+        thisLevelStems = music11;
+
         
+
+        UpdateStems();
+        print("stems updated");
     }
 	
 	// Update is called once per frame
@@ -85,14 +93,26 @@ public class StemsManager : MonoBehaviour
     {
         print("Saved Index: " + savedMapIndex);
         print("Build Index: " + SceneManager.GetActiveScene().buildIndex);
-        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex && SceneManager.GetActiveScene().buildIndex > 2)
+        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex)
         {
+            //for (int i = 0; i < worldList.Count; i++)
+            //{
+            //    if (worldList[i])
+            //    {
+
+            //    }
+            //}
             UpdateStems();
             savedMapIndex = SceneManager.GetActiveScene().buildIndex;
+            print("SaveIndex Updated");
         }
-        for (int i = 0; i < AudioSources.Count; i++)
+        //for (int i = 0; i < AudioSources.Count; i++)
+        //{
+        //    print(AudioSources[i].name + " " + AudioSources[i].isPlaying);
+        //}
+        if (SceneManager.GetActiveScene().buildIndex < 3)
         {
-            print(AudioSources[i].name + " " + AudioSources[i].isPlaying);
+            OnMenuPause();
         }
     }
 
@@ -100,29 +120,61 @@ public class StemsManager : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().buildIndex)
         {
+            case 0:
+                OnMenuPause();
+                break;
+            case 1:
+                OnMenuPause();
+                break;
+            case 2:
+                OnMenuPause();
+                break;
             case 3:
+                OnMenuUnPause();
                 thisLevelStems = music11;
-                stairStemBool = false;
+                //stairStemBool = false;
                 break;
             case 4:
+                OnMenuUnPause();
                 thisLevelStems = music12;
-                stairStemBool = false;
+                //stairStemBool = false;
                 break;
             case 5:
+                OnMenuUnPause();
                 thisLevelStems = music13;
-                stairStemBool = false;
+                //stairStemBool = false;
+                break;
+            case 6:
+                OnMenuPause();
+                break;
+            case 7:
+                OnMenuPause();
                 break;
             case 8:
+                OnMenuUnPause();
                 thisLevelStems = music21;
-                stairStemBool = true;
+                stemCount = 1;
+                //stairStemBool = true;
                 break;
             case 9:
+                OnMenuUnPause();
                 thisLevelStems = music22;
-                stairStemBool = true;
+                stemCount = 1;
+                //stairStemBool = true;
                 break;
             case 10:
+                OnMenuPause();
+                break;
+            case 11:
+                OnMenuUnPause();
                 thisLevelStems = music31;
-                stairStemBool = false;
+                //stairStemBool = false;
+                break;
+            case 12:
+                OnMenuPause();
+                break;
+            case 13:
+                OnMenuPause();
                 break;
         }
         mainStemAudioSource.clip = thisLevelStems[0];

@@ -64,6 +64,11 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+
+        if (/*SceneManager.GetActiveScene().buildIndex == 2 || */FindObjectOfType<VideoStreamer>() != null || SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            musicSource.Pause();
+        }
         if (winLoseStingerPlaying)
         {
             if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
@@ -80,27 +85,20 @@ public class AudioManager : MonoBehaviour
             if (!pause)
             {
                 musicSource.clip = mainMenuMusic;
+                //musicSource.Pause();
                 musicChange();
             }
-
+            
         }
-
-
-
-
 
     }
 
     private void musicChange()
     {
 
-
+        
         if (!pause)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 2)
-            {
-                musicSource.Pause();
-            }
             if (FindObjectOfType<VideoStreamer>() != null)
             {
                 if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
@@ -113,13 +111,17 @@ public class AudioManager : MonoBehaviour
                 }
             }
         }
-        else if (pause)
-        {
-            musicSource.UnPause();
-        }
+        //else if (pause)
+        //{
+        //    musicSource.UnPause();
+        //}
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
-            SceneManager.GetActiveScene().buildIndex == 1)
+            SceneManager.GetActiveScene().buildIndex == 1 ||
+            SceneManager.GetActiveScene().buildIndex == 13)
         {
+
+
+
             if (FindObjectOfType<VideoStreamer>() != null)
             {
                 if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
@@ -179,14 +181,7 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = pauseMenuMusic;
             if (FindObjectOfType<VideoStreamer>() != null)
             {
-                if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-                {
-                    musicSource.Play();
-                }
-                else if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-                {
-                    musicSource.Pause();
-                }
+                musicSource.Pause();
             }
             else if (FindObjectOfType<VideoStreamer>() == null)
             {
