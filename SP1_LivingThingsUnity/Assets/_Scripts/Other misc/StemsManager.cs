@@ -105,17 +105,14 @@ public class StemsManager : MonoBehaviour
             case 6:
                 thisLevelStems = music13;
                 break;
-            case 7:
+            case 9:
                 thisLevelStems = music21;
                 break;
-            case 8:
+            case 10:
                 thisLevelStems = music22;
                 break;
-            case 9:
+            case 11:
                 thisLevelStems = music31;
-                break;
-            case 10:
-                thisLevelStems = music32;
                 break;
         }
         mainStemAudioSource.clip = thisLevelStems[0];
