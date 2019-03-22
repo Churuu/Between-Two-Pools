@@ -68888,7 +68888,12 @@ Prefab:
     - target: {fileID: 114848026189906242, guid: c19cbbaf0a9b76344af3f3c93d42ce07,
         type: 2}
       propertyPath: sceneToLoad
-      value: Level 3.1
+      value: Cutscene 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114848026189906242, guid: c19cbbaf0a9b76344af3f3c93d42ce07,
+        type: 2}
+      propertyPath: playCutscene
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c19cbbaf0a9b76344af3f3c93d42ce07, type: 2}
