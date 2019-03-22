@@ -355,6 +355,7 @@ MonoBehaviour:
   blueNormalAudio: {fileID: 0}
   blueActiv: {fileID: 212153470789330560}
   blueActiveAudio: {fileID: 0}
+  activeObject: {fileID: 0}
 --- !u!114 &114311071466254478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,6 +390,8 @@ MonoBehaviour:
   - {fileID: 95256204118674962}
   - {fileID: 95458106015453186}
   pullActiv: 1
+  powerOnAudio: {fileID: 0}
+  powerOffAudio: {fileID: 0}
 --- !u!114 &114546895044668474
 MonoBehaviour:
   m_ObjectHideFlags: 1
