@@ -53403,6 +53403,21 @@ Prefab:
       propertyPath: Distance_From_Start_Pos
       value: 3.41
       objectReference: {fileID: 0}
+    - target: {fileID: 61985832794832424, guid: 172673de6e350f440bec70263839af13,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.7948702
+      objectReference: {fileID: 0}
+    - target: {fileID: 61985832794832424, guid: 172673de6e350f440bec70263839af13,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.3897403
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205745952259040, guid: 172673de6e350f440bec70263839af13,
+        type: 2}
+      propertyPath: Enemy_Move_speed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 172673de6e350f440bec70263839af13, type: 2}
   m_IsPrefabParent: 0
@@ -66806,7 +66821,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114143339872106972, guid: bff99851f3aa5b848bfb1d3d36836d4d,
         type: 2}
@@ -82206,6 +82221,11 @@ Prefab:
         type: 2}
       propertyPath: Distance_From_Start_Pos
       value: 3.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205745952259040, guid: 172673de6e350f440bec70263839af13,
+        type: 2}
+      propertyPath: Enemy_Move_speed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 172673de6e350f440bec70263839af13, type: 2}

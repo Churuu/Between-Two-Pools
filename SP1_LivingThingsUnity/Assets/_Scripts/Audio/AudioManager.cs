@@ -97,7 +97,7 @@ public class AudioManager : MonoBehaviour
 
         if (!pause)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 3)
+            if (SceneManager.GetActiveScene().buildIndex == 2)
             {
                 musicSource.Pause();
             }
@@ -118,8 +118,7 @@ public class AudioManager : MonoBehaviour
             musicSource.UnPause();
         }
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
-            SceneManager.GetActiveScene().buildIndex == 1 ||
-            SceneManager.GetActiveScene().buildIndex == 2)
+            SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (FindObjectOfType<VideoStreamer>() != null)
             {
