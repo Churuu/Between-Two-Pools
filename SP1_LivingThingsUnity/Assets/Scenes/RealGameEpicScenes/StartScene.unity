@@ -165,13 +165,18 @@ Prefab:
     - target: {fileID: 82771115592901402, guid: 515c794038457fc4f8deee297750d695,
         type: 2}
       propertyPath: m_Volume
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 82511216925882584, guid: 515c794038457fc4f8deee297750d695,
         type: 2}
       propertyPath: m_Volume
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114982481058377898, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: pauseMenuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: df513fef416aaa14cb8ee5abb620737e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 515c794038457fc4f8deee297750d695, type: 2}
   m_IsPrefabParent: 0
