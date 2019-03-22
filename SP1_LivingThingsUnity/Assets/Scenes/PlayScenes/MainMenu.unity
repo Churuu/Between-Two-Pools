@@ -388,7 +388,7 @@ Prefab:
     - target: {fileID: 114509782640068654, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114811874520829046, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
@@ -398,7 +398,7 @@ Prefab:
     - target: {fileID: 114920906860646812, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114480129130275000, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
@@ -408,7 +408,7 @@ Prefab:
     - target: {fileID: 114274405169810842, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114362382568028302, guid: f7e6aebd788d3fd49a5270140b948079,
         type: 2}
@@ -1199,6 +1199,10 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544499438077262, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e6aebd788d3fd49a5270140b948079, type: 2}
