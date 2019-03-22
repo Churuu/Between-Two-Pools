@@ -130,17 +130,20 @@ public class StemsManager : MonoBehaviour
                 OnMenuPause();
                 break;
             case 3:
-                OnMenuUnPause();
+                FindObjectOfType<AudioManager>().PauseBool(true);
+                FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music11;
                 //stairStemBool = false;
                 break;
             case 4:
-                OnMenuUnPause();
+                FindObjectOfType<AudioManager>().PauseBool(true);
+                FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music12;
                 //stairStemBool = false;
                 break;
             case 5:
-                OnMenuUnPause();
+                FindObjectOfType<AudioManager>().PauseBool(true);
+                FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music13;
                 //stairStemBool = false;
                 break;
@@ -151,13 +154,15 @@ public class StemsManager : MonoBehaviour
                 OnMenuPause();
                 break;
             case 8:
-                OnMenuUnPause();
+                FindObjectOfType<AudioManager>().PauseBool(true);
+                FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music21;
                 stemCount = 1;
                 //stairStemBool = true;
                 break;
             case 9:
-                OnMenuUnPause();
+                FindObjectOfType<AudioManager>().PauseBool(true);
+                FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music22;
                 stemCount = 1;
                 //stairStemBool = true;
@@ -166,7 +171,8 @@ public class StemsManager : MonoBehaviour
                 OnMenuPause();
                 break;
             case 11:
-                OnMenuUnPause();
+                FindObjectOfType<AudioManager>().PauseBool(true);
+                FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music31;
                 //stairStemBool = false;
                 break;

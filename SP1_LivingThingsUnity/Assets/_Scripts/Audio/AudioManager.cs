@@ -65,10 +65,11 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
 
-        if (/*SceneManager.GetActiveScene().buildIndex == 2 || */FindObjectOfType<VideoStreamer>() != null || SceneManager.GetActiveScene().buildIndex == 6)
+        if (FindObjectOfType<VideoStreamer>() != null || SceneManager.GetActiveScene().buildIndex == 6)
         {
             musicSource.Pause();
         }
+
         if (winLoseStingerPlaying)
         {
             if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
@@ -88,14 +89,12 @@ public class AudioManager : MonoBehaviour
                 //musicSource.Pause();
                 musicChange();
             }
-            
         }
-
+        print("pause: " + pause);
     }
 
     private void musicChange()
     {
-
         
         if (!pause)
         {
@@ -119,8 +118,6 @@ public class AudioManager : MonoBehaviour
             SceneManager.GetActiveScene().buildIndex == 1 ||
             SceneManager.GetActiveScene().buildIndex == 13)
         {
-
-
 
             if (FindObjectOfType<VideoStreamer>() != null)
             {
@@ -187,13 +184,14 @@ public class AudioManager : MonoBehaviour
             {
                 musicSource.Play();
             }
-
         }
         if (!pBool)
         {
-            stemsManager.GetComponent<StemsManager>().OnMenuUnPause();
             pause = false;
             musicSource.Pause();
+            print("PauseBool false");
+            stemsManager.GetComponent<StemsManager>().OnMenuUnPause();
+            
         }
     }
 

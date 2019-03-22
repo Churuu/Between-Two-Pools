@@ -119,7 +119,7 @@ public class MenuSystem : MonoBehaviour {
     }
     void TaskOnExitClick()
     {
-        Debug.Log("You have clicked the Exit button!");
+        Debug.Log("You have clicked the Exit button!"); 
         //Stänger av spelet
         Application.Quit();
     }
@@ -134,6 +134,7 @@ public class MenuSystem : MonoBehaviour {
     public void LoadLevel(string LevelSceneName)
     {
         NextScene.LoadNextScene(LevelSceneName);
+        
     }
 
     void TaskOnRestart()
