@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Badboll : MonoBehaviour {
+
+    public GameObject conversation;
     [SerializeField] Sprite Deflated;
     private SpriteRenderer changeSprite;
 	// Use this for initialization
@@ -19,6 +21,7 @@ public class Badboll : MonoBehaviour {
             changeSprite.sprite = Deflated;
             GetComponent<BoxCollider2D>().enabled = false;
             transform.position = new Vector3(transform.position.x, transform.position.y - 0.338f, 0);
+            Destroy(conversation);
         }
     }
 }

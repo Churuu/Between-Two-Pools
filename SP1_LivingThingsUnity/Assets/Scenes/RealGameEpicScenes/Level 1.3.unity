@@ -52652,6 +52652,11 @@ Prefab:
       propertyPath: m_BodyType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114001400270965110, guid: f2048306005558f4cbfb21aa4e07662b,
+        type: 2}
+      propertyPath: conversation
+      value: 
+      objectReference: {fileID: 428944911}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2048306005558f4cbfb21aa4e07662b, type: 2}
   m_IsPrefabParent: 0
@@ -70498,7 +70503,7 @@ Tilemap:
   - first: {x: 68, y: -57, z: 0}
     second:
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 5
       m_ObjectToInstantiate: {fileID: 0}
@@ -86860,7 +86865,7 @@ Tilemap:
   - first: {x: 83, y: -39, z: 0}
     second:
       m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 5
       m_ObjectToInstantiate: {fileID: 0}
@@ -94787,8 +94792,8 @@ Tilemap:
     m_Data: {fileID: 21300218, guid: 8cf49b48753b90548aca549301891a95, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300120, guid: 8cf49b48753b90548aca549301891a95, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 21300310, guid: 8cf49b48753b90548aca549301891a95, type: 3}
   - m_RefCount: 18
@@ -94797,16 +94802,16 @@ Tilemap:
     m_Data: {fileID: 21300264, guid: 8cf49b48753b90548aca549301891a95, type: 3}
   - m_RefCount: 15
     m_Data: {fileID: 21300290, guid: 8cf49b48753b90548aca549301891a95, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300120, guid: 8cf49b48753b90548aca549301891a95, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300266, guid: 8cf49b48753b90548aca549301891a95, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 8
     m_Data: {fileID: 21300144, guid: 8cf49b48753b90548aca549301891a95, type: 3}
   - m_RefCount: 1
