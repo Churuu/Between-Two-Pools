@@ -702,7 +702,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Walk on the stone to pick it up. Hold "Q" to shoot. (If you miss with the
+  m_Text: Walk on the stone to pick it up. Click "S" to shoot. (If you miss with the
     stone will be back in ~5 sec)
 --- !u!222 &108235929
 CanvasRenderer:
@@ -52535,7 +52535,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4191993236724640, guid: a382c5a984fd69e42ac449c50abf80c1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.03
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 4191993236724640, guid: a382c5a984fd69e42ac449c50abf80c1, type: 2}
       propertyPath: m_LocalPosition.z
