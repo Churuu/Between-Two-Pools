@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuSystem : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class MenuSystem : MonoBehaviour {
     public bool P_Pressed;
     private SceneManagerScript NextScene;
 
+
     
 
     void Start()
@@ -38,8 +40,8 @@ public class MenuSystem : MonoBehaviour {
         //Main Menu
         StartButton.onClick.AddListener(TaskOnLevel);
         ExitButton.onClick.AddListener(TaskOnExitClick);
-        Credits.onClick.AddListener(TaskOnCredits);
-
+        
+        Options.onClick.AddListener(TaskOnOption);
         Back.onClick.AddListener(TaskOnBack);
         //Pause menu
         Restart.onClick.AddListener(TaskOnRestart);
@@ -74,15 +76,23 @@ public class MenuSystem : MonoBehaviour {
     }
     void TaskOnReturnPause()
     {
-        PauseMenu.gameObject.SetActive(true);
-        PauseSettings.gameObject.SetActive(false);
-        ResumeGame.Select();
-
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenu"))
+        {
+            MainMenu.gameObject.SetActive(true);
+            PauseSettings.gameObject.SetActive(false);
+        }
+        else
+        {
+            PauseMenu.gameObject.SetActive(true);
+            PauseSettings.gameObject.SetActive(false);
+            ResumeGame.Select();
+        }
     }
 
-    void TaskOnCredits()
+    void TaskOnOption()
     {
-        //creditscen
+        MainMenu.gameObject.SetActive(false);
+        PauseSettings.gameObject.SetActive(true);
     }
 
     void TaskOnSoundOption()
