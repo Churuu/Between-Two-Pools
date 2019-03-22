@@ -82,22 +82,22 @@ public class AudioManager : MonoBehaviour
             {
                 musicSource.clip = mainMenuMusic;
                 musicChange();
-                print("no pause no stinger");   
+                print("no pause no stinger");
                 //musicSource.Pause();
             }
-            
+
         }
 
-        
-        
-        
-        
+
+
+
+
     }
 
     private void musicChange()
     {
 
-        
+
         if (!pause)
         {
             if (SceneManager.GetActiveScene().buildIndex == 3)
@@ -180,7 +180,7 @@ public class AudioManager : MonoBehaviour
                     }
                 }
             }
-            
+
         }
         print("isPlaying: " + musicSource.isPlaying);
     }
@@ -211,7 +211,7 @@ public class AudioManager : MonoBehaviour
                 musicSource.Play();
                 print("mS.Play");
             }
-            
+
         }
         if (!pBool)
         {
