@@ -75,7 +75,7 @@ public class MenuSystem : MonoBehaviour {
 
     }
     void TaskOnReturnPause()
-    {
+    {   //kollar ifall man är i main menu eller i pause menu
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenu"))
         {
             MainMenu.gameObject.SetActive(true);
