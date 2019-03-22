@@ -21,12 +21,13 @@ public class CameraFollow : MonoBehaviour
 
     public IEnumerator SwitchActiveCamera(GameObject camera)
     {
+        FindObjectOfType<CharacterIndictor>().mainCamera = camera.GetComponent<Camera>();
         camera.SetActive(true);
         cameraObject.gameObject.SetActive(false);
-
         yield return new WaitForSeconds(2);
 
         camera.SetActive(false);
+        FindObjectOfType<CharacterIndictor>().mainCamera = cameraObject.GetComponent<Camera>();
         cameraObject.gameObject.SetActive(true);
 
     }
