@@ -29,6 +29,8 @@ public class FrogKilld : MonoBehaviour
             {
                 transform.GetChild(0).gameObject.active = false;
             }
+
+            
             GetComponent<Frog>().enabled = false;
             normel.SetActive(false);
             rocke.SetActive(false);
@@ -48,7 +50,17 @@ public class FrogKilld : MonoBehaviour
             {
                 EventManager.instance.OnGameOver();
             }
-            GetComponent<PlayerAudioScript>().Death();
+
+            if (normel.GetComponent<AudioSource>().enabled == true)
+            {
+                normel.GetComponent<PlayerAudioScript>().Death();
+            }
+            else
+            {
+                rocke.GetComponent<PlayerAudioScript>().Death();
+            }
+
+
         }
     }
 }

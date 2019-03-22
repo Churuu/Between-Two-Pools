@@ -31,9 +31,6 @@ public class StemsManager : MonoBehaviour
     [SerializeField]
     private List<AudioClip> music31 = new List<AudioClip>();
 
-    [SerializeField]
-    private List<AudioClip> music32 = new List<AudioClip>();
-
     private List<AudioClip> thisLevelStems = new List<AudioClip>();
 
     private List<AudioSource> AudioSources = new List<AudioSource>();
@@ -46,17 +43,24 @@ public class StemsManager : MonoBehaviour
 
     private float savedMapIndex = 4;
 
+    [SerializeField]
+    private int stemCount = 1;
+
     public enum StemFocus
     {
-        Otter, Seal, Frog
+        Otter, Seal, Frog, Stairs
     }
     [SerializeField]
     StemFocus stemFocus;
+
+    private bool stairStemBool = false;
+
 
     MenuSystem menuSystem;
     // Use this for initialization
     void Start ()
     {
+        mainStemVolume = mainStemAudioSource.volume;
         sealStemVolume = sealStemAudioSource.volume;
         otterStemVolume = otterStemAudioSource.volume;
         frogStemVolume = frogStemAudioSource.volume;
@@ -81,7 +85,7 @@ public class StemsManager : MonoBehaviour
     {
         print("Saved Index: " + savedMapIndex);
         print("Build Index: " + SceneManager.GetActiveScene().buildIndex);
-        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex && SceneManager.GetActiveScene().buildIndex > 3)
+        if (savedMapIndex != SceneManager.GetActiveScene().buildIndex && SceneManager.GetActiveScene().buildIndex > 2)
         {
             UpdateStems();
             savedMapIndex = SceneManager.GetActiveScene().buildIndex;
@@ -96,23 +100,29 @@ public class StemsManager : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().buildIndex)
         {
-            case 4:
+            case 3:
                 thisLevelStems = music11;
+                stairStemBool = false;
+                break;
+            case 4:
+                thisLevelStems = music12;
+                stairStemBool = false;
                 break;
             case 5:
-                thisLevelStems = music12;
-                break;
-            case 6:
                 thisLevelStems = music13;
+                stairStemBool = false;
+                break;
+            case 8:
+                thisLevelStems = music21;
+                stairStemBool = true;
                 break;
             case 9:
-                thisLevelStems = music21;
+                thisLevelStems = music22;
+                stairStemBool = true;
                 break;
             case 10:
-                thisLevelStems = music22;
-                break;
-            case 11:
                 thisLevelStems = music31;
+                stairStemBool = false;
                 break;
         }
         mainStemAudioSource.clip = thisLevelStems[0];
@@ -151,18 +161,6 @@ public class StemsManager : MonoBehaviour
         {
             AudioSources[i].UnPause();
         }
-        //switch (stemFocus)
-        //{
-        //    case StemFocus.Otter:
-        //        ToOtter();
-        //        break;
-        //    case StemFocus.Seal:
-        //        ToSeal();
-        //        break;
-        //    case StemFocus.Frog:
-        //        ToFrog();
-        //        break;
-        //}
     }
 
     public void ToSeal()
@@ -185,5 +183,30 @@ public class StemsManager : MonoBehaviour
         otterStemAudioSource.volume = 0;
         frogStemAudioSource.volume = frogStemVolume;
         stemFocus = StemFocus.Frog;
+    }
+
+    public void UpdateStemStairs()
+    {
+        stemFocus = StemFocus.Stairs;
+        switch (stemCount)
+        {
+            case 1:
+                mainStemAudioSource.volume = mainStemVolume;
+                sealStemAudioSource.volume = 0;
+                otterStemAudioSource.volume = 0;
+                frogStemAudioSource.volume = 0;
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
+    }
+
+    public void StemCountIncrease()
+    {
+        ++stemCount;
     }
 }
