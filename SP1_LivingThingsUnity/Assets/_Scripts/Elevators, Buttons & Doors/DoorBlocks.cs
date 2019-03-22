@@ -22,7 +22,7 @@ public class DoorBlocks : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         var obj = col.gameObject;
-        if (obj.CompareTag("Otter") || obj.CompareTag("Frog") || obj.CompareTag("Seal"))
+        if (obj.CompareTag("Seal"))
         {
             if (gameObject.CompareTag("ButtonBlockUp"))
                 SwitchBlockPosition(new Vector2(0, blockMargin));
@@ -34,7 +34,7 @@ public class DoorBlocks : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
         var obj = col.gameObject;
-        if (obj.CompareTag("Otter") || obj.CompareTag("Frog") || obj.CompareTag("Seal"))
+        if (obj.CompareTag("Seal"))
         {
             if (gameObject.CompareTag("ButtonBlockUp"))
                 SwitchBlockPosition(Vector2.zero);
