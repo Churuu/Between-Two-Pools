@@ -26,19 +26,18 @@ public class FrogAnimManager : MonoBehaviour
         if (rocks == 0)
         {
             normalFrog.enabled = true;
+            normalFrogAudio.enabled = true;
             rockFrog.enabled = false;
+            rockFrogAudio.enabled = false;
         }
 
         else
         {
             normalFrog.enabled = false;
+            normalFrogAudio.enabled = false;
             rockFrog.enabled = true;
+            rockFrogAudio.enabled = true;
         }
-    }
-
-    public GameObject GetActiveObject()
-    {
-        return activeObject;
     }
 }
 

@@ -22,14 +22,16 @@ public class Frog : MonoBehaviour
     //  bool canRetract = false;
 
     GameObject _tounge;
-    Animator anim;
+    [SerializeField]
+    Animator animFrog;
+    [SerializeField]
+    Animator animRockFrog;
     Vector2 direction = Vector2.right;
 
 
     void Start()
     {
         playerController = GetComponent<PlayerController>();
-        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -60,10 +62,12 @@ public class Frog : MonoBehaviour
     {
         if (Input.GetButtonDown(shootRockButton))
         {
-            anim.SetBool("ShootRock", false);
+            animFrog.SetBool("ShootRock", false);
+            animRockFrog.SetBool("ShootRock", false);
             if (rockCount == 1)
             {
-                anim.SetBool("ShootRock", true);
+                animFrog.SetBool("ShootRock", true);
+                animRockFrog.SetBool("ShootRock", true);
                 ShootRocks();
             }
         }
@@ -76,13 +80,15 @@ public class Frog : MonoBehaviour
             }
             else if (extended)//&& canRetract)
             {
-                anim.SetBool("ShootTounge", false);
+                animFrog.SetBool("ShootTounge", false);
+                animRockFrog.SetBool("ShootTounge", false);
                 Invoke("Unextend", retractClip.length / 2);
             }
         }
         else
         {
-            anim.SetBool("ShootRock", false);
+            animFrog.SetBool("ShootRock", false);
+            animRockFrog.SetBool("ShootRock", false);
         }
     }
 
@@ -96,7 +102,8 @@ public class Frog : MonoBehaviour
 
         if (hit.collider != null && playerController.Grounded())
         {
-            anim.SetBool("ShootTounge", true);
+            animFrog.SetBool("ShootTounge", true);
+            animRockFrog.SetBool("ShootTounge", true);
             playerController.SetPlayerState(false);
 
             Vector2 hitPoint = new Vector2(hit.point.x + (0.5f * direction.x), hit.point.y);

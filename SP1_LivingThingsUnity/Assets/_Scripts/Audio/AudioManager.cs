@@ -64,7 +64,6 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        print(name + " " + musicSource.isPlaying);
         if (winLoseStingerPlaying)
         {
             if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
@@ -82,8 +81,6 @@ public class AudioManager : MonoBehaviour
             {
                 musicSource.clip = mainMenuMusic;
                 musicChange();
-                print("no pause no stinger");
-                //musicSource.Pause();
             }
 
         }
@@ -106,7 +103,6 @@ public class AudioManager : MonoBehaviour
             }
             if (FindObjectOfType<VideoStreamer>() != null)
             {
-                print("FoundVideoStreamer");
                 if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
                 {
                     PauseBool(true);
@@ -121,25 +117,20 @@ public class AudioManager : MonoBehaviour
         {
             musicSource.UnPause();
         }
-        print("buildindex: " + SceneManager.GetActiveScene().buildIndex);
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
             SceneManager.GetActiveScene().buildIndex == 1 ||
             SceneManager.GetActiveScene().buildIndex == 2)
         {
             if (FindObjectOfType<VideoStreamer>() != null)
             {
-                print("vid1");
                 if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
                 {
-                    print("vid2");
                     stemsManager.GetComponent<StemsManager>().OnMenuPause();
                     if (musicSource.clip.name != mainMenuMusic.name)
                     {
-                        print("vid3");
                         musicSource.clip = mainMenuMusic;
                         if (!musicSource.isPlaying)
                         {
-                            print("vid4");
                             musicSource.Play();
                         }
 
@@ -157,16 +148,12 @@ public class AudioManager : MonoBehaviour
             }
             else
             {
-                print("novid1");
-
                 stemsManager.GetComponent<StemsManager>().OnMenuPause();
                 if (musicSource.clip.name != mainMenuMusic.name)
                 {
-                    print("novid2");
                     musicSource.clip = mainMenuMusic;
                     if (!musicSource.isPlaying)
                     {
-                        print("novid3");
                         musicSource.Play();
                     }
 
@@ -182,24 +169,20 @@ public class AudioManager : MonoBehaviour
             }
 
         }
-        print("isPlaying: " + musicSource.isPlaying);
     }
 
     public void PauseBool(bool pBool)
     {
-        print("pausebool");
         if (pBool)
         {
             stemsManager.GetComponent<StemsManager>().OnMenuPause();
             pause = true;
             musicSource.clip = pauseMenuMusic;
-            print("mS == pMM");
             if (FindObjectOfType<VideoStreamer>() != null)
             {
                 if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
                 {
                     musicSource.Play();
-                    print("mS.Play");
                 }
                 else if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
                 {
@@ -209,7 +192,6 @@ public class AudioManager : MonoBehaviour
             else if (FindObjectOfType<VideoStreamer>() == null)
             {
                 musicSource.Play();
-                print("mS.Play");
             }
 
         }

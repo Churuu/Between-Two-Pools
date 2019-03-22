@@ -93,9 +93,4 @@ public class AnimManager : MonoBehaviour
             }
         }
     }
-
-    public GameObject GetActiveObject()
-    {
-        return activeObject;
-    }
 }
