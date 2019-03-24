@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class TextColliderOnOff : MonoBehaviour
 {// Jonas Thunberg 2019-02-09
 
-    [SerializeField] Text text;
+    [SerializeField] GameObject imageText;
     List<GameObject> gameObjects = new List<GameObject>();
 
     private void Start()
@@ -14,18 +14,18 @@ public class TextColliderOnOff : MonoBehaviour
         {
             gameObjects.Add(controller.gameObject);
         }
-        if (text != null)
+        if (imageText != null)
         {
-            text.enabled = false;
+            imageText.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         for (int i = 0; i < gameObjects.Count; i++)
         {
-            if (text != null && collision.gameObject == gameObjects[i])
+            if (imageText != null && collision.gameObject == gameObjects[i])
             {
-                text.enabled = true;
+                imageText.SetActive(true);
             }
         }
 
@@ -37,9 +37,9 @@ public class TextColliderOnOff : MonoBehaviour
 
         for (int i = 0; i < gameObjects.Count; i++)
         {
-            if (text != null && collision.gameObject == gameObjects[i])
+            if (imageText != null && collision.gameObject == gameObjects[i])
             {
-                text.enabled = false;
+                imageText.SetActive(false);
             }
         }
     }
