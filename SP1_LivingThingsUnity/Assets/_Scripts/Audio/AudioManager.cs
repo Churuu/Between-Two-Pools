@@ -97,6 +97,10 @@ public class AudioManager : MonoBehaviour
             }
             
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 14)
+        {
+            musicSource.Pause();
+        }
 
         else if (FindObjectOfType<VideoStreamer>() != null) /*||
             SceneManager.GetActiveScene().buildIndex == 2 ||

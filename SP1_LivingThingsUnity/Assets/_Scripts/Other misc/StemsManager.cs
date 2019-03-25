@@ -210,6 +210,10 @@ public class StemsManager : MonoBehaviour
                 menuPauseBool = true;
                 stemStairBool = false;
                 break;
+            case 15:
+                menuPauseBool = true;
+                stemStairBool = false;
+                break;
         }
         mainStemAudioSource.clip = thisLevelStems[0];
         sealStemAudioSource.clip = thisLevelStems[1];
