@@ -27,6 +27,8 @@ public class AudioManager : MonoBehaviour
     private AudioClip creditsMusic;
     [SerializeField]
     private AudioClip cityEndingMusic;
+    [SerializeField]
+    private AudioClip mainMenuCreditMusic;
 
     [SerializeField]
     private string nextSong = "NextSong";
@@ -79,9 +81,9 @@ public class AudioManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex == 13)
         {
             //stemsManager.GetComponent<StemsManager>().OnMenuPause();
-            if (musicSource.clip.name != mainMenuMusic.name)
+            if (musicSource.clip.name != mainMenuCreditMusic.name)
             {
-                musicSource.clip = mainMenuMusic;
+                musicSource.clip = mainMenuCreditMusic;
                 musicSource.Play();
             }
         }
@@ -155,8 +157,7 @@ public class AudioManager : MonoBehaviour
         
 
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
-            SceneManager.GetActiveScene().buildIndex == 1 ||
-            SceneManager.GetActiveScene().buildIndex == 13)
+            SceneManager.GetActiveScene().buildIndex == 1)
         {
 
             if (FindObjectOfType<VideoStreamer>() != null)

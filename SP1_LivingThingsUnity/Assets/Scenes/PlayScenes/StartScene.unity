@@ -222,6 +222,11 @@ Prefab:
       propertyPath: music22.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 8bbb9a03797c9a74bbb9bfc6a5f54873, type: 3}
+    - target: {fileID: 114982481058377898, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: creditsMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: e2140e8b077b14943b43b795f65e0338, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 515c794038457fc4f8deee297750d695, type: 2}
   m_IsPrefabParent: 0

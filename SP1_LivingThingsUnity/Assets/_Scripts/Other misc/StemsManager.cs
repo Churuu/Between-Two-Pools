@@ -329,7 +329,6 @@ public class StemsManager : MonoBehaviour
         stemCount += value;
         if (stemCount <= 4 && stemCount > 0)
         {
-
             UpdateStemStairs();
         }
         else if (stemCount > 4)
