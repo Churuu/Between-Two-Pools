@@ -1097,6 +1097,8 @@ MonoBehaviour:
   conversationName: Froggggg
   conversationImage: {fileID: 720555978}
   characters: 3
+  convoStarter: []
+  textSFX: {fileID: 0}
 --- !u!4 &497037287 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4198786597963436, guid: d4ffb06c07e786a46b10a581b839bf28,
@@ -35771,7 +35773,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.64
+      value: -3.49
       objectReference: {fileID: 0}
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.y
@@ -35946,7 +35948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cName: Plankton
-  selectedConversation: 4
+  selectedConversation: 0
   selectedDialog: 7
   conversations:
   - name: Default
@@ -35956,7 +35958,7 @@ MonoBehaviour:
     - Can't you just like...move it?
     - It's big and heavy, do you really think I can move it?
     - Don't talk to Lutra Lutra like that.
-    - Because they are so much better than us? Why can't I talk to them that way?
+    - Because they are so much better than us?
     - Stop.
     - I can't deal with this right now...
     characterDialog:
@@ -35986,18 +35988,18 @@ MonoBehaviour:
   - name: Plankton
     dialog:
     - And who may this be, roaming alone in the darkness?
-    - I have friends with me.
-    - Are you sure about that?
-    - Please just leave me be.
-    - Do you really think you'll make it?
-    - Do you have to be so mean?
+    - I'm just travelling through.
+    - You think you can get through without succumbing to the darkness?
+    - I have to get to InksAlot.
+    - "You're even more na\xEFve than I thought."
+    - You're mean.
     - I'm just being truthful.
-    - Go away.
+    - Please just go away...
     characterDialog:
     - {fileID: 21300002, guid: 6bebab15d45792b41b8be9d6004b0e21, type: 3}
     - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300000, guid: 6bebab15d45792b41b8be9d6004b0e21, type: 3}
-    - {fileID: 21300002, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+    - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300000, guid: 6bebab15d45792b41b8be9d6004b0e21, type: 3}
     - {fileID: 21300002, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300000, guid: 6bebab15d45792b41b8be9d6004b0e21, type: 3}
@@ -37383,11 +37385,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.05
+      value: -9.77
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14.55
+      value: 14.28
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.z
