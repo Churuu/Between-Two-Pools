@@ -23,8 +23,6 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip winMusic;
-    [SerializeField]
-    private AudioClip loseMusic;
 
     [SerializeField]
     private string nextSong = "NextSong";
@@ -37,7 +35,7 @@ public class AudioManager : MonoBehaviour
     private GameObject stemsManager;
 
     private bool pause = false;
-    private bool winLoseStingerPlaying = false;
+    public bool winLoseStingerPlaying = false;
 
     void Start()
     {
@@ -65,7 +63,10 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
 
-        if (FindObjectOfType<VideoStreamer>() != null || SceneManager.GetActiveScene().buildIndex == 6)
+        if (FindObjectOfType<VideoStreamer>() != null || SceneManager.GetActiveScene().buildIndex == 6 ||
+            SceneManager.GetActiveScene().buildIndex == 2 ||
+            SceneManager.GetActiveScene().buildIndex == 7 || SceneManager.GetActiveScene().buildIndex == 10 ||
+            SceneManager.GetActiveScene().buildIndex == 12)
         {
             if (!pause)
             {
@@ -76,7 +77,7 @@ public class AudioManager : MonoBehaviour
 
         if (winLoseStingerPlaying)
         {
-            if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
+            if (musicSource.clip.name == winMusic.name)
             {
                 if (!musicSource.isPlaying)
                 {
@@ -212,9 +213,7 @@ public class AudioManager : MonoBehaviour
     {
         winLoseStingerPlaying = true;
         stemsManager.GetComponent<StemsManager>().OnMenuPause();
-        musicSource.clip = loseMusic;
-        musicSource.loop = false;
-        musicSource.Play();
+        musicSource.Pause();
     }
 
     public void SongRequest()
