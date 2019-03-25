@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1497041865}
-  nextScene: Credits
+  nextScene: Credits 1
   startCutsceneImmidietly: 1
 --- !u!328 &1950653862
 VideoPlayer:
@@ -512,7 +512,7 @@ VideoPlayer:
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 1950653863}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
