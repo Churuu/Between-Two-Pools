@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419742074148018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.6, y: -2.5, z: -0.08203125}
+  m_LocalPosition: {x: 23.61, y: -32.53, z: -0.08203125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,18 +54,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.009144783}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 3}
+    oldSize: {x: 1, y: 5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3}
+  m_Size: {x: 1, y: 5.0054646}
   m_EdgeRadius: 0
 --- !u!114 &114424598636166506
 MonoBehaviour:
@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6800c387666ad7142a8585b71fa66823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroySound: {fileID: 1010612878808466, guid: 0797c90b6dc61af4cbd758e9d0797142,
+    type: 2}
   pieces:
   - {fileID: 1780339900787742, guid: 2753fc6a041b8a745b626c9a04e52c8c, type: 2}
   - {fileID: 1568101650178998, guid: 7f33945c11384a04294fd0bb6ffff368, type: 2}
@@ -118,7 +120,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 9ae4153e788cf6f4a8d7b10d3049c5b2, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 9ae4153e788cf6f4a8d7b10d3049c5b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

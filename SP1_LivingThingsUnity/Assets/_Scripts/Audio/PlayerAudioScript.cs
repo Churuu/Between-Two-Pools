@@ -17,6 +17,9 @@ public class PlayerAudioScript : MonoBehaviour
     private List<AudioClip> ability2List = new List<AudioClip>();
 
     [SerializeField]
+    private List<AudioClip> ability3List = new List<AudioClip>();
+
+    [SerializeField]
     private List<AudioClip> landingSounds = new List<AudioClip>();
 
     [SerializeField]
@@ -34,29 +37,34 @@ public class PlayerAudioScript : MonoBehaviour
 		
 	}
 
-    private void Walk()
+    public void Walk()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(walkingSounds);
     }
 
-    private void Jump()
+    public void Jump()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(jumpSounds);
     }
 
-    private void Landing()
+    public void Landing()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(landingSounds);
     }
 
-    private void Ability1()
+    public void Ability1()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(ability1List);
     }
 
-    private void Ability2()
+    public void Ability2()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(ability2List);
+    }
+
+    public void Ability3()
+    {
+        GetComponent<ObjectAudioClip>().PlaySingle(ability3List);
     }
     
     public void Death()

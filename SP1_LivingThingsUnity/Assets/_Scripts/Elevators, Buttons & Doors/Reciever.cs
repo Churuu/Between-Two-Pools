@@ -19,7 +19,12 @@ public class Reciever : MonoBehaviour
     }
     ElevatorState elevatorState;
 
-    private bool motionCreate = true;
+    [SerializeField]
+    private GameObject camera;
+
+    CameraFollow cameraFollow;
+
+    private bool cameraPan = true;
     //Motion Variables
     [Space]
     [Header("Motion Variables")]
@@ -66,6 +71,8 @@ public class Reciever : MonoBehaviour
         start = transform.position;
         ToggleObjectComponents();
         anim.SetBool("Pressed", !gameObjectToggle);
+        camera.SetActive(false);
+        cameraFollow = FindObjectOfType<CameraFollow>();
     }
 
 // Update is called once per frame
@@ -233,27 +240,13 @@ void Update ()
     {
         return lockBool;
     }
+
+    public void ObjectCamera()
+    {
+        if (camera != null && cameraPan)
+        {
+            StartCoroutine(cameraFollow.SwitchActiveCamera(camera));
+            cameraPan = false;
+        }
+    }
 }
-
-
-//public void ToggleObject(bool senderBool)
-//{
-//    if (toggle)
-//    {
-//        audioSource.Play();
-//        if (gameObjectToggle == false)
-//        {
-//            gameObjectToggle = senderBool;
-//        }
-//        else
-//            gameObjectToggle = false;
-//        if (doorType == DoorType.flip)
-//        {
-//            gameObject.SetActive(gameObjectToggle);
-//        }
-//        else if (doorType == DoorType.moveTimer)
-//        {
-//            timerToggle = true;
-//        }
-//    }
-//}

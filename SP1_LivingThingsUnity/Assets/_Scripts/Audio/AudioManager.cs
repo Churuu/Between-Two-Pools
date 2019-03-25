@@ -24,7 +24,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip winMusic;
     [SerializeField]
-    private AudioClip loseMusic;
+    private AudioClip creditsMusic;
+    [SerializeField]
+    private AudioClip cityEndingMusic;
 
     [SerializeField]
     private string nextSong = "NextSong";
@@ -37,7 +39,7 @@ public class AudioManager : MonoBehaviour
     private GameObject stemsManager;
 
     private bool pause = false;
-    private bool winLoseStingerPlaying = false;
+    public bool winLoseStingerPlaying = false;
 
     void Start()
     {
@@ -64,10 +66,53 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        print(name + " " + musicSource.isPlaying);
-        if (winLoseStingerPlaying)
+        if (SceneManager.GetActiveScene().buildIndex == 6)
         {
-            if (musicSource.clip.name == winMusic.name || musicSource.clip.name == loseMusic.name)
+            stemsManager.GetComponent<StemsManager>().OnMenuPause();
+            if (musicSource.clip.name != cityEndingMusic.name)
+            {
+                musicSource.clip = cityEndingMusic;
+                musicSource.Play();
+            }
+            
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 13)
+        {
+            //stemsManager.GetComponent<StemsManager>().OnMenuPause();
+            if (musicSource.clip.name != mainMenuMusic.name)
+            {
+                musicSource.clip = mainMenuMusic;
+                musicSource.Play();
+            }
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 14)
+        {
+            stemsManager.GetComponent<StemsManager>().OnMenuPause();
+            if (musicSource.clip.name != creditsMusic.name)
+            {
+                stemsManager.GetComponent<StemsManager>().OnMenuPause();
+                musicSource.clip = creditsMusic;
+                musicSource.Play();
+
+            }
+            
+        }
+
+        else if (FindObjectOfType<VideoStreamer>() != null) /*||
+            SceneManager.GetActiveScene().buildIndex == 2 ||
+            SceneManager.GetActiveScene().buildIndex == 7 || SceneManager.GetActiveScene().buildIndex == 10 ||
+            SceneManager.GetActiveScene().buildIndex == 12)*/
+        {
+            if (!pause)
+            {
+                musicSource.Pause();
+            }
+            FindObjectOfType<StemsManager>().OnMenuPause();
+        }
+
+        else if (winLoseStingerPlaying)
+        {
+            if (musicSource.clip.name == winMusic.name)
             {
                 if (!musicSource.isPlaying)
                 {
@@ -78,72 +123,52 @@ public class AudioManager : MonoBehaviour
         }
         else if (!winLoseStingerPlaying)
         {
+            print("here?");
             if (!pause)
             {
                 musicSource.clip = mainMenuMusic;
-                musicChange();
-                print("no pause no stinger");   
                 //musicSource.Pause();
-            }
-            
-        }
-
-        if (FindObjectOfType<VideoStreamer>() != null)
-        {
-            print("FoundVideoStreamer");
-            if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-            {
-                PauseBool(true);
-                FindObjectOfType<StemsManager>().OnMenuPause();
-            }
-            else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-            {
-                PauseBool(false);
-                FindObjectOfType<StemsManager>().OnMenuUnPause();
+                musicChange();
+                print("here2?");
             }
         }
-        
-        
+        print("pause: " + pause);
     }
 
     private void musicChange()
     {
+        
         if (!pause)
-        {
-
-        }
-        else if (pause)
-        {
-            //if (musicIndex < 0)
-            //{
-            //    musicIndex = musicClips.Count - 1;
-            //}
-            //else if (musicIndex >= musicClips.Count)
-            //{
-            //    musicIndex = 0;
-            //}
-            //SwitchMusic();
-            musicSource.UnPause();
-        }
-        print("buildindex: " + SceneManager.GetActiveScene().buildIndex);
-        if (SceneManager.GetActiveScene().buildIndex == 0 ||
-            SceneManager.GetActiveScene().buildIndex == 1 ||
-            SceneManager.GetActiveScene().buildIndex == 2)
         {
             if (FindObjectOfType<VideoStreamer>() != null)
             {
-                print("vid1");
+                if (FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                {
+                    PauseBool(true);
+                }
+                else if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
+                {
+                    PauseBool(false);
+                }
+            }
+        }
+        
+
+        if (SceneManager.GetActiveScene().buildIndex == 0 ||
+            SceneManager.GetActiveScene().buildIndex == 1 ||
+            SceneManager.GetActiveScene().buildIndex == 13)
+        {
+
+            if (FindObjectOfType<VideoStreamer>() != null)
+            {
                 if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
                 {
-                    print("vid2");
                     stemsManager.GetComponent<StemsManager>().OnMenuPause();
                     if (musicSource.clip.name != mainMenuMusic.name)
                     {
-                        print("vid3");
                         musicSource.clip = mainMenuMusic;
                         if (!musicSource.isPlaying)
                         {
-                            print("vid4");
                             musicSource.Play();
                         }
 
@@ -161,16 +186,12 @@ public class AudioManager : MonoBehaviour
             }
             else
             {
-                print("novid1");
-
                 stemsManager.GetComponent<StemsManager>().OnMenuPause();
                 if (musicSource.clip.name != mainMenuMusic.name)
                 {
-                    print("novid2");
                     musicSource.clip = mainMenuMusic;
                     if (!musicSource.isPlaying)
                     {
-                        print("novid3");
                         musicSource.Play();
                     }
 
@@ -184,62 +205,38 @@ public class AudioManager : MonoBehaviour
                     }
                 }
             }
-            
+
         }
-        print("isPlaying: " + musicSource.isPlaying);
     }
 
     public void PauseBool(bool pBool)
     {
-        print("pausebool");
         if (pBool)
         {
             stemsManager.GetComponent<StemsManager>().OnMenuPause();
             pause = true;
-            musicSource.UnPause();
-            if (musicSource.clip.name != pauseMenuMusic.name)
+            musicSource.clip = pauseMenuMusic;
+            if (FindObjectOfType<VideoStreamer>() != null)
             {
-                musicSource.clip = pauseMenuMusic;
-                print("mS != pMM");
-                if (FindObjectOfType<VideoStreamer>() != null)
-                {
-                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-                    {
-                        musicSource.Play();
-                        print("mS.Play");
-                    }
-                }
-                else
-                {
-                    musicSource.Play();
-                    print("mS.Play");
-                }
-
+                musicSource.Pause();
             }
-            else if (musicSource.clip.name == pauseMenuMusic.name)
+            else if (FindObjectOfType<VideoStreamer>() == null)
             {
-                musicSource.clip = pauseMenuMusic;
-                print("mS == pMM");
-                if (FindObjectOfType<VideoStreamer>() != null)
-                {
-                    if (!FindObjectOfType<VideoStreamer>().IsVideoPlaying())
-                    {
-                        musicSource.Play();
-                        print("mS.Play");
-                    }
-                }
-                else
-                {
-                    musicSource.Play();
-                    print("mS.Play");
-                }
+                musicSource.Play();
             }
         }
         if (!pBool)
         {
-            stemsManager.GetComponent<StemsManager>().OnMenuUnPause();
             pause = false;
             musicSource.Pause();
+            print("PauseBool false");
+            //if (SceneManager.GetActiveScene().buildIndex != 14)
+            //{
+
+            //}
+            stemsManager.GetComponent<StemsManager>().OnMenuUnPause();
+            print("!pBool UnPause");
+            
         }
     }
 
@@ -256,9 +253,7 @@ public class AudioManager : MonoBehaviour
     {
         winLoseStingerPlaying = true;
         stemsManager.GetComponent<StemsManager>().OnMenuPause();
-        musicSource.clip = loseMusic;
-        musicSource.loop = false;
-        musicSource.Play();
+        musicSource.Pause();
     }
 
     public void SongRequest()

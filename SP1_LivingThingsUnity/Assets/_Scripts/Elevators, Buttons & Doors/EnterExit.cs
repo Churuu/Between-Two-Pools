@@ -67,7 +67,12 @@ public class EnterExit : MonoBehaviour
             else
                 goBool = true;
         }
-
+        if (other.gameObject.tag == "StemIncrease")
+        {
+            print("tag");
+            FindObjectOfType<StemsManager>().stemCountInt(1);
+            other.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

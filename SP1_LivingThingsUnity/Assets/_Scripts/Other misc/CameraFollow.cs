@@ -19,6 +19,19 @@ public class CameraFollow : MonoBehaviour
         SmoothFollow();
     }
 
+    public IEnumerator SwitchActiveCamera(GameObject camera)
+    {
+        FindObjectOfType<CharacterIndictor>().mainCamera = camera.GetComponent<Camera>();
+        camera.SetActive(true);
+        cameraObject.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2);
+
+        camera.SetActive(false);
+        FindObjectOfType<CharacterIndictor>().mainCamera = cameraObject.GetComponent<Camera>();
+        cameraObject.gameObject.SetActive(true);
+
+    }
+
     void SmoothFollow()
     {
         Vector3 cameraPos = new Vector3(cameraObject.position.x, cameraObject.position.y, -10);

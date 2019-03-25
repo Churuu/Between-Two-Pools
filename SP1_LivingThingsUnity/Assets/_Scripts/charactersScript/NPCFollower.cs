@@ -8,11 +8,13 @@ public class NPCFollower : MonoBehaviour
 
     public float minDistance;
     public float followSpeed;
+    public float runAwaySpeed;
     public float meanCommentTimerDelta;
     [Space]
     public Vector2 offset;
     [Space]
     public GameObject target;
+    public Transform runAwayPoint;
     public Text commentText;
     public Image conversationImage;
     [Space]
@@ -42,7 +44,7 @@ public class NPCFollower : MonoBehaviour
         Vector2 followPosition = new Vector2(target.transform.position.x + offset.x, target.transform.position.y + offset.y);
 
         if (distance > minDistance)
-            transform.position = Vector2.Lerp(transform.position, followPosition, followSpeed * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, followPosition, (target != runAwayPoint.gameObject ? followSpeed : runAwaySpeed) * Time.deltaTime);
     }
 
     void SayMeanComment()
@@ -57,6 +59,11 @@ public class NPCFollower : MonoBehaviour
             commentText.text = meanComments[Random.Range(0, meanComments.Length)];
             timer = meanCommentTimerDelta + Time.time;
         }
+    }
+
+    public void RunAway()
+    {
+        target = runAwayPoint.gameObject;
     }
 
     void OnTriggerEnter2D(Collider2D other)

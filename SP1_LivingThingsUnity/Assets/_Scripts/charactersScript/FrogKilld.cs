@@ -2,7 +2,8 @@
 
 public class FrogKilld : MonoBehaviour
 {
-
+    [SerializeField] GameObject normel;
+    [SerializeField] GameObject rocke;
     [SerializeField] Sprite ghost;
     [SerializeField] int layerGhost = 15;
 
@@ -28,8 +29,13 @@ public class FrogKilld : MonoBehaviour
             {
                 transform.GetChild(0).gameObject.active = false;
             }
+
+
             GetComponent<Frog>().enabled = false;
-            GetComponent<Animator>().enabled = false;
+            normel.GetComponent<Animator>().enabled = false;
+            normel.GetComponent<SpriteRenderer>().enabled = false;
+            rocke.GetComponent<Animator>().enabled = false;
+            rocke.GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<PlayerController>().enabled = false;
             GetComponent<CrushedPlayer>().enabled = false;
             GetComponent<ContactWithEnemy>().enabled = false;
@@ -46,7 +52,17 @@ public class FrogKilld : MonoBehaviour
             {
                 EventManager.instance.OnGameOver();
             }
-            GetComponent<PlayerAudioScript>().Death();
+
+            if (normel.GetComponent<AudioSource>().enabled == true)
+            {
+                normel.GetComponent<PlayerAudioScript>().Death();
+            }
+            else
+            {
+                rocke.GetComponent<PlayerAudioScript>().Death();
+            }
+
+
         }
     }
 }

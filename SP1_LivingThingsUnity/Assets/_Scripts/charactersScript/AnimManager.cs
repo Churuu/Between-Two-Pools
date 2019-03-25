@@ -17,6 +17,8 @@ public class AnimManager : MonoBehaviour
     [SerializeField] SpriteRenderer blueActiv;
     [SerializeField] AudioSource blueActiveAudio;
 
+    public GameObject activeObject;
+
     bool Pull;
     //  bool Thrust;
     bool AbillityOn;
@@ -44,6 +46,8 @@ public class AnimManager : MonoBehaviour
                 blueActiveAudio.enabled = false;
                 blueNarmal.enabled = false;
                 blueNormalAudio.enabled = false;
+
+                activeObject = redActiveAudio.gameObject;
             }
             else
             {
@@ -55,6 +59,8 @@ public class AnimManager : MonoBehaviour
                 blueActiveAudio.enabled = false;
                 blueNarmal.enabled = false;
                 blueNormalAudio.enabled = false;
+
+                activeObject = redNormalAudio.gameObject;
             }
         }
         else//Throst
@@ -70,6 +76,7 @@ public class AnimManager : MonoBehaviour
                 blueNarmal.enabled = false;
                 blueNormalAudio.enabled = false;
 
+                activeObject = blueActiveAudio.gameObject;
             }
             else
             {
@@ -81,6 +88,8 @@ public class AnimManager : MonoBehaviour
                 redNormalAudio.enabled = false;
                 blueActiv.enabled = false;
                 blueActiveAudio.enabled = false;
+
+                activeObject = blueNormalAudio.gameObject;
             }
         }
     }

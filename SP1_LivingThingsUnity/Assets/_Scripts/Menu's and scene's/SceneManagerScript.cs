@@ -13,6 +13,9 @@ public class SceneManagerScript : MonoBehaviour {
     public void ReloadCurrentScene()
     {
         FindObjectOfType<StemsManager>().RestartStems();
+        FindObjectOfType<AudioManager>().PauseBool(true);
+        FindObjectOfType<AudioManager>().PauseBool(false);
+        FindObjectOfType<AudioManager>().winLoseStingerPlaying = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

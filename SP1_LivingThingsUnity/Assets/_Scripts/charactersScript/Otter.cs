@@ -46,6 +46,12 @@ public class Otter : MonoBehaviour
     int numer = 0;
     MenuSystem menuSystem;
 
+    [Header("OtterPower")]
+    [SerializeField]
+    private AudioClip powerOnAudio;
+    [SerializeField]
+    private AudioClip powerOffAudio;
+
 
     //   Animator anim;
 
@@ -80,6 +86,8 @@ public class Otter : MonoBehaviour
 
     void Update()
     {
+
+        
         if (!menuSystem.P_Pressed)
         {
 
@@ -108,7 +116,20 @@ public class Otter : MonoBehaviour
 
                 if (Input.GetButtonDown(buttonNameAbility1AvPå))//Av/PÅ
                 {
+                    
                     magnetPowerActiv = !magnetPowerActiv;
+                    if (magnetPowerActiv)
+                    {
+                        GetComponent<AudioSource>().clip = powerOnAudio;
+                        GetComponent<AudioSource>().Play();
+
+                    }
+                    else if (!magnetPowerActiv)
+                    {
+                        GetComponent<AudioSource>().clip = powerOffAudio;
+                        GetComponent<AudioSource>().Play();
+
+                    }
                     for (int i = 0; i < animChild.Length; i++)
                     {
                         if (animChild[i] != null)
@@ -276,6 +297,14 @@ public class Otter : MonoBehaviour
             {
                 OtterThrustBox(i);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("PlanktonRun"))
+        {
+            FindObjectOfType<NPCFollower>().RunAway();
         }
     }
 

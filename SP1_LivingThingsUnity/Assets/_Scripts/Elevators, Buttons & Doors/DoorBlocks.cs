@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DoorBlocks : MonoBehaviour
 {
-
+    Animator anim;
     public GameObject[] blocks;
     public int blockMargin = 1;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void SwitchBlockPosition(Vector2 dir)
     {
@@ -22,8 +26,9 @@ public class DoorBlocks : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         var obj = col.gameObject;
-        if (obj.CompareTag("Otter") || obj.CompareTag("Frog") || obj.CompareTag("Seal"))
+        if (obj.CompareTag("Seal"))
         {
+            anim.SetBool("Pressed", true);
             if (gameObject.CompareTag("ButtonBlockUp"))
                 SwitchBlockPosition(new Vector2(0, blockMargin));
             else
@@ -34,8 +39,9 @@ public class DoorBlocks : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
         var obj = col.gameObject;
-        if (obj.CompareTag("Otter") || obj.CompareTag("Frog") || obj.CompareTag("Seal"))
+        if (obj.CompareTag("Seal"))
         {
+            anim.SetBool("Pressed", false);
             if (gameObject.CompareTag("ButtonBlockUp"))
                 SwitchBlockPosition(Vector2.zero);
             else
