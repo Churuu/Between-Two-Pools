@@ -56359,6 +56359,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114143339872106972, guid: bff99851f3aa5b848bfb1d3d36836d4d,
+        type: 2}
+      propertyPath: crushingColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -102.36
@@ -56396,6 +56401,16 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114143339872106972, guid: bff99851f3aa5b848bfb1d3d36836d4d,
+        type: 2}
+      propertyPath: crushingColliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 850403092}
+    - target: {fileID: 114143339872106972, guid: bff99851f3aa5b848bfb1d3d36836d4d,
+        type: 2}
+      propertyPath: crushingColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 909881678}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
   m_IsPrefabParent: 0
@@ -56824,6 +56839,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114595585253836458, guid: 63fb09175a9e49d4cb5db92d0e362d09,
+        type: 2}
+      propertyPath: crushingColliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 850403092}
+    - target: {fileID: 114595585253836458, guid: 63fb09175a9e49d4cb5db92d0e362d09,
+        type: 2}
+      propertyPath: crushingColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 909881678}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63fb09175a9e49d4cb5db92d0e362d09, type: 2}
   m_IsPrefabParent: 0
@@ -57664,6 +57689,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114372677744664496, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964,
+        type: 2}
+      propertyPath: crushingColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4499547856276202, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
       propertyPath: m_LocalPosition.x
       value: -105.6
@@ -57701,6 +57731,16 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114372677744664496, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964,
+        type: 2}
+      propertyPath: crushingColliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 850403092}
+    - target: {fileID: 114372677744664496, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964,
+        type: 2}
+      propertyPath: crushingColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 909881678}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ebbd5cd5b6bc2c409cd4b3531fa6964, type: 2}
   m_IsPrefabParent: 0
