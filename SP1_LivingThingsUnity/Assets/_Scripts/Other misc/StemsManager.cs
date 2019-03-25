@@ -57,6 +57,7 @@ public class StemsManager : MonoBehaviour
 
     private bool stemStairBool = false;
 
+    private bool menuPauseBool = false;
 
     MenuSystem menuSystem;
     // Use this for initialization
@@ -114,7 +115,6 @@ public class StemsManager : MonoBehaviour
         {
             OnMenuPause();
         }
-        print(stemStairBool + ": STEMSTAIRBOOL");
     }
 
     public void UpdateStems()
@@ -122,44 +122,52 @@ public class StemsManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
-                OnMenuPause();
+                //OnMenuPause();
+                menuPauseBool = true;
                 stemStairBool = false;
                 break;
             case 1:
-                OnMenuPause();
+                //OnMenuPause();
+                menuPauseBool = true;
                 stemStairBool = false;
                 break;
             case 2:
-                OnMenuPause();
+                FindObjectOfType<AudioManager>().PauseBool(true);
                 stemStairBool = false;
                 break;
             case 3:
+                menuPauseBool = false;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music11;
                 stemStairBool = false;
                 break;
             case 4:
+                menuPauseBool = false;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music12;
                 stemStairBool = false;
                 break;
             case 5:
+                menuPauseBool = false;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music13;
                 stemStairBool = false;
                 break;
             case 6:
-                OnMenuPause();
+                menuPauseBool = true;
+                FindObjectOfType<AudioManager>().PauseBool(true);
                 stemStairBool = false;
                 break;
             case 7:
-                OnMenuPause();
+                menuPauseBool = true;
+                FindObjectOfType<AudioManager>().PauseBool(true);
                 stemStairBool = false;
                 break;
             case 8:
+                menuPauseBool = false;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music21;
@@ -168,6 +176,7 @@ public class StemsManager : MonoBehaviour
                 stemStairBool = true;
                 break;
             case 9:
+                menuPauseBool = false;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music22;
@@ -176,21 +185,29 @@ public class StemsManager : MonoBehaviour
                 stemStairBool = true;
                 break;
             case 10:
-                OnMenuPause();
+                menuPauseBool = true;
+                FindObjectOfType<AudioManager>().PauseBool(true);
                 stemStairBool = false;
                 break;
             case 11:
+                menuPauseBool = false;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music31;
                 stemStairBool = false;
                 break;
             case 12:
-                OnMenuPause();
+                menuPauseBool = true;
+                FindObjectOfType<AudioManager>().PauseBool(true);
                 stemStairBool = false;
                 break;
             case 13:
+                menuPauseBool = true;
                 OnMenuPause();
+                stemStairBool = false;
+                break;
+            case 14:
+                menuPauseBool = true;
                 stemStairBool = false;
                 break;
         }
@@ -203,9 +220,16 @@ public class StemsManager : MonoBehaviour
         {
             AudioSources[i].clip = thisLevelStems[i];
         }
-        RestartStems();
+        
+        if (!menuPauseBool)
+        {
+            RestartStems();
+        }
+
         ToOtter();
     }
+
+
 
     public void RestartStems()
     {

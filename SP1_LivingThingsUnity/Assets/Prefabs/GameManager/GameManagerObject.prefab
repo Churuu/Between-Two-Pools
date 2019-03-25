@@ -757,35 +757,36 @@ MonoBehaviour:
   otterStemAudioSource: {fileID: 82447081628418366}
   frogStemAudioSource: {fileID: 82771115592901402}
   music11:
+  - {fileID: 8300000, guid: e2140e8b077b14943b43b795f65e0338, type: 3}
+  - {fileID: 8300000, guid: 6e83c2f1b993aae40b87342a1f147a2f, type: 3}
+  - {fileID: 8300000, guid: d7fa791e4f78b9b4c95a3d2da03735ff, type: 3}
+  - {fileID: 8300000, guid: b85c96d4deca214489fd4ee74bb1523c, type: 3}
+  music12:
   - {fileID: 8300000, guid: 035b216e5bcd4e24b90f428813fca317, type: 3}
   - {fileID: 8300000, guid: a94d9f3c348ab664cbb44df49eea6174, type: 3}
   - {fileID: 8300000, guid: aadbea7c2c255ce4e90ebf6ef2106614, type: 3}
   - {fileID: 8300000, guid: e1857801310e88a44833b555f57b3d89, type: 3}
-  music12:
-  - {fileID: 8300000, guid: ce23c16a18f5b2b4aa6ab03c693506b7, type: 3}
-  - {fileID: 8300000, guid: 46b714634c08e6a40858872d8b553d21, type: 3}
-  - {fileID: 8300000, guid: 1404f44eae236fc48bcc95aef5106631, type: 3}
-  - {fileID: 8300000, guid: cfdc47265f1e2ea43a46f8d10e135ccc, type: 3}
   music13:
   - {fileID: 8300000, guid: 8ab7384a0a984404287c5b37632f9ac9, type: 3}
   - {fileID: 8300000, guid: 0b5c1a4d79441a740a609d6a3ecaf508, type: 3}
   - {fileID: 8300000, guid: fd92317519e23504fb665b060046ff24, type: 3}
   - {fileID: 8300000, guid: af52970a3b740054b81390a03df33db0, type: 3}
   music21:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5856458ceec7f514d8af782244296cf6, type: 3}
+  - {fileID: 8300000, guid: 077b3f2d028883741a6808501aab6bf7, type: 3}
+  - {fileID: 8300000, guid: 62b0616d3be9ac6468b1e1968bcabc50, type: 3}
+  - {fileID: 8300000, guid: 88baa6e84ed66344f8431272f221c801, type: 3}
   music22:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: ad1c46ad3b0f4af4898337a004eb1a52, type: 3}
+  - {fileID: 8300000, guid: 839281878aadb984f95887f1fd88aeb8, type: 3}
+  - {fileID: 8300000, guid: 93964a60e40ace346b0013cdb06f2c95, type: 3}
+  - {fileID: 8300000, guid: 8bbb9a03797c9a74bbb9bfc6a5f54873, type: 3}
   music31:
   - {fileID: 8300000, guid: 2f0080e072ad6804899aa92b7ae49621, type: 3}
   - {fileID: 8300000, guid: f56c43ef29204764b8ed243712effb1e, type: 3}
   - {fileID: 8300000, guid: 0334c56848a977343b3ec9c7f30aed74, type: 3}
   - {fileID: 8300000, guid: be339cde3277bb343a22f8eaf1e91461, type: 3}
+  worldList: 
   stemCount: 1
   stemFocus: 0
 --- !u!114 &114783954291008314
@@ -826,9 +827,9 @@ MonoBehaviour:
   mainMenuMusic: {fileID: 8300000, guid: e1a29856436a232469d4a75bcea8e9ac, type: 3}
   pauseMenuMusic: {fileID: 8300000, guid: df513fef416aaa14cb8ee5abb620737e, type: 3}
   winMusic: {fileID: 8300000, guid: be9c7145a7b93ce459d2dc64db79109b, type: 3}
-  loseMusic: {fileID: 8300000, guid: 2ea35b2e59de7b5439a8e9d7fc2f3631, type: 3}
   nextSong: NextSong
   previousSong: PreviousSong
+  winLoseStingerPlaying: 0
 --- !u!222 &222652169035523192
 CanvasRenderer:
   m_ObjectHideFlags: 1

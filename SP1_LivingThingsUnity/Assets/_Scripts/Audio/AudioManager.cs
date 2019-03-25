@@ -23,6 +23,10 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip winMusic;
+    [SerializeField]
+    private AudioClip creditsMusic;
+    [SerializeField]
+    private AudioClip cityEndingMusic;
 
     [SerializeField]
     private string nextSong = "NextSong";
@@ -62,11 +66,42 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            stemsManager.GetComponent<StemsManager>().OnMenuPause();
+            if (musicSource.clip.name != cityEndingMusic.name)
+            {
+                musicSource.clip = cityEndingMusic;
+                musicSource.Play();
+            }
+            
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 13)
+        {
+            //stemsManager.GetComponent<StemsManager>().OnMenuPause();
+            if (musicSource.clip.name != mainMenuMusic.name)
+            {
+                musicSource.clip = mainMenuMusic;
+                musicSource.Play();
+            }
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 14)
+        {
+            stemsManager.GetComponent<StemsManager>().OnMenuPause();
+            if (musicSource.clip.name != creditsMusic.name)
+            {
+                stemsManager.GetComponent<StemsManager>().OnMenuPause();
+                musicSource.clip = creditsMusic;
+                musicSource.Play();
 
-        if (FindObjectOfType<VideoStreamer>() != null || SceneManager.GetActiveScene().buildIndex == 6 ||
+            }
+            
+        }
+
+        else if (FindObjectOfType<VideoStreamer>() != null) /*||
             SceneManager.GetActiveScene().buildIndex == 2 ||
             SceneManager.GetActiveScene().buildIndex == 7 || SceneManager.GetActiveScene().buildIndex == 10 ||
-            SceneManager.GetActiveScene().buildIndex == 12)
+            SceneManager.GetActiveScene().buildIndex == 12)*/
         {
             if (!pause)
             {
@@ -75,7 +110,7 @@ public class AudioManager : MonoBehaviour
             FindObjectOfType<StemsManager>().OnMenuPause();
         }
 
-        if (winLoseStingerPlaying)
+        else if (winLoseStingerPlaying)
         {
             if (musicSource.clip.name == winMusic.name)
             {
@@ -88,12 +123,13 @@ public class AudioManager : MonoBehaviour
         }
         else if (!winLoseStingerPlaying)
         {
-
+            print("here?");
             if (!pause)
             {
                 musicSource.clip = mainMenuMusic;
                 //musicSource.Pause();
                 musicChange();
+                print("here2?");
             }
         }
         print("pause: " + pause);
@@ -116,10 +152,8 @@ public class AudioManager : MonoBehaviour
                 }
             }
         }
-        //else if (pause)
-        //{
-        //    musicSource.UnPause();
-        //}
+        
+
         if (SceneManager.GetActiveScene().buildIndex == 0 ||
             SceneManager.GetActiveScene().buildIndex == 1 ||
             SceneManager.GetActiveScene().buildIndex == 13)
@@ -196,7 +230,12 @@ public class AudioManager : MonoBehaviour
             pause = false;
             musicSource.Pause();
             print("PauseBool false");
+            //if (SceneManager.GetActiveScene().buildIndex != 14)
+            //{
+
+            //}
             stemsManager.GetComponent<StemsManager>().OnMenuUnPause();
+            print("!pBool UnPause");
             
         }
     }

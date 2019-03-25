@@ -25,10 +25,15 @@ public class ExitDoor : MonoBehaviour
         else if (otter && seal && frog)
         {
             FindObjectOfType<AudioManager>().OnWinStinger();
-            FindObjectOfType<SceneTransitioner>().LoadScene(sceneToLoad);
+            Invoke("LoadSceneTimer", FindObjectOfType<AudioManager>().GetComponent<AudioSource>().clip.length);
         }
 
             
+    }
+
+    private void LoadSceneTimer()
+    {
+        FindObjectOfType<SceneTransitioner>().LoadScene(sceneToLoad);
     }
 
     void OnTriggerExit2D(Collider2D col)
