@@ -92,7 +92,7 @@ public class AudioManager : MonoBehaviour
             if (musicSource.clip.name != creditsMusic.name)
             {
                 musicSource.clip = creditsMusic;
-                musicSource.Play();
+                musicSource.Play(); 
 
             }
             
@@ -123,10 +123,12 @@ public class AudioManager : MonoBehaviour
         }
         else if (!winLoseStingerPlaying)
         {
+            
             print("here?");
             if (!pause)
             {
                 musicSource.clip = mainMenuMusic;
+
                 //musicSource.Pause();
                 musicChange();
                 print("here2?");

@@ -6,6 +6,8 @@ public class SceneManagerScript : MonoBehaviour {
 
 	public void LoadNextScene(string SceneName)
     {
+        FindObjectOfType<AudioManager>().PauseBool(true);
+        FindObjectOfType<AudioManager>().PauseBool(false);
         SceneManager.LoadScene(SceneName);
         
     }
