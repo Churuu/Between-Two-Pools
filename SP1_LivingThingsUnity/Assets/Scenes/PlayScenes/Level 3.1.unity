@@ -1410,7 +1410,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.02
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4782,7 +4782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cName: ShrimpBye
   selectedConversation: 3
-  selectedDialog: 6
+  selectedDialog: 1
   conversations:
   - name: Default
     dialog:
@@ -4824,11 +4824,11 @@ MonoBehaviour:
     - suit yourself. just do not come crying to me when everything goes to hell.
     characterDialog:
     - {fileID: 21300004, guid: 57bb7164eccbfe944981b4db30b773bc, type: 3}
-    - {fileID: 21300002, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+    - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300004, guid: 57bb7164eccbfe944981b4db30b773bc, type: 3}
     - {fileID: 21300006, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300004, guid: 57bb7164eccbfe944981b4db30b773bc, type: 3}
-    - {fileID: 21300004, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+    - {fileID: 21300006, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
     - {fileID: 21300004, guid: 57bb7164eccbfe944981b4db30b773bc, type: 3}
   optionsList:
   - Default
@@ -90756,11 +90756,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.44
+      value: -13.08
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.54
+      value: 7.62
       objectReference: {fileID: 0}
     - target: {fileID: 4025028342899652, guid: bff99851f3aa5b848bfb1d3d36836d4d, type: 2}
       propertyPath: m_LocalPosition.z
