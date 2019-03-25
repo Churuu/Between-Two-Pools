@@ -89,10 +89,8 @@ public class AudioManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 14)
         {
-            stemsManager.GetComponent<StemsManager>().OnMenuPause();
             if (musicSource.clip.name != creditsMusic.name)
             {
-                stemsManager.GetComponent<StemsManager>().OnMenuPause();
                 musicSource.clip = creditsMusic;
                 musicSource.Play();
 
