@@ -17,6 +17,9 @@ public class PlayerAudioScript : MonoBehaviour
     private List<AudioClip> ability2List = new List<AudioClip>();
 
     [SerializeField]
+    private List<AudioClip> ability3List = new List<AudioClip>();
+
+    [SerializeField]
     private List<AudioClip> landingSounds = new List<AudioClip>();
 
     [SerializeField]
@@ -57,6 +60,11 @@ public class PlayerAudioScript : MonoBehaviour
     public void Ability2()
     {
         GetComponent<ObjectAudioClip>().PlaySingle(ability2List);
+    }
+
+    public void Ability3()
+    {
+        GetComponent<ObjectAudioClip>().PlaySingle(ability3List);
     }
     
     public void Death()

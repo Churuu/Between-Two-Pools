@@ -300,29 +300,21 @@ public class StemsManager : MonoBehaviour
         }
     }
 
-    public int stemCountInt
+    public void stemCountInt(int value)
     {
-        //get
-        //{
-        //    return stemCount;
-        //}
-        set
+        stemCount += value;
+        if (stemCount <= 4 && stemCount > 0)
         {
-            stemCount = value;
-            if (stemCount <= 4 && stemCount > 0)
-            {
 
-                UpdateStemStairs();
-            }
-            else if (stemCount > 4)
-            {
-                stemCount = 4;
-            }
-            else if (stemCount <= 0)
-            {
-                stemCount = 0;
-            }
-
+            UpdateStemStairs();
+        }
+        else if (stemCount > 4)
+        {
+            stemCount = 4;
+        }
+        else if (stemCount <= 0)
+        {
+            stemCount = 0;
         }
     }
 }
