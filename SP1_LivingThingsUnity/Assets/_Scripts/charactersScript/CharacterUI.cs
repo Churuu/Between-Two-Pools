@@ -16,7 +16,7 @@ public class CharacterUI : MonoBehaviour
     public Sprite sealDead, sealAsleep, sealDeadAndAsleep, sealSelected, sealActive;
     [Space]
     [Header("Frog Sprites")]
-    public Image frog;
+    public Image frog, rock;
     public Sprite frogDead, frogAsleep, frogDeadAndAsleep, frogSelected, frogActive;
     [Space]
     public Image selectedCharacterImage;
@@ -27,12 +27,14 @@ public class CharacterUI : MonoBehaviour
     OtterKilld otterKilld;
     FrogKilld frogKilld;
     SealKilld sealKilld;
+    Frog frogScript;
 
     void Start()
     {
         sealKilld = FindObjectOfType<SealKilld>();
         otterKilld = FindObjectOfType<OtterKilld>();
         frogKilld = FindObjectOfType<FrogKilld>();
+        frogScript = FindObjectOfType<Frog>();
         EventManager.instance.OnNewActiveCharacter += SetActiveCharacter;
         EventManager.instance.onKilld += UpdateDeathState;
     }
@@ -40,6 +42,15 @@ public class CharacterUI : MonoBehaviour
     void Update()
     {
         States();
+        UpdateRock();
+    }
+
+    void UpdateRock()
+    {
+        if (frogScript.rockCount == 1)
+            rock.enabled = true;
+        else
+            rock.enabled = false;
     }
 
     void UpdateDeathState(GameObject obj)
