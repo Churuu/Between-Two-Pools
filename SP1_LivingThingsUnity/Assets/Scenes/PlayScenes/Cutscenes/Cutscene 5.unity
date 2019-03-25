@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1497041865}
-  nextScene: Credits 1
+  nextScene: MainMenu
   startCutsceneImmidietly: 1
 --- !u!328 &1950653862
 VideoPlayer:
@@ -498,7 +498,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1950653860}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 8751543ab151a0f4395557ed5992627e, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 51b02defc5609214e80c0dc6066f2d6e, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
