@@ -55,12 +55,12 @@ public class StemsManager : MonoBehaviour
     [SerializeField]
     StemFocus stemFocus;
 
-    private bool stairStemBool = false;
+    private bool stemStairBool = false;
 
 
     MenuSystem menuSystem;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         mainStemVolume = mainStemAudioSource.volume;
         sealStemVolume = sealStemAudioSource.volume;
@@ -82,14 +82,14 @@ public class StemsManager : MonoBehaviour
 
         thisLevelStems = music11;
 
-        
+
 
         UpdateStems();
         print("stems updated");
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         print("Saved Index: " + savedMapIndex);
         print("Build Index: " + SceneManager.GetActiveScene().buildIndex);
@@ -114,6 +114,7 @@ public class StemsManager : MonoBehaviour
         {
             OnMenuPause();
         }
+        print(stemStairBool + ": STEMSTAIRBOOL");
     }
 
     public void UpdateStems()
@@ -122,65 +123,75 @@ public class StemsManager : MonoBehaviour
         {
             case 0:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
             case 1:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
             case 2:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
             case 3:
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music11;
-                //stairStemBool = false;
+                stemStairBool = false;
                 break;
             case 4:
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music12;
-                //stairStemBool = false;
+                stemStairBool = false;
                 break;
             case 5:
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music13;
-                //stairStemBool = false;
+                stemStairBool = false;
                 break;
             case 6:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
             case 7:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
             case 8:
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music21;
                 stemCount = 1;
-                //stairStemBool = true;
+                UpdateStemStairs();
+                stemStairBool = true;
                 break;
             case 9:
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music22;
                 stemCount = 1;
-                //stairStemBool = true;
+                UpdateStemStairs();
+                stemStairBool = true;
                 break;
             case 10:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
             case 11:
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music31;
-                //stairStemBool = false;
+                stemStairBool = false;
                 break;
             case 12:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
             case 13:
                 OnMenuPause();
+                stemStairBool = false;
                 break;
         }
         mainStemAudioSource.clip = thisLevelStems[0];
@@ -202,6 +213,7 @@ public class StemsManager : MonoBehaviour
         {
             OnMenuUnPause();
             AudioSources[i].Play();
+            print("RESTART");
         }
     }
 
@@ -218,29 +230,42 @@ public class StemsManager : MonoBehaviour
         for (int i = 0; i < AudioSources.Count; i++)
         {
             AudioSources[i].UnPause();
+            print("UNPAUSE");
         }
     }
 
     public void ToSeal()
     {
-        sealStemAudioSource.volume = sealStemVolume;
-        otterStemAudioSource.volume = 0;
-        frogStemAudioSource.volume = 0;
-        stemFocus = StemFocus.Seal;
+        if (!stemStairBool)
+        {
+            sealStemAudioSource.volume = sealStemVolume;
+            otterStemAudioSource.volume = 0;
+            frogStemAudioSource.volume = 0;
+            stemFocus = StemFocus.Seal;
+        }
+
     }
     public void ToOtter()
     {
-        sealStemAudioSource.volume = 0;
-        otterStemAudioSource.volume = otterStemVolume;
-        frogStemAudioSource.volume = 0;
-        stemFocus = StemFocus.Otter;
+        if (!stemStairBool)
+        {
+            sealStemAudioSource.volume = 0;
+            otterStemAudioSource.volume = otterStemVolume;
+            frogStemAudioSource.volume = 0;
+            stemFocus = StemFocus.Otter;
+        }
+        
     }
     public void ToFrog()
     {
-        sealStemAudioSource.volume = 0;
-        otterStemAudioSource.volume = 0;
-        frogStemAudioSource.volume = frogStemVolume;
-        stemFocus = StemFocus.Frog;
+        if (!stemStairBool)
+        {
+            sealStemAudioSource.volume = 0;
+            otterStemAudioSource.volume = 0;
+            frogStemAudioSource.volume = frogStemVolume;
+            stemFocus = StemFocus.Frog;
+        }
+        
     }
 
     public void UpdateStemStairs()
@@ -255,16 +280,50 @@ public class StemsManager : MonoBehaviour
                 frogStemAudioSource.volume = 0;
                 break;
             case 2:
+                mainStemAudioSource.volume = mainStemVolume;
+                sealStemAudioSource.volume = sealStemVolume;
+                otterStemAudioSource.volume = 0;
+                frogStemAudioSource.volume = 0;
                 break;
             case 3:
+                mainStemAudioSource.volume = mainStemVolume;
+                sealStemAudioSource.volume = sealStemVolume;
+                otterStemAudioSource.volume = otterStemVolume;
+                frogStemAudioSource.volume = 0;
                 break;
             case 4:
+                mainStemAudioSource.volume = mainStemVolume;
+                sealStemAudioSource.volume = sealStemVolume;
+                otterStemAudioSource.volume = otterStemVolume;
+                frogStemAudioSource.volume = frogStemVolume;
                 break;
         }
     }
 
-    public void StemCountIncrease()
+    public int stemCountInt
     {
-        ++stemCount;
+        //get
+        //{
+        //    return stemCount;
+        //}
+        set
+        {
+            stemCount = value;
+            if (stemCount <= 4 && stemCount > 0)
+            {
+
+                UpdateStemStairs();
+            }
+            else if (stemCount > 4)
+            {
+                stemCount = 4;
+            }
+            else if (stemCount <= 0)
+            {
+                stemCount = 0;
+            }
+
+        }
     }
 }
+

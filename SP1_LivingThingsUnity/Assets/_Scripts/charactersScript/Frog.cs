@@ -177,6 +177,10 @@ public class Frog : MonoBehaviour
         if (col.CompareTag("Rock") && rockCount < 1)
         {
             rockCount++;
+            for (int i = 0; i < transform.childCount; i++)
+            {
+
+            }
             Destroy(col);
         }
     }
