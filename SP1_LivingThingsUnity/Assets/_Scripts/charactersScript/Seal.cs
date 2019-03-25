@@ -47,7 +47,7 @@ public class Seal : MonoBehaviour
 
         var hitRB = gObj.GetComponent<Rigidbody2D>();
 
-        if (hitRB.velocity.y < 0)
+        if (hitRB.velocity.y < -.1f)
         {
             float velocityY = hitRB.velocity.y;
             hitRB.velocity = new Vector2(hitRB.velocity.x, 0);
