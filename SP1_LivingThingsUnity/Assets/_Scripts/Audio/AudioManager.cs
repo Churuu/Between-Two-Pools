@@ -88,6 +88,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (!winLoseStingerPlaying)
         {
+
             if (!pause)
             {
                 musicSource.clip = mainMenuMusic;

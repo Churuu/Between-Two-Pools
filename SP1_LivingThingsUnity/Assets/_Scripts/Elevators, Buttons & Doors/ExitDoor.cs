@@ -23,7 +23,12 @@ public class ExitDoor : MonoBehaviour
         if (otter && seal && frog && playCutscene)
             FindObjectOfType<VideoStreamer>().PrepareVideo();
         else if (otter && seal && frog)
+        {
+            FindObjectOfType<AudioManager>().OnWinStinger();
             FindObjectOfType<SceneTransitioner>().LoadScene(sceneToLoad);
+        }
+
+            
     }
 
     void OnTriggerExit2D(Collider2D col)
