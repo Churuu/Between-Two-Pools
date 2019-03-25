@@ -79,7 +79,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 82844460218d9c34abe949f34efb4370, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -164,3 +164,8 @@ MonoBehaviour:
   conversationName: poster
   conversationImage: {fileID: 0}
   characters: 1
+  convoStarter:
+  - {fileID: 8300000, guid: dc59e73b31701a049b06822112944a96, type: 3}
+  - {fileID: 8300000, guid: 4fdb529e02f3a59449d63c2925573cd9, type: 3}
+  - {fileID: 8300000, guid: 71161b20a8d22b746864d5bc8659f8bc, type: 3}
+  textSFX: {fileID: 8300000, guid: 82844460218d9c34abe949f34efb4370, type: 3}

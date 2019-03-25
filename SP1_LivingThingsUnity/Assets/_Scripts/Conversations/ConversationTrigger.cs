@@ -13,6 +13,11 @@ public class ConversationTrigger : MonoBehaviour
     public enum characterTypes { Otter = 1, Seal = 2, Frog = 3 };
     public characterTypes characters;
 
+    [SerializeField]
+    private List<AudioClip> convoStarter = new List<AudioClip>();
+
+    [SerializeField]
+    private AudioClip textSFX;
 
     bool entered = false;
     bool thisActive = false;
@@ -24,9 +29,26 @@ public class ConversationTrigger : MonoBehaviour
         if (obj.CompareTag(Enum.GetName(typeof(characterTypes), characters)) && !entered)
         {
             currentIndex = 0;
+            
+            
             PlayConversation();
             thisActive = true;
             entered = true;
+            switch (characters)
+            {
+                case characterTypes.Otter:
+                    GetComponent<AudioSource>().clip = convoStarter[0];
+                    GetComponent<AudioSource>().Play();
+                    break;
+                case characterTypes.Seal:
+                    GetComponent<AudioSource>().clip = convoStarter[1];
+                    GetComponent<AudioSource>().Play();
+                    break;
+                case characterTypes.Frog:
+                    GetComponent<AudioSource>().clip = convoStarter[2];
+                    GetComponent<AudioSource>().Play();
+                    break;
+            }
         }
     }
 
@@ -74,6 +96,7 @@ public class ConversationTrigger : MonoBehaviour
             convoText.text += letter;
             if (!GetComponent<AudioSource>().isPlaying)
             {
+                GetComponent<AudioSource>().clip = textSFX;
                 GetComponent<AudioSource>().Play();
             }
             yield return new WaitForSeconds(TypingDelay);
