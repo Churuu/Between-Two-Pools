@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 114057535520630778}
   - component: {fileID: 114384293926692768}
   - component: {fileID: 212741243657111364}
+  - component: {fileID: 114966669780037680}
   m_Layer: 12
   m_Name: Frog
   m_TagString: Frog
@@ -453,7 +454,8 @@ MonoBehaviour:
   ability2List:
   - {fileID: 8300000, guid: 0976f27cdcdd80c46bd95506c6ccfb40, type: 3}
   - {fileID: 8300000, guid: a37cb487a3a94a2448ea89da1c793ad5, type: 3}
-  ability3List: []
+  ability3List:
+  - {fileID: 8300000, guid: 1d1c9b6f73ec26c4a948969f737057e3, type: 3}
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
   deathSound: {fileID: 8300000, guid: 22c5943b896fabe4e9696d1682e10c5a, type: 3}
@@ -500,7 +502,8 @@ MonoBehaviour:
   ability2List:
   - {fileID: 8300000, guid: 0976f27cdcdd80c46bd95506c6ccfb40, type: 3}
   - {fileID: 8300000, guid: a37cb487a3a94a2448ea89da1c793ad5, type: 3}
-  ability3List: []
+  ability3List:
+  - {fileID: 8300000, guid: 1d1c9b6f73ec26c4a948969f737057e3, type: 3}
   landingSounds:
   - {fileID: 8300000, guid: 3508f7a84e23f1347beefa232e1a2837, type: 3}
   deathSound: {fileID: 8300000, guid: 22c5943b896fabe4e9696d1682e10c5a, type: 3}
@@ -586,6 +589,22 @@ MonoBehaviour:
   retractClip: {fileID: 7400000, guid: 939105854d018dd4baf23dbe1120ae26, type: 2}
   animFrog: {fileID: 95712764120880806}
   animRockFrog: {fileID: 95480195938259762}
+--- !u!114 &114966669780037680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660948256948312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a01e1e79ad4dc48a872c8ffe802700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalFrog: {fileID: 212949567391826418}
+  normalFrogAudio: {fileID: 82488911680648826}
+  rockFrog: {fileID: 212439537221757368}
+  rockFrogAudio: {fileID: 82109009218481728}
+  activeObject: {fileID: 0}
 --- !u!212 &212439537221757368
 SpriteRenderer:
   m_ObjectHideFlags: 1

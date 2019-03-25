@@ -177,7 +177,7 @@ public class Frog : MonoBehaviour
         if (col.CompareTag("Rock") && rockCount < 1)
         {
             rockCount++;
-            GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play(); 
             Destroy(col);
         }
     }

@@ -72,6 +72,10 @@ public class ConversationTrigger : MonoBehaviour
         foreach (var letter in conversation.dialog[currentIndex].ToCharArray())
         {
             convoText.text += letter;
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
             yield return new WaitForSeconds(TypingDelay);
         }
     }
