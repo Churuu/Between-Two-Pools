@@ -13,6 +13,8 @@ public class SceneManagerScript : MonoBehaviour {
     public void ReloadCurrentScene()
     {
         FindObjectOfType<StemsManager>().RestartStems();
+        FindObjectOfType<AudioManager>().PauseBool(true);
+        FindObjectOfType<AudioManager>().PauseBool(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

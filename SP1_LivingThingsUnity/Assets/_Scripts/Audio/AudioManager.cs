@@ -67,7 +67,11 @@ public class AudioManager : MonoBehaviour
 
         if (FindObjectOfType<VideoStreamer>() != null || SceneManager.GetActiveScene().buildIndex == 6)
         {
-            musicSource.Pause();
+            if (!pause)
+            {
+                musicSource.Pause();
+            }
+            FindObjectOfType<StemsManager>().OnMenuPause();
         }
 
         if (winLoseStingerPlaying)
