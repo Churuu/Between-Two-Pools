@@ -177,6 +177,51 @@ Prefab:
       propertyPath: pauseMenuMusic
       value: 
       objectReference: {fileID: 8300000, guid: df513fef416aaa14cb8ee5abb620737e, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: stemCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music21.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5856458ceec7f514d8af782244296cf6, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music21.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 077b3f2d028883741a6808501aab6bf7, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music21.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 62b0616d3be9ac6468b1e1968bcabc50, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music21.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 88baa6e84ed66344f8431272f221c801, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music22.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ad1c46ad3b0f4af4898337a004eb1a52, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music22.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 839281878aadb984f95887f1fd88aeb8, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music22.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 93964a60e40ace346b0013cdb06f2c95, type: 3}
+    - target: {fileID: 114626987943519492, guid: 515c794038457fc4f8deee297750d695,
+        type: 2}
+      propertyPath: music22.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8bbb9a03797c9a74bbb9bfc6a5f54873, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 515c794038457fc4f8deee297750d695, type: 2}
   m_IsPrefabParent: 0
