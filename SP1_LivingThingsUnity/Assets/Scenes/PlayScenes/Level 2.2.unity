@@ -82362,7 +82362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cName: PlanktonBye
-  selectedConversation: 4
+  selectedConversation: 1
   selectedDialog: 0
   conversations:
   - name: Default
@@ -82374,7 +82374,7 @@ MonoBehaviour:
     dialog:
     - This might help.
     characterDialog:
-    - {fileID: 21300002, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+    - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
   - name: Toxic
     dialog:
     - This seems dangerous...
@@ -82845,7 +82845,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7310543
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 4584515841288358, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
       propertyPath: m_LocalPosition.y
