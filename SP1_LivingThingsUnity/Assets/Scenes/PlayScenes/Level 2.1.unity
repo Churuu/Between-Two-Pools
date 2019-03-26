@@ -2604,6 +2604,11 @@ Prefab:
       propertyPath: conversationName
       value: Plankton
       objectReference: {fileID: 0}
+    - target: {fileID: 82235728806592562, guid: 44a025f64b397ac4886c067c818535ed,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
   m_IsPrefabParent: 0
@@ -42702,7 +42707,7 @@ Prefab:
     - target: {fileID: 212578748756830820, guid: 11086b851930c164bbc9e7250993dad1,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 111
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 223361521972297786, guid: 11086b851930c164bbc9e7250993dad1,
         type: 2}
