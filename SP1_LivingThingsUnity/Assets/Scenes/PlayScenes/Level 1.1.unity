@@ -60946,8 +60946,8 @@ MonoBehaviour:
   camera: {fileID: 1738347765}
   start: {x: 47.01, y: -4.2, z: 0}
   target: {x: 47.01, y: -21.66, z: 0}
-  speed: 0.5
-  acceleration: 0
+  speed: 0.05
+  acceleration: 1.5
   tolerance: 0.15
   gameObjectToggle: 1
   lockBool: 1

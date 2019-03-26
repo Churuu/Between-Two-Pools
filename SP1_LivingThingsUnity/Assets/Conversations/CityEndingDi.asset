@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc5aa10c2d1ec54cabc5f3b7ad30f81, type: 3}
+  m_Name: CityEndingDi
+  m_EditorClassIdentifier: 
+  dialog:
+  - It looks like this place has been abandoned. I think it's time we stop to rest.
+  - It looks a bit creepy.
+  - I'm sure it's fine.
+  - 'this journey is more challenging than what we prepared for. '
+  - Are we sure this was a good idea?
+  - It's too late to turn back.
+  - I don't like this at all... We don't even know the way.
+  - Stop bringing us down. You don't have to go if you don't want to.
+  - You can't leave me behind. We are a team.
+  - I'm starting to feel like you are just slowing me down.
+  characters:
+  - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+  - {fileID: 21300002, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+  - {fileID: 21300000, guid: 37dcd7a1c58b6bb49a340b96dddaec8a, type: 3}
+  - {fileID: 21300002, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+  - {fileID: 21300002, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+  - {fileID: 21300000, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+  - {fileID: 21300008, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+  - {fileID: 21300002, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+  - {fileID: 21300008, guid: b53b5a905a2c41c45b7d4ee8ce9c2ec5, type: 3}
+  - {fileID: 21300004, guid: fba4ca00aa12bb84a8d3471c5d059c5c, type: 3}
+  sounds: []

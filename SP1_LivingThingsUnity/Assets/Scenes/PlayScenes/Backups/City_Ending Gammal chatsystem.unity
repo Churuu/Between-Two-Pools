@@ -177,6 +177,11 @@ Prefab:
       propertyPath: characters
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82235728806592562, guid: 44a025f64b397ac4886c067c818535ed,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
   m_IsPrefabParent: 0
@@ -9928,7 +9933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cName: 
   selectedConversation: 0
-  selectedDialog: 6
+  selectedDialog: 0
   conversations:
   - name: Default
     dialog:
