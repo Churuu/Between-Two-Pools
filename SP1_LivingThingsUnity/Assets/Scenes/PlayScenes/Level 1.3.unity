@@ -51803,6 +51803,11 @@ Prefab:
       propertyPath: m_Layer
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 212532328237411294, guid: 0a2cf7aed6f73a949832548fe96a9715,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
   m_IsPrefabParent: 0
@@ -96747,6 +96752,11 @@ Prefab:
     - target: {fileID: 1521461176954430, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
       propertyPath: m_Layer
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 212532328237411294, guid: 0a2cf7aed6f73a949832548fe96a9715,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a2cf7aed6f73a949832548fe96a9715, type: 2}
