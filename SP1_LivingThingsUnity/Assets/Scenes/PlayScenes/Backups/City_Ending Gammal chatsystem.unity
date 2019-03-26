@@ -177,46 +177,9 @@ Prefab:
       propertyPath: characters
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 82235728806592562, guid: 44a025f64b397ac4886c067c818535ed,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114023169475813040, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a025f64b397ac4886c067c818535ed, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &123201133 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1610097870488322, guid: 44a025f64b397ac4886c067c818535ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 123201132}
---- !u!114 &123201134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 123201133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3c39b0ded87e3419c945bc3263e99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TypingDelay: 0.04
-  convoText: {fileID: 898512133}
-  conversationImage: {fileID: 222635388}
-  conversation: {fileID: 11400000, guid: 7bec4a1311554624eb82b955c192231f, type: 2}
-  characters: 1
-  convoStarter:
-  - {fileID: 8300000, guid: dc59e73b31701a049b06822112944a96, type: 3}
-  - {fileID: 8300000, guid: 4fdb529e02f3a59449d63c2925573cd9, type: 3}
-  - {fileID: 8300000, guid: 71161b20a8d22b746864d5bc8659f8bc, type: 3}
-  textSFX: {fileID: 8300000, guid: 82844460218d9c34abe949f34efb4370, type: 3}
 --- !u!1 &163658519
 GameObject:
   m_ObjectHideFlags: 0
@@ -9965,7 +9928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cName: 
   selectedConversation: 0
-  selectedDialog: 9
+  selectedDialog: 6
   conversations:
   - name: Default
     dialog:
