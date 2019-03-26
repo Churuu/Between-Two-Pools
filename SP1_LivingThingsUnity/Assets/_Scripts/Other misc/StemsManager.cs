@@ -115,6 +115,7 @@ public class StemsManager : MonoBehaviour
         {
             OnMenuPause();
         }
+        print("StemFocus: " + stemFocus);
     }
 
     public void UpdateStems()
@@ -168,21 +169,25 @@ public class StemsManager : MonoBehaviour
                 break;
             case 8:
                 menuPauseBool = false;
+                stemStairBool = true;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music21;
-                stemCount = 1;
+                stemCount = 0;
+                stemCountInt(1);
                 UpdateStemStairs();
-                stemStairBool = true;
+                print("case 8");
                 break;
             case 9:
                 menuPauseBool = false;
+                stemStairBool = true;
                 FindObjectOfType<AudioManager>().PauseBool(true);
                 FindObjectOfType<AudioManager>().PauseBool(false);
                 thisLevelStems = music22;
-                stemCount = 1;
+                stemCount = 0;
+                stemCountInt(1);
                 UpdateStemStairs();
-                stemStairBool = true;
+                print("case 9");
                 break;
             case 10:
                 menuPauseBool = true;
@@ -215,10 +220,10 @@ public class StemsManager : MonoBehaviour
                 stemStairBool = false;
                 break;
         }
-        mainStemAudioSource.clip = thisLevelStems[0];
-        sealStemAudioSource.clip = thisLevelStems[1];
-        otterStemAudioSource.clip = thisLevelStems[2];
-        frogStemAudioSource.clip = thisLevelStems[3];
+        //mainStemAudioSource.clip = thisLevelStems[0];
+        //sealStemAudioSource.clip = thisLevelStems[1];
+        //otterStemAudioSource.clip = thisLevelStems[2];
+        //frogStemAudioSource.clip = thisLevelStems[3];
 
         for (int i = 0; i < AudioSources.Count; i++)
         {
@@ -250,6 +255,7 @@ public class StemsManager : MonoBehaviour
         for (int i = 0; i < AudioSources.Count; i++)
         {
             AudioSources[i].Pause();
+            print("PAUSE");
         }
     }
 
@@ -306,6 +312,7 @@ public class StemsManager : MonoBehaviour
                 sealStemAudioSource.volume = 0;
                 otterStemAudioSource.volume = 0;
                 frogStemAudioSource.volume = 0;
+                
                 break;
             case 2:
                 mainStemAudioSource.volume = mainStemVolume;
@@ -326,11 +333,16 @@ public class StemsManager : MonoBehaviour
                 frogStemAudioSource.volume = frogStemVolume;
                 break;
         }
+        if (!mainStemAudioSource.isPlaying)
+        {
+            RestartStems();
+        }
     }
 
     public void stemCountInt(int value)
     {
         stemCount += value;
+        print("stemCount: " + stemCount);
         if (stemCount <= 4 && stemCount > 0)
         {
             UpdateStemStairs();

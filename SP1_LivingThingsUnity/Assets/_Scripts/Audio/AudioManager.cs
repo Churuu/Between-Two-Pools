@@ -102,10 +102,7 @@ public class AudioManager : MonoBehaviour
             musicSource.Pause();
         }
 
-        else if (FindObjectOfType<VideoStreamer>() != null) /*||
-            SceneManager.GetActiveScene().buildIndex == 2 ||
-            SceneManager.GetActiveScene().buildIndex == 7 || SceneManager.GetActiveScene().buildIndex == 10 ||
-            SceneManager.GetActiveScene().buildIndex == 12)*/
+        else if (FindObjectOfType<VideoStreamer>() != null)
         {
             if (!pause)
             {

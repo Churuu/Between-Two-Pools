@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitDoor : MonoBehaviour
 {
@@ -24,8 +25,15 @@ public class ExitDoor : MonoBehaviour
             FindObjectOfType<VideoStreamer>().PrepareVideo();
         else if (otter && seal && frog)
         {
-            FindObjectOfType<AudioManager>().OnWinStinger();
-            Invoke("LoadSceneTimer", FindObjectOfType<AudioManager>().GetComponent<AudioSource>().clip.length);
+            if (SceneManager.GetActiveScene().buildIndex != 6)
+            {
+                FindObjectOfType<AudioManager>().OnWinStinger();
+                Invoke("LoadSceneTimer", FindObjectOfType<AudioManager>().GetComponent<AudioSource>().clip.length);
+            }
+            else
+                FindObjectOfType<SceneTransitioner>().LoadScene(sceneToLoad);
+
+
         }
 
             
