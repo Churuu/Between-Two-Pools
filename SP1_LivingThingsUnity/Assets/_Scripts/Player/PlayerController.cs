@@ -32,8 +32,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] [Range(0.0001f, 1f)] float gravity = 0.1f;
     float minGravity = 0.0005f;
-   MenuSystem menuSystem;
-
+    MenuSystem menuSystem;
+    [SerializeField] float nextOkJump = 0.05f;
+    float timerForJump = 00f;
 
     void Start()
     {
@@ -146,10 +147,13 @@ public class PlayerController : MonoBehaviour
     //AddForce För att hoppa
     private void VerticalMovmenent()
     {
-        if (Input.GetButtonDown(jumpAxis))
+        timerForJump += Time.deltaTime;
+
+        if (Input.GetButtonDown(jumpAxis) && timerForJump >= nextOkJump)
         {
             if (Grounded())
             {
+                timerForJump = 0f;
                 rb2D.AddForce(Vector2.up * jumpAddForce);
                 for (int i = 0; i < animChild.Length; i++)
                 {
@@ -187,7 +191,7 @@ public class PlayerController : MonoBehaviour
     private void HorizontalMovmenentNotActive()
     {
         Vector2 movement = new Vector2(horizontalInput * speedVelocityHorizontal * Time.deltaTime, rb2D.velocity.y);
-       
+
         rb2D.velocity = movement;
     }
 
